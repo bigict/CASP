@@ -32,6 +32,12 @@ shift $((OPTIND - 1))
 mkdir -p ${output_dir}
 for f in $*; do
   echo "Start predict (${f}) `date`"
-  python alphafold/docker/run_docker.py --docker_image_name=${docker_image_name} --data_dir=${data_dir} --max_template_date=${max_template_date} --output_dir=${output_dir} --fasta_paths=${f} ${af2_params}
+  python alphafold/docker/run_docker.py \
+      --docker_image_name=${docker_image_name} \
+      --data_dir=${data_dir} \
+      --max_template_date=${max_template_date} \
+      --output_dir=${output_dir} \
+      --fasta_paths=${f} \
+      ${af2_params}
   echo "Finished (${f}) `date`"
 done
