@@ -1,12 +1,15 @@
-"""Tools for run msa tools, run
+"""Full AlphaFold msa search pipeline script. run
      ```bash
      $python run_msa_tool.py -h
      ```
      for further help.
 """
 
-"""Full AlphaFold msa search pipeline script."""
+import os
+import pathlib
+import pickle
 import shutil
+import time
 from typing import Union
 
 from absl import app
@@ -39,8 +42,7 @@ flags.DEFINE_string('hmmbuild_binary_path', shutil.which('hmmbuild'),
                     'Path to the hmmbuild executable.')
 flags.DEFINE_string('kalign_binary_path', shutil.which('kalign'),
                     'Path to the Kalign executable.')
-flags.DEFINE_string('\
-      uniref90_database_path', None, 'Path to the Uniref90 '
+flags.DEFINE_string('uniref90_database_path', None, 'Path to the Uniref90 '
                     'database for use by JackHMMER.')
 flags.DEFINE_string('mgnify_database_path', None, 'Path to the MGnify '
                     'database for use by JackHMMER.')
@@ -68,8 +70,15 @@ flags.DEFINE_enum('db_preset', 'full_dbs',
                   'Choose preset MSA database configuration - '
                   'smaller genetic database config (reduced_dbs) or '
                   'full genetic database config  (full_dbs)')
+flags.DEFINE_enum('model_preset', 'monomer',
+                  ['monomer', 'monomer_casp14', 'monomer_ptm', 'multimer'],
+                  'Choose preset model configuration - the monomer model, '
+                  'the monomer model with extra ensembling, monomer model with '
+                  'pTM head, or multimer model')
 
 FLAGS = flags.FLAGS
+
+MAX_TEMPLATE_HITS = 20
 
 def _check_flag(flag_name: str,
                 other_flag_name: str,
@@ -83,7 +92,8 @@ def run_msa_tool(
     fasta_path: str,
     fasta_name: str,
     output_dir_base: str,
-    data_pipeline: Union[pipeline.DataPipeline, pipeline_multimer.DataPipeline]):
+    data_pipeline: Union[pipeline.DataPipeline,
+        pipeline_multimer.DataPipeline]):
   """Predicts structure using AlphaFold for the given sequence."""
   logging.info('Predicting %s', fasta_name)
   timings = {}
@@ -176,14 +186,12 @@ def main(argv):
       use_precomputed_msas=False)
 
   if run_multimer_system:
-    num_predictions_per_model = FLAGS.num_multimer_predictions_per_model
     data_pipeline = pipeline_multimer.DataPipeline(
         monomer_data_pipeline=monomer_data_pipeline,
         jackhmmer_binary_path=FLAGS.jackhmmer_binary_path,
         uniprot_database_path=FLAGS.uniprot_database_path,
         use_precomputed_msas=False)
   else:
-    num_predictions_per_model = 1
     data_pipeline = monomer_data_pipeline
 
   # Predict structure for each of the sequences.
