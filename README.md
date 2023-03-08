@@ -14,5 +14,10 @@ Improve protein structure prediction accuracy by MSA searching strategies
    ```
 2. How to run [Alphafold2](http://github.com/bigict/alphafold)
    ```
-   sh run_alphafold.sh -d <db_dir> -o <output_dir> <fasta_file_1> <fasta_file_2> ...
+   $ sh run_alphafold.sh -d <db_dir> -o <output_dir> <fasta_file_1> <fasta_file_2> ...
+   ```
+3. How to run msa searching tool
+   ```
+   $ cd CASP
+   $ sh run_msa_tool.sh -d <data_dir> -o . examples/T1024-D1.fasta  # data_dir - database dir
    ```
