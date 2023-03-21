@@ -36,7 +36,7 @@ for f in $*; do
       --uniref90_database_path=${data_dir}/uniref90/uniref90.fasta \
       --mgnify_database_path=${data_dir}/mgnify/mgy_clusters.fa \
       --bfd_database_path=${data_dir}/bfd/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt \
-      --uniclust30_database_path=${data_dir}/uniclust30/uniclust30_2018_08/uniclust30_2018_08 \
+      --uniref30_database_path=${data_dir}/uniclust30/uniclust30_2018_08/uniclust30_2018_08 \
       --template_mmcif_dir=${data_dir}/pdb_mmcif/mmcif_files \
       --obsolete_pdbs_path=${data_dir}/pdb_mmcif/obsolete.dat \
       --pdb70_database_path=${data_dir}/pdb70/pdb70 \
