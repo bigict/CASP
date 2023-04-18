@@ -74,7 +74,7 @@ for f in $*; do
     fi
     af2_params="--use_precomputed_msas ${af2_params}"
   fi
-  python docker/run_docker.py \
+  python alphafold/docker/run_docker.py \
       --docker_image_name=${docker_image_name} \
       --data_dir=${data_dir} \
       --max_template_date=${max_template_date} \

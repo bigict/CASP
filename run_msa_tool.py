@@ -95,7 +95,7 @@ def run_msa_tool(
     data_pipeline: Union[pipeline.DataPipeline,
         pipeline_multimer.DataPipeline]):
   """Predicts structure using AlphaFold for the given sequence."""
-  logging.info('Predicting %s', fasta_name)
+  logging.info('Querying %s', fasta_name)
   timings = {}
   output_dir = os.path.join(output_dir_base, fasta_name)
   if not os.path.exists(output_dir):
