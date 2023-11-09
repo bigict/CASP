@@ -11,13 +11,27 @@ help() {
   exit $1
 }
 
+export PYTHONPATH=${CWD}/alphafold
+
+########################
+# Temp directory
+########################
+export TMPDIR=tmp
+mkdir -p ${TMPDIR}
+
+export JACKHMMER_CPU_NUM=8
+export HHBLITS_CPU_NUM=32
+
+CONDA_ENV="af2"
+
 docker_image_name="alphafold2"
 data_dir=/mnt/data/alphafold/db
 output_dir=/mnt/data/alphafold/test
 max_template_date="2021-05-14"
 msa_params=""
-while getopts 'd:o:m:t:p:h' OPT; do
+while getopts 'x:d:o:m:t:p:h' OPT; do
   case $OPT in
+    x) CONDA_ENV="$OPTARG";;
     d) data_dir="$OPTARG";;
     o) output_dir="$OPTARG";;
     p) msa_params="$OPTARG";;
@@ -27,6 +41,11 @@ while getopts 'd:o:m:t:p:h' OPT; do
   esac
 done
 shift $((OPTIND - 1))
+
+. ${HOME}/.bashrc
+export PATH=${HOME}/.local/anaconda3/bin:${HOME}/.local/bin:${PATH}
+export LD_LIBRARY_PATH=${HOME}/.local/lib:${HOME}/local/lib:${LD_LIBRARY_PATH}
+. activate ${CONDA_ENV} || exit 1
 
 mkdir -p ${output_dir}
 for f in $*; do
