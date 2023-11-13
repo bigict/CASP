@@ -23,15 +23,17 @@ export JACKHMMER_CPU_NUM=8
 export HHBLITS_CPU_NUM=32
 
 CONDA_ENV="af2"
+WORKER_NUM=25
 
 docker_image_name="alphafold2"
 data_dir=/mnt/data/alphafold/db
 output_dir=/mnt/data/alphafold/test
 max_template_date="2021-05-14"
 msa_params=""
-while getopts 'x:d:o:m:t:p:h' OPT; do
+while getopts 'x:n:d:o:m:t:p:h' OPT; do
   case $OPT in
     x) CONDA_ENV="$OPTARG";;
+    n) WORKER_NUM="$OPTARG";;
     d) data_dir="$OPTARG";;
     o) output_dir="$OPTARG";;
     p) msa_params="$OPTARG";;
@@ -42,15 +44,24 @@ while getopts 'x:d:o:m:t:p:h' OPT; do
 done
 shift $((OPTIND - 1))
 
+
+if [ $# -eq 0 ]; then
+  exit 1
+fi
+
 . ${HOME}/.bashrc
 export PATH=${HOME}/.local/anaconda3/bin:${HOME}/.local/bin:${PATH}
 export LD_LIBRARY_PATH=${HOME}/.local/lib:${HOME}/local/lib:${LD_LIBRARY_PATH}
 . activate ${CONDA_ENV} || exit 1
 
 mkdir -p ${output_dir}
-for f in $*; do
-  echo "Start predict (${f}) `date`"
-  python run_msa_tool.py \
+
+if [ $# -lt ${WORKER_NUM} ]; then
+  WORKER_NUM=$#
+fi
+
+msa_tool_cmd=" \
+python run_msa_tool.py \
       --output_dir=${output_dir} \
       --uniref90_database_path=${data_dir}/uniref90/uniref90.fasta \
       --mgnify_database_path=${data_dir}/mgnify/mgy_clusters.fa \
@@ -60,7 +71,25 @@ for f in $*; do
       --obsolete_pdbs_path=${data_dir}/pdb_mmcif/obsolete.dat \
       --pdb70_database_path=${data_dir}/pdb70/pdb70 \
       --max_template_date=${max_template_date} \
-      --fasta_paths=${f} \
-      ${msa_params}
-  echo "Finished (${f}) `date`"
-done
+      ${msa_params}"
+
+echo $@ | \
+  awk '{for (i=1; i<=NF; ++i){print $i}}' | \
+  ./bin/mapred -m "${msa_tool_cmd}" -c ${WORKER_NUM}
+
+# for f in $*; do
+#   echo "Start predict (${f}) `date`"
+#   python run_msa_tool.py \
+#       --output_dir=${output_dir} \
+#       --uniref90_database_path=${data_dir}/uniref90/uniref90.fasta \
+#       --mgnify_database_path=${data_dir}/mgnify/mgy_clusters.fa \
+#       --bfd_database_path=${data_dir}/bfd/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt \
+#       --uniref30_database_path=${data_dir}/uniclust30/uniclust30_2018_08/uniclust30_2018_08 \
+#       --template_mmcif_dir=${data_dir}/pdb_mmcif/mmcif_files \
+#       --obsolete_pdbs_path=${data_dir}/pdb_mmcif/obsolete.dat \
+#       --pdb70_database_path=${data_dir}/pdb70/pdb70 \
+#       --max_template_date=${max_template_date} \
+#       --fasta_paths=${f} \
+#       ${msa_params}
+#   echo "Finished (${f}) `date`"
+# done
