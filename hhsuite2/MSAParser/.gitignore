@@ -1,0 +1,13 @@
+# vim temporary backup
+.*.sw*
+
+# binary executables
+fasta2aln
+fastaCov
+realignMSA
+rmRedundantSeq
+trimMSA
+calNf
+cleanFastaHeader
+AlnAaProb
+RemoveNonQueryPosition
