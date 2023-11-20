@@ -6,6 +6,7 @@
 """
 
 import os
+import sys
 import pathlib
 import pickle
 import shutil
@@ -95,7 +96,7 @@ def run_msa_tool(
     data_pipeline: Union[pipeline.DataPipeline,
         pipeline_multimer.DataPipeline]):
   """Predicts structure using AlphaFold for the given sequence."""
-  logging.info('Predicting %s', fasta_name)
+  logging.info('Querying %s', fasta_name)
   timings = {}
   output_dir = os.path.join(output_dir_base, fasta_name)
   if not os.path.exists(output_dir):
@@ -144,6 +145,8 @@ def main(argv):
               should_be_set=run_multimer_system)
 
   # Check for duplicate FASTA file names.
+  if not FLAGS.fasta_paths:
+    FLAGS.fasta_paths = [fasta_file.strip() for fasta_file in sys.stdin]
   fasta_names = [pathlib.Path(p).stem for p in FLAGS.fasta_paths]
   if len(fasta_names) != len(set(fasta_names)):
     raise ValueError('All FASTA paths must have a unique basename.')
@@ -205,7 +208,6 @@ def main(argv):
 
 if __name__ == '__main__':
   flags.mark_flags_as_required([
-      'fasta_paths',
       'output_dir',
       'uniref90_database_path',
       'mgnify_database_path',

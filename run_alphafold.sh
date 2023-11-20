@@ -68,13 +68,14 @@ for f in $*; do
       create_sto ${f} ${mgnify_hits_sto}
     fi
     touch ${msa_dir}/pdb_hits.hhr
-    bfd_uniclust_hits_a3m="${msa_dir}/bfd_uniclust_hits.a3m"
-    if [ ! -e ${bfd_uniclust_hits_a3m} ]; then
-      cp ${f} ${bfd_uniclust_hits_a3m}
+    #bfd_uniclust_hits_a3m="${msa_dir}/bfd_uniclust_hits.a3m"
+    bfd_uniref_hits_a3m="${msa_dir}/bfd_uniref_hits.a3m"
+    if [ ! -e ${bfd_uniref_hits_a3m} ]; then
+      cp ${f} ${bfd_uniref_hits_a3m}
     fi
     af2_params="--use_precomputed_msas ${af2_params}"
   fi
-  python docker/run_docker.py \
+  python alphafold/docker/run_docker.py \
       --docker_image_name=${docker_image_name} \
       --data_dir=${data_dir} \
       --max_template_date=${max_template_date} \
