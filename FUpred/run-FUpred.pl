@@ -4,11 +4,16 @@ use File::Basename;
 use Cwd 'abs_path';
 
 ######## set your variables here
-$msa_hhblitsdb="/nfs/amino-home/zhng/local_library/uniclust30_2017_04/uniclust30_2017_04";
-$msa_jackhmmerdb="/nfs/amino-home/zhng/local_library/uniref90_04042018/uniref90.fasta";
+#$msa_hhblitsdb="/nfs/amino-home/zhng/local_library/uniclust30_2017_04/uniclust30_2017_04";
+$msa_hhblitsdb="/public/dbu/data/af2_db/uniclust30/uniclust30_2018_08/uniclust30_2018_08";
+#$msa_jackhmmerdb="/nfs/amino-home/zhng/local_library/uniref90_04042018/uniref90.fasta";
+$msa_jackhmmerdb="/public/dbu/data/fupred_db/uniref90_db/uniref90.fasta";
+
 $msa_hmmsearchdb="/nfs/amino-home/zhng/local_library/metaclust/metaclust.fasta";
-$python="/nfs/amino-home/zhng/local_library/anaconda3/bin/python";
-$python2="/nfs/amino-home/zhng/local_library/anaconda2/bin/python";
+#$python="/nfs/amino-home/zhng/local_library/anaconda3/bin/python";
+$python="/public/dbu/local/anaconda3/envs/pytorch/bin/python";
+#$python2="/nfs/amino-home/zhng/local_library/anaconda2/bin/python";
+$python2="/public/dbu/local/anaconda3/envs/py27/bin/python";
 $cpunum=4;
 
 #################################
