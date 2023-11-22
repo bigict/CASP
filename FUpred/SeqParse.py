@@ -33,10 +33,12 @@ def run_FUpred(input_file,output_folder):
         for i,domain in enumerate(domain_list,start=1):
             if not domain.strip():
                 continue
-            output_file=os.path.join(output_folder,f"Domain{i}.fasta") 
+            # 获取输入文件的基本名称（去除路径和扩展名）
+            input_base_name = os.path.splitext(os.path.basename(input_file))[0]
+            output_file = os.path.join(output_folder, f"{input_base_name}Domain{i}.fasta")
             with open(output_file,"w") as output_fasta:
                 #分割好的domain也有1-456,969-1147;的格式,所以将domain1的两个region的序列拼接在一起
-                output_fasta.write(f">Domain{i}\n")
+                output_fasta.write(f">{input_base_name}_Domain{i}:{domain_list[i-1].strip()}\n")
                 for region in domain.split(','):
                     start,end=map(int,region.strip().split('-'))  # 使用strip()去除换行符，再进行分割
                     output_fasta.write(str(SeqIO.read(input_file, "fasta").seq[start - 1:end]))
