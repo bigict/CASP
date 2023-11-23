@@ -28,14 +28,21 @@ for f in $@; do
   ${msa_tool_run} python ${msa_tool_home}/CASP/FUpred/SeqParser.py -i ${msa_tool_data_dir}/fasta/${f} -o ${msa_tool_data_dir}/fasta
 done
 
-#将远程的${msa_tool_data_dir}/fasta同步到本地fupred_fasta文件夹
-fupred_data_dir="${CWD}/data/${timestamp}/fupred_fasta"#本地的fasta文件夹
-mkdir -p ${fupred_data_dir}
-${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/fasta/* ${fupred_data_dir}/
+echo "parse_domain done"
+
+af2_pred_data_dir="${CWD}/data/${timestamp}"
+
+mkdir -p ${af2_pred_data_dir}
+
+
+#将远程的${msa_tool_data_dir}/fasta同步到本地
+parse_data_dir="${af2_pred_data_dir}/parse"
+mkdir -p ${parse_data_dir}
+${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/fasta/* ${parse_data_dir}/
 
 #创建msa_tool_file_list文件，里面存放的是各个fasta文件,空格分隔
 msa_tool_file_list=""
-for f in "${fupred_data_dir}"/fasta/*; do
+for f in "${parse_data_dir}"/fasta/*; do
   f=$(basename ${f})
   msa_tool_file_list="${msa_tool_file_list} ${msa_tool_data_dir}/fasta/${f}"
 done
@@ -47,11 +54,9 @@ ${msa_tool_run} bash -x ${msa_tool_home}/CASP/run_msa_tool.sh \
 
 echo "msa_tool_run done"
 
-af2_pred_data_dir="${CWD}/data/${timestamp}"
-
-mkdir -p ${af2_pred_data_dir}
-
 ${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/msa/* ${af2_pred_data_dir}/
+
+#本地在${af2_pred_data_dir}/msa开始splice msa TODO
 
 bash -x run_alphafold.sh \
     -m alphafold \
