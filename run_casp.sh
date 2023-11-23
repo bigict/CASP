@@ -23,7 +23,7 @@ msa_tool_data_dir="${msa_tool_home}/CASP/data/${timestamp}"
 ${msa_tool_run} mkdir -p ${msa_tool_data_dir}/fasta
 
 #远程对input1_fasta input2_fasta ...run SeqParser.py
-for f in $*; do
+for f in $@; do
   f=$(basename ${f})
   ${msa_tool_run} python ${msa_tool_home}/CASP/FUpred/SeqParser.py -i ${msa_tool_data_dir}/fasta/${f} -o ${msa_tool_data_dir}/fasta
 done
@@ -35,7 +35,7 @@ ${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/fasta/* ${fupred_data_dir}
 
 #创建msa_tool_file_list文件，里面存放的是各个fasta文件,空格分隔
 msa_tool_file_list=""
-for f in fupred_data_dir/*; do
+for f in "${fupred_data_dir}"/fasta/*; do
   f=$(basename ${f})
   msa_tool_file_list="${msa_tool_file_list} ${msa_tool_data_dir}/fasta/${f}"
 done
