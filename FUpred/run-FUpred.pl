@@ -308,13 +308,13 @@ print "\n";
 print "\n";
 print "predicting domain and domain boundary...\n";
 ############### run FUpred
-print "domain boundary is in protein.txt";
+print "domain boundary is in protein-FUpred.txt";
 #system("$bindir/FUpred -i protein.ce -2c 0.85 -2d 0.66 -chip 15 -label3c 0 -o protein >$work_dir/fu.txt");
-#改成输出文件的名字不叫fu.txt,而是叫protein.txt
-system("$bindir/FUpred -i protein.ce -2c 0.85 -2d 0.66 -chip 15 -label3c 0 -o protein >$work_dir/protein.txt");
+#改成输出文件的名字不叫fu.txt,而是叫protein-FUpred.txt
+system("$bindir/FUpred -i protein.ce -2c 0.85 -2d 0.66 -chip 15 -label3c 0 -o protein >$work_dir/protein-FUpred.txt");
 #`cp protein.2c $datadir/`;
 #`cp protein.2d $datadir/`;
-system("cat $work_dir/fu.txt");
+system("cat $work_dir/protein-FUpred.txt");
 print "\n";
 ################# endding procedure ######################
 $time=`date`;

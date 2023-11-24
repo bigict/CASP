@@ -27,7 +27,7 @@ def run_FUpred(input_file,output_folder):
         subprocess.run(command, shell=True, check=True)
         # 获取输入文件的基本名称（去除路径和扩展名）
         input_base_name = os.path.splitext(os.path.basename(input_file))[0]
-        with open("$input_base_name.txt","r") as fu_file:
+        with open("$input_base_name-FUpred.txt","r") as fu_file:
             domain_info=fu_file.read() #文件中内容全部存在domain_info中
         #按照结构域信息裁剪fasta文件
         domain_list=domain_info.split(";") #将domain_info按照;分割，得到一个列表
