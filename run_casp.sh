@@ -56,7 +56,14 @@ echo "msa_tool_run done"
 
 ${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/msa/* ${af2_pred_data_dir}/
 
-#本地在${af2_pred_data_dir}/msa开始splice msa TODO
+#Splice MSA
+for f in $*; do
+  f=$(basename ${f})
+  #f还要去掉后缀
+  f=${f%.*}
+  python ${CWD}/SpiceMSA/Splice-v1.py -i ${af2_pred_data_dir}/msa/ -n ${f} -o ${af2_pred_data_dir}/msa
+done
+
 
 bash -x run_alphafold.sh \
     -m alphafold \
