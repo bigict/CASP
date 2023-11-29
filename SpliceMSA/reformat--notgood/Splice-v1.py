@@ -1,3 +1,5 @@
+# brutal process using reformat.pl from HH-suite3
+import subprocess
 import os
 import argparse
 import re
