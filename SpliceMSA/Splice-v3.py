@@ -15,8 +15,12 @@ from typing import Dict, Iterable, List, Optional, Sequence, Tuple, Set
 
 
 def write_spliced_msa(output_path, spliced_msa):
+    
+    if os.path.exists(output_path):
+        os.remove(output_path)
     with open(output_path, 'w') as f:
         f.write(spliced_msa)
+
     print(f" saved to {output_path}")
 
 def generate_bfd_paths(input_folder,protein_name):
@@ -75,28 +79,42 @@ def combine_db_msa(bfd_msas,uniref90_msas,mgnify_msas):
     #将bfd_msas,uniref90_msas,mgnify_msas合并成一个字典，key是domain，value是一个字符串，是拼接后的MSA
     db_msas={}
     for domain in bfd_msas.keys():
-        #print(domain) 
+        print(f"Combining {domain} MSAs") 
         db_msas[domain]=bfd_msas[domain]+uniref90_msas[domain]+mgnify_msas[domain]
     return db_msas
 
 def combine_domain(db_msas):
-    #将db_msas根据domain进行横向拼接
+    # 将 db_msas 根据 domain 进行横向拼接
     domain_names = sorted(list(db_msas.keys()))
-    # domain_msas_line是个列表，其中的每个元素是一个 domain 的 MSA，该 MSA 被按照换行符拆分成了行的列表。
-    domain_msas_lines = [msa.split('\n') for msa in db_msas.values()]
     
-    max_rows = max(len(msa_lines) for msa_lines in domain_msas_lines)
+    # domain_msas_lines 是个列表，其中的每个元素是一个 domain 的 MSA，该 MSA 被按照换行符拆分成了行的列表。
+    domain_msas_lines = [msa.split('\n') for msa in db_msas.values()]
+
+    # 统一domain内部长度
+    for i in range(len(domain_msas_lines)):
+        #处理各个domain：
+        max_length=max(len(line) for line in domain_msas_lines[i])
+        for j in range(len(domain_msas_lines[i])):
+            if(len(domain_msas_lines[i][j])<max_length):
+                while len(domain_msas_lines[i][j])<max_length:
+                    domain_msas_lines[i][j]+='-'
+
+    # 统一各个domaini的深度
+    max_depth = max(len(msa) for msa in domain_msas_lines)
+    for i in range(len(domain_msas_lines)):
+        if(len(domain_msas_lines[i]) < max_depth):
+            while len(domain_msas_lines[i]) < max_depth:
+                domain_msas_lines[i].append('-'*len(domain_msas_lines[i][0]))
     
     # 横向拼接
     spliced_msa = ""
-    for row in range(max_rows):
+    for row in range(len(domain_msas_lines[0])):
         for i in range(len(domain_names)):
-            # 如果当前 domain 还有行数，则拼接，否则略过
-            if row < len(domain_msas_lines[i]):
-                spliced_msa += domain_msas_lines[i][row]
+            spliced_msa += domain_msas_lines[i][row]
         spliced_msa += '\n'
     
     return spliced_msa
+
 
 
 def main():
