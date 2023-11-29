@@ -1,0 +1,280 @@
+# STOCKHOLM 1.0
+
+#=GS T1114s1                  DE A0QUM5, A0QUM6, A0QUM7, Mycobacterium smegmatis, subunit 1, 189 residues|
+#=GS MGYP000073586012/9-186   DE [subseq from] PL=00 UP=0 BIOMES=0110000000000
+#=GS MGYP000558882341/11-176  DE [subseq from] PL=00 UP=0 BIOMES=1110000000000
+#=GS MGYP000225671226/9-176   DE [subseq from] PL=00 UP=0 BIOMES=1110000000000
+#=GS MGYP000889177398/9-176   DE [subseq from] PL=00 UP=0 BIOMES=1000000000000
+#=GS MGYP001022705884/9-176   DE [subseq from] PL=00 UP=0 BIOMES=1000000000000
+#=GS MGYP000314187920/138-262 DE [subseq from] PL=11 UP=0 BIOMES=1000000000000
+#=GS MGYP001068460043/7-173   DE [subseq from] PL=00 UP=0 BIOMES=1000000000000
+#=GS MGYP000010407751/11-132  DE [subseq from] PL=01 UP=0 BIOMES=1000000000000
+#=GS MGYP001005842409/12-82   DE [subseq from] PL=00 UP=0 BIOMES=1000000000000
+#=GS MGYP001005842409/129-183 DE [subseq from] PL=00 UP=0 BIOMES=1000000000000
+#=GS MGYP001005842409/238-295 DE [subseq from] PL=00 UP=0 BIOMES=1000000000000
+#=GS MGYP001005842409/345-511 DE [subseq from] PL=00 UP=0 BIOMES=1000000000000
+#=GS MGYP000176792293/16-122  DE [subseq from] PL=10 UP=0 BIOMES=0110000000000
+#=GS MGYP000545358534/7-179   DE [subseq from] PL=00 UP=0 BIOMES=0000000010100
+#=GS MGYP001065829109/11-185  DE [subseq from] PL=00 UP=0 BIOMES=1000000000000
+#=GS MGYP000891367617/9-137   DE [subseq from] PL=00 UP=0 BIOMES=1000000000000
+#=GS MGYP000209197126/1-114   DE [subseq from] PL=01 UP=0 BIOMES=0000000010100
+#=GS MGYP001125226156/5-175   DE [subseq from] PL=11 UP=0 BIOMES=0000000100000
+#=GS MGYP001121645707/9-170   DE [subseq from] PL=00 UP=1 BIOMES=1000000000000
+#=GS MGYP000851719643/6-109   DE [subseq from] PL=10 UP=0 BIOMES=1000000000000
+#=GS MGYP001137069286/8-174   DE [subseq from] PL=00 UP=0 BIOMES=1000000000000
+#=GS MGYP001091124380/13-182  DE [subseq from] PL=00 UP=1 BIOMES=1000000000000
+#=GS MGYP001074605341/11-174  DE [subseq from] PL=00 UP=0 BIOMES=1000000000000
+#=GS MGYP000992117423/15-173  DE [subseq from] PL=00 UP=1 BIOMES=1000000000000
+#=GS MGYP000906674855/18-184  DE [subseq from] PL=00 UP=0 BIOMES=1000000000000
+#=GS MGYP000144362724/9-94    DE [subseq from] PL=00 UP=0 BIOMES=0110000000000
+#=GS MGYP000597199878/21-144  DE [subseq from] PL=01 UP=0 BIOMES=1000000000000
+#=GS MGYP001016184041/6-115   DE [subseq from] PL=01 UP=0 BIOMES=1000000000000
+#=GS MGYP001153413685/20-79   DE [subseq from] PL=00 UP=0 BIOMES=0101000000000
+#=GS MGYP001153413685/118-286 DE [subseq from] PL=00 UP=0 BIOMES=0101000000000
+#=GS MGYP000222495251/19-78   DE [subseq from] PL=00 UP=0 BIOMES=0100000000000
+#=GS MGYP000222495251/115-284 DE [subseq from] PL=00 UP=0 BIOMES=0100000000000
+#=GS MGYP000366080387/42-205  DE [subseq from] PL=01 UP=0 BIOMES=0000100000000
+#=GS MGYP000078098159/57-218  DE [subseq from] PL=10 UP=0 BIOMES=0000101000000
+#=GS MGYP000971909152/10-110  DE [subseq from] PL=00 UP=0 BIOMES=1000000000000
+#=GS MGYP000971909152/108-280 DE [subseq from] PL=00 UP=0 BIOMES=1000000000000
+#=GS MGYP000406873900/20-81   DE [subseq from] PL=00 UP=1 BIOMES=0100000000000
+#=GS MGYP000406873900/118-286 DE [subseq from] PL=00 UP=1 BIOMES=0100000000000
+#=GS MGYP000994546640/18-68   DE [subseq from] PL=00 UP=0 BIOMES=1000000000000
+#=GS MGYP000994546640/123-301 DE [subseq from] PL=00 UP=0 BIOMES=1000000000000
+#=GS MGYP000123373911/7-168   DE [subseq from] PL=00 UP=0 BIOMES=0000000000001
+#=GS MGYP000303618431/168-223 DE [subseq from] PL=10 UP=0 BIOMES=0110000000000
+#=GS MGYP000526441016/3-156   DE [subseq from] PL=01 UP=0 BIOMES=1000000000000
+#=GS MGYP000882008200/1-91    DE [subseq from] PL=10 UP=0 BIOMES=1000000000000
+#=GS MGYP000060446849/16-175  DE [subseq from] PL=00 UP=0 BIOMES=0000101000000
+#=GS MGYP000908403288/8-76    DE [subseq from] PL=00 UP=0 BIOMES=1000000000000
+#=GS MGYP000908403288/110-256 DE [subseq from] PL=00 UP=0 BIOMES=1000000000000
+#=GS MGYP000904160838/21-90   DE [subseq from] PL=00 UP=0 BIOMES=1000000000000
+#=GS MGYP000904160838/117-285 DE [subseq from] PL=00 UP=0 BIOMES=1000000000000
+#=GS MGYP000066164860/18-112  DE [subseq from] PL=10 UP=0 BIOMES=0100000000000
+#=GS MGYP000066164860/115-171 DE [subseq from] PL=10 UP=0 BIOMES=0100000000000
+#=GS MGYP001033073556/18-117  DE [subseq from] PL=00 UP=0 BIOMES=0100000000000
+#=GS MGYP001033073556/116-286 DE [subseq from] PL=00 UP=0 BIOMES=0100000000000
+#=GS MGYP000355489710/10-100  DE [subseq from] PL=01 UP=0 BIOMES=1000000000000
+#=GS MGYP000533239037/23-91   DE [subseq from] PL=11 UP=0 BIOMES=0000100000000
+#=GS MGYP000533239037/128-173 DE [subseq from] PL=11 UP=0 BIOMES=0000100000000
+#=GS MGYP001059417589/17-72   DE [subseq from] PL=00 UP=0 BIOMES=0100000000000
+#=GS MGYP001059417589/116-283 DE [subseq from] PL=00 UP=0 BIOMES=0100000000000
+#=GS MGYP000974778827/7-162   DE [subseq from] PL=10 UP=0 BIOMES=1000000000000
+#=GS MGYP000876312880/4-51    DE [subseq from] PL=11 UP=0 BIOMES=1000000000000
+#=GS MGYP000876312880/107-161 DE [subseq from] PL=11 UP=0 BIOMES=1000000000000
+#=GS MGYP000906228296/38-182  DE [subseq from] PL=00 UP=0 BIOMES=1000000000000
+#=GS MGYP000157625395/12-104  DE [subseq from] PL=00 UP=0 BIOMES=0100000000000
+#=GS MGYP000157625395/116-282 DE [subseq from] PL=00 UP=0 BIOMES=0100000000000
+#=GS MGYP000041197068/14-172  DE [subseq from] PL=00 UP=0 BIOMES=0100000000000
+#=GS MGYP001020688395/14-178  DE [subseq from] PL=00 UP=0 BIOMES=1000000000000
+#=GS MGYP000502873009/20-204  DE [subseq from] PL=00 UP=0 BIOMES=1000000000000
+#=GS MGYP000871684787/13-104  DE [subseq from] PL=01 UP=0 BIOMES=1000000000000
+#=GS MGYP000871684787/105-167 DE [subseq from] PL=01 UP=0 BIOMES=1000000000000
+#=GS MGYP000654528330/11-90   DE [subseq from] PL=00 UP=0 BIOMES=0110000000000
+#=GS MGYP000654528330/97-251  DE [subseq from] PL=00 UP=0 BIOMES=0110000000000
+#=GS MGYP000867985302/17-183  DE [subseq from] PL=00 UP=0 BIOMES=1000000000000
+#=GS MGYP000876628591/17-183  DE [subseq from] PL=00 UP=0 BIOMES=1000000000000
+#=GS MGYP000665065149/2-68    DE [subseq from] PL=10 UP=0 BIOMES=1000000000000
+#=GS MGYP000072374428/8-170   DE [subseq from] PL=00 UP=0 BIOMES=1000000000000
+#=GS MGYP000087128931/20-135  DE [subseq from] PL=11 UP=0 BIOMES=1000000000000
+#=GS MGYP001001340043/14-81   DE [subseq from] PL=10 UP=0 BIOMES=1000000000000
+#=GS MGYP001083168992/66-223  DE [subseq from] PL=01 UP=0 BIOMES=0100000000000
+#=GS MGYP001069023481/4-60    DE [subseq from] PL=01 UP=0 BIOMES=0000000100000
+#=GS MGYP001024581486/20-183  DE [subseq from] PL=00 UP=1 BIOMES=1000000000000
+#=GS MGYP000152037383/8-167   DE [subseq from] PL=01 UP=0 BIOMES=1000000000000
+#=GS MGYP000961186727/24-93   DE [subseq from] PL=10 UP=0 BIOMES=1000000000000
+#=GS MGYP000978967733/2-170   DE [subseq from] PL=01 UP=0 BIOMES=1000000000000
+#=GS MGYP000992378453/95-250  DE [subseq from] PL=00 UP=0 BIOMES=1000000000000
+#=GS MGYP000882223271/1-169   DE [subseq from] PL=01 UP=0 BIOMES=1000000000000
+#=GS MGYP000639048560/6-61    DE [subseq from] PL=00 UP=0 BIOMES=0110000000000
+#=GS MGYP000639048560/149-234 DE [subseq from] PL=00 UP=0 BIOMES=0110000000000
+#=GS MGYP000503644672/15-173  DE [subseq from] PL=00 UP=0 BIOMES=1000000000000
+#=GS MGYP000973370019/15-63   DE [subseq from] PL=00 UP=0 BIOMES=1000000000000
+#=GS MGYP000143654370/5-161   DE [subseq from] PL=00 UP=0 BIOMES=0110000000000
+
+T1114s1                          MASNGHSAGQNAIDELPDI-SPVDGIRRRLDDPQVAEALNSLLDHADLLAVLVKGLDGFVRRGDDIANNLTSA---------IGELK-A--L-----N----A----A-D---------T-P---I-PALAAL-K-D-V---D--LAGLA---NS---L--ATL---S-----GG-L--VK---------AT--PA---L
+MGYP000073586012/9-186           ---------TPVLDSVNGA-GPADAVRDRLDDPRVAEALTTLLDHADLLAVLVSGLDGFVRRGDDITANLTSA---------WGELS---------------G----S-S---------E-Q---I-PGLAAL-R-E-V---D--LTELS---AS---L--AVL---T-----GG-L--VK---------AT--PA---I
+MGYP000558882341/11-176          --------------------TPSESVRDRLDDPRVAEALNSLLDHADLLAILVAGLDGLVKRGDDIAANLTSA---------VGELK-G--S-----G----A----A-G---------A-E---M------A-K-Q-L---D--LGGLA---VN---L--LTL---S-----GG-L--AK---------AT--PA---I
+MGYP000225671226/9-176           -----------------AV-TPADTVRDRLDDPQVAAALNTLLDHADVLAVLVSGLDGFVRRGDTITSTLSSA---------VSEFR-G--A-----S----S----A-G-----------A---I-PGAEAF-K-G-V---D--LQTLA---AS---L--ATL---S-----GS-V--AG---------AT--PA---L
+MGYP000889177398/9-176           -----------------AV-TPADTVRDRLDDPQVAAALNTLLDHADVLAVLVSGLGGFVRRGDTITSTLSSA---------VSEFR-G--A-----S----S----A-G-----------A---I-PGAEAF-K-G-V---D--LQTLA---AS---L--ATL---S-----GS-V--AG---------AT--PA---L
+MGYP001022705884/9-176           -----------------AV-TPADTVRDRLDDPQVAAALNTLLDHADVLAVLVSGLDGFVRRGDTITSTLSSA---------VSEFR-G--A-----S----S----A-G-----------A---I-PGAEAF-K-G-V---D--LQTLA---AS---L--ATL---S-----GS-V--AG---------AT--PA---L
+MGYP000314187920/138-262         -------------------------------------------------AQAAAGLDGLVKRGDDIAANLTSA---------VGELK-G--S-----G----A----A-G---------A-E---M------A-K-Q-L---D--LGGLA---VN---L--LTL---S-----GG-L--AK---------AT--PA---I
+MGYP001068460043/7-173           ---------------LVAS-SPADALIERLDDPKVVESLNQLLDHADLLAVLVVGLDGLVSRGEVIGESLLSA---------VNELR-D--V-----S----D----G-R---------S-P----------L-R-D-L---D--LAGLA---NS---L--KSL---S-----GP-I--VE---------AT--PA---L
+MGYP000010407751/11-132          --------------------TPSESVRDRLDDPRVAEALNSLLDHADLLAILVAGLDGLVKRGDDIAANLTSA---------VGELK-G--S-----G----A----A-G---------A-E---M------A-K-Q-L---D--LGGLA---VN---L--LTL---S-----GG-L--AK---------AT--PA---I
+MGYP001005842409/12-82           -----------------TT-EPIDHLVRQLNDPNTASALSYLLNNAQLLAFLVASLDGVLKRGEELTDNIGST---------LREFN-A--S-----G----Q------------------N---G-ASLAA--------------------------------------------------------------------
+MGYP001005842409/129-183         --------------------------LDQLSNAQTMAALTQIINNAPLIALLVNGLDGVIKRGEELTDNIGSA---------VREMQ-A--G-----D------------------------------------------------------------------------------------------------------
+MGYP001005842409/238-295         ---------------------------NQVNEPESLAALSQLVKHAPLLAFMLNSLEGTLKRSEEITDNLGAA---------MRDLS-P--S----GN----A----L-G------------------------------------------------------------------------------------------
+MGYP001005842409/345-511         ------------------------QVVNKVNQPTTLNALGQIAQHAPLMALLLNGLDGVIRRGDVLADNLSTT---------LKEIN-P-NL-----N----L----P-I---------S-P---A-EFTAIT-R-Q-L---P----ELF---RR---L--PILL-RA-----GNKV--AE---------VT--DSE-EF
+MGYP000176792293/16-122          -----------------------------------------------------------------------------------------------------------------------V-V---I-ATMAAL-R-E-V---D--LTELS---AS---L--AVL---T-----GG-L--VK---------AT--PA---I
+MGYP000545358534/7-179           ----------------VEA-SPADLLRERLDDPAVAASLNSLLDHADLLAVLLAGLDGMVRRGDEISETLASA---------VGELR-G--P-----A----T----S-L---------P-G---LDRARAEF-G-S-V---D--VASLV---VS---L--AGL---T-----RA-L--VD---------TM--PV---L
+MGYP001065829109/11-185          ----------NGDGELLDD-SPGDALAQRLKDPQIAASLSTILDHADLLAILVVGVDGFIRRAETISDSLVSS---------VAEVRQA--A-----S----A----A-G---------T-E---L-P----L-A-G-I---D--VAGLG---ET---L--GRL---G-----SA-L--VD---------AA--PA---L
+MGYP000891367617/9-137           -----------------AV-TPADTVRDRLDDPQVAAALNTLLDHADVLAVLVSGLDGFVRRGDTITSTLSSA---------VSEFR-G--A-----S----S----A-G-----------A---I-PGAEAF-K-G-V---D--LQTLA---AS---L--ATL---S-----GS-V--AG---------AT--PA---L
+MGYP000209197126/1-114           ---------------------------------------------------------------DDITANLTSA---------LGDLK-G---------------------------------------------Q-S-V---E--LGQLS---SS---L--AQL---S-----GG-L--VH---------AA--PA---I
+MGYP001125226156/5-175           -------------DELISE-SPGDEVIARLDDPRIASSLSLILDHADLLATLIVGLDGLLRRADVIGDSLASG---------VAEVR-E--L-----A----A----S-S---------D--------GQRAW-P-S-I---D--VAALS---DS---V--SRL---T-----AA-A--VD---------AT--PA---I
+MGYP001121645707/9-170           -----------------AQ-SPADELLARLDEPRVAAALGNLLDHADLLAILVVGLDGLVSRGEVIGASLADA---------IGELR-G--------G----A----E-D---------L-P--------------S-V---D--LKGLA---SS---L--TTL---S-----GS-L--SS---------AT--PA---L
+MGYP000851719643/6-109           --------------QMVTI-SPADYLRERLDDPAVAASLNSLLDHADLLAILVSGLDGMIRRGDEIGASLTSA---------VEELK-G--G----------M----A-P---------G-A---M-PGIESL-K-S-V---D--LQGLA---AS---L--ASL---S-----GA-L--VN---------AT--PA---L
+MGYP001137069286/8-174           ----------------AVR-SPADQLVERLEDPAVATALGQILDHADLLALMVSAFDGFLRRSDSIVEAVSDG---------VRELG-S--I---------------G-D---------R-P--------AAL-A-E-V---D--LQQLA---SS---L--TTL---S-----VR-V--AK---------AT--PG---L
+MGYP001091124380/13-182          -------------NELTAD-SPRNDLIRRLEDPKTAAALGQLLDHAELVAFLVDSIDGFVRRADVISDSVASG---------VAEVK-Q--L-----A----G----S-N---------G-Q---R-PWPA-------V---D--VAALS---ET---V--ARL---G-----AA-A--AA---------AA--PV---V
+MGYP001074605341/11-174          --------------------SPGDAVVAKLEDPRVAAALCDLLEHADLLAVLVTGLDAMIRRGDTITGGLAKA---------VGDWR-E--A-----M----A------E---------T---------AGDR-E-P-V---D--LAKLA---SS---L--RTL---S-----AA-V--SD---------AT--PG---L
+MGYP000992117423/15-173          ------------------------ALLAKLNEPRVAEALYDLLDHLDLLAVLVEGLDALARRGDTIAGNLTKA---------VGELR-L--------A----V----S-T---------T-P--------EAL-K-P-I---D--LPKLA---SS---L--RIL---F-----AA-I--SD---------AT--PG---L
+MGYP000906674855/18-184          --------------------TPRDALIRRLEDPQTAASMAQILDHLDLIATLIDGLDGFIRRADVISESVTAG---------VADIR-Q--L-----A----T----AGD---------H-E---R-PW-----A-S-V---D--VGALT---DT---L--ARL---S-----TA-A--AN---------AA--PA---L
+MGYP000144362724/9-94            ---------TPVLDSVNGA-GPADAVRERLDDPRVAEALTTLLDHADLLAVLVSGLDGFVRRGDDITANLTSA---------WGELS---------------G----S-S---------E-Q---I-PGLAAL-R-E-V---G--AA-----------------------------------------------------
+MGYP000597199878/21-144          -------------------------------------------------------TRGFVRRGDTITSTLSSA---------VSEFR-G--A-----S----S----A-G-----------A---I-PGAEAF-K-G-V---D--LQTLA---AS---L--ATL---S-----GS-V--AG---------AT--PA---L
+MGYP001016184041/6-115           --------------QVLEA-SPADQVRAKLDDPRVAESLNNLLEHADLLAVLVSGLDGLLRRSDVIGESLASA---------IGDFK-G--D-----A----T----G-DA-------VL-S---I-PGVDAL-K-S-V---D--LAGLA---ES---F--ATS---P--------H--VR---------RR--PA---E
+MGYP001153413685/20-79           ------------------------ALLERLNEPQTAAALHLLLDKAELLAFSVSAVDSLLQRGETIADNVAAS---------VHELR-A--A-----L----P----E-D------------------------------------------------------------------------------------------
+MGYP001153413685/118-286         ---------------------------TTLTKPEVLAALERLLAHSELLSFLVSALDHLLARGDELTENIRSS---------IEEMR-N--V-----M----V----A-Q---------S-V---T-PAQLID-A-M-V---T--FLPYF---PR---L--VAV---A-----PN-F--IEVIERIEPFIAS--EE---F
+MGYP000222495251/19-78           -------------------------LLERLNEPQTAAALHRLLDHAELLAFSASAVDSLLQRGEVIADNVAAS---------VHELR-A--A-----L----P----A-E---------S--------------------------------------------------------------------------------
+MGYP000222495251/115-284         --------------------------MATLSKPQTLDALDRLLGQSELLAFLVSALDHLLARGDELTENIRSA---------VEELR-A--TM---QD----R----A-I---------T-PDKLI-DAFIAF-L-P-YF-PR--LVAVA---PN---F--IEV---I-----EK-IEPFV---------AS--DE---F
+MGYP000366080387/42-205          -----------------AP-DPVAALAARLGDPAVATALHDLLDHADLIAILVVGLSGLVSRGDTIADSLAEG---------VGEWR-T--A-----S----A----G-T---------L-P---S-GE-------------E--AVQLI---QR---L--TSL---S-----GP-L--VT---------LL--PA---I
+MGYP000078098159/57-218          -----------SIDALPE----VDRLVRRLNDPAVAASLNSLLDNVELLAVLVEGLDGLARKGEVIGDTLGEV---------LGQLR-V--A-----G----R----E-S--------------------------G-L---D--PVTTA---HQ---L--STI---L-----PT-L--AA---------AS--PA---I
+MGYP000971909152/10-110          --------------------SAEERLRQRLNEPGTAELLLQILDKLDVIHLAVSSLDGFLQRSDTIIENVASS---------VRDVR-D--------N----V----P-A---------S-P---V-DTQKAI-A------------TLS---AA---M--PQL---L-----EA-L--PR---------IT--AA---L
+MGYP000971909152/108-280         -------------------------LSDQLRNPQTAVALQTILSKMDVLALTVASLDAFLQRSDTIIENIASSVRGVRETAPVGDLD-L--I-----S----G----A-I---------E-A---L-PQMAAT-L-P-T------IADRL---PQ---L--ITV---AD--QLQG-L--LN---------SA--EV---T
+MGYP000406873900/20-81           ------------------------ALLERLNEPQTAAALHRLLDHAELLAFSVGAVDSLLQRGDVIADNVAAS---------VHELR-A--A-----L----P----D-D---------G-G------------------------------------------------------------------------------
+MGYP000406873900/118-286         ---------------------------ATLSKPDTLAALDRLLAQSELLAFLVSALDHLLARGDELTENIRLA---------VEELR-T-TM-----NDRTIT----A-D---------K-L---I-DAFIAF-L-P-YF-PR--LVAVA---PN---F--IEV---I-----ER-IEPFI---------AS--AE---F
+MGYP000994546640/18-68           --------------------------ITELNNPQTASALKNLLKNAKTLDALLTGVDGFLQRSEEITDNVSEA---------IHEF------------------------------------------------------------------------------------------------------------------
+MGYP000994546640/123-301         ----------------------LSDLSNKLSNPQTLSALNEIIDNAPTIAFLAKGLSDFLSRGEEIADNIGEA---------IQEFK-P--Q-----M----S----D-EYAANFTSLIT-Q---L-PAALPT-I-T-E---N--LPPLL---EKAPILMQTTA---K-----LG-E--IA---------ES--QG---V
+MGYP000123373911/7-168           ----------------ETH-QPVDAIAERLNDPAVAASLVTLLDNAELLSTLVLGLGGFVERGDLIMDAVADG---------VNEFK-A--S-----G----A----A-L---------A-P---E-G-MPSV-----A---E--LSGLA---GQ---------------------L--AG---------AA--PL---L
+MGYP000303618431/168-223         --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+MGYP000526441016/3-156           -----------------------ERLVERLAEPRTAAALHTLLDNLELLAVMANGLDGLARKGEVIGDTLGEV---------LHEVR-A--A-----G----R----A--------------------------T-G-L---D--VRTTS---QQ---L--ATL---I-----PT-L--AE---------AS--PA---I
+MGYP000882008200/1-91            --------------------------------------------------------------------------------------------------------------------------------------------------AGLA---DS---F--AAL---S-----GT-M--ID---------AA--PA---L
+MGYP000060446849/16-175          ----------------------AHALARRLAEPRTAAAVNTLLDHADLLAILVSGLDALVSRSDTITESFADG---------VSELR-A--V-----G----E------------------P--------ARV-N-A-T---Q--LAATA---KQ---L--SAL---A-----PP-L--LD---------KL--PV---L
+MGYP000908403288/8-76            ---------------LAAL-TPQERLQERLSEPQTLEALNRLLDRLDVIAFTAEALEGFLRRAEVVADSVAQG---------LADLR-R--L-----A----G----D-E---------T--------------------------------------------------------------------------------
+MGYP000908403288/110-256         -----------------------SGLLETLAEPRTLEALKALTGKLELVQFGLDAADGFLQRGDQLVDSLAAG---------ARDLS-E------------------------------------------VT-Q-D-L---D--LGELR---KV---V--DTL---P------S-L--VE---------AG--KL---L
+MGYP000904160838/21-90           -------------------------LLDRLNEPRTLDALNRLLDHAELLAFSASSLDGLVRRSDVIVDNVAAS---------VGELR-G--T-----L----P----A-T---------P-A---L-DTAAAA-R-L---------------------------------------------------------------
+MGYP000904160838/117-285         --------------------------LRLLGDPATLGALNRLLAHTDLIAYLIGALDLFLQGSDRMVDNIREL---------VRDIG-A--GT---PD----A----S-A---------S-L---L-TLLQSL-H-E-Q---RSYLPRLI---VA---V--PQF---T-----DI-I--EQVA----PFVSS--PE---F
+MGYP000066164860/18-112          ----------------------VEQLLDRLNEPRTLEALNRLLDHAELLAFSAASLDGLVRRSEVIVDNVTST---------IAEVRDA--L-----P----P----A-P---------AVD---T-AALARLLH-D-L---P-RLLELT---NR---L--TA----------------LT---------AT--PE----
+MGYP000066164860/115-171         ------------------------ALLTLIGNPTTMTALQRLLQHAELLAYLVEAIDGVIRRSETIVENVGTL---------LQDVA--------------------A-G---------T--------------------------------------------------------------------------------
+MGYP001033073556/18-117          ----------------------VEQLLDRLNEPRTLEALNRLLDHAELLAFSAASLDGLVRRSEVIVENVTAT---------VAEVREA--L-----P----S----APE---------I-D---T-AALARL-LHD-L---P-RLLELT---NR---L--TAL----------------T---------AT--PE---F
+MGYP001033073556/116-286         -------------------------LLTLLGNPSTMTSLQRLLQHAELLAYLMEALDALIRRSDTIVESVNVL---------LRDIA-SGTP-----G----A----S-D---------S-LLTLI-EMLHRH-R-D-Y---VPRLIAVVPQFTE---L--VEQ---I-----GP-F--VA---------SE--EF---R
+MGYP000355489710/10-100          -------------------------------------------------------------------------------------------------------------------------A---I-PGAEAF-K-G-V---D--LQTLA---AS---L--ATL---S-----GS-V--AG---------AT--PA---L
+MGYP000533239037/23-91           ----------GAVEPMVSP-TPQEQLQSRLSDPRTVDSLNRLLDRVDMISDSMEMLDSFLRRGTEVADNVAES---------IEEIR-G--T------------------------------------------------------------------------------------------------------------
+MGYP000533239037/128-173         -----------------------SGLLERLAEPSTIQGITTLLDKLELLAFLATSLDGFVRRSNEIADS-----------------------------------------------------------------------------------------------------------------------------------
+MGYP001059417589/17-72           -------------------------LQARLNEPRTAEALNQILDRIELIAFTVTALDGLLQRSEQIGDEVARS---------VSDLK-A--S-----T------------------------------------------------------------------------------------------------------
+MGYP001059417589/116-283         -----------------------------LSTPETLEAIIVLMENMDKLAFAVEAIDGFLQRGDVIIESVAAS---------VKDAK-A-GV-----E----G----S-D---------I-KK-VM-DSLPQI-M-E-ATPQL--LDATS---QL---L--PIL---A-----SE-P--MQE------FINS--GA---L
+MGYP000974778827/7-162           ------------------S-TPVDQLRARLDDPEVAASLNALLDNVGTLALLATMVNGFLERGDTITENVVSA---------VHEMR-G--A-----A----G----H-G---------P-G---Y-LVEPAR-K----------LVEEA---PA---I--ADA---A-----TA-L--IE---------SG--MF---S
+MGYP000876312880/4-51            -----------------------------LNRPQTAAALKNLLKNAQTLDALLSGVDGFLKRGDEIADNVAES---------VREF------------------------------------------------------------------------------------------------------------------
+MGYP000876312880/107-161         -----------------------KDLSDKLSSPQTLAALNEIIENAPTIAFLANGLSEFLKRGEDIADNIGEA---------VQEFR-----------------------------------------------------------------------------------------------------------------
+MGYP000906228296/38-182          -------------------------LLERLQDPQVAQALVALLDRAELLAVLVEGLDQFVARSEEIGDAVITG---------VAELR-E--T-----V----A----A-N---------S-R---L-SEI------E-V---D--LPRIV---DT---A--TRL---A-----GS-D-----------------------
+MGYP000157625395/12-104          --------------------ASLEALLDRLNEPRTVEALHQLLDHAELLAYSAGALDGLIRRGEAITDNIAAS---------LDEVR-Q--A-----L----P----A-ES-------GA-Y---V-NELAALGK-E-L---P-AITATA---TQ---L--AQL---S--------------------------------
+MGYP000157625395/116-282         -----------------------------LRNPATLQAINQLLGQLELVAFALTAAHDLLQRGEELTDNIRSS---------LDDVR-G--AIPSESN----E----V-I---------A-Q---I-LSLAVL-L-P-YL-PR--LVAVA---PK---F--IEI---I-----ER-L--APF-------VAS--QE---F
+MGYP000041197068/14-172          -----------------ER-QPIDALTDRLNDPAVAASLGLLLDNVEALAVLAMGAQGLLNRGDTLADSLADG---------VHMLR-D--A-----S----A---------------------------GAG-V-D-I---D--EARQA---MA---F--GRH---V-----------MG---------HA--GD---I
+MGYP001020688395/14-178          -------------------------LYQRFSDPHVANSLATLLDHADLLALLVEALDSFVARSEVIGDNLVSS---------ITELR-E--A-----S----G----G-S---------------------GG-S-G-V---D--VAALA---QS---A--TML---A-----AA-L--PQ---------AA--PG---I
+MGYP000502873009/20-204          ------------------L-TPEEQLAERLKDPAVVGSLLTLLDHADLLAVLVTGLDQLISRSEVIGDSVLSG---------IAELR-G--I-----A----ELRGIA-EL-------RG-A---T-DGTAGD-Q-R-L---D--PAALA---QS---V--VAL---C-----AV-L--PK---------IT--PA---M
+MGYP000871684787/13-104          ---------------------AADRLRQRLDDPATAAALNEILDRLDVIALSVNSLDGLLRRSDVIIESARDS---------VNDLR-Q--T-----A----P----K-D---------L-D---L-EKTLTQ-L-G-Q---S--LPAVL---ES---L--PEL---S-----RS-L--P--------------------
+MGYP000871684787/105-167         ---------------------QLTRLAARLNEPETSAAIDTVLDNAAVLALAAQSADGLLKRSDVIIENVAGS---------VRDVV-G--S-----D----S----A-A------------------------------------------------------------------------------------------
+MGYP000654528330/11-90           -------------------------LQERLADAGTVDNLLQILDKLEVAAFALNAADGFLKRGEEIADNVADT---------ISDAK-L--S-----T----SL--KA-D---------D-L---Q-EGLALL-P-D-L--IK--LGAIA--------------------------------------------------
+MGYP000654528330/97-251          --------------------PQIRGLPDLLREPGNAQALRSLLQNAELIAFGLEALKGFLGRSEEVIENVTQG---------VGEAR----------Q----A----A-E--------------------------------G--LKGMA---NR---L--PEM---M-----ET-L--PL---------LA--DT---T
+MGYP000867985302/17-183          -----------------------GAIAARLSDPATVNALGSILDHVDLLAILIEGLDQMVSRSEVIGDSIVDG---------LAEVR-G--A-----T---ES----T-A---------R-P---V-DVGAVV-R-SGI---A--LAG------V---L--PQA---T-----PG-M--VA---------AVESGA---I
+MGYP000876628591/17-183          -----------------------GAIAARLSDPATVNALGSILDHVDLLAILIEGLDQMVSRSEVIGDSIVES---------LAEVR-G--A-----G----E----S-S---------A-S---A------------V---D--IGAVV---QS---G--IAL---A-----GV-L--PK---------AT--PG---M
+MGYP000665065149/2-68            ------------------------------------------------------------------------------------------------------------------------------------L-K-S-V---D--LQSLA---AS---L--ATL---S-----GS-L--VG---------AT--PA---L
+MGYP000072374428/8-170           ---------------------DTDALAAMLADPEIRESLAVILANAPALAALASMSTALLQRGPELTDNINGL---------VSQLR-E--S-----T----E----S-D---------G-E---V-SNLRG-------------AVGAL---NE---L--APL---T-----GT-L--AE---------RK--DT---I
+MGYP000087128931/20-135          ----------------------VERLVERLAEPRTAAALHTLLDNLELLAVMANGLDGLARKGEVIGDTLGEV---------LHEVR-A--A-----G----R----A--------------------------T-G-L---D--VRTTS---QQ---L--ATL---I-----PT-L--AE---------AS--PA---I
+MGYP001001340043/14-81           -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------I
+MGYP001083168992/66-223          ---------------------------GKLGDPALVDALARLAERRELLLFAAESAAGFLERADTITENVADS---------VRDAM-A--L-----A----G----G-----------Q-G---E-QALAML-T-Q-L---G-RLLPAV---QT---L--LTQ---V-----EP-L--VE---------SG--AI---E
+MGYP001069023481/4-60            --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+MGYP001024581486/20-183          ----------------------AERLRQRLGDPETVAALNHLLDNAELVAGLLDVVGGFFAHSDNIVENVATS---------YHEAV-A--M----------V----T-E---------S-P---V-GKRAVA-A-G-P---A--LLKVA---DQ---A--IPV---LEHVADAD-L--VE---------KI--GSSGLL
+MGYP000152037383/8-167           ---------------------ETDALAAMLADPETRQALAVIVANAPTLAALSTMASALLQRGPEIADNVNEL---------VRQLR-V--E-----G----A----G-D---------E-N------AIGG-------------AIGSL---AS---L--APL---A-----PA-L--AE---------RT--DT---I
+MGYP000961186727/24-93           -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------T--PA----
+MGYP000978967733/2-170           --------------------------------PNTLEALNKIIDNAPTVAFLAQGLNDFLGRGEEIADNIGEA---------IKEFK-P--Q-----M----S----D-E---------Y-A---A-TFATLL-T-Q-IP-KT--LPALT---EN---L--PPLLEKS-----PN-L--IK---------TG--LQ---L
+MGYP000992378453/95-250          ---------------------------EKILDENTADSILELLNHLDEVSDLVTMVLQALRRGPEYADNLNGL---------LQKLR-A--A-----A---------A-S---------S-G---D-SLEAQI-K-A-I---D--LPTLR---NT---A--FQL---T------Q-I--IQ---------SP--QM---Q
+MGYP000882223271/1-169           --------------------------------PNTLAALNEIIDNAPTVAFLAKGLSDFLSRGEEIADNIGEA---------IQEFK-P--Q-----M----SD--KF-S---------A-D---M-GKLVAE-L-P-K---V--LPTMA---EN---L--PPLLDKA-----PS-L--IK---------TG--LQ---L
+MGYP000639048560/6-61            ------------------A-NGAPSLEERLNDPQTTQALHRILDRLDAIEDAVDGLATAVDQAPQAANMVTDM---------VD--------------------------------------------------------------------------------------------------------------------
+MGYP000639048560/149-234         ----------------------------------------------------------------------------------------------------------------------------------------------------TA---EA---L--SEL---S-----TF-----V---------GS--DE---F
+MGYP000503644672/15-173          -----------------------DALDAMLADPEIRQSLAVIVANAPTIAALAAMGTAFLQRGPELTDNVNGL---------VRQLR-E--S-----L----D----A-D---------Q-A---S-QLTSAV--------------GAL---AT---L--APL---A-----ET-L--AT---------RK--ET---V
+MGYP000973370019/15-63           --------------------TPQERLQMRLADPHTVESLNALLDKLDVAVFSLNALDGFLRRGEEVASD-----------------------------------------------------------------------------------------------------------------------------------
+MGYP000143654370/5-161           ----------------PDIRTETDALSAMLADPEIREALAVIVANAPALAAIASVSVAFIERGPEIADNINDA---------VLELR-E--Q-----A----G----G-------------------------------------AEGIG---KA---L--PLV---------SA-L--GE---------RT--DS---I
+#=GC RF                          xxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.........xxxxx.x..x.....x....x....x.x.........x.x...x.xxxxxx.x.x.x...x..xxxxx...xx...x..xxx...x.....xx.x..xx.........xx..xx...x
+
+T1114s1                          N-AVL-D-S----------LT-D-Q-RG-AEVLSALG--DA---L----VAA----R---TSA----P--PAPR---G----VR-GMWKTLRAAAKDPDVGRGVSYLIEVARVFGSKV
+MGYP000073586012/9-186           N-TLL-SSS----------LT-D-P-RG-AEVVAALG--DA---L----VSA----R---SSV----P--APPR---G----LR-GLWSTLRGAAKDPDVTRGLAYLIEVARVFGRKV
+MGYP000558882341/11-176          N-ALL-NSS----------LA-D-P-RG-AEVVSALG--DA---L----VSG----R---TAL----P--PAPR---G----VR-GMWKTVRTAAKDPDIGRGLVYLIEVARAFGRKV
+MGYP000225671226/9-176           N-TLL-T-S---------KLT-D-P-QA-AQVLASLG--DA---L----IDG----K---AGA----A--NPPK---G----LY-GLYK----ATKDPDVSRGLGFLLAVAKSFGRRV
+MGYP000889177398/9-176           N-TLL-T-S---------KLT-D-P-QA-AQVLASLG--DA---L----IDG----K---AGA----A--NPPK---G----LY-GLYK----ATKDPDVSRGLGFLLAVAKSFGRRV
+MGYP001022705884/9-176           N-TLL-T-S---------KLT-D-P-QA-AQVLASLG--DA---L----IDG----K---AGA----A--NPPK---G----LY-GLYK----ATKDSDVSRGLGFLLAVAKSFGRRV
+MGYP000314187920/138-262         N-ALL-NSS----------LA-D-P-RG-AEVVSALG--DA---L----VSG----R---TAL----P--PAPR---G----VR-GMWKTVRTAAKDPDIGRGLVY------------
+MGYP001068460043/7-173           S-TLL-T-S---------KLT-D-P-QA-IGVISQLG--EA---L----VEG----R---ERA----A--HNPS---T----PM-GVFGLLRT-LKDEDISRGLGFLIEVARSFGKQ-
+MGYP000010407751/11-132          N-ALL-NSS----------LA-D-P-RG-AEVVSALG--DA---L----VDE----L-------------------------------------------------------------
+MGYP001005842409/12-82           ----------------------------------------------------------------------------------------------------------------------
+MGYP001005842409/129-183         ----------------------------------------------------------------------------------------------------------------------
+MGYP001005842409/238-295         ----------------------------------------------------------------------------------------------------------------------
+MGYP001005842409/345-511         E-TFLHG-G----------MF-E-P-RT-VKFLGEVG--VT---V----VEA----Q---ERF----R--KKPQ---Q----VS--LF-GLIGAMKDPDVQRGMGFLMELSRSFGK--
+MGYP000176792293/16-122          N-TLL-SSS----------LT-D-P-RG-AEVVAALG--DA---L----VSA----R---ASV----P--AAPR---G----LR-GLWSTLRGAAKDPDVTRGLAYLIEVARVFGRKV
+MGYP000545358534/7-179           N-KLL-H-S---------PLA-D-P-RA-AEVLADIG--AA---L----VEG----ELAAQSD----P--GRPK---G----LF-GLWR----VSKDKDINRGLGFLIHVARAFGRQ-
+MGYP001065829109/11-185          E-KLL-H-S---------PLT-D-P-QT-ADVLADLG--SA---L----LEG----K---RAA----D--TDRR---G----PK-GVFALMK-SLKDPDVSRGLGFMIHIARAFGRK-
+MGYP000891367617/9-137           N-TLL-T-S---------KLT-D-P-QA-AQVLASLG--DA---L----IDF----I---T---------------------------------------------------------
+MGYP000209197126/1-114           T-TLL-N-S---------PLT-D-P-AG-AEVIAALG--DA---M----VSA----R---QSV----P--PAPR---G----VR-GLWKTLRGAAKDPDVARGVAYLLEVARVFGRRV
+MGYP001125226156/5-175           E-RLL-H-S---------PLT-D-P-QT-AEVLAEIG--EA---L----RAG----K---QAA----A--ADPR---G----PK-GVFALMRV-TKDPDVSRGLGFMIQIARAFGK--
+MGYP001121645707/9-170           D-ALLRS-S----------LT-D-P-KA-VEVISQLA--HA---L----VVG----R---ERI----D--ANSS---G----PT-GVFGLLRV-LKDDDVSRGLGYLMQVAKAFGQE-
+MGYP000851719643/6-109           N---------------------------------------------------------------------------------------------------------------------
+MGYP001137069286/8-174           T-ALL-ESS----------FT-D-P-RT-VSALEMVG--SA---L----VEG----R---EEA----A--KNPS---A----PT-GVFGVVRA-LKDEDVARGIGLLIHVARALGRKV
+MGYP001091124380/13-182          E-RLL-N-S---------PLT-D-P-QT-ADTLAQLG--EA---V----VAG----R---QAA----A--ADRR---G----PK-GIFALMRA-TKDPDVARGLGFMIHIARAVGR--
+MGYP001074605341/11-174          E-ALFRS-A----------LT-D-P-RA-VDVASSVA--RS---I----IAG----A---EAA----K--REPA---K----PM-GAFALLRT-LKDEDVARGLNFLIHVARAFGRE-
+MGYP000992117423/15-173          E-ALF-R-S---------DLT-D-P-RV-VEVVSMAS--RA---L----RKG----A---EQD----K--REPV---T----SW-TVFSLLR-VLKDEDVARGLGFLVQVAKALGH--
+MGYP000906674855/18-184          E-RLL-N-S---------PLT-D-V-RT-ADTIADLG--EA---L----LEG----K---QAA----D--ADHS---K----RK-GLFALLRA-TKDPDVARGLGLMIHIARAVGRRV
+MGYP000144362724/9-94            ----------------------------------------------------------------------------------------------------------------------
+MGYP000597199878/21-144          N-TLL-T-S---------KLT-D-P-QA-AQVLASLG--DA---L----IDG----K---AGA----A--NPPK---G----LY-GLYK----ATKDPDVSRGLGFLLAYA-------
+MGYP001016184041/6-115           G-PVI-Y-Q-------------------------------------------------------------------------------------------------------------
+MGYP001153413685/20-79           ----------------------------------------------------------------------------------------------------------------------
+MGYP001153413685/118-286         D-ALL-D-S---------GVF-D-P-ET-VRLVGEAG--DA---F----VAS----R---KEL----R--QSPK---A----V--GVFGLLK-ALRDPDVQRAAALIVEFGRRFGR--
+MGYP000222495251/19-78           ----------------------------------------------------------------------------------------------------------------------
+MGYP000222495251/115-284         D-ALL-D-S----------GV-F-HPDT-VRLVGEAG--DA---F----VAS----R---ESL----R--HSPK---P----I--GLLGLLRA-LRDPDVQRAAGLIVEFGRRFGR--
+MGYP000366080387/42-205          E-RLM-T-S---------DLA-D-P-RM-VDIASLAS--RA---A----VRG----A---TEA----S--ATQA---R----VS-GLRALLR-VLKDDDVSRALGFVISVARALGQE-
+MGYP000078098159/57-218          N-RIL-E-S---------PIV-A-P-EP-IDILSETA--VA---L----VDG----L---RAA----E---AGE---T----RL-GVFGLLK-ATRDKDVQRGLGFLVEVARVFGR--
+MGYP000971909152/10-110          P-ELL---S----------LS-D-----------------------------------------------------------------------------------------------
+MGYP000971909152/108-280         A-LMG-S-G----------IF-S-P-QT-VAVVAHAG--DA---L----VES----Y---NAN----Q--TAPK---Q----V--GLFGLLRAL-GDPDVQRGLGFLVDFGKRFGQQ-
+MGYP000406873900/20-81           ----------------------------------------------------------------------------------------------------------------------
+MGYP000406873900/118-286         D-ALL-D-S----------GVFH-P-DT-VQLVGEAG--NA---F----VAS----R---EAL----R--QEPK---P----I--GLFGLLRA-LRDPDVQRAAGLIVEFGRRFGR--
+MGYP000994546640/18-68           ----------------------------------------------------------------------------------------------------------------------
+MGYP000994546640/123-301         Q-AFL-N-S-------------G-M-LT-PELVSLLG--DI--GK----TTV----Q---TEAE--FR--QNPK---S----VS---LFGLYGATKDEDVQRGLGFLVSLAKNIGK--
+MGYP000123373911/7-168           T-QLL-D-S----------AI-V-K----PEMISLLN--DV---S----EAA----T---EGA----E--NARKNETT----VS-GIRGTLKT-LKDPEVAKGLGLLVEIARSLGRR-
+MGYP000303618431/168-223         --------------------------------IGALG--DA---L----VSA----R---SSV----P--APPR---G----LR-GLWSTLRGAAKDPDVTRGLAYLIEVARVFGRKV
+MGYP000526441016/3-156           N-RIL-E-S---------PIV-E-P-EP-IAVLSEAA--EA---L----VKG----L---QAA----Q--QNQT---K-----V-GLRGLLR-ATKDEDVQRGLGFLIEVAKVFGR--
+MGYP000882008200/1-91            N-SLL-GSS----------LT-D-P-QA-AEVLAQLG--AA---L----VEA----K---TAH----A--RNPE---G----PK-GFFGILKS-AKDPDVARGLGFMLQVAKAFGRQ-
+MGYP000060446849/16-175          E-ALL-S-S---------DLA-D-P-KV-IELASMAS--RA---V----TRG----A---EQA----D--RGDL---R----VT-GVVGLLRA-LKDPDVSRALGFVLSIAKALGKE-
+MGYP000908403288/8-76            ----------------------------------------------------------------------------------------------------------------------
+MGYP000908403288/110-256         A-E---A-G----------MF-E-P-KT-VSLLAQLG--QS---L----AEA----H---REV----V--RSPR---P----PI-GLFGLLRL-IKDPEVQPILHWIIEVARRY----
+MGYP000904160838/21-90           ----------------------------------------------------------------------------------------------------------------------
+MGYP000904160838/117-285         S-GLL-A-S---------GLF-H-T-DT-VALLGRAG--DA---F----VEV----Y---NEG----L--NADR---R----M--GPIAILRA-LNDPDVQRVAALLVEFARRFS---
+MGYP000066164860/18-112          ----------------------------------------------------------------------------------------------------------------------
+MGYP000066164860/115-171         ----------------------------------------------------------------------------------------------------------------------
+MGYP001033073556/18-117          E-ALL-----------------------------------------------------------------------------------------------------------------
+MGYP001033073556/116-286         T-LLT-S-G----------VF-D-P-DT-VTLVGRAG--DA---F----VVT----Y---NED----R--QAQR---R----LG-P-IGLVR-ALYDPDVQRVAALLVDFARRFGK--
+MGYP000355489710/10-100          N-TLL-T-S---------KLT-D-P-QA-AQVLASLG--DA---L----IDG----K---AGA----A--NPPK---G----LY-GLYK----ATKDPDVSRGLGFL-----------
+MGYP000533239037/23-91           ----------------------------------------------------------------------------------------------------------------------
+MGYP000533239037/128-173         ----------------------------------------------------------------------------------------------------------------------
+MGYP001059417589/17-72           ----------------------------------------------------------------------------------------------------------------------
+MGYP001059417589/116-283         D-RLL-N-S---------GIL-A-P-QT-IDVVGHAG--GA---L----VES----Y---DKT----K--TTDT--------RA-GLF-ALLGAARDPDVQKALGFFVEFGKQFGKE-
+MGYP000974778827/7-162           R-QVV-D-L----------L-------------GRFA--NA---A----VEG----V---RVA----E--TQRT---T----VS-GLRPAFRA-LHDPDVARGLGMLVEVARAIGK--
+MGYP000876312880/4-51            ----------------------------------------------------------------------------------------------------------------------
+MGYP000876312880/107-161         ----------------------------------------------------------------------------------------------------------------------
+MGYP000906228296/38-182          -------------------LV-D-P-AA-VDQISLLA--RG---L----VAG----G---EAF----A--ERPV---P----VQ-GLLS-LNRILRDPDVRRAVSFLATVAKSLGQ--
+MGYP000157625395/12-104          ----------------------------------------------------------------------------------------------------------------------
+MGYP000157625395/116-282         D-ALL-S-S----------GV-F-Q-PATVKLVGQAG--DA---F----VAS----Y---EEQ----R--RHPP--------KR-GLLS-LLGALRDPDVQRAAALILAFGKRFGH--
+MGYP000041197068/14-172          E-HLL-E-S---------RML-R-P-QV-VEVLSMAA--EA---L----VEG----R---AAA----R--DGEP---E----IT-GIRSALRV-LKDPDVARGLDFLINVARALST--
+MGYP001020688395/14-178          V-RLV-E-S----------GT-A-D-KL-IATTEVSA--EA---LDQVQLIARGLKR---GSD----DFVTRPV---Q----VG-GVLSAA-KLLKDPDIARALSFFATVAKAVGQ--
+MGYP000502873009/20-204          V-AVA-D-SGI-----VERLS-N-Q-PG-F-TAGALDDLDA---V----VGG----A---AQGVERFH--RRPV---R----VR-GFVSAMKA-LRDKDVQLTLSYAVTIAKAVGER-
+MGYP000871684787/13-104          ----------------------------------------------------------------------------------------------------------------------
+MGYP000871684787/105-167         ----------------------------------------------------------------------------------------------------------------------
+MGYP000654528330/11-90           ----------------------------------------------------------------------------------------------------------------------
+MGYP000654528330/97-251          Q-QLK-E-S---------GVF-E-K-KP-VEVVGKAG--RA---A----AHA----Y---NQT----I--HEDK---T----DV-GVLQ-LMTAMRDPDIKSAVSFAYHMAQHFGKQ-
+MGYP000867985302/17-183          D-KLL-A-S---------GVV-S-G-EA-LDQVAMLA--RG---L----VKG----T---EDF----G--NSPV---E----VN-GIM-SLPKLLKDPDIRRSLSFFATVAKAIGKQ-
+MGYP000876628591/17-183          V-AAV-E-SGAIDKLLASGVV-S-G-QA-LDQVAMLA--RG---L----VTG----T---EDF----G--NNPV---E----VT-GVL-SLTKLLKDPDIRRSLSFFATVAKAIGKQ-
+MGYP000665065149/2-68            N-TLL-S-G----------LT-D-P-AA-AQVLASLG--VS---L----VDG----K---AGA----A--NPPK---G----FY-GL-------------------------------
+MGYP000072374428/8-170           Q-GFL-D-S---------PIL-R-P-EI-IDVVGNLG--EA---A----LEA----D---TQT----K--GKQV---N----AG-GVFSLMR-QLKDPDVQETLSFLLTFARVFGAR-
+MGYP000087128931/20-135          N-RIL-E-S---------PIV-E-P-EP-IAVLSEAA--EA---L----VAA----V---A---------------------------------------------------------
+MGYP001001340043/14-81           N-DYA-A-A----------LT-D-P-QT-ADVLASLG--DA---M----IDG----K---AGA----A--NPPK---G----LY-GLYK----ATKDPDVARGLGFLLAVAKSFGRRV
+MGYP001083168992/66-223          H-LAE-S-K----------LL-A-P-EM-VDVIAKIG--DA---L----HAT----E---TQH----P--E-GI---G----LV-GLMKTLR----DPDARRALGYLSTFAKEFGKRV
+MGYP001069023481/4-60            -----------------------------ADLMAPAG--DA---L----LEG----K---RAA----E--ADPR---G----PK-GVFGLMRV-TKDPDVSRGLGFMIQVARAFGKR-
+MGYP001024581486/20-183          DPALL-D-L----------LT-R-V-AG-G-VSRAT---EQ---A----QAE----A---EQK----P--PSII---A----IS--------GMTRDPDVRRGLAFALRIVKELG---
+MGYP000152037383/8-167           T-TLL-D-S---------PVL-A-P-QV-VQVIGRVG--QA---A----VEA----D---AQT----R--GKQA---Q----VG-GAFAILRE-LKDPGVQEGLAFLFAFAKAFGR--
+MGYP000961186727/24-93           --AEF-N-V----------YV-D-P-EA-ADVLAQLG--QA---L----VDG----K---AAAK-ADP--GGPK---G----VF-GLWR----VSKDKDIIRGLGFMIQVARAFGK--
+MGYP000978967733/2-170           G-EIA-E-SEGV----QAFLT-SGM-LT-PELVGFLG--DIGRTT----VET----E---HEF----R--KNPK---S----IS---LFGLYGATKDEDVQRGLGFMISLAKNIGK--
+MGYP000992378453/95-250          N-LLA-S-E----------IF-G-K-ES-VELVDRVA--KI---------AV----Q---SSI----E--AKQP---G----KRIGIFDLFR-ALNDPDIQTTLRFALGFAKKLG---
+MGYP000882223271/1-169           G-EIA-E-SEGV----QAFLT-SGM-LT-PELVSFLG--DIGRTT----VET----E---HEF----R--SNPK---S----IS---LFGLYGATKDEDVQRGLGFMIALAKNIGK--
+MGYP000639048560/6-61            ----------------------------------------------------------------------------------------------------------------------
+MGYP000639048560/149-234         T-ALK-D-S---------GIL-D-P-QA-VSVVGKAG--DA---L----ADC----R---REC----G--SEPP---Q----V--GLWGLFK-ALRDPDTRRALGFLTSFGKHFGRK-
+MGYP000503644672/15-173          Q-GFL-D-S---------PIL-Q-P-EI-VQVIGTFG--EA---A----LEA----D---RRT----R--GKQV---D----VG-GVFALMK-VIKEPEVQETLAFFVEFARVFGS--
+MGYP000973370019/15-63           ----------------------------------------------------------------------------------------------------------------------
+MGYP000143654370/5-161           T-GLL-D-S----------PV-L-Q----PEVVEVVG--RV---G----AAA----K---T-A----D--EATR---GTNQTVG-GIFSIL-GKLKDPNTQHALAFLFAFAEAFGA--
+#=GC RF                          x.xxx.x.x..........xx.x.x.xx.xxxxxxxx..xx...x....xxx....x...xxx....x..xxxx...x....xx.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//

@@ -1,4 +1,4 @@
-#use parsers.convert_stockholm_to_a3m, without using multimer pair and merge
+#use parsers.convert_stockholm_to_a3m, without using multimer pair and merge, directly horizontal splice
 import subprocess
 import os
 import argparse
@@ -13,9 +13,15 @@ sys.path.append('/public/dbu/CASP/alphafold/')
 from alphafold.data import parsers
 from typing import Dict, Iterable, List, Optional, Sequence, Tuple, Set
 
+
+def write_spliced_msa(output_path, spliced_msa):
+    with open(output_path, 'w') as f:
+        f.write(spliced_msa)
+    print(f" saved to {output_path}")
+
 def generate_bfd_paths(input_folder,protein_name):
     #查找前缀是protein_name+“Domain"的目录eg:T1125Domain1
-    domain_dirs = [dir for dir in os.listdir(input_folder) if dir.startswith(protein_name+'Domain') ]
+    domain_dirs = sorted( [dir for dir in os.listdir(input_folder) if dir.startswith(protein_name+'Domain') ] )
     print(f"Found {len(domain_dirs)} matching directories: {domain_dirs}")
     bfd_paths = {}
     for domain in domain_dirs:
@@ -26,17 +32,16 @@ def generate_bfd_paths(input_folder,protein_name):
 
 def generate_uniref90_paths(input_folder,protein_name):
     #查找前缀是protein_name+“Domain"的目录eg:T1125Domain1
-    domain_dirs = [dir for dir in os.listdir(input_folder) if dir.startswith(protein_name+'Domain') ]
+    domain_dirs = sorted([dir for dir in os.listdir(input_folder) if dir.startswith(protein_name+'Domain') ])
     uniref90_paths = {}
     for domain in domain_dirs:
         uniref90_path = os.path.join(input_folder, domain, 'msas', 'uniref90_hits.sto')
         uniref90_paths[domain] = uniref90_path
-
     return uniref90_paths
 
 def generate_mgnify_paths(input_folder,protein_name):
     #查找前缀是protein_name+“Domain"的目录eg:T1125Domain1
-    domain_dirs = [dir for dir in os.listdir(input_folder) if dir.startswith(protein_name+'Domain') ]
+    domain_dirs = sorted([dir for dir in os.listdir(input_folder) if dir.startswith(protein_name+'Domain') ])
     mgnify_paths = {}
     for domain in domain_dirs:
         mgnify_path = os.path.join(input_folder, domain, 'msas', 'mgnify_hits.sto')
@@ -70,10 +75,28 @@ def combine_db_msa(bfd_msas,uniref90_msas,mgnify_msas):
     #将bfd_msas,uniref90_msas,mgnify_msas合并成一个字典，key是domain，value是一个字符串，是拼接后的MSA
     db_msas={}
     for domain in bfd_msas.keys():
-        print(domain)
+        #print(domain) 
         db_msas[domain]=bfd_msas[domain]+uniref90_msas[domain]+mgnify_msas[domain]
     return db_msas
 
+def combine_domain(db_msas):
+    #将db_msas根据domain进行横向拼接
+    domain_names = sorted(list(db_msas.keys()))
+    # domain_msas_line是个列表，其中的每个元素是一个 domain 的 MSA，该 MSA 被按照换行符拆分成了行的列表。
+    domain_msas_lines = [msa.split('\n') for msa in db_msas.values()]
+    
+    max_rows = max(len(msa_lines) for msa_lines in domain_msas_lines)
+    
+    # 横向拼接
+    spliced_msa = ""
+    for row in range(max_rows):
+        for i in range(len(domain_names)):
+            # 如果当前 domain 还有行数，则拼接，否则略过
+            if row < len(domain_msas_lines[i]):
+                spliced_msa += domain_msas_lines[i][row]
+        spliced_msa += '\n'
+    
+    return spliced_msa
 
 
 def main():
@@ -95,13 +118,23 @@ def main():
     #此时uniref90&mgnify都转成了a3m格式
     bfd_msas=read_msa_from_bfd(bfd_paths)
     uniref90_msas=read_msa_from_uniref90(uniref90_paths)
+    #在output_folder中输出uniref90_msas字典的内容，以换行符分割不同domain的内容
+    for domain,msa in uniref90_msas.items():
+        output_path = os.path.join(args.output_folder,f'{domain}-uniref90.a3m')
+        write_spliced_msa(output_path, msa)
+
+
     mgnify_msas=read_msa_from_mgnify(mgnify_paths)
+    for domain,msa in mgnify_msas.items():
+        output_path = os.path.join(args.output_folder,f'{domain}-mgnify.a3m')
+        write_spliced_msa(output_path, msa)
+    
     db_msas=combine_db_msa(bfd_msas,uniref90_msas,mgnify_msas)
     
     spliced_msa = combine_domain(db_msas)
-    #output_path = os.path.join(args.output_folder,f'{args.protein_name}-SpliceDone.a3m')
-    #write_spliced_msa(output_path, spliced_msa)
-    #print(f"Spliced MSA saved to {output_path}")
+    output_path = os.path.join(args.output_folder,f'{args.protein_name}-SpliceDone.a3m')
+    write_spliced_msa(output_path, spliced_msa)
+    
 
 if __name__ == "__main__":
     main()
