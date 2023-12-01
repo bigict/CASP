@@ -61,7 +61,7 @@ for f in $*; do
   f=$(basename ${f})
   #f还要去掉后缀
   f=${f%.*}
-  python ${CWD}/SpiceMSA/Splice-v1.py -i ${af2_pred_data_dir}/msa/ -n ${f} -o ${af2_pred_data_dir}/msa
+  python ${CWD}/SpiceMSA/Splice-v3.py -i ${af2_pred_data_dir}/msa/ -n ${f} -o ${af2_pred_data_dir}/msa
 done
 
 
