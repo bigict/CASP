@@ -14,10 +14,9 @@ help() {
 msa_tool_home="/public/dbu"
 msa_tool_srv="dbu@10.206.0.2"
 msa_tool_sync="rsync -avP -e ssh"
-msa_tool_run="ssh ${msa_tool_srv}"
+msa_tool_run="ssh -i /home/tanqian/.ssh/id_rsa ${msa_tool_srv}"
 
-${msa_tool_run} source /public/dbu/local/anaconda3/bin/activate
-${msa_tool_run} conda activate pytorch
+${msa_tool_run} 
 
 #timestamp=$(date +%Y%m%d-%H%M%S-%N)
 timestamp= "test"
