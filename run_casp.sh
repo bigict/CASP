@@ -12,7 +12,7 @@ help() {
 }
 
 msa_tool_home="/public/dbu"
-msa_tool_srv="dbu@idnode17"
+msa_tool_srv="dbu@10.206.0.2"
 msa_tool_sync="rsync -avP -e ssh"
 msa_tool_run="ssh ${msa_tool_srv}"
 
@@ -27,7 +27,7 @@ ${msa_tool_sync} $* ${msa_tool_srv}:${msa_tool_data_dir}/fasta/
 #远程对input1_fasta input2_fasta ...run SeqParser.py
 for f in $@; do
   f=$(basename ${f})
-  ${msa_tool_run} python ${msa_tool_home}/CASP/FUpred/SeqParser.py -i ${msa_tool_data_dir}/fasta/${f} -o ${msa_tool_data_dir}/fasta
+  ${msa_tool_run} python ${msa_tool_home}/CASP/FUpred/SeqParse.py -i ${msa_tool_data_dir}/fasta/${f} -o ${msa_tool_data_dir}/fasta
 done
 
 echo "parse_domain done"
