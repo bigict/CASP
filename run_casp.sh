@@ -16,7 +16,8 @@ msa_tool_srv="dbu@10.206.0.2"
 msa_tool_sync="rsync -avP -e ssh"
 msa_tool_run="ssh -i /home/tanqian/.ssh/id_rsa ${msa_tool_srv}"
 
-${msa_tool_run} 
+#查看远程python用的什么版本
+${msa_tool_run} python --version
 
 #timestamp=$(date +%Y%m%d-%H%M%S-%N)
 timestamp= "test"
