@@ -16,10 +16,7 @@ msa_tool_srv="dbu@10.206.0.2"
 msa_tool_sync="rsync -avP -e ssh"
 msa_tool_run="ssh -i /home/tanqian/.ssh/id_rsa ${msa_tool_srv}"
 
-${msa_tool_run} source /public/dbu/local/anaconda3/bin/activate
-${msa_tool_run} python --version
-${msa_tool_run} conda --version
-${msa_tool_run} conda activate pytorch
+
 #timestamp=$(date +%Y%m%d-%H%M%S-%N)
 timestamp= "test"
 
@@ -31,7 +28,7 @@ ${msa_tool_sync} $* ${msa_tool_srv}:${msa_tool_data_dir}/fasta/
 #远程对input1_fasta input2_fasta ...run SeqParser.py
 for f in $@; do
   f=$(basename ${f})
-  ${msa_tool_run} python ${msa_tool_home}/CASP/FUpred/SeqParse.py -i ${msa_tool_data_dir}/fasta/${f} -o ${msa_tool_data_dir}/fasta
+  ${msa_tool_run} bash -x ${msa_tool_home}/CASP/FUpred/SeqParse.sh -i ${msa_tool_data_dir}/fasta/${f} -o ${msa_tool_data_dir}/fasta
 done
 
 echo "parse_domain done"
