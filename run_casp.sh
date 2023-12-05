@@ -19,8 +19,16 @@ msa_tool_run="ssh ${msa_tool_srv}"
 timestamp=$(date +%Y%m%d-%H%M%S-%N)
 
 msa_tool_data_dir="${msa_tool_home}/CASP/data/${timestamp}"
-
 ${msa_tool_run} mkdir -p ${msa_tool_data_dir}/fasta
+
+af2_pred_data_dir="${CWD}/data/${timestamp}"
+mkdir -p ${af2_pred_data_dir}
+
+#将远程的${msa_tool_data_dir}/fasta同步到本地
+parse_data_dir="${af2_pred_data_dir}/parse"
+mkdir -p ${parse_data_dir}
+${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/fasta/* ${parse_data_dir}/
+
 
 #远程对input1_fasta input2_fasta ...run SeqParser.py
 for f in $@; do
@@ -30,14 +38,7 @@ done
 
 echo "parse_domain done"
 
-af2_pred_data_dir="${CWD}/data/${timestamp}"
-
-mkdir -p ${af2_pred_data_dir}
-
-
 #将远程的${msa_tool_data_dir}/fasta同步到本地
-parse_data_dir="${af2_pred_data_dir}/parse"
-mkdir -p ${parse_data_dir}
 ${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/fasta/* ${parse_data_dir}/
 
 #创建msa_tool_file_list文件，里面存放的是各个fasta文件,空格分隔
