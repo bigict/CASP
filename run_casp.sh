@@ -16,9 +16,10 @@ msa_tool_srv="dbu@10.206.0.2"
 msa_tool_sync="rsync -avP -e ssh"
 msa_tool_run="ssh -i /home/tanqian/.ssh/id_rsa ${msa_tool_srv}"
 
-#查看远程python用的什么版本
+${msa_tool_run} source /public/dbu/local/anaconda3/bin/activate
 ${msa_tool_run} python --version
-
+${msa_tool_run} conda --version
+${msa_tool_run} conda activate pytorch
 #timestamp=$(date +%Y%m%d-%H%M%S-%N)
 timestamp= "test"
 
