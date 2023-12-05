@@ -7,17 +7,12 @@ import collections
 import itertools
 import re
 import string
-import sys
-sys.path.append('/public/dbu/CASP/alphafold/')
 
 from alphafold.data import parsers
 from typing import Dict, Iterable, List, Optional, Sequence, Tuple, Set
 
 
 def write_spliced_msa(output_path, spliced_msa):
-    
-    if os.path.exists(output_path):
-        os.remove(output_path)
     with open(output_path, 'w') as f:
         f.write(spliced_msa)
 
@@ -136,6 +131,7 @@ def main():
     #此时uniref90&mgnify都转成了a3m格式
     bfd_msas=read_msa_from_bfd(bfd_paths)
     uniref90_msas=read_msa_from_uniref90(uniref90_paths)
+    '''
     #在output_folder中输出uniref90_msas字典的内容，以换行符分割不同domain的内容
     for domain,msa in uniref90_msas.items():
         output_path = os.path.join(args.output_folder,f'{domain}-uniref90.a3m')
@@ -146,7 +142,8 @@ def main():
     for domain,msa in mgnify_msas.items():
         output_path = os.path.join(args.output_folder,f'{domain}-mgnify.a3m')
         write_spliced_msa(output_path, msa)
-    
+    '''
+
     db_msas=combine_db_msa(bfd_msas,uniref90_msas,mgnify_msas)
     
     spliced_msa = combine_domain(db_msas)

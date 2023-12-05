@@ -16,7 +16,8 @@ msa_tool_srv="dbu@idnode17"
 msa_tool_sync="rsync -avP -e ssh"
 msa_tool_run="ssh ${msa_tool_srv}"
 
-timestamp=$(date +%Y%m%d-%H%M%S-%N)
+#timestamp=$(date +%Y%m%d-%H%M%S-%N)
+timestamp= "test"
 
 msa_tool_data_dir="${msa_tool_home}/CASP/data/${timestamp}"
 ${msa_tool_run} mkdir -p ${msa_tool_data_dir}/fasta
@@ -31,6 +32,7 @@ done
 
 echo "parse_domain done"
 
+exit $1
 
 af2_pred_data_dir="${CWD}/data/${timestamp}"
 mkdir -p ${af2_pred_data_dir}
@@ -43,7 +45,7 @@ ${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/fasta/* ${parse_data_dir}/
 
 #创建msa_tool_file_list文件，里面存放的是各个fasta文件,空格分隔
 msa_tool_file_list=""
-for f in "${parse_data_dir}"/fasta/*; do
+for f in "${parse_data_dir}"/fasta/* ; do
   f=$(basename ${f})
   msa_tool_file_list="${msa_tool_file_list} ${msa_tool_data_dir}/fasta/${f}"
 done
@@ -55,20 +57,22 @@ ${msa_tool_run} bash -x ${msa_tool_home}/CASP/run_msa_tool.sh \
 
 echo "msa_tool_run done"
 
-${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/msa/* ${af2_pred_data_dir}/
-
-#本地Splice MSA
-for f in $*; do
+#check whether exists msa ,use msa_tool_file_list
+for f in $@;do
   f=$(basename ${f})
-  #f还要去掉后缀
   f=${f%.*}
-  python ${CWD}/SpiceMSA/Splice-v3.py -i ${af2_pred_data_dir}/msa/ -n ${f} -o ${af2_pred_data_dir}/msa
+  ${msa_tool_run} bash -x ${msa_tool_home}/CASP/Splice.sh \
+    -i "${msa_tool_data_dir}/msa" \
+    -n "${f}" \
+    -o "${msa_tool_data_dir}/msa/${f}_splice"
 done
 
+exit $1
+${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/msa/* ${af2_pred_data_dir}/
 
-bash -x run_alphafold.sh \
-    -m alphafold \
-    -d db \
-    -o ${af2_pred_data_dir} \
-    -p "--use_precomputed_msas" \
-    $*
+# bash -x run_alphafold.sh \
+#     -m alphafold \
+#     -d db \
+#     -o ${af2_pred_data_dir} \
+#     -p "--use_precomputed_msas" \
+#     $*
