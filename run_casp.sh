@@ -18,7 +18,7 @@ msa_tool_run="ssh -i /home/tanqian/.ssh/id_rsa ${msa_tool_srv}"
 
 
 #timestamp=$(date +%Y%m%d-%H%M%S-%N)
-timestamp= "test"
+timestamp="test"
 
 msa_tool_data_dir="${msa_tool_home}/CASP/data/${timestamp}"
 ${msa_tool_run} mkdir -p ${msa_tool_data_dir}/fasta

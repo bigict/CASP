@@ -5,10 +5,10 @@ CWD=$(readlink -f $0)
 CWD=$(dirname ${CWD})
 cd ${CWD}
 
-CONDA_ENV="pytorch"
+CONDA_ENV="BIO38"
 . ${HOME}/.bashrc
-export PATH=${HOME}/.local/anaconda3/bin:${HOME}/.local/bin:${PATH}
-export LD_LIBRARY_PATH=${HOME}/.local/lib:${HOME}/local/lib:${LD_LIBRARY_PATH}
+export PATH=${HOME}/local/anaconda3/bin:${HOME}/local/bin:${PATH}
+
 . activate ${CONDA_ENV} || exit 1
 
 PYTHON_MODULE_PATH="/public/dbu/CASP/alphafold/"
