@@ -33,7 +33,7 @@ done
 
 echo "parse_domain done"
 
-exit $1
+
 
 af2_pred_data_dir="${CWD}/data/${timestamp}"
 mkdir -p ${af2_pred_data_dir}
@@ -50,6 +50,8 @@ for f in "${parse_data_dir}"/fasta/* ; do
   f=$(basename ${f})
   msa_tool_file_list="${msa_tool_file_list} ${msa_tool_data_dir}/fasta/${f}"
 done
+
+echo "start run msa_tool"
 
 ${msa_tool_run} bash -x ${msa_tool_home}/CASP/run_msa_tool.sh \
     -d ${msa_tool_home}/data/af2_db \
