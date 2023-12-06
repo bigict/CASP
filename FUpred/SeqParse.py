@@ -2,7 +2,7 @@ import argparse
 import os
 import subprocess
 from Bio import SeqIO
-# 还需要查看FUpred输出文件fu.txt的生成路径
+
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Sequence Parser")
