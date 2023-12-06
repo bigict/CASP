@@ -41,15 +41,18 @@ mkdir -p ${af2_pred_data_dir}
 #将远程的${msa_tool_data_dir}/fasta分好的同步到本地
 parse_data_dir="${af2_pred_data_dir}/parse"
 mkdir -p ${parse_data_dir}
-${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/fasta/* ${parse_data_dir}/
+${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/fasta ${parse_data_dir}/
 
 
 #创建msa_tool_file_list文件，里面存放的是各个fasta文件,空格分隔
 msa_tool_file_list=""
 for f in "${parse_data_dir}"/fasta/* ; do
   f=$(basename ${f})
+  echo "f:${f}"
   msa_tool_file_list="${msa_tool_file_list} ${msa_tool_data_dir}/fasta/${f}"
 done
+
+echo "msa_tool_file_list: ${msa_tool_file_list}"
 
 echo "start run msa_tool"
 
