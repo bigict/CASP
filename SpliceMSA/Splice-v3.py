@@ -20,7 +20,7 @@ def write_spliced_msa(output_path, spliced_msa):
 
 def generate_bfd_paths(input_folder,protein_name):
     #查找前缀是protein_name+“Domain"的目录eg:T1125Domain1
-    domain_dirs = sorted( [dir for dir in os.listdir(input_folder) if dir.startswith(protein_name+'Domain') ] )
+    domain_dirs = sorted( [dir for dir in os.listdir(input_folder) if dir.startswith(protein_name+'Domain') ] ,key=lambda x: int(x[len(protein_name+'Domain'):]))
     print(f"Found {len(domain_dirs)} matching directories: {domain_dirs}")
     bfd_paths = {}
     for domain in domain_dirs:
@@ -31,7 +31,7 @@ def generate_bfd_paths(input_folder,protein_name):
 
 def generate_uniref90_paths(input_folder,protein_name):
     #查找前缀是protein_name+“Domain"的目录eg:T1125Domain1
-    domain_dirs = sorted([dir for dir in os.listdir(input_folder) if dir.startswith(protein_name+'Domain') ])
+    domain_dirs = sorted([dir for dir in os.listdir(input_folder) if dir.startswith(protein_name+'Domain') ],key=lambda x: int(x[len(protein_name+'Domain'):]))
     uniref90_paths = {}
     for domain in domain_dirs:
         uniref90_path = os.path.join(input_folder, domain, 'msas', 'uniref90_hits.sto')
@@ -40,7 +40,7 @@ def generate_uniref90_paths(input_folder,protein_name):
 
 def generate_mgnify_paths(input_folder,protein_name):
     #查找前缀是protein_name+“Domain"的目录eg:T1125Domain1
-    domain_dirs = sorted([dir for dir in os.listdir(input_folder) if dir.startswith(protein_name+'Domain') ])
+    domain_dirs = sorted([dir for dir in os.listdir(input_folder) if dir.startswith(protein_name+'Domain') ],key=lambda x: int(x[len(protein_name+'Domain'):]))
     mgnify_paths = {}
     for domain in domain_dirs:
         mgnify_path = os.path.join(input_folder, domain, 'msas', 'mgnify_hits.sto')
@@ -80,7 +80,7 @@ def combine_db_msa(bfd_msas,uniref90_msas,mgnify_msas):
 
 def combine_domain(db_msas):
     # 将 db_msas 根据 domain 进行横向拼接
-    domain_names = sorted(list(db_msas.keys()))
+    domain_names = sorted(list(db_msas.keys()),key=lambda x:int(re.search(r'\d+',x).group()))
     
     # domain_msas_lines 是个列表，其中的每个元素是一个 domain 的 MSA，该 MSA 被按照换行符拆分成了行的列表。
     domain_msas_lines = [msa.split('\n') for msa in db_msas.values()]
