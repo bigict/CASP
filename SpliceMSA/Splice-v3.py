@@ -136,9 +136,10 @@ def main():
     for domain,msa in uniref90_msas.items():
         output_path = os.path.join(args.output_folder,f'{domain}-uniref90.a3m')
         write_spliced_msa(output_path, msa)
-
+    '''
 
     mgnify_msas=read_msa_from_mgnify(mgnify_paths)
+    '''
     for domain,msa in mgnify_msas.items():
         output_path = os.path.join(args.output_folder,f'{domain}-mgnify.a3m')
         write_spliced_msa(output_path, msa)

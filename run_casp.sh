@@ -56,10 +56,10 @@ echo "msa_tool_file_list: ${msa_tool_file_list}"
 
 echo "start run msa_tool"
 
-#${msa_tool_run} bash -x ${msa_tool_home}/CASP/run_msa_tool.sh \
-#    -d ${msa_tool_home}/data/af2_db \
-#    -o ${msa_tool_data_dir}/msa \
-#    ${msa_tool_file_list}
+${msa_tool_run} bash -x ${msa_tool_home}/CASP/run_msa_tool.sh \
+    -d ${msa_tool_home}/data/af2_db \
+    -o ${msa_tool_data_dir}/msa \
+    ${msa_tool_file_list}
 
 echo "msa_tool_run done"
 
