@@ -12,7 +12,7 @@ help() {
 }
 
 msa_tool_home="/public/dbu"
-msa_tool_srv="dbu@10.206.0.2"
+msa_tool_srv="dbu@inode17"
 msa_tool_sync="rsync -avP -e ssh"
 msa_tool_run="ssh -i /home/tanqian/.ssh/id_rsa ${msa_tool_srv}"
 
@@ -48,7 +48,7 @@ ${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/fasta ${parse_data_dir}/
 msa_tool_file_list=""
 for f in "${parse_data_dir}"/fasta/* ; do
   f=$(basename ${f})
-  echo "f:${f}"
+  #echo "f:${f}"
   msa_tool_file_list="${msa_tool_file_list} ${msa_tool_data_dir}/fasta/${f}"
 done
 
@@ -56,10 +56,10 @@ echo "msa_tool_file_list: ${msa_tool_file_list}"
 
 echo "start run msa_tool"
 
-${msa_tool_run} bash -x ${msa_tool_home}/CASP/run_msa_tool.sh \
-    -d ${msa_tool_home}/data/af2_db \
-    -o ${msa_tool_data_dir}/msa \
-    ${msa_tool_file_list}
+#${msa_tool_run} bash -x ${msa_tool_home}/CASP/run_msa_tool.sh \
+#    -d ${msa_tool_home}/data/af2_db \
+#    -o ${msa_tool_data_dir}/msa \
+#    ${msa_tool_file_list}
 
 echo "msa_tool_run done"
 
@@ -73,7 +73,7 @@ for f in $@;do
     -o "${msa_tool_data_dir}/msa/${f}_splice"
 done
 
-exit $1
+
 ${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/msa/* ${af2_pred_data_dir}/
 
 # bash -x run_alphafold.sh \

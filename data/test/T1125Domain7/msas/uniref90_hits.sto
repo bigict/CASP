@@ -1,0 +1,12 @@
+# STOCKHOLM 1.0
+
+#=GS UniRef90_A7XXD0/795-830     DE [subseq from] Tape tail measure protein n=3 Tax=Oshimavirus TaxID=1623293 RepID=A7XXD0_BP234
+#=GS UniRef90_A0A285NL61/97-125  DE [subseq from] Predicted chitinase n=1 Tax=Terribacillus aidingensis TaxID=586416 RepID=A0A285NL61_9BACI
+#=GS UniRef90_A0A285NL61/158-186 DE [subseq from] Predicted chitinase n=1 Tax=Terribacillus aidingensis TaxID=586416 RepID=A0A285NL61_9BACI
+
+T1125_Domain7:795-830               DPHRLEVFQTLMAHAGLAGGRKGGGSVEPSPGELRF
+UniRef90_A7XXD0/795-830             DPHRLEVFQTLMAHAGLAGGRKGGGSVEPSPGELRF
+UniRef90_A0A285NL61/97-125          DPNKLQIGQKLKVYSS-SGGSTGGGSTRPT------
+UniRef90_A0A285NL61/158-186         DPNKLQIGQNLKVYS-TSGGSTGGGSTRPT------
+#=GC RF                             xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//

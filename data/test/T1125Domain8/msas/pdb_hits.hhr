@@ -1,0 +1,159 @@
+Query         T1125_Domain8:831-922 
+Match_columns 92
+No_of_seqs    1 out of 1
+Neff          1
+Searched_HMMs 80799
+Date          Wed Dec  6 17:30:52 2023
+Command       /public/dbu/.local/bin/hhsearch -i /public/dbu/CASP/tmp/tmprr5ajptn/query.a3m -o /public/dbu/CASP/tmp/tmprr5ajptn/output.hhr -maxseq 1000000 -d /public/dbu/data/af2_db/pdb70/pdb70 
+
+ No Hit                             Prob E-value P-value  Score    SS Cols Query HMM  Template HMM
+  1 5YI7_D Protein numb, Pon pepti  72.4     2.7 3.3E-05   26.1   0.0   13   31-43      5-17  (34)
+  2 5YI8_B Protein numb, Pon pepti  48.9      14 0.00018   22.9   0.0   12   29-40     21-32  (33)
+  3 1E7L_A RECOMBINATION ENDONUCLE  38.7      26 0.00032   25.1   0.0   44    7-60    112-155 (157)
+  4 2QNC_B Recombination endonucle  38.7      26 0.00032   25.1   0.0   44    7-60    112-155 (157)
+  5 3C6F_D YetF protein; UNCHARACT  36.3      30 0.00037   24.9   0.0   33   12-46     33-65  (153)
+  6 6DNO_B Serine/threonine-protei  28.3      50 0.00062   19.4   0.0   12   60-71      4-15  (30)
+  7 3SB1_A hydrogenase expression   27.5      53 0.00065   24.6   0.0   40   48-87     52-93  (160)
+  8 2N00_A Interferon-inducible pr  23.4      70 0.00087   20.4   0.0   24   37-61     10-33  (95)
+  9 3GMH_G Mitotic spindle assembl  18.5   1E+02  0.0013   21.4   0.0   37   48-84     69-105 (207)
+ 10 3G06_A SspH2 (Leucine-rich rep  17.9 1.1E+02  0.0013   24.9   0.0   54   14-70    568-621 (622)
+
+No 1
+>5YI7_D Protein numb, Pon peptide from; Numb PTB domain and Pon; HET: GOL; 1.7A {Drosophila melanogaster}
+Probab=72.41  E-value=2.7  Score=26.13  Aligned_cols=13  Identities=54%  Similarity=0.797  Sum_probs=10.1  Template_Neff=1.700
+
+Q T1125_Domain8:   31 LSNPFEVVRQLES   43 (92)
+Q Consensus        31 lsnpfevvrqles   43 (92)
+                      -.|||||+|+--.
+T Consensus         5 ~~NPfEV~R~p~k   17 (34)
+T 5YI7_D            5 PTNPFEVLRQPPK   17 (34)
+T ss_pred             CCCchhhccCCCC
+Confidence            4699999998543
+
+
+No 2
+>5YI8_B Protein numb, Pon peptide from; Numb PTB domain and Pon; 2.001A {Drosophila melanogaster}
+Probab=48.90  E-value=14  Score=22.89  Aligned_cols=12  Identities=58%  Similarity=0.875  Sum_probs=9.0  Template_Neff=1.800
+
+Q T1125_Domain8:   29 EDLSNPFEVVRQ   40 (92)
+Q Consensus        29 edlsnpfevvrq   40 (92)
+                      +.--|||||||.
+T Consensus        21 ek~~NP~EvvR~   32 (33)
+T 5YI8_B           21 EKQFNPYEVVRS   32 (33)
+T ss_dssp             -CCCCTTCCCCC
+T ss_pred             CCcCCchhhhcc
+Confidence            446799999984
+
+
+No 3
+>1E7L_A RECOMBINATION ENDONUCLEASE VII (E.C.3.1.22.4); ENDONUCLEASE, RESOLVASE, HOLLIDAY JUNCTION, DNASE; HET: SO4; 1.32A {BACTERIOPHAGE T4} SCOP: a.140.4.1, d.4.1.5
+Probab=38.68  E-value=26  Score=25.08  Aligned_cols=44  Identities=32%  Similarity=0.418  Sum_probs=31.1  Template_Neff=6.800
+
+Q T1125_Domain8:    7 YDKVLARLSKSRLAAELRNAGVEDLSNPFEVVRQLESLGEEELLKAFKGYLRKG   60 (92)
+Q Consensus         7 ydkvlarlsksrlaaelrnagvedlsnpfevvrqleslgeeellkafkgylrkg   60 (92)
+                      ..|..+|+++.++.++|...|++-...          -+-.+|.+.|+.-||+.
+T Consensus       112 ~~k~~~r~~~~~~~~~~~~~~~~~~~~----------~~k~~~~~~~~~~~~~~  155 (157)
+T 1E7L_A          112 KSKEFSRLGKEEMMAEMLQRGFEYNES----------DTKTQLIASFKKQLRKS  155 (157)
+T ss_dssp             HHHHHHTSCHHHHHHHHHHHTCCCCTT----------CCHHHHHHHHHHHHHHH
+T ss_pred             HHHHHHhhcHHHHHHHHHHcCCCCCCC----------CCHHHHHHHHHHHHHHh
+Confidence            346788899999999988887754332          23567778877776654
+
+
+No 4
+>2QNC_B Recombination endonuclease VII (E.C.3.1.22.4)/DNA Complex; T4 Endonuclease VII, Endo VII; 3.1A {Enterobacteria phage T4} SCOP: d.4.1.5, a.140.4.1
+Probab=38.68  E-value=26  Score=25.08  Aligned_cols=44  Identities=32%  Similarity=0.418  Sum_probs=31.1  Template_Neff=6.800
+
+Q T1125_Domain8:    7 YDKVLARLSKSRLAAELRNAGVEDLSNPFEVVRQLESLGEEELLKAFKGYLRKG   60 (92)
+Q Consensus         7 ydkvlarlsksrlaaelrnagvedlsnpfevvrqleslgeeellkafkgylrkg   60 (92)
+                      ..|..+|+++.++.++|...|++-...          -+-.+|.+.|+.-||+.
+T Consensus       112 ~~k~~~r~~~~~~~~~~~~~~~~~~~~----------~~k~~~~~~~~~~~~~~  155 (157)
+T 2QNC_B          112 KSKEFSRLGKEEMMAEMLQRGFEYNES----------DTKTQLIASFKKQLRKS  155 (157)
+T ss_dssp             HHHHHHTSCHHHHHHHHHHTTCCCCTT----------CCHHHHHHHHHHHHHHT
+T ss_pred             HHHHHHhhcHHHHHHHHHHcCCCCCCC----------CCHHHHHHHHHHHHHHh
+Confidence            346788899999999988887754332          23567778877776654
+
+
+No 5
+>3C6F_D YetF protein; UNCHARACTERIZED PROTEIN, PREDICTED MEMBRANE PROTEIN; 2.5A {Bacillus subtilis}
+Probab=36.28  E-value=30  Score=24.92  Aligned_cols=33  Identities=21%  Similarity=0.316  Sum_probs=24.9  Template_Neff=6.500
+
+Q T1125_Domain8:   12 ARLSKSRLAAELRNAGVEDLSNPFEVVRQLESLGE   46 (92)
+Q Consensus        12 arlsksrlaaelrnagvedlsnpfevvrqleslge   46 (92)
+                      ++++...|.+.||..|+.+++.--.++  ||.-|.
+T Consensus        33 ~~it~~dl~~~LR~~gi~~l~dV~~ai--lE~nG~   65 (153)
+T 3C6F_D           33 NKIDINQLQSMLRQAGSFSIQEVEYAI--METNGM   65 (153)
+T ss_dssp             TTCCHHHHHHHHHHTTCCSGGGEEEEE--ECTTSC
+T ss_pred             CCCCHHHHHHHHHHcCCCCHHHheEEE--EcCCCe
+Confidence            578889999999999999887654443  555444
+
+
+No 6
+>6DNO_B Serine/threonine-protein phosphatase PP1-alpha catalytic subunit; Inhibitor, complex, HYDROLASE, HYDROLASE-HYDROLASE INHIBITOR; HET: 1ZN; 1.45A {Homo sapiens}
+Probab=28.33  E-value=50  Score=19.39  Aligned_cols=12  Identities=42%  Similarity=0.791  Sum_probs=10.2  Template_Neff=4.000
+
+Q T1125_Domain8:   60 GFAKELGLDLKS   71 (92)
+Q Consensus        60 gfakelgldlks   71 (92)
+                      -||..+||+|.+
+T Consensus         4 ~FAD~lGl~L~~   15 (30)
+T 6DNO_B            4 SFADNFGFNLVS   15 (30)
+T ss_dssp             EEGGGGTSCSEE
+T ss_pred             EeccccCCcceE
+Confidence            589999999975
+
+
+No 7
+>3SB1_A hydrogenase expression protein; Structural Genomics, PSI-Biology, Midwest Center; HET: PGE; 1.67A {Thiobacillus denitrificans}
+Probab=27.49  E-value=53  Score=24.61  Aligned_cols=40  Identities=23%  Similarity=0.214  Sum_probs=27.2  Template_Neff=5.500
+
+Q T1125_Domain8:   48 ELLKAFKGYLRKGFAKELGLDLK--SEEDRARLNQYLFEGFL   87 (92)
+Q Consensus        48 ellkafkgylrkgfakelgldlk--seedrarlnqylfegfl   87 (92)
+                      ||..++..+...|-...+.|..-  |++|++.|+|.|-+|=.
+T Consensus        52 el~~aL~~~~~~~~~~~idLs~LPLs~~d~~~L~~~LGeGEV   93 (160)
+T 3SB1_A           52 EIAEHLHHLLETGEASTIDLSALPLTPGDLEWLRAELGGGEV   93 (160)
+T ss_dssp             HHHHHHHHHHHHCCCEEECGGGSCCCHHHHHHHHHHHCCCSE
+T ss_pred             HHHHHHHHHhhcCCCeEEEchhCCCCHHHHHHHHHHhCCceE
+Confidence            34445554444454555666667  89999999999988743
+
+
+No 8
+>2N00_A Interferon-inducible protein AIM2; AIM2, PYD, DNA BINDING PROTEIN; NMR {Mus musculus}
+Probab=23.37  E-value=70  Score=20.44  Aligned_cols=24  Identities=38%  Similarity=0.587  Sum_probs=16.7  Template_Neff=7.700
+
+Q T1125_Domain8:   37 VVRQLESLGEEELLKAFKGYLRKGF   61 (92)
+Q Consensus        37 vvrqleslgeeellkafkgylrkgf   61 (92)
+                      ...-|+.|+++++ +.||..|+.+|
+T Consensus        10 Ll~~Le~L~~~e~-~~FK~~L~~~~   33 (95)
+T 2N00_A           10 LLTGLDHITEEEL-KRFKYFALTEF   33 (95)
+T ss_dssp             HHHHHTTSCHHHH-HHHHHHHCSSS
+T ss_pred             HHHHHhcCCHHHH-HHHHHHhhcCc
+Confidence            3455677777776 67888888763
+
+
+No 9
+>3GMH_G Mitotic spindle assembly checkpoint protein; CELL CYCLE, MITOTIC SPINDLE ASSEMBLY; HET: SO4; 3.95A {Homo sapiens}
+Probab=18.53  E-value=1e+02  Score=21.38  Aligned_cols=37  Identities=19%  Similarity=0.350  Sum_probs=26.3  Template_Neff=8.900
+
+Q T1125_Domain8:   48 ELLKAFKGYLRKGFAKELGLDLKSEEDRARLNQYLFE   84 (92)
+Q Consensus        48 ellkafkgylrkgfakelgldlkseedrarlnqylfe   84 (92)
+                      +++..+...|++|..+.+-+-+.++++..-+..|.|+
+T Consensus        69 ~~~~~v~~aL~~~~L~~v~l~i~~~~~~~~lE~y~f~  105 (207)
+T 3GMH_G           69 NVVEQLKDWLYKCSVQKLVVVISNIESGEVLERWQFD  105 (207)
+T ss_dssp             HHHHHHHHHHHHTCEEEEEEEEEETTTCCEEEEEEEE
+T ss_pred             HHHHHHHHHHhcCCccEEEEEEEeCCCCcEEEEEEEE
+Confidence            4456677788888888888888877655556666653
+
+
+No 10
+>3G06_A SspH2 (Leucine-rich repeat protein) (E.C.6.3.2.19); E3 Ubiquitin Ligase, Leucine Rich; 1.9A {Salmonella typhimurium}
+Probab=17.95  E-value=1.1e+02  Score=24.94  Aligned_cols=54  Identities=24%  Similarity=0.221  Sum_probs=36.1  Template_Neff=9.000
+
+Q T1125_Domain8:   14 LSKSRLAAELRNAGVEDLSNPFEVVRQLESLGEEELLKAFKGYLRKGFAKELGLDLK   70 (92)
+Q Consensus        14 lsksrlaaelrnagvedlsnpfevvrqleslgeeellkafkgylrkgfakelgldlk   70 (92)
+                      --.+|+.++|+..|+.+-.   +..|.+-.---+|..+.+++-++.-+-+.+|.-++
+T Consensus       568 ~~~~~~~~~~~~~~~~~~~---~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  621 (622)
+T 3G06_A          568 TYRMLSDTELRPSGLVGNT---DAERTIGARAMESAKKTFLDGLRPLVEEMLGSYLN  621 (622)
+T ss_dssp             HHHHHCCCCCTTSSCSSCH---HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHGGGSC
+T ss_pred             HHHHHHHHHhHHhCCCCCh---HHHHHHHHHHHHHHHHHHHhchHHHHHHHHhhhhc
+Confidence            3457888888888876544   55566555555677777777777766666665443
+
+
