@@ -16,7 +16,385 @@ I1206 17:30:32.011129 46971176933504 utils.py:40] Finished HHsearch query in 74.
 I1206 17:30:32.065826 46971176933504 hhblits.py:128] Launching subprocess "/public/dbu/.local/bin/hhblits -i /public/dbu/CASP/data/test/fasta/T1125Domain6.fasta -cpu 32 -oa3m /public/dbu/CASP/tmp/tmpung5uspp/output.a3m -o /dev/null -n 3 -e 0.001 -maxseq 1000000 -realign_max 100000 -maxfilt 100000 -min_prefilter_hits 1000 -d /public/dbu/data/af2_db/bfd/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt -d /public/dbu/data/af2_db/uniclust30/uniclust30_2018_08/uniclust30_2018_08"
 I1206 17:30:32.108050 46971176933504 utils.py:36] Started HHblits query
 I1206 17:30:49.990849 47667411998848 utils.py:40] Finished HHsearch query in 44.962 seconds
-I1206 17:30:50.036518 47667411998848 hhblits.py:128] Launching subprocess "/public/dbu/.local/bin/hhblits -i /public/dbu/CASP/data/test/fasta/T1125Domain5.fasta -cpu 32 -oa3m /public/dbu/CASP/tmp/tmpm1hvm1ah/output.a3m -o /dev/null -n 3 -e 0.001 -maxseq 1000000 -realign_max 100000 -maxfilt 100000 -min_prefilter_hits 1000 -d /public/dbu/data/af2_db/bfd/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt -d /public/dbu/data/af2_db/uniclust30/uniclust30_2018_08/uniclust30_2018_08"
+I1206 17:30:50.036518 47667411998848 hhblitsending incremental file list
+
+sent 68 bytes  received 12 bytes  160.00 bytes/sec
+total size is 1,208  speedup is 15.10
+Python 3.8.18
+Input file: /public/dbu/CASP/data/test/fasta/T1125.fasta
+Output folder: /public/dbu/CASP/data/test/fasta
+parse_domain done
+receiving incremental file list
+fasta/T1125Domain1.fasta
+
+              0   0%    0.00kB/s    0:00:00  
+            666 100%  650.39kB/s    0:00:00 (xfr#1, to-chk=9/12)
+fasta/T1125Domain10.fasta
+
+              0   0%    0.00kB/s    0:00:00  
+             80 100%   78.12kB/s    0:00:00 (xfr#2, to-chk=8/12)
+fasta/T1125Domain2.fasta
+
+              0   0%    0.00kB/s    0:00:00  
+             67 100%   65.43kB/s    0:00:00 (xfr#3, to-chk=7/12)
+fasta/T1125Domain3.fasta
+
+              0   0%    0.00kB/s    0:00:00  
+            106 100%  103.52kB/s    0:00:00 (xfr#4, to-chk=6/12)
+fasta/T1125Domain4.fasta
+
+              0   0%    0.00kB/s    0:00:00  
+             59 100%   57.62kB/s    0:00:00 (xfr#5, to-chk=5/12)
+fasta/T1125Domain5.fasta
+
+              0   0%    0.00kB/s    0:00:00  
+            113 100%  110.35kB/s    0:00:00 (xfr#6, to-chk=4/12)
+fasta/T1125Domain6.fasta
+
+              0   0%    0.00kB/s    0:00:00  
+            113 100%  110.35kB/s    0:00:00 (xfr#7, to-chk=3/12)
+fasta/T1125Domain7.fasta
+
+              0   0%    0.00kB/s    0:00:00  
+             60 100%   58.59kB/s    0:00:00 (xfr#8, to-chk=2/12)
+fasta/T1125Domain8.fasta
+
+              0   0%    0.00kB/s    0:00:00  
+            116 100%  113.28kB/s    0:00:00 (xfr#9, to-chk=1/12)
+fasta/T1125Domain9.fasta
+
+              0   0%    0.00kB/s    0:00:00  
+             70 100%   68.36kB/s    0:00:00 (xfr#10, to-chk=0/12)
+
+sent 275 bytes  received 682 bytes  638.00 bytes/sec
+total size is 2,658  speedup is 2.78
+msa_tool_file_list:  /public/dbu/CASP/data/test/fasta/T1125.fasta /public/dbu/CASP/data/test/fasta/T1125Domain1.fasta /public/dbu/CASP/data/test/fasta/T1125Domain10.fasta /public/dbu/CASP/data/test/fasta/T1125Domain2.fasta /public/dbu/CASP/data/test/fasta/T1125Domain3.fasta /public/dbu/CASP/data/test/fasta/T1125Domain4.fasta /public/dbu/CASP/data/test/fasta/T1125Domain5.fasta /public/dbu/CASP/data/test/fasta/T1125Domain6.fasta /public/dbu/CASP/data/test/fasta/T1125Domain7.fasta /public/dbu/CASP/data/test/fasta/T1125Domain8.fasta /public/dbu/CASP/data/test/fasta/T1125Domain9.fasta
+start run msa_tool
+msa_tool_run done
+Found 10 matching directories: ['T1125Domain1', 'T1125Domain10', 'T1125Domain2', 'T1125Domain3', 'T1125Domain4', 'T1125Domain5', 'T1125Domain6', 'T1125Domain7', 'T1125Domain8', 'T1125Domain9']
+Combining T1125Domain1 MSAs
+Combining T1125Domain10 MSAs
+Combining T1125Domain2 MSAs
+Combining T1125Domain3 MSAs
+Combining T1125Domain4 MSAs
+Combining T1125Domain5 MSAs
+Combining T1125Domain6 MSAs
+Combining T1125Domain7 MSAs
+Combining T1125Domain8 MSAs
+Combining T1125Domain9 MSAs
+ saved to /public/dbu/CASP/data/test/msa/T1125_splice/T1125-SpliceDone.a3m
+receiving incremental file list
+T1125/
+T1125/features.pkl
+
+              0   0%    0.00kB/s    0:00:00  
+        151,030 100%    2.36MB/s    0:00:00 (xfr#1, to-chk=66/79)
+T1125/msas/
+T1125/msas/bfd_uniref_hits.a3m
+
+              0   0%    0.00kB/s    0:00:00  
+          1,208 100%   19.34kB/s    0:00:00 (xfr#2, to-chk=64/79)
+T1125/msas/mgnify_hits.sto
+
+              0   0%    0.00kB/s    0:00:00  
+          2,533 100%   40.55kB/s    0:00:00 (xfr#3, to-chk=63/79)
+T1125/msas/pdb_hits.hhr
+
+              0   0%    0.00kB/s    0:00:00  
+         48,004 100%  538.84kB/s    0:00:00 (xfr#4, to-chk=62/79)
+T1125/msas/uniref90_hits.sto
+
+              0   0%    0.00kB/s    0:00:00  
+          7,939 100%   89.11kB/s    0:00:00 (xfr#5, to-chk=61/79)
+T1125Domain1/
+T1125Domain1/features.pkl
+
+              0   0%    0.00kB/s    0:00:00  
+      1,388,018 100%   11.71MB/s    0:00:00 (xfr#6, to-chk=60/79)
+T1125Domain1/msas/
+T1125Domain1/msas/bfd_uniref_hits.a3m
+
+              0   0%    0.00kB/s    0:00:00  
+            666 100%    5.76kB/s    0:00:00 (xfr#7, to-chk=58/79)
+T1125Domain1/msas/mgnify_hits.sto
+
+              0   0%    0.00kB/s    0:00:00  
+          1,533 100%   13.25kB/s    0:00:00 (xfr#8, to-chk=57/79)
+T1125Domain1/msas/pdb_hits.hhr
+
+              0   0%    0.00kB/s    0:00:00  
+         11,553 100%   99.84kB/s    0:00:00 (xfr#9, to-chk=56/79)
+T1125Domain1/msas/uniref90_hits.sto
+
+              0   0%    0.00kB/s    0:00:00  
+          5,334 100%   46.10kB/s    0:00:00 (xfr#10, to-chk=55/79)
+T1125Domain10/
+T1125Domain10/features.pkl
+
+              0   0%    0.00kB/s    0:00:00  
+        260,458 100%    1.62MB/s    0:00:00 (xfr#11, to-chk=54/79)
+T1125Domain10/msas/
+T1125Domain10/msas/bfd_uniref_hits.a3m
+
+              0   0%    0.00kB/s    0:00:00  
+             80 100%    0.51kB/s    0:00:00 (xfr#12, to-chk=52/79)
+T1125Domain10/msas/mgnify_hits.sto
+
+              0   0%    0.00kB/s    0:00:00  
+            527 100%    3.36kB/s    0:00:00 (xfr#13, to-chk=51/79)
+T1125Domain10/msas/pdb_hits.hhr
+
+              0   0%    0.00kB/s    0:00:00  
+          8,186 100%   51.91kB/s    0:00:00 (xfr#14, to-chk=50/79)
+T1125Domain10/msas/uniref90_hits.sto
+
+              0   0%    0.00kB/s    0:00:00  
+            412 100%    2.61kB/s    0:00:00 (xfr#15, to-chk=49/79)
+T1125Domain2/
+T1125Domain2/features.pkl
+
+              0   0%    0.00kB/s    0:00:00  
+        298,733 100%    1.45MB/s    0:00:00 (xfr#16, to-chk=48/79)
+T1125Domain2/msas/
+T1125Domain2/msas/bfd_uniref_hits.a3m
+
+              0   0%    0.00kB/s    0:00:00  
+             67 100%    0.33kB/s    0:00:00 (xfr#17, to-chk=46/79)
+T1125Domain2/msas/mgnify_hits.sto
+
+              0   0%    0.00kB/s    0:00:00  
+            152 100%    0.75kB/s    0:00:00 (xfr#18, to-chk=45/79)
+T1125Domain2/msas/pdb_hits.hhr
+
+              0   0%    0.00kB/s    0:00:00  
+          7,926 100%   39.29kB/s    0:00:00 (xfr#19, to-chk=44/79)
+T1125Domain2/msas/uniref90_hits.sto
+
+              0   0%    0.00kB/s    0:00:00  
+            374 100%    1.85kB/s    0:00:00 (xfr#20, to-chk=43/79)
+T1125Domain3/
+T1125Domain3/features.pkl
+
+              0   0%    0.00kB/s    0:00:00  
+        803,220 100%    2.62MB/s    0:00:00 (xfr#21, to-chk=42/79)
+T1125Domain3/msas/
+T1125Domain3/msas/bfd_uniref_hits.a3m
+
+              0   0%    0.00kB/s    0:00:00  
+            106 100%    0.35kB/s    0:00:00 (xfr#22, to-chk=40/79)
+T1125Domain3/msas/mgnify_hits.sto
+
+              0   0%    0.00kB/s    0:00:00  
+          3,159 100%   10.53kB/s    0:00:00 (xfr#23, to-chk=39/79)
+T1125Domain3/msas/pdb_hits.hhr
+
+              0   0%    0.00kB/s    0:00:00  
+         12,366 100%   41.22kB/s    0:00:00 (xfr#24, to-chk=38/79)
+T1125Domain3/msas/uniref90_hits.sto
+
+              0   0%    0.00kB/s    0:00:00  
+          1,926 100%    6.42kB/s    0:00:00 (xfr#25, to-chk=37/79)
+T1125Domain4/
+T1125Domain4/features.pkl
+
+              0   0%    0.00kB/s    0:00:00  
+        219,530 100%  667.87kB/s    0:00:00 (xfr#26, to-chk=36/79)
+T1125Domain4/msas/
+T1125Domain4/msas/bfd_uniref_hits.a3m
+
+              0   0%    0.00kB/s    0:00:00  
+             59 100%    0.18kB/s    0:00:00 (xfr#27, to-chk=34/79)
+T1125Domain4/msas/mgnify_hits.sto
+
+              0   0%    0.00kB/s    0:00:00  
+            136 100%    0.41kB/s    0:00:00 (xfr#28, to-chk=33/79)
+T1125Domain4/msas/pdb_hits.hhr
+
+              0   0%    0.00kB/s    0:00:00  
+          7,980 100%   24.20kB/s    0:00:00 (xfr#29, to-chk=32/79)
+T1125Domain4/msas/uniref90_hits.sto
+
+              0   0%    0.00kB/s    0:00:00  
+            350 100%    1.06kB/s    0:00:00 (xfr#30, to-chk=31/79)
+T1125Domain5/
+T1125Domain5/features.pkl
+
+              0   0%    0.00kB/s    0:00:00  
+        557,838 100%    1.52MB/s    0:00:00 (xfr#31, to-chk=30/79)
+T1125Domain5/msas/
+T1125Domain5/msas/bfd_uniref_hits.a3m
+
+              0   0%    0.00kB/s    0:00:00  
+            113 100%    0.31kB/s    0:00:00 (xfr#32, to-chk=28/79)
+T1125Domain5/msas/mgnify_hits.sto
+
+              0   0%    0.00kB/s    0:00:00  
+            244 100%    0.68kB/s    0:00:00 (xfr#33, to-chk=27/79)
+T1125Domain5/msas/pdb_hits.hhr
+
+              0   0%    0.00kB/s    0:00:00  
+          8,641 100%   24.04kB/s    0:00:00 (xfr#34, to-chk=26/79)
+T1125Domain5/msas/uniref90_hits.sto
+
+              0   0%    0.00kB/s    0:00:00  
+          4,340 100%   12.04kB/s    0:00:00 (xfr#35, to-chk=25/79)
+T1125Domain6/
+T1125Domain6/features.pkl
+
+              0   0%    0.00kB/s    0:00:00  
+      2,067,701 100%    5.23MB/s    0:00:00 (xfr#36, to-chk=24/79)
+T1125Domain6/msas/
+T1125Domain6/msas/bfd_uniref_hits.a3m
+
+              0   0%    0.00kB/s    0:00:00  
+        213,958 100%  519.76kB/s    0:00:00 (xfr#37, to-chk=22/79)
+T1125Domain6/msas/mgnify_hits.sto
+
+              0   0%    0.00kB/s    0:00:00  
+          1,919 100%    4.66kB/s    0:00:00 (xfr#38, to-chk=21/79)
+T1125Domain6/msas/pdb_hits.hhr
+
+              0   0%    0.00kB/s    0:00:00  
+        159,383 100%  384.31kB/s    0:00:00 (xfr#39, to-chk=20/79)
+T1125Domain6/msas/uniref90_hits.sto
+
+              0   0%    0.00kB/s    0:00:00  
+            794 100%    1.91kB/s    0:00:00 (xfr#40, to-chk=19/79)
+T1125Domain7/
+T1125Domain7/features.pkl
+
+              0   0%    0.00kB/s    0:00:00  
+        496,216 100%    1.06MB/s    0:00:00 (xfr#41, to-chk=18/79)
+T1125Domain7/msas/
+T1125Domain7/msas/bfd_uniref_hits.a3m
+
+              0   0%    0.00kB/s    0:00:00  
+             60 100%    0.13kB/s    0:00:00 (xfr#42, to-chk=16/79)
+T1125Domain7/msas/mgnify_hits.sto
+
+              0   0%    0.00kB/s    0:00:00  
+            138 100%    0.30kB/s    0:00:00 (xfr#43, to-chk=15/79)
+T1125Domain7/msas/pdb_hits.hhr
+
+              0   0%    0.00kB/s    0:00:00  
+         24,514 100%   53.44kB/s    0:00:00 (xfr#44, to-chk=14/79)
+T1125Domain7/msas/uniref90_hits.sto
+
+              0   0%    0.00kB/s    0:00:00  
+            795 100%    1.73kB/s    0:00:00 (xfr#45, to-chk=13/79)
+T1125Domain8/
+T1125Domain8/features.pkl
+
+              0   0%    0.00kB/s    0:00:00  
+        637,791 100%    1.25MB/s    0:00:00 (xfr#46, to-chk=12/79)
+T1125Domain8/msas/
+T1125Domain8/msas/bfd_uniref_hits.a3m
+
+              0   0%    0.00kB/s    0:00:00  
+            116 100%    0.23kB/s    0:00:00 (xfr#47, to-chk=10/79)
+T1125Domain8/msas/mgnify_hits.sto
+
+              0   0%    0.00kB/s    0:00:00  
+            250 100%    0.50kB/s    0:00:00 (xfr#48, to-chk=9/79)
+T1125Domain8/msas/pdb_hits.hhr
+
+              0   0%    0.00kB/s    0:00:00  
+          9,006 100%   18.10kB/s    0:00:00 (xfr#49, to-chk=8/79)
+T1125Domain8/msas/uniref90_hits.sto
+
+              0   0%    0.00kB/s    0:00:00  
+            521 100%    1.04kB/s    0:00:00 (xfr#50, to-chk=7/79)
+T1125Domain9/
+T1125Domain9/features.pkl
+
+              0   0%    0.00kB/s    0:00:00  
+        288,148 100%  571.94kB/s    0:00:00 (xfr#51, to-chk=6/79)
+T1125Domain9/msas/
+T1125Domain9/msas/bfd_uniref_hits.a3m
+
+              0   0%    0.00kB/s    0:00:00  
+             70 100%    0.14kB/s    0:00:00 (xfr#52, to-chk=4/79)
+T1125Domain9/msas/mgnify_hits.sto
+
+              0   0%    0.00kB/s    0:00:00  
+            158 100%    0.31kB/s    0:00:00 (xfr#53, to-chk=3/79)
+T1125Domain9/msas/pdb_hits.hhr
+
+              0   0%    0.00kB/s    0:00:00  
+          7,297 100%   14.45kB/s    0:00:00 (xfr#54, to-chk=2/79)
+T1125Domain9/msas/uniref90_hits.sto
+
+              0   0%    0.00kB/s    0:00:00  
+            383 100%    0.76kB/s    0:00:00 (xfr#55, to-chk=1/79)
+T1125_splice/
+T1125_splice/T1125-SpliceDone.a3m
+
+              0   0%    0.00kB/s    0:00:00  
+      4,429,375 100%    7.75MB/s    0:00:00 (xfr#56, to-chk=0/79)
+
+sent 1,252 bytes  received 12,160,747 bytes  8,107,999.33 bytes/sec
+total size is 12,153,334  speedup is 1.00
+sending incremental file list
+
+sent 68 bytes  received 12 bytes  53.33 bytes/sec
+total size is 1,208  speedup is 15.10
+Python 3.8.18
+Input file: /public/dbu/CASP/data/test/fasta/T1125.fasta
+Output folder: /public/dbu/CASP/data/test/fasta
+parse_domain done
+receiving incremental file list
+fasta/T1125Domain1.fasta
+
+              0   0%    0.00kB/s    0:00:00  
+            666 100%  650.39kB/s    0:00:00 (xfr#1, to-chk=9/12)
+fasta/T1125Domain10.fasta
+
+              0   0%    0.00kB/s    0:00:00  
+             80 100%   78.12kB/s    0:00:00 (xfr#2, to-chk=8/12)
+fasta/T1125Domain2.fasta
+
+              0   0%    0.00kB/s    0:00:00  
+             67 100%   65.43kB/s    0:00:00 (xfr#3, to-chk=7/12)
+fasta/T1125Domain3.fasta
+
+              0   0%    0.00kB/s    0:00:00  
+            106 100%  103.52kB/s    0:00:00 (xfr#4, to-chk=6/12)
+fasta/T1125Domain4.fasta
+
+              0   0%    0.00kB/s    0:00:00  
+             59 100%   57.62kB/s    0:00:00 (xfr#5, to-chk=5/12)
+fasta/T1125Domain5.fasta
+
+              0   0%    0.00kB/s    0:00:00  
+            113 100%  110.35kB/s    0:00:00 (xfr#6, to-chk=4/12)
+fasta/T1125Domain6.fasta
+
+              0   0%    0.00kB/s    0:00:00  
+            113 100%  110.35kB/s    0:00:00 (xfr#7, to-chk=3/12)
+fasta/T1125Domain7.fasta
+
+              0   0%    0.00kB/s    0:00:00  
+             60 100%   29.30kB/s    0:00:00 (xfr#8, to-chk=2/12)
+fasta/T1125Domain8.fasta
+
+              0   0%    0.00kB/s    0:00:00  
+            116 100%   56.64kB/s    0:00:00 (xfr#9, to-chk=1/12)
+fasta/T1125Domain9.fasta
+
+              0   0%    0.00kB/s    0:00:00  
+             70 100%   34.18kB/s    0:00:00 (xfr#10, to-chk=0/12)
+
+sent 275 bytes  received 682 bytes  638.00 bytes/sec
+total size is 2,658  speedup is 2.78
+msa_tool_file_list:  /public/dbu/CASP/data/test/fasta/T1125.fasta /public/dbu/CASP/data/test/fasta/T1125Domain1.fasta /public/dbu/CASP/data/test/fasta/T1125Domain10.fasta /public/dbu/CASP/data/test/fasta/T1125Domain2.fasta /public/dbu/CASP/data/test/fasta/T1125Domain3.fasta /public/dbu/CASP/data/test/fasta/T1125Domain4.fasta /public/dbu/CASP/data/test/fasta/T1125Domain5.fasta /public/dbu/CASP/data/test/fasta/T1125Domain6.fasta /public/dbu/CASP/data/test/fasta/T1125Domain7.fasta /public/dbu/CASP/data/test/fasta/T1125Domain8.fasta /public/dbu/CASP/data/test/fasta/T1125Domain9.fasta
+start run msa_tool
+msa_tool_run done
+Found 10 matching directories: ['T1125Domain1', 'T1125Domain2', 'T1125Domain3', 'T1125Domain4', 'T1125Domain5', 'T1125Domain6', 'T1125Domain7', 'T1125Domain8', 'T1125Domain9', 'T1125Domain10']
+receiving incremental file list
+
+sent 43 bytes  received 2,056 bytes  1,399.33 bytes/sec
+total size is 12,153,334  speedup is 5,790.06
+s.py:128] Launching subprocess "/public/dbu/.local/bin/hhblits -i /public/dbu/CASP/data/test/fasta/T1125Domain5.fasta -cpu 32 -oa3m /public/dbu/CASP/tmp/tmpm1hvm1ah/output.a3m -o /dev/null -n 3 -e 0.001 -maxseq 1000000 -realign_max 100000 -maxfilt 100000 -min_prefilter_hits 1000 -d /public/dbu/data/af2_db/bfd/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt -d /public/dbu/data/af2_db/uniclust30/uniclust30_2018_08/uniclust30_2018_08"
 I1206 17:30:50.047217 47667411998848 utils.py:36] Started HHblits query
 I1206 17:30:50.298431 47398779017344 utils.py:40] Finished Jackhmmer (mgy_clusters.fa) query in 344.931 seconds
 I1206 17:30:50.375505 47398779017344 hhsearch.py:85] Launching subprocess "/public/dbu/.local/bin/hhsearch -i /public/dbu/CASP/tmp/tmpq0_59pbn/query.a3m -o /public/dbu/CASP/tmp/tmpq0_59pbn/output.hhr -maxseq 1000000 -d /public/dbu/data/af2_db/pdb70/pdb70"
