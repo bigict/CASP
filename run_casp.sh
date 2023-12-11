@@ -76,9 +76,9 @@ done
 
 ${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/msa ${af2_pred_data_dir}/
 
-# bash -x run_alphafold.sh \
-#     -m alphafold \
-#     -d db \
-#     -o ${af2_pred_data_dir} \
-#     -p "--use_precomputed_msas" \
-#     $*
+bash -x run_alphafold.sh \
+     -m alphafold \
+     -d db \
+     -o ${af2_pred_data_dir} \
+     -p "--use_precomputed_msas" \
+     $*
