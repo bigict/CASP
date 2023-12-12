@@ -19,10 +19,10 @@ def parse_tmscore_output(src, terms: tuple):
     result = dict(zip(terms, (float('nan'),) * len(terms)))
     return result
   result = {}
-  start_keyword = dict(tmscore='TM-score    = ',
+  start_keyword = dict(tmscore='TM-score    = ',#pylint:disabled=use-dict-literal
                        gdt='GDT-TS-score= ',
                        length='Length=  ')
-  end_char = dict(tmscore=' ', gdt=' ', length='\n')
+  end_char = dict(tmscore=' ', gdt=' ', length='\n')#pylint:disabled=use-dict-literal
   for term in terms:
     assert term in end_char
     key_word = start_keyword[term]
@@ -36,7 +36,7 @@ def parse_tmscore_output(src, terms: tuple):
 
 
 def parse_deepscore_output(src, terms):
-  key_name = dict(tmscore='TMscore', gdt='GDT_TS', length='length')
+  key_name = dict(tmscore='TMscore', gdt='GDT_TS', length='length')#pylint:disabled=use-dict-literal
   length_line = 7  # 0-indexed.
   title_line = 12  # 0-indexed.
   score_line = 13  # 0-indexed.
@@ -73,7 +73,7 @@ def parse_tmalign_output(src, terms):
       m = p.match(line)
       if m:
         all_scores[key] = trans(m.group('value'))
-  key_name = dict(tmscore=('tmscore1', 'tmscore2', max),
+  key_name = dict(tmscore=('tmscore1', 'tmscore2', max),#pylint:disabled=use-dict-literal
                   length=('length1', 'length2', min))
   return {
       k: f(all_scores[v1], all_scores[v2])  # pylint: disable=not-callable
