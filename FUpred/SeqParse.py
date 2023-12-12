@@ -87,6 +87,4 @@ if __name__ == "__main__":
   except argparse.ArgumentError:
     print("Please input the correct parameters!")
     sys.exit(1)
-  except Exception as exception_message:
-    print("An error occurred: ", exception_message)
-    sys.exit(1)
+  

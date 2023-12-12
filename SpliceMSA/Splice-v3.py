@@ -5,18 +5,17 @@ without using multimer pair and merge, directly horizontal splice
 
 Author: TanQian
 """
-import subprocess
+#import subprocess
 import os
 import argparse
 import re
-import collections
-import itertools
-import string
+#import collections
+#import itertools
+#import string
 import sys
 
 from alphafold.data import parsers
-from typing import Dict, Iterable, List, Optional, Sequence, Tuple, Set
-
+#from typing import Dict, Iterable, List, Optional, Sequence, Tuple, Set
 
 def write_spliced_msa(output_path, spliced_msa):
   with open(output_path, 'w',encoding='utf-8') as f:
