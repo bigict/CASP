@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-docstring='''
+docstring = '''
 build_MSA.py seq.fasta            \\
     -hhblitsdb=uniclust30_2017_10 \\
     -jackhmmerdb=uniref90.fasta   \\
@@ -65,42 +65,42 @@ output:
 import sys, os
 import shutil
 import subprocess
-from string import Template,ascii_lowercase
+from string import Template, ascii_lowercase
 
 from HHPaths import bin_dict
-from kClust2db import kClust2db,id2s_dict
+from kClust2db import kClust2db, id2s_dict
 
 #### search parameters ####
 # min query coverage by template
-cov_cut=[
-    50, # from metapsicov 2.0.3 and deepcontact. for final alignment output
-    60, # from metapsicov 1.04. for Nf calculation
-    75, # from gremlin. for qhmmbuild searching
+cov_cut = [
+    50,  # from metapsicov 2.0.3 and deepcontact. for final alignment output
+    60,  # from metapsicov 1.04. for Nf calculation
+    75,  # from gremlin. for qhmmbuild searching
 ]
 
 # target nf, beyond which we do not attempt to build deeper alignment
-target_nf=[
+target_nf = [
     64,  # from gremlin
-    128, # from baker casp12
+    128,  # from baker casp12
 ]
 
 # max seqID within MSA
-id_cut=[
-    99, # from metapsicov and deepcontact
-    90, # from gremlin
+id_cut = [
+    99,  # from metapsicov and deepcontact
+    90,  # from gremlin
 ]
 
 # The threshold above which kClust'ed hhsuite database is build instead of
-# non-clustered hhsuite database. For some reason, non-clustered database
+# non-clustered hhsuite database.For some reason, non-clustered database
 # has slightly better alignment quality, but takes much longer time to make.
-kClust2db_threshold=1000
+kClust2db_threshold = 1000
 
 # The maximum number of hits to be parsed in a checkpoint alignment
-checkali_threshold=30000
+checkali_threshold = 30000
 
 # If the number of hits exceed kClust2db_threshold, remove hits with coverage
 # smaller than checkali_cov
-checkali_cov=cov_cut[0]*0.6
+checkali_cov = cov_cut[0] * 0.6
 
 #### command templates ####
 # Although both gremlin and PconSC2 recommend increasing -maxfilt, it seems
@@ -137,7 +137,7 @@ alnfilter_template=Template(bin_dict["rmRedundantSeq"]+ \
 # $calNf       - calNf executable
 # $infile      - PSICOV format input
 # $target_nf   - max Nf to consider
-calNf_template=Template(bin_dict["calNf"]+" $infile 0.8 0 $target_nf")
+calNf_template = Template(bin_dict["calNf"] + " $infile 0.8 0 $target_nf")
 
 # qjackhmmer is almost identical to jackhmmer, except that the output
 # alignment only include positions covered by query. Here, the number of
@@ -148,7 +148,7 @@ calNf_template=Template(bin_dict["calNf"]+" $infile 0.8 0 $target_nf")
 # neccesitate trim_eslsfetch for removing spurious fseqs hits and template
 # regions that are neither aligned nor close to an aligned region.
 # $ncpu        - number of cpu cores
-# $outprefix   - outputs are $outprefix.first $outprefix.tbl 
+# $outprefix   - outputs are $outprefix.first $outprefix.tbl
 #                $outprefix.fseqs $outprefix.out
 # $infile      - input query fasta
 # $db          - jackhmmer database
@@ -170,16 +170,16 @@ fastaCov_template=Template(bin_dict["fastaCov"]+ \
 # $ncpu        - number of cpu cores
 # $db          - output hhblits database
 # $a3mdir      - input a3m folder
-hhblitsdb_template=Template(
-bin_dict["hhblitsdb"]+" -cpu $ncpu -o $db -ia3m $a3mdir")
+hhblitsdb_template = Template(bin_dict["hhblitsdb"] +
+                              " -cpu $ncpu -o $db -ia3m $a3mdir")
 
 # qhmmbuild is almost identical to hmmbuild, except that the output
 # alignment only contains the first sequence in query alignment, so
 # as to save disk space. qhmmbuild can be replaced by hmmbuild.
-# $infile      - input aln 
+# $infile      - input aln
 # $outprefix   - outputs are $outprefix.afq $outprefix.hmm
 qhmmbuild_aln_template=Template(
-"sed = $infile |sed 'N;s/\\n/\\t/'|sed 's/^/>/g'|sed 's/\\t/\\n/g'|"+ \
+    "sed = $infile |sed 'N;s/\\n/\\t/'|sed 's/^/>/g'|sed 's/\\t/\\n/g'|"+ \
 bin_dict["qhmmbuild"]                                               + \
 " -n aln --amino -O $outprefix.afq --informat afa $outprefix.hmm -")
 
@@ -196,185 +196,197 @@ qhmmsearch_eslsfetch_template=Template(bin_dict["qhmmsearch"]+" --cpu"+ \
 
 #### check databases ####
 
+
 def check_db(db_dict):
-    ''' check if databases are legal '''
-    if not db_dict["hhblitsdb"]:
-        sys.stderr.write("Warning! Not setting -hhblitsdb is unrecommended\n")
-        if not db_dict["jackhmmerdb"]:
-            if db_dict["hmmsearchdb"]:
-                sys.stderr.write("WARNING! Using single query "+ \
-                    "sequence for hmmsearch generates worse result\n")
-            else:
-                sys.stderr.write("Please at least set -hhblitsdb\n")
-                sys.stderr.write("ERROR! No database to search\n")
-                exit()
+  ''' check if databases are legal '''
+  if not db_dict["hhblitsdb"]:
+    sys.stderr.write("Warning! Not setting -hhblitsdb is unrecommended\n")
+    if not db_dict["jackhmmerdb"]:
+      if db_dict["hmmsearchdb"]:
+        sys.stderr.write("WARNING! Using single query "+ \
+            "sequence for hmmsearch generates worse result\n")
+      else:
+        sys.stderr.write("Please at least set -hhblitsdb\n")
+        sys.stderr.write("ERROR! No database to search\n")
+        exit()
 
-    if db_dict["hhblitsdb"]:
-        a3m_db=db_dict["hhblitsdb"]+"_a3m_db"
-        if not os.path.isfile(a3m_db):
-            sys.stderr.write(
-                "ERROR! Cannot locate %s for\n -hhblitsdb=%s\n"%(
-                a3m_db,db_dict["hhblitsdb"]))
-            exit()
+  if db_dict["hhblitsdb"]:
+    a3m_db = db_dict["hhblitsdb"] + "_a3m_db"
+    if not os.path.isfile(a3m_db):
+      sys.stderr.write("ERROR! Cannot locate %s for\n -hhblitsdb=%s\n" %
+                       (a3m_db, db_dict["hhblitsdb"]))
+      exit()
 
-    if db_dict["jackhmmerdb"]:
-        for db in db_dict["jackhmmerdb"].split(':'):
-            if not os.path.isfile(db):
-                sys.stderr.write("ERROR! No such jackhmmerdb file %s\n"%db)
-                exit()
+  if db_dict["jackhmmerdb"]:
+    for db in db_dict["jackhmmerdb"].split(':'):
+      if not os.path.isfile(db):
+        sys.stderr.write("ERROR! No such jackhmmerdb file %s\n" % db)
+        exit()
 
-            if db.endswith(".gz") or db.endswith(".bz2"):
-                sys.stderr.write(
-                    "ERROR! jackhmmer cannot use compressed file %s\n"%db)
-                exit()
+      if db.endswith(".gz") or db.endswith(".bz2"):
+        sys.stderr.write("ERROR! jackhmmer cannot use compressed file %s\n" %
+                         db)
+        exit()
 
-            ssi_db=db+".ssi"
-            if not os.path.isfile(ssi_db):
-                sys.stderr.write(
-                    "ERROR! ssi index file missing for %s.\n"%db+ \
-                    "You can create the ssi index file by:\n"   + \
-                    "%s --index %s\n"%(bin_dict["eslsfetch"],db))
-                exit()
+      ssi_db = db + ".ssi"
+      if not os.path.isfile(ssi_db):
+        sys.stderr.write(
+            "ERROR! ssi index file missing for %s.\n"%db+ \
+            "You can create the ssi index file by:\n"   + \
+            "%s --index %s\n"%(bin_dict["eslsfetch"],db))
+        exit()
 
-    if db_dict["hmmsearchdb"]:
-        for db in db_dict["hmmsearchdb"].split(':'):
-            if not os.path.isfile(db):
-                sys.stderr.write("ERROR! No such hmmsearchdb file %s\n"%db)
-                exit()
+  if db_dict["hmmsearchdb"]:
+    for db in db_dict["hmmsearchdb"].split(':'):
+      if not os.path.isfile(db):
+        sys.stderr.write("ERROR! No such hmmsearchdb file %s\n" % db)
+        exit()
 
-            if db.endswith(".gz") or db.endswith(".bz2"):
-                sys.stderr.write(
-                    "ERROR! esl-sfetch cannot use compressed file %s\n"%db)
-                exit()
+      if db.endswith(".gz") or db.endswith(".bz2"):
+        sys.stderr.write("ERROR! esl-sfetch cannot use compressed file %s\n" %
+                         db)
+        exit()
 
-            ssi_db=db+".ssi"
-            if not os.path.isfile(ssi_db):
-                sys.stderr.write(
-                    "ERROR! ssi index file missing for %s.\n"%db+ \
-                    "You can create the ssi index file by:\n"   + \
-                    "%s --index %s\n"%(bin_dict["eslsfetch"],db))
-                exit()
-    return
-    
+      ssi_db = db + ".ssi"
+      if not os.path.isfile(ssi_db):
+        sys.stderr.write(
+            "ERROR! ssi index file missing for %s.\n"%db+ \
+            "You can create the ssi index file by:\n"   + \
+            "%s --index %s\n"%(bin_dict["eslsfetch"],db))
+        exit()
+  return
+
+
 #### parse query ####
 
+
 def read_one_sequence(query_fasta="seq.fasta"):
-    ''' check if input is legal single sequence fasta and read the sequence '''
-    fp=open(query_fasta,'rU')
-    txt=fp.read()
-    fp.close()
-    if ('\n'+txt).count('\n>')!=1:
-        sys.stderr.write("ERROR! Input is not single sequence fasta.")
-        exit()
-    sequence=''
-    for line in txt.splitlines():
-        if not line.startswith('>'):
-            sequence+=line.strip()
-    sequence=sequence.upper().replace(' ','').replace('\t','')
-    illegal_residues=set(sequence)-set("ABCDEFGHIKLMNOPQRSTUVWXYZ")
-    if illegal_residues:
-        sys.stderr.write("ERROR! %s contains illegal residues %s\n"%(
-            query_fasta,' '.join(illegal_residues)))
-        exit()
-    return sequence
+  ''' check if input is legal single sequence fasta and read the sequence '''
+  fp = open(query_fasta, 'rU')
+  txt = fp.read()
+  fp.close()
+  if ('\n' + txt).count('\n>') != 1:
+    sys.stderr.write("ERROR! Input is not single sequence fasta.")
+    exit()
+  sequence = ''
+  for line in txt.splitlines():
+    if not line.startswith('>'):
+      sequence += line.strip()
+  sequence = sequence.upper().replace(' ', '').replace('\t', '')
+  illegal_residues = set(sequence) - set("ABCDEFGHIKLMNOPQRSTUVWXYZ")
+  if illegal_residues:
+    sys.stderr.write("ERROR! %s contains illegal residues %s\n" %
+                     (query_fasta, ' '.join(illegal_residues)))
+    exit()
+  return sequence
+
 
 #### make tmp folder ####
 
+
 def mkdir_if_not_exist(tmpdir):
-    ''' create folder if not exists '''
-    if not os.path.isdir(tmpdir):
-        os.makedirs(tmpdir)
-    
+  ''' create folder if not exists '''
+  if not os.path.isdir(tmpdir):
+    os.makedirs(tmpdir)
+
+
 def make_tmpdir(tmpdir):
-    ''' create tmp folder '''
-    if not tmpdir:
-        import random
-        tmpdir="/tmp/%s/MSA_%s"%(
-            os.getenv("USER"),random.randint(0,10**10))
-        while(os.path.isdir(tmpdir)):
-            tmpdir="/tmp/%s/MSA_%s"%(
-                os.getenv("USER"),random.randint(0,10**10))
-    mkdir_if_not_exist(tmpdir)
-    sys.stdout.write("created folder %s\n"%tmpdir)
-    return tmpdir 
+  ''' create tmp folder '''
+  if not tmpdir:
+    import random
+    tmpdir = "/tmp/%s/MSA_%s" % (os.getenv("USER"), random.randint(0, 10**10))
+    while (os.path.isdir(tmpdir)):
+      tmpdir = "/tmp/%s/MSA_%s" % (os.getenv("USER"), random.randint(0, 10**10))
+  mkdir_if_not_exist(tmpdir)
+  sys.stdout.write("created folder %s\n" % tmpdir)
+  return tmpdir
+
 
 #### search sequence database ####
 
+
 def getNseq(query_fasta):
-    ''' return the number of sequences in fasta file '''
-    cmd="grep '^>' %s|wc -l"%query_fasta
-    stdout,stderr=subprocess.Popen(cmd,shell=True,
-        stdout=subprocess.PIPE).communicate()
-    return float(stdout)
+  ''' return the number of sequences in fasta file '''
+  cmd = "grep '^>' %s|wc -l" % query_fasta
+  stdout, stderr = subprocess.Popen(cmd, shell=True,
+                                    stdout=subprocess.PIPE).communicate()
+  return float(stdout)
+
 
 def getNf(prefix):
-    ''' return Nf on -cov 60 filtered MSA. input file is prefix.a3m.
+  ''' return Nf on -cov 60 filtered MSA. input file is prefix.a3m.
     output files are prefix.60.a3m and prefix.60.aln
     '''
-    cov   =cov_cut[1]
-    infile="%s.%d.aln"%(prefix,cov)
+  cov = cov_cut[1]
+  infile = "%s.%d.aln" % (prefix, cov)
 
-    #### filter input alignment ####
-    if not os.path.isfile(infile):
-        if os.path.isfile(prefix+".a3m"):
-            cmd=hhfilter_template.substitute(
-                prefix =prefix,
-                id_cut =id_cut[0],
-                cov_cut=cov,
-            )
-        else:
-            cmd=alnfilter_template.substitute(
-                prefix=prefix,
-                id_cut=id_cut[0],
-                cov_cut=cov,
-            )
-        sys.stdout.write(cmd+'\n')
-        os.system(cmd)
-
-    #### calculate Nf ####
-    cmd=calNf_template.substitute(
-        infile   =infile,
-        target_nf=target_nf[-1],
-    )
-    stdout,stderr=subprocess.Popen(cmd,
-        shell=True,stdout=subprocess.PIPE).communicate()
-    return float(stdout)
-
-def run_hhblits(query_fasta,db,ncpu,hhblits_prefix):
-    ''' run hhblits with -cov 50 and return Nf for -cov 60'''
-    cmd=hhblits_template.substitute(
-        infile   =query_fasta,
-        db       =db,
-        ncpu     =ncpu,
-        outprefix=hhblits_prefix,# outputs are $outprefix.a3m 
-                                 # $outprefix.log $outprefix.aln
-        id_cut   =id_cut[0],     # 99 in metapsicov
-        cov_cut  =cov_cut[0],    # 50 in metapsicov 2.0.3
-    )
-    sys.stdout.write(cmd+'\n')
+  #### filter input alignment ####
+  if not os.path.isfile(infile):
+    if os.path.isfile(prefix + ".a3m"):
+      cmd = hhfilter_template.substitute(
+          prefix=prefix,
+          id_cut=id_cut[0],
+          cov_cut=cov,
+      )
+    else:
+      cmd = alnfilter_template.substitute(
+          prefix=prefix,
+          id_cut=id_cut[0],
+          cov_cut=cov,
+      )
+    sys.stdout.write(cmd + '\n')
     os.system(cmd)
-    return getNf(hhblits_prefix)
 
-def fasta2a3msplit(txt,a3mdir='.'):
-    ''' split multiple sequence FASTA txt into single sequence a3m files
+  #### calculate Nf ####
+  cmd = calNf_template.substitute(
+      infile=infile,
+      target_nf=target_nf[-1],
+  )
+  stdout, stderr = subprocess.Popen(cmd, shell=True,
+                                    stdout=subprocess.PIPE).communicate()
+  return float(stdout)
+
+
+def run_hhblits(query_fasta, db, ncpu, hhblits_prefix):
+  ''' run hhblits with -cov 50 and return Nf for -cov 60'''
+  cmd = hhblits_template.substitute(
+      infile=query_fasta,
+      db=db,
+      ncpu=ncpu,
+      outprefix=hhblits_prefix,  # outputs are $outprefix.a3m 
+      # $outprefix.log $outprefix.aln
+      id_cut=id_cut[0],  # 99 in metapsicov
+      cov_cut=cov_cut[0],  # 50 in metapsicov 2.0.3
+  )
+  sys.stdout.write(cmd + '\n')
+  os.system(cmd)
+  return getNf(hhblits_prefix)
+
+
+def fasta2a3msplit(txt, a3mdir='.'):
+  ''' split multiple sequence FASTA txt into single sequence a3m files
     under "a3mdir"'''
-    mkdir_if_not_exist(a3mdir)
-    seqnum=0
-    for block in ('\n'+txt).split('\n>'):
-        lines=block.splitlines()
-        if len(lines)<2:
-            continue
-        name=lines[0].split()[0].replace('|','_')
-        sequence=''.join(lines[1:])
-        fp=open(os.path.join(a3mdir,name+".a3m"),'w')
-        fp.write('>'+lines[0]+'\n'+sequence+'\n')
-        fp.close()
-        seqnum+=1
-    return seqnum
+  mkdir_if_not_exist(a3mdir)
+  seqnum = 0
+  for block in ('\n' + txt).split('\n>'):
+    lines = block.splitlines()
+    if len(lines) < 2:
+      continue
+    name = lines[0].split()[0].replace('|', '_')
+    sequence = ''.join(lines[1:])
+    fp = open(os.path.join(a3mdir, name + ".a3m"), 'w')
+    fp.write('>' + lines[0] + '\n' + sequence + '\n')
+    fp.close()
+    seqnum += 1
+  return seqnum
 
-def trim_eslsfetch(fseqs_file,first_file,L=0,seqname_prefix='',
-    max_seqnum=0):
-    ''' 
+
+def trim_eslsfetch(fseqs_file,
+                   first_file,
+                   L=0,
+                   seqname_prefix='',
+                   max_seqnum=0):
+  ''' 
     trim fseqs_file according to first_file so that for a template in
     fseqs_file, the N and C termini are trimmed such that template 
     sequence flanking the aligned region is <=L at each side.
@@ -391,417 +403,443 @@ def trim_eslsfetch(fseqs_file,first_file,L=0,seqname_prefix='',
     max_seqnum - maximum number of hits to be parsed in first_file
                  default is 0, which means parsing all sequences
     '''
-    trim_txt=''
-    L=0
-    trim_dict=dict() # key is sequence name, value (min,max) position to keep
+  trim_txt = ''
+  L = 0
+  trim_dict = dict()  # key is sequence name, value (min,max) position to keep
 
-    fp=open(first_file,'rU')
-    seqnum=0
-    for block in ('\n'+fp.read()).split("\n>"):
-        lines=block.splitlines()
-        if len(lines)<2:
-            continue
-        if not L:
-            sequence=''.join(lines[1:])
-            L=len(sequence)
-            trim_dict[lines[0].split()[0]]=(1,L)
-        else:
-            subseq_name=lines[0].split()[0]
-            name,pos_range=subseq_name.split('/')
-            min_pos,max_pos=map(int,pos_range.split('-'))
-            min_pos=max([0,min_pos-1-L]) # starting from 0
-            max_pos+=L                   # starting from 1
-            if name in trim_dict:
-                min_pos=min([min_pos,trim_dict[name][0]])
-                max_pos=max([max_pos,trim_dict[name][1]])
-            trim_dict[name]=(min_pos,max_pos)
-        seqnum+=1
-        if max_seqnum>0 and seqnum>=max_seqnum:
-            break
-    fp.close()
-
-    fp=open(fseqs_file,'rU')
-    for block in ('\n'+fp.read()).split("\n>"):
-        lines=block.splitlines()
-        if len(lines)<2:
-            continue
-        sequence=''.join(lines[1:])
-        name=lines[0].split()[0]
-        if name in trim_dict:
-            trim_txt+='>'+seqname_prefix
-            # hhmake "helpfully" assume a3m with sequences name ending in
-            # "_consensus" must have a master sequence. see "hhalignment.C"
-            if "_consensus" in name:
-                trim_txt+=name.replace("_consensus","_consen")+'\n'
-            else:
-                trim_txt+=name+'\n'
-            trim_txt+=sequence[trim_dict[name][0]:trim_dict[name][1]]+'\n'
-    fp.close()
-    return trim_txt
-
-def run_jackblits(query_fasta,db_list,ncpu,hhblits_prefix,jackblits_prefix):
-    ''' run jackhmmer, hhblitsdb and hhblits '''
-    fp=open(query_fasta,'rU')
-    txt=fp.read()
-    fp.close()
-
-    #### run jackhmmer ####
-    for d,db in enumerate(db_list):
-        # outputs are $outprefix.first $outprefix.tbl $outprefix.fseqs
-        outprefix=jackblits_prefix+'.'+str(d)
-        cmd=qjackhmmer_template.substitute(
-            ncpu     =ncpu,
-            outprefix=outprefix,
-            infile   =query_fasta,
-            db       =db,
-        )
-        sys.stdout.write(cmd+'\n')
-        os.system(cmd)
-
-        if getNseq(outprefix+".first")>kClust2db_threshold:
-            cmd=fastaCov_template.substitute(
-                cov=checkali_cov,
-                infile=outprefix+".first",
-            )
-            sys.stdout.write(cmd+'\n')
-            os.system(cmd)
-
-        # parse jackhmmer hits
-        txt+=trim_eslsfetch(outprefix+".fseqs",outprefix+".first",
-            seqname_prefix="jac%d_"%d,
-            max_seqnum=checkali_threshold, # avoid excessive number of hits
-        )
-    
-    #### build hhsuite database ####
-    db=jackblits_prefix+"-mydb/mydb"
-    if txt.count('\n>')>kClust2db_threshold:
-        ### cluster at 30% seqID and build database ###
-        fp=open(jackblits_prefix+".fseqs",'w')
-        fp.write(txt)
-        fp.close()
-        kClust2db(jackblits_prefix+".fseqs",db,s=id2s_dict[30],
-            ncpu=ncpu,tmpdir=os.path.dirname(jackblits_prefix))
+  fp = open(first_file, 'rU')
+  seqnum = 0
+  for block in ('\n' + fp.read()).split("\n>"):
+    lines = block.splitlines()
+    if len(lines) < 2:
+      continue
+    if not L:
+      sequence = ''.join(lines[1:])
+      L = len(sequence)
+      trim_dict[lines[0].split()[0]] = (1, L)
     else:
-        ### split jackhmmer hits into a3m ###
-        a3mdir=jackblits_prefix+"-mya3m"
-        seqnum=fasta2a3msplit(txt,a3mdir)
-    
-        ### build single sequence profile database ###
-        mkdir_if_not_exist(jackblits_prefix+"-mydb")
-        cmd=hhblitsdb_template.substitute(
-            ncpu  =ncpu,
-            db    =db,
-            a3mdir=a3mdir,
-        )
-        sys.stdout.write(cmd+'\n')
-        os.system(cmd)
+      subseq_name = lines[0].split()[0]
+      name, pos_range = subseq_name.split('/')
+      min_pos, max_pos = map(int, pos_range.split('-'))
+      min_pos = max([0, min_pos - 1 - L])  # starting from 0
+      max_pos += L  # starting from 1
+      if name in trim_dict:
+        min_pos = min([min_pos, trim_dict[name][0]])
+        max_pos = max([max_pos, trim_dict[name][1]])
+      trim_dict[name] = (min_pos, max_pos)
+    seqnum += 1
+    if max_seqnum > 0 and seqnum >= max_seqnum:
+      break
+  fp.close()
 
-    #### hhblits search  ####
-    if os.path.isfile(hhblits_prefix+".a3m"):
-        query_fasta=hhblits_prefix+".a3m"
-    else:
-        sys.stderr.write("WARNING! Using single sequence for jackblits\n")
-    return run_hhblits(query_fasta,db,ncpu,jackblits_prefix)
+  fp = open(fseqs_file, 'rU')
+  for block in ('\n' + fp.read()).split("\n>"):
+    lines = block.splitlines()
+    if len(lines) < 2:
+      continue
+    sequence = ''.join(lines[1:])
+    name = lines[0].split()[0]
+    if name in trim_dict:
+      trim_txt += '>' + seqname_prefix
+      # hhmake "helpfully" assume a3m with sequences name ending in
+      # "_consensus" must have a master sequence. see "hhalignment.C"
+      if "_consensus" in name:
+        trim_txt += name.replace("_consensus", "_consen") + '\n'
+      else:
+        trim_txt += name + '\n'
+      trim_txt += sequence[trim_dict[name][0]:trim_dict[name][1]] + '\n'
+  fp.close()
+  return trim_txt
 
-def run_hmsblits(query_fasta,sequence,hhblits_prefix,
-    db_list,ncpu,hmmsearch_prefix):
-    ''' jump start hmmsearch using hhblits or jack_hhblits a3m'''
 
-    #### convert input to hmm ####
-    input_aln=hhblits_prefix+".aln"
-    if not os.path.isfile(input_aln):
-        sys.stderr.write("WARNING! No hhblits alignment.\n"+ \
-            "Using query sequence as input for hmmsearch\n")
-        fp=open(input_aln,'w')
-        fp.write(sequence+'\n')
-        fp.close()
+def run_jackblits(query_fasta, db_list, ncpu, hhblits_prefix, jackblits_prefix):
+  ''' run jackhmmer, hhblitsdb and hhblits '''
+  fp = open(query_fasta, 'rU')
+  txt = fp.read()
+  fp.close()
 
-    cmd=qhmmbuild_aln_template.substitute(
-        infile=input_aln,
-        outprefix=hmmsearch_prefix,
+  #### run jackhmmer ####
+  for d, db in enumerate(db_list):
+    # outputs are $outprefix.first $outprefix.tbl $outprefix.fseqs
+    outprefix = jackblits_prefix + '.' + str(d)
+    cmd = qjackhmmer_template.substitute(
+        ncpu=ncpu,
+        outprefix=outprefix,
+        infile=query_fasta,
+        db=db,
     )
-    sys.stdout.write(cmd+'\n')
+    sys.stdout.write(cmd + '\n')
     os.system(cmd)
 
-    #### read in query profile ####
-    fp=open(query_fasta,'rU')
-    txt=fp.read()
+    if getNseq(outprefix + ".first") > kClust2db_threshold:
+      cmd = fastaCov_template.substitute(
+          cov=checkali_cov,
+          infile=outprefix + ".first",
+      )
+      sys.stdout.write(cmd + '\n')
+      os.system(cmd)
+
+    # parse jackhmmer hits
+    txt += trim_eslsfetch(
+        outprefix + ".fseqs",
+        outprefix + ".first",
+        seqname_prefix="jac%d_" % d,
+        max_seqnum=checkali_threshold,  # avoid excessive number of hits
+    )
+
+  #### build hhsuite database ####
+  db = jackblits_prefix + "-mydb/mydb"
+  if txt.count('\n>') > kClust2db_threshold:
+    ### cluster at 30% seqID and build database ###
+    fp = open(jackblits_prefix + ".fseqs", 'w')
+    fp.write(txt)
+    fp.close()
+    kClust2db(jackblits_prefix + ".fseqs",
+              db,
+              s=id2s_dict[30],
+              ncpu=ncpu,
+              tmpdir=os.path.dirname(jackblits_prefix))
+  else:
+    ### split jackhmmer hits into a3m ###
+    a3mdir = jackblits_prefix + "-mya3m"
+    seqnum = fasta2a3msplit(txt, a3mdir)
+
+    ### build single sequence profile database ###
+    mkdir_if_not_exist(jackblits_prefix + "-mydb")
+    cmd = hhblitsdb_template.substitute(
+        ncpu=ncpu,
+        db=db,
+        a3mdir=a3mdir,
+    )
+    sys.stdout.write(cmd + '\n')
+    os.system(cmd)
+
+  #### hhblits search  ####
+  if os.path.isfile(hhblits_prefix + ".a3m"):
+    query_fasta = hhblits_prefix + ".a3m"
+  else:
+    sys.stderr.write("WARNING! Using single sequence for jackblits\n")
+  return run_hhblits(query_fasta, db, ncpu, jackblits_prefix)
+
+
+def run_hmsblits(query_fasta, sequence, hhblits_prefix, db_list, ncpu,
+                 hmmsearch_prefix):
+  ''' jump start hmmsearch using hhblits or jack_hhblits a3m'''
+
+  #### convert input to hmm ####
+  input_aln = hhblits_prefix + ".aln"
+  if not os.path.isfile(input_aln):
+    sys.stderr.write("WARNING! No hhblits alignment.\n"+ \
+        "Using query sequence as input for hmmsearch\n")
+    fp = open(input_aln, 'w')
+    fp.write(sequence + '\n')
     fp.close()
 
-    #### search hmm against metaclust ####
-    outfile=hmmsearch_prefix+".nonredundant"
-    for d,db in enumerate(db_list):
-        outprefix=hmmsearch_prefix+".%d"%d
-        cmd=qhmmsearch_eslsfetch_template.substitute(
-            outprefix=outprefix,
-            infile   =hmmsearch_prefix+".hmm",
-            ncpu     =ncpu,
-            db       =db,
-        )
-        sys.stdout.write(cmd+'\n')
-        os.system(cmd)
+  cmd = qhmmbuild_aln_template.substitute(
+      infile=input_aln,
+      outprefix=hmmsearch_prefix,
+  )
+  sys.stdout.write(cmd + '\n')
+  os.system(cmd)
 
-        if getNseq(outprefix+".match")>kClust2db_threshold:
-            cmd=fastaCov_template.substitute(
-                cov=checkali_cov,
-                infile=outprefix+".match",
-            )
-            sys.stdout.write(cmd+'\n')
-            os.system(cmd)
+  #### read in query profile ####
+  fp = open(query_fasta, 'rU')
+  txt = fp.read()
+  fp.close()
 
-        # parse hmmsearch hits
-        txt+=trim_eslsfetch(outprefix+".fseqs",outprefix+".match",
-            L=len(sequence), seqname_prefix="hms%d_"%d,
-            max_seqnum=checkali_threshold, # avoid excessive number of hits
-        )
+  #### search hmm against metaclust ####
+  outfile = hmmsearch_prefix + ".nonredundant"
+  for d, db in enumerate(db_list):
+    outprefix = hmmsearch_prefix + ".%d" % d
+    cmd = qhmmsearch_eslsfetch_template.substitute(
+        outprefix=outprefix,
+        infile=hmmsearch_prefix + ".hmm",
+        ncpu=ncpu,
+        db=db,
+    )
+    sys.stdout.write(cmd + '\n')
+    os.system(cmd)
 
-    #### build custom hhsuite database ####
-    db=hmmsearch_prefix+"-mydb/mydb"
-    if txt.count('\n>')>kClust2db_threshold:
-        ### cluster at 30% seqID and build database ###
-        fp=open(hmmsearch_prefix+".fseqs",'w')
-        fp.write(txt)
-        fp.close()
-        kClust2db(hmmsearch_prefix+".fseqs",db,s=id2s_dict[30],
-            ncpu=ncpu,tmpdir=os.path.dirname(hmmsearch_prefix))
-    else:
-        ### split hmmsearch hits into a3m ###
-        a3mdir=hmmsearch_prefix+"-mya3m"
-        seqnum=fasta2a3msplit(txt,a3mdir)
-    
-        ### build single sequence profile database ###
-        mkdir_if_not_exist(hmmsearch_prefix+"-mydb")
-        cmd=hhblitsdb_template.substitute(
-            ncpu  =ncpu,
-            db    =db,
-            a3mdir=a3mdir,
-        )
-        sys.stdout.write(cmd+'\n')
-        os.system(cmd)
+    if getNseq(outprefix + ".match") > kClust2db_threshold:
+      cmd = fastaCov_template.substitute(
+          cov=checkali_cov,
+          infile=outprefix + ".match",
+      )
+      sys.stdout.write(cmd + '\n')
+      os.system(cmd)
 
-    #### hhblits search  ####
-    if not os.path.isfile(hhblits_prefix+".a3m") or \
-       not os.path.isfile(hhblits_prefix+".aln"):
-        sys.stderr.write("WARNING! Using single sequence for"+ \
-            " hmmsearch+hhblits\n")
-        return run_hhblits(query_fasta,db,ncpu,hmmsearch_prefix)
-    return run_hhblits(hhblits_prefix+".a3m",db,ncpu,hmmsearch_prefix)
+    # parse hmmsearch hits
+    txt += trim_eslsfetch(
+        outprefix + ".fseqs",
+        outprefix + ".match",
+        L=len(sequence),
+        seqname_prefix="hms%d_" % d,
+        max_seqnum=checkali_threshold,  # avoid excessive number of hits
+    )
 
-def build_MSA(prefix, sequence, tmpdir, db_dict, ncpu=1,
-    overwrite_dict=dict(hmmsearch=False,jackhmmer=False,hhblits=False)):
-    ''' sequentially attempt to build MSA by hhblits, jackhmmer+hhblits,
+  #### build custom hhsuite database ####
+  db = hmmsearch_prefix + "-mydb/mydb"
+  if txt.count('\n>') > kClust2db_threshold:
+    ### cluster at 30% seqID and build database ###
+    fp = open(hmmsearch_prefix + ".fseqs", 'w')
+    fp.write(txt)
+    fp.close()
+    kClust2db(hmmsearch_prefix + ".fseqs",
+              db,
+              s=id2s_dict[30],
+              ncpu=ncpu,
+              tmpdir=os.path.dirname(hmmsearch_prefix))
+  else:
+    ### split hmmsearch hits into a3m ###
+    a3mdir = hmmsearch_prefix + "-mya3m"
+    seqnum = fasta2a3msplit(txt, a3mdir)
+
+    ### build single sequence profile database ###
+    mkdir_if_not_exist(hmmsearch_prefix + "-mydb")
+    cmd = hhblitsdb_template.substitute(
+        ncpu=ncpu,
+        db=db,
+        a3mdir=a3mdir,
+    )
+    sys.stdout.write(cmd + '\n')
+    os.system(cmd)
+
+  #### hhblits search  ####
+  if not os.path.isfile(hhblits_prefix+".a3m") or \
+     not os.path.isfile(hhblits_prefix+".aln"):
+    sys.stderr.write("WARNING! Using single sequence for"+ \
+        " hmmsearch+hhblits\n")
+    return run_hhblits(query_fasta, db, ncpu, hmmsearch_prefix)
+  return run_hhblits(hhblits_prefix + ".a3m", db, ncpu, hmmsearch_prefix)
+
+
+def build_MSA(prefix,
+              sequence,
+              tmpdir,
+              db_dict,
+              ncpu=1,
+              overwrite_dict=dict(hmmsearch=False,
+                                  jackhmmer=False,
+                                  hhblits=False)):
+  ''' sequentially attempt to build MSA by hhblits, jackhmmer+hhblits,
     and hmmsearch. '''
-    nf=hhb_nf=jack_nf=hms_nf=0
-    #### preparing query ####
-    query_fasta=os.path.join(tmpdir,"seq.fasta")
-    fp=open(query_fasta,'w')
-    fp.write(">seq\n%s\n"%sequence)
-    fp.close()
+  nf = hhb_nf = jack_nf = hms_nf = 0
+  #### preparing query ####
+  query_fasta = os.path.join(tmpdir, "seq.fasta")
+  fp = open(query_fasta, 'w')
+  fp.write(">seq\n%s\n" % sequence)
+  fp.close()
 
-    #### run hhblits ####
-    hhblits_prefix=os.path.join(tmpdir,"hhblits")
-    if db_dict["hhblitsdb"]:
-        if overwrite_dict["hhblits"] or not os.path.isfile(
-            prefix+".hhbaln") or not os.path.isfile(prefix+".hhba3m"):
-            # generates hhblits_prefix.a3m hhblits_prefix.aln
-            # hhblits_prefix.60.a3m hhblits_prefix.60.aln
-            hhb_nf=run_hhblits(query_fasta,db_dict["hhblitsdb"],
-                ncpu,hhblits_prefix)
-            shutil.copyfile(hhblits_prefix+".aln",prefix+".hhbaln")
-            shutil.copyfile(hhblits_prefix+".a3m",prefix+".hhba3m")
-        else:
-            shutil.copyfile(prefix+".hhbaln",hhblits_prefix+".aln")
-            shutil.copyfile(prefix+".hhba3m",hhblits_prefix+".a3m")
-            hhb_nf=getNf(hhblits_prefix)
-            sys.stdout.write("%s and %s exists, skip hhblitsdb\n"%(
-                prefix+".hhbaln",prefix+".hhba3m"))
-        
-        nf=hhb_nf
-        if hhb_nf>=target_nf[1] or (
-            not db_dict["jackhmmerdb"] and hhb_nf>=target_nf[0]):
-            shutil.copyfile(hhblits_prefix+".aln",prefix+".aln")
-            sys.stdout.write("Final MSA by hhblits with Nf >=%.1f\n"%nf)
-            return nf
-
-    #### run jack_hhblits ####
-    jackblits_prefix=os.path.join(tmpdir,"jackblits")
-    if db_dict["jackhmmerdb"]:
-        if overwrite_dict["jackhmmer"] or not os.path.isfile(
-            prefix+".jacaln") or not os.path.isfile(prefix+".jaca3m"):
-            # generates jackblits_prefix.a3m jackblits_prefix.aln
-            # jackblits_prefix.60.a3m jackblits_prefix.60.aln
-            jack_nf=run_jackblits(query_fasta,
-                db_dict["jackhmmerdb"].split(':'),
-                ncpu,hhblits_prefix,jackblits_prefix)
-            shutil.copyfile(jackblits_prefix+".aln",prefix+".jacaln")
-            shutil.copyfile(jackblits_prefix+".a3m",prefix+".jaca3m")
-        else:
-            shutil.copyfile(prefix+".jacaln",jackblits_prefix+".aln")
-            shutil.copyfile(prefix+".jaca3m",jackblits_prefix+".a3m")
-            jack_nf=getNf(jackblits_prefix)
-            sys.stdout.write("%s and %s exists, skip jackhmmerdb\n"%(
-                prefix+".jacaln",prefix+".jaca3m"))
-        
-        nf=max([jack_nf,hhb_nf])
-        if jack_nf>=target_nf[0]:
-            if jack_nf>=hhb_nf:
-                shutil.copyfile(jackblits_prefix+".aln",prefix+".aln")
-                sys.stdout.write("Final MSA by jackhmmer with Nf >=%.1f\n"%nf)
-            else:
-                shutil.copyfile(hhblits_prefix+".aln",prefix+".aln")
-                sys.stdout.write("Final MSA by hhblits with Nf >=%.1f\n"%nf)
-            return nf
-
-    #### run hmmsearch ####
-    hmmsearch_prefix=os.path.join(tmpdir,"hmmsearch")
-    if db_dict["hmmsearchdb"]:
-        if overwrite_dict["hmmsearch"] or \
-            not os.path.isfile(prefix+".hmsaln") or \
-            not os.path.isfile(prefix+".hmsa3m"):
-            # generates hmmsearch_prefix.afq hmmsearch_prefix.hmm
-            # hmmsearch_prefix.redundant hmmsearch_prefix.nonredundant
-            # hmmsearch_prefix.aln
-            hms_nf=run_hmsblits(query_fasta,sequence,
-                hhblits_prefix if jack_nf<hhb_nf else jackblits_prefix,
-                db_dict["hmmsearchdb"].split(':'),ncpu,hmmsearch_prefix)
-            shutil.copyfile(hmmsearch_prefix+".aln",prefix+".hmsaln")
-            shutil.copyfile(hmmsearch_prefix+".a3m",prefix+".hmsa3m")
-        else:
-            shutil.copyfile(prefix+".hmsaln",hmmsearch_prefix+".aln")
-            shutil.copyfile(prefix+".hmsa3m",hmmsearch_prefix+".a3m")
-            sys.stdout.write("%s exists, skip hmmsearchdb\n"%(
-                prefix+".hmsaln"))
-            hms_nf=getNf(hmmsearch_prefix)
-
-        if hms_nf>nf: # hmmsearch replaces jackblits and hhblits result
-            nf=hms_nf
-            shutil.copyfile(hmmsearch_prefix+".aln",prefix+".aln")
-            sys.stdout.write("Final MSA by hmmsearch with Nf >=%.1f\n"%nf)
-            return nf
-
-    if hhb_nf>jack_nf:
-        shutil.copyfile(hhblits_prefix+".aln",prefix+".aln")
-        sys.stdout.write("hhblits MSA has %.1f Nf. Output anyway.\n"%hhb_nf)
+  #### run hhblits ####
+  hhblits_prefix = os.path.join(tmpdir, "hhblits")
+  if db_dict["hhblitsdb"]:
+    if overwrite_dict["hhblits"] or not os.path.isfile(
+        prefix + ".hhbaln") or not os.path.isfile(prefix + ".hhba3m"):
+      # generates hhblits_prefix.a3m hhblits_prefix.aln
+      # hhblits_prefix.60.a3m hhblits_prefix.60.aln
+      hhb_nf = run_hhblits(query_fasta, db_dict["hhblitsdb"], ncpu,
+                           hhblits_prefix)
+      shutil.copyfile(hhblits_prefix + ".aln", prefix + ".hhbaln")
+      shutil.copyfile(hhblits_prefix + ".a3m", prefix + ".hhba3m")
     else:
-        shutil.copyfile(jackblits_prefix+".aln",prefix+".aln")
-        sys.stdout.write("jackhmmer MSA has %.1f Nf. Output anyway.\n"%jack_nf)
-    return nf
+      shutil.copyfile(prefix + ".hhbaln", hhblits_prefix + ".aln")
+      shutil.copyfile(prefix + ".hhba3m", hhblits_prefix + ".a3m")
+      hhb_nf = getNf(hhblits_prefix)
+      sys.stdout.write("%s and %s exists, skip hhblitsdb\n" %
+                       (prefix + ".hhbaln", prefix + ".hhba3m"))
+
+    nf = hhb_nf
+    if hhb_nf >= target_nf[1] or (not db_dict["jackhmmerdb"] and
+                                  hhb_nf >= target_nf[0]):
+      shutil.copyfile(hhblits_prefix + ".aln", prefix + ".aln")
+      sys.stdout.write("Final MSA by hhblits with Nf >=%.1f\n" % nf)
+      return nf
+
+  #### run jack_hhblits ####
+  jackblits_prefix = os.path.join(tmpdir, "jackblits")
+  if db_dict["jackhmmerdb"]:
+    if overwrite_dict["jackhmmer"] or not os.path.isfile(
+        prefix + ".jacaln") or not os.path.isfile(prefix + ".jaca3m"):
+      # generates jackblits_prefix.a3m jackblits_prefix.aln
+      # jackblits_prefix.60.a3m jackblits_prefix.60.aln
+      jack_nf = run_jackblits(query_fasta, db_dict["jackhmmerdb"].split(':'),
+                              ncpu, hhblits_prefix, jackblits_prefix)
+      shutil.copyfile(jackblits_prefix + ".aln", prefix + ".jacaln")
+      shutil.copyfile(jackblits_prefix + ".a3m", prefix + ".jaca3m")
+    else:
+      shutil.copyfile(prefix + ".jacaln", jackblits_prefix + ".aln")
+      shutil.copyfile(prefix + ".jaca3m", jackblits_prefix + ".a3m")
+      jack_nf = getNf(jackblits_prefix)
+      sys.stdout.write("%s and %s exists, skip jackhmmerdb\n" %
+                       (prefix + ".jacaln", prefix + ".jaca3m"))
+
+    nf = max([jack_nf, hhb_nf])
+    if jack_nf >= target_nf[0]:
+      if jack_nf >= hhb_nf:
+        shutil.copyfile(jackblits_prefix + ".aln", prefix + ".aln")
+        sys.stdout.write("Final MSA by jackhmmer with Nf >=%.1f\n" % nf)
+      else:
+        shutil.copyfile(hhblits_prefix + ".aln", prefix + ".aln")
+        sys.stdout.write("Final MSA by hhblits with Nf >=%.1f\n" % nf)
+      return nf
+
+  #### run hmmsearch ####
+  hmmsearch_prefix = os.path.join(tmpdir, "hmmsearch")
+  if db_dict["hmmsearchdb"]:
+    if overwrite_dict["hmmsearch"] or \
+        not os.path.isfile(prefix+".hmsaln") or \
+        not os.path.isfile(prefix+".hmsa3m"):
+      # generates hmmsearch_prefix.afq hmmsearch_prefix.hmm
+      # hmmsearch_prefix.redundant hmmsearch_prefix.nonredundant
+      # hmmsearch_prefix.aln
+      hms_nf = run_hmsblits(
+          query_fasta, sequence,
+          hhblits_prefix if jack_nf < hhb_nf else jackblits_prefix,
+          db_dict["hmmsearchdb"].split(':'), ncpu, hmmsearch_prefix)
+      shutil.copyfile(hmmsearch_prefix + ".aln", prefix + ".hmsaln")
+      shutil.copyfile(hmmsearch_prefix + ".a3m", prefix + ".hmsa3m")
+    else:
+      shutil.copyfile(prefix + ".hmsaln", hmmsearch_prefix + ".aln")
+      shutil.copyfile(prefix + ".hmsa3m", hmmsearch_prefix + ".a3m")
+      sys.stdout.write("%s exists, skip hmmsearchdb\n" % (prefix + ".hmsaln"))
+      hms_nf = getNf(hmmsearch_prefix)
+
+    if hms_nf > nf:  # hmmsearch replaces jackblits and hhblits result
+      nf = hms_nf
+      shutil.copyfile(hmmsearch_prefix + ".aln", prefix + ".aln")
+      sys.stdout.write("Final MSA by hmmsearch with Nf >=%.1f\n" % nf)
+      return nf
+
+  if hhb_nf > jack_nf:
+    shutil.copyfile(hhblits_prefix + ".aln", prefix + ".aln")
+    sys.stdout.write("hhblits MSA has %.1f Nf. Output anyway.\n" % hhb_nf)
+  else:
+    shutil.copyfile(jackblits_prefix + ".aln", prefix + ".aln")
+    sys.stdout.write("jackhmmer MSA has %.1f Nf. Output anyway.\n" % jack_nf)
+  return nf
+
 
 def parse_overwrite_option(overwrite=0):
-    ''' whether overwrite existing search result.
+  ''' whether overwrite existing search result.
     0 - do not overwrite any alignment
     1 - overwrite hhblitsdb search result (.hhbaln and .hhba3m)
     2 - overwrite jackhmmerdb search result (.jacaln and .jaca3m)
     4 - overwrite hmmsearchdb search result (.hmsaln)
     These options are addictive, e.g., -overwrite=7 (=1+2+4) for
     overwriting any alignment. '''
-    overwrite_dict=dict()
+  overwrite_dict = dict()
 
-    overwrite_dict["hmmsearch"]=(overwrite>=4)
-    overwrite %= 4
+  overwrite_dict["hmmsearch"] = (overwrite >= 4)
+  overwrite %= 4
 
-    overwrite_dict["jackhmmer"]=(overwrite>=2)
-    overwrite %= 2
+  overwrite_dict["jackhmmer"] = (overwrite >= 2)
+  overwrite %= 2
 
-    overwrite_dict["hhblits"]=(overwrite>=1)
-    overwrite %= 1
-    return overwrite_dict
+  overwrite_dict["hhblits"] = (overwrite >= 1)
+  overwrite %= 1
+  return overwrite_dict
 
-def refilter_aln(prefix,tmpdir):
-    ''' filter final MSA by -id 99 -cov 60 '''
-    final_prefix=os.path.join(tmpdir,"final")
-    shutil.copyfile(prefix+".aln",final_prefix+".aln")
 
-    #### filter by cov ####
-    for c in range(1,len(cov_cut)):
-        ### filter ###
-        cov=cov_cut[c]
-        cmd=alnfilter_template.substitute(
-            id_cut=id_cut[0],
-            cov_cut=cov,
-            prefix=final_prefix,
-        )
-        sys.stdout.write(cmd+'\n')
-        os.system(cmd)
+def refilter_aln(prefix, tmpdir):
+  ''' filter final MSA by -id 99 -cov 60 '''
+  final_prefix = os.path.join(tmpdir, "final")
+  shutil.copyfile(prefix + ".aln", final_prefix + ".aln")
 
-        ### calculate Nf ###
-        cmd=calNf_template.substitute(
-            infile   =final_prefix+".%d.aln"%cov,
-            target_nf=target_nf[-1],
-        )
-        stdout,stderr=subprocess.Popen(cmd,
-            shell=True,stdout=subprocess.PIPE).communicate()
-        nf=float(stdout)
-
-        ### accept the refiltered MSA ###
-        if nf<target_nf[-1]:
-            break
-        shutil.copyfile(final_prefix+".%d.aln"%cov,prefix+".aln")
-        shutil.copyfile(final_prefix+".%d.aln"%cov,final_prefix+".aln")
-        sys.stdout.write("Re-filter final MSA to Nf >= %.1f\n"%nf)
-    return nf
-
-if __name__=="__main__":
-    #### command line argument parsing ####
-    db_dict=dict(
-        hhblitsdb='',
-        jackhmmerdb='',
-        hmmsearchdb='',
+  #### filter by cov ####
+  for c in range(1, len(cov_cut)):
+    ### filter ###
+    cov = cov_cut[c]
+    cmd = alnfilter_template.substitute(
+        id_cut=id_cut[0],
+        cov_cut=cov,
+        prefix=final_prefix,
     )
-    tmpdir=''
-    outdir='.'
-    overwrite=0
-    ncpu=1
+    sys.stdout.write(cmd + '\n')
+    os.system(cmd)
 
-    argv=[]
-    for arg in sys.argv[1:]:
-        if arg.startswith("-hhblitsdb="):
-            db_dict["hhblitsdb"]=os.path.abspath(arg[len("-hhblitsdb="):])
-        elif arg.startswith("-jackhmmerdb="):
-            db_dict["jackhmmerdb"]=os.path.abspath(arg[len("-jackhmmerdb="):])
-        elif arg.startswith("-hmmsearchdb="):
-            db_dict["hmmsearchdb"]=os.path.abspath(arg[len("-hmmsearchdb="):])
-        elif arg.startswith("-tmpdir="):
-            tmpdir=os.path.abspath(arg[len("-tmpdir="):])
-        elif arg.startswith("-outdir="):
-            outdir=os.path.abspath(arg[len("-outdir="):])
-        elif arg.startswith("-ncpu="):
-            ncpu=int(arg[len("-ncpu="):])
-        elif arg.startswith("-overwrite="):
-            overwrite=int(arg[len("-overwrite="):])
-        elif arg.startswith('-'):
-            sys.stderr.write("ERROR! No such option %s\n"%arg)
-            exit()
-        else:
-            argv.append(arg)
+    ### calculate Nf ###
+    cmd = calNf_template.substitute(
+        infile=final_prefix + ".%d.aln" % cov,
+        target_nf=target_nf[-1],
+    )
+    stdout, stderr = subprocess.Popen(cmd, shell=True,
+                                      stdout=subprocess.PIPE).communicate()
+    nf = float(stdout)
 
-    if len(argv)!=1 or (not ''.join(db_dict.values())):
-        sys.stderr.write(docstring)
-        exit()
-    
-    #### check input format ####
-    query_fasta=os.path.abspath(argv[0])
-    if not os.path.isfile(query_fasta):
-        sys.stderr.write("ERROR! No such query fasta %s\n"%query_fasta)
-        exit()
-    check_db(db_dict)
-    sequence=read_one_sequence(query_fasta)
-    tmpdir=make_tmpdir(tmpdir)
-    prefix=os.path.splitext(query_fasta)[0]
-    if outdir and outdir!='.':
-        mkdir_if_not_exist(outdir)
-        prefix=os.path.join(outdir,os.path.basename(prefix))
+    ### accept the refiltered MSA ###
+    if nf < target_nf[-1]:
+      break
+    shutil.copyfile(final_prefix + ".%d.aln" % cov, prefix + ".aln")
+    shutil.copyfile(final_prefix + ".%d.aln" % cov, final_prefix + ".aln")
+    sys.stdout.write("Re-filter final MSA to Nf >= %.1f\n" % nf)
+  return nf
 
-    #### start building MSA ####
-    nf=build_MSA(prefix,sequence,tmpdir,db_dict,
-        ncpu=ncpu, overwrite_dict=parse_overwrite_option(overwrite))
 
-    #### filter final MSA if too large ####
-    # this will not improve contact accuracy. it is solely for making the
-    # MSA not too large so that it is manageable for contact prediction
-    if nf>=target_nf[-1]:
-        nf=refilter_aln(prefix,tmpdir)
+if __name__ == "__main__":
+  #### command line argument parsing ####
+  db_dict = dict(
+      hhblitsdb='',
+      jackhmmerdb='',
+      hmmsearchdb='',
+  )
+  tmpdir = ''
+  outdir = '.'
+  overwrite = 0
+  ncpu = 1
 
-    #### clean up ####
-    if os.path.isdir(tmpdir):
-        shutil.rmtree(tmpdir)
+  argv = []
+  for arg in sys.argv[1:]:
+    if arg.startswith("-hhblitsdb="):
+      db_dict["hhblitsdb"] = os.path.abspath(arg[len("-hhblitsdb="):])
+    elif arg.startswith("-jackhmmerdb="):
+      db_dict["jackhmmerdb"] = os.path.abspath(arg[len("-jackhmmerdb="):])
+    elif arg.startswith("-hmmsearchdb="):
+      db_dict["hmmsearchdb"] = os.path.abspath(arg[len("-hmmsearchdb="):])
+    elif arg.startswith("-tmpdir="):
+      tmpdir = os.path.abspath(arg[len("-tmpdir="):])
+    elif arg.startswith("-outdir="):
+      outdir = os.path.abspath(arg[len("-outdir="):])
+    elif arg.startswith("-ncpu="):
+      ncpu = int(arg[len("-ncpu="):])
+    elif arg.startswith("-overwrite="):
+      overwrite = int(arg[len("-overwrite="):])
+    elif arg.startswith('-'):
+      sys.stderr.write("ERROR! No such option %s\n" % arg)
+      exit()
+    else:
+      argv.append(arg)
+
+  if len(argv) != 1 or (not ''.join(db_dict.values())):
+    sys.stderr.write(docstring)
+    exit()
+
+  #### check input format ####
+  query_fasta = os.path.abspath(argv[0])
+  if not os.path.isfile(query_fasta):
+    sys.stderr.write("ERROR! No such query fasta %s\n" % query_fasta)
+    exit()
+  check_db(db_dict)
+  sequence = read_one_sequence(query_fasta)
+  tmpdir = make_tmpdir(tmpdir)
+  prefix = os.path.splitext(query_fasta)[0]
+  if outdir and outdir != '.':
+    mkdir_if_not_exist(outdir)
+    prefix = os.path.join(outdir, os.path.basename(prefix))
+
+  #### start building MSA ####
+  nf = build_MSA(prefix,
+                 sequence,
+                 tmpdir,
+                 db_dict,
+                 ncpu=ncpu,
+                 overwrite_dict=parse_overwrite_option(overwrite))
+
+  #### filter final MSA if too large ####
+  # this will not improve contact accuracy. it is solely for making the
+  # MSA not too large so that it is manageable for contact prediction
+  if nf >= target_nf[-1]:
+    nf = refilter_aln(prefix, tmpdir)
+
+  #### clean up ####
+  if os.path.isdir(tmpdir):
+    shutil.rmtree(tmpdir)
