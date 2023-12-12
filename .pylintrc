@@ -148,7 +148,7 @@ disable=abstract-method,
         xrange-builtin,
         zip-builtin-not-iterating,
         use-dict-literal,
-
+        C0103,  # invalid-name
 
 [REPORTS]
 

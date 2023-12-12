@@ -87,4 +87,3 @@ if __name__ == "__main__":
   except argparse.ArgumentError:
     print("Please input the correct parameters!")
     sys.exit(1)
-  
