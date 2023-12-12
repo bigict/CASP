@@ -1,7 +1,7 @@
 """
-SeqParse Module
+seq_parse Module
 
-This module provides functions for parsing sequences using FUpred.
+This module provides functions for parsing sequences using fupred.
 
 Author: TanQian
 """
@@ -35,7 +35,7 @@ def create_output_folder(output_folder):
   return folder_path
 
 
-def run_FUpred(input_file, output_folder):
+def run_fupred(input_file, output_folder):
   # 运行FUpred程序 ./run-FUpred.pl seq.fasta -o fu.txt
   try:
 
@@ -78,7 +78,7 @@ def main():
   print(f"Input file: {args.input}")  #f代表format，可以将变量的值直接放入字符串中
   print(f"Output folder: {output_folder}")
   # 运行FUpred程序
-  run_FUpred(args.input, output_folder)
+  run_fupred(args.input, output_folder)
 
 
 if __name__ == "__main__":

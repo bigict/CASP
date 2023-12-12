@@ -1,5 +1,5 @@
 """
-Splice Module
+msa_assemble Module
 
 without using multimer pair and merge, directly horizontal splice
 
@@ -176,7 +176,7 @@ def main():
 
   spliced_msa = combine_domain(db_msas)
   output_path = os.path.join(args.output_folder,
-                             f'{args.protein_name}-SpliceDone.a3m')
+                             f'{args.protein_name}-assembled.a3m')
   write_spliced_msa(output_path, spliced_msa)
 
 

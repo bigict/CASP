@@ -25,10 +25,10 @@ ${msa_tool_run} mkdir -p ${msa_tool_data_dir}/fasta
 #fasta上传远程
 ${msa_tool_sync} $* ${msa_tool_srv}:${msa_tool_data_dir}/fasta/
 
-#远程对input1_fasta input2_fasta ...run SeqParser.py
+#远程对input1_fasta input2_fasta ...run seq_parser.py
 for f in $@; do
   f=$(basename ${f})
-  ${msa_tool_run} bash -x ${msa_tool_home}/CASP/FUpred/SeqParse.sh -i ${msa_tool_data_dir}/fasta/${f} -o ${msa_tool_data_dir}/fasta
+  ${msa_tool_run} bash -x ${msa_tool_home}/CASP/seq_parse/seq_parse.sh -i ${msa_tool_data_dir}/fasta/${f} -o ${msa_tool_data_dir}/fasta
 done
 
 echo "parse_domain done"
@@ -67,10 +67,10 @@ echo "msa_tool_run done"
 for f in $@;do
   f=$(basename ${f})
   f=${f%.*}
-  ${msa_tool_run} bash -x ${msa_tool_home}/CASP/Splice.sh \
+  ${msa_tool_run} bash -x ${msa_tool_home}/CASP/msa_assemble.sh \
     -i "${msa_tool_data_dir}/msa" \
     -n "${f}" \
-    -o "${msa_tool_data_dir}/msa/${f}_splice"
+    -o "${msa_tool_data_dir}/msa/${f}_assembled"
 done
 
 
