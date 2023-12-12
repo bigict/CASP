@@ -139,6 +139,7 @@ disable=abstract-method,
         unicode-builtin,
         unnecessary-pass,
         unpacking-in-except,
+        unspecified-encoding,
         useless-else-on-loop,
         useless-object-inheritance,
         useless-suppression,
@@ -146,7 +147,7 @@ disable=abstract-method,
         wrong-import-order,
         xrange-builtin,
         zip-builtin-not-iterating,
-
+        use-dict-literal,
 
 [REPORTS]
 
@@ -159,10 +160,10 @@ output-format=text
 # command line instead of printing them on stdout. Reports (if any) will be
 # written in a file name "pylint_global.[txt|html]". This option is deprecated
 # and it will be removed in Pylint 2.0.
-files-output=no
+#files-output=no
 
 # Tells whether to display a full report or only the messages
-reports=no
+reports=yes
 
 # Python expression which should return a note less than 10 (10 is the highest
 # note). You have access to the variables errors warning, statement which
@@ -283,7 +284,7 @@ single-line-if-stmt=yes
 # separator` is used to allow tabulation in dicts, etc.: {1  : 1,\n222: 2}.
 # `trailing-comma` allows a space between comma and closing bracket: (a, ).
 # `empty-line` allows space-only lines.
-no-space-check=
+#no-space-check=
 
 # Maximum number of lines in a module
 max-module-lines=99999
@@ -436,6 +437,6 @@ valid-metaclass-classmethod-first-arg=mcs
 
 # Exceptions that will emit a warning when being caught. Defaults to
 # "Exception"
-overgeneral-exceptions=StandardError,
-                       Exception,
-                       BaseException
+overgeneral-exceptions=builtins.StandardError,
+                       builtins.Exception,
+                       builtins.BaseException

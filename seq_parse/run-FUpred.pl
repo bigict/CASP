@@ -4,11 +4,16 @@ use File::Basename;
 use Cwd 'abs_path';
 
 ######## set your variables here
-$msa_hhblitsdb="/nfs/amino-home/zhng/local_library/uniclust30_2017_04/uniclust30_2017_04";
-$msa_jackhmmerdb="/nfs/amino-home/zhng/local_library/uniref90_04042018/uniref90.fasta";
-$msa_hmmsearchdb="/nfs/amino-home/zhng/local_library/metaclust/metaclust.fasta";
-$python="/nfs/amino-home/zhng/local_library/anaconda3/bin/python";
-$python2="/nfs/amino-home/zhng/local_library/anaconda2/bin/python";
+#$msa_hhblitsdb="/nfs/amino-home/zhng/local_library/uniclust30_2017_04/uniclust30_2017_04";
+$msa_hhblitsdb="/public/dbu/data/af2_db/uniclust30/uniclust30_2018_08/uniclust30_2018_08";
+#$msa_jackhmmerdb="/nfs/amino-home/zhng/local_library/uniref90_04042018/uniref90.fasta";
+$msa_jackhmmerdb="/public/dbu/data/fupred_db/uniref90_db/uniref90.fasta";
+#$msa_hmmsearchdb="/nfs/amino-home/zhng/local_library/metaclust/metaclust.fasta";
+$msa_hmmsearchdb="/public/dbu/data/fupred_db/metaclust_db/metaclust.fasta";
+#$python="/nfs/amino-home/zhng/local_library/anaconda3/bin/python";
+$python="/public/dbu/local/anaconda3/envs/pytorch/bin/python";
+#$python2="/nfs/amino-home/zhng/local_library/anaconda2/bin/python";
+$python2="/public/dbu/local/anaconda3/envs/py27/bin/python";
 $cpunum=4;
 
 #################################
@@ -303,11 +308,13 @@ print "\n";
 print "\n";
 print "predicting domain and domain boundary...\n";
 ############### run FUpred
-print "domain boundary is:";
-system("$bindir/FUpred -i protein.ce -2c 0.85 -2d 0.66 -chip 15 -label3c 0 -o protein >$work_dir/fu.txt");
+print "domain boundary is in protein-FUpred.txt";
+#system("$bindir/FUpred -i protein.ce -2c 0.85 -2d 0.66 -chip 15 -label3c 0 -o protein >$work_dir/fu.txt");
+#改成输出文件的名字不叫fu.txt,而是叫protein-FUpred.txt
+system("$bindir/FUpred -i protein.ce -2c 0.85 -2d 0.66 -chip 15 -label3c 0 -o protein >$work_dir/protein-FUpred.txt");
 #`cp protein.2c $datadir/`;
 #`cp protein.2d $datadir/`;
-system("cat $work_dir/fu.txt");
+system("cat $work_dir/protein-FUpred.txt");
 print "\n";
 ################# endding procedure ######################
 $time=`date`;
