@@ -1,6 +1,8 @@
 #!/bin/bash
+# 
 # This script is used to parse -i <fasta file> to domain fasta files in -o <output_folder>
 # use FUpred by zhangyang's lab to predict domain boundary
+
 CWD=$(readlink -f $0)
 CWD=$(dirname ${CWD})
 cd ${CWD}

@@ -1,9 +1,10 @@
 #!/bin/bash
-#this script is used to assemble msa results from msa_tool
-#assembling strategy: 
-#1. use alphafold.data.parser's convert_stockholm_to_a3m
-#2. assemble msas vertically from 3 databases: uniref90, uniref50, bfd within domain
-#3. assemble msas horizontally with domains
+#
+# This script is used to assemble msa results from msa_tool
+# assembling strategy: 
+#     1. use alphafold.data.parser's convert_stockholm_to_a3m
+#     2. assemble msas vertically from 3 databases: uniref90, uniref50, bfd within domain
+#     3. assemble msas horizontally with domains
 
 help(){
   echo "Usage: $0 -i <input_folder> -n <protein_name> -o <output_folder>"
@@ -28,15 +29,16 @@ export PYTHONPATH="$PYTHONPATH:$PYTHON_MODULE_PATH"
 
 
 
-while getopts "i:n:o:" opt; do
+while getopts "i:n:o:h" opt; do
   case $opt in
     i) INPUT_FOLDER=$OPTARG ;;
     n) PROTEIN_NAME=$OPTARG ;;
     o) OUTPUT_FOLDER=$OPTARG ;;
-    \?) echo "Invalid option: -$OPTARG" >&2
-        exit 1 ;;
+    h) help 0 ;;
+    ?) help 1 ;;
   esac
 done
+shift $((OPTIND - 1))
 
 mkdir -p "$OUTPUT_FOLDER"
 
