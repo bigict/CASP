@@ -21,6 +21,14 @@ mkdir -p ${TMPDIR}
 
 export JACKHMMER_CPU_NUM=8
 export HHBLITS_CPU_NUM=32
+export HHBLITS_MIN_P=10 #default:20
+export HHBLITS_MAX_Z=700 #default:500
+export HHBLITS_MAX_ITER=3 #default:2
+export HHBLITS_EVALUE=0.002 #default:0.001
+export HHBLITS_REALIGN_MAX=200000 #default:100_000
+export HHBLITS_MAXFILT=200000 #default:100_000
+export HHBLITS_MIN_PREFILT_HITS=500 #default:1000
+
 
 CONDA_ENV="af2"
 WORKER_NUM=25
