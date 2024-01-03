@@ -12,7 +12,7 @@ help() {
           "  -t, --timestamp <timestamp>\n" \
           "  -o, --output_dir <output_dir>\n" \
           "  -p, --model_params <model_params>\n" \
-          "  --enable_domain_split\n" \
+          "  -s, --enable_domain_split\n" \
           "\n" \
           "workflow:\n" \
           "  [MSA preprocess]* -> MSA search -> [MSA postprocess]* -> Predict"
@@ -31,7 +31,7 @@ model_params=""
 
 enable_domain_split=0
 
-ARGS=$(getopt --options "t:o:p:h" --longoptions "timestamp:,output_dir:,model_params:,enable_domain_split,help" -- "$@") || exit
+ARGS=$(getopt --options "t:o:p:sh" --longoptions "timestamp:,output_dir:,model_params:,enable_domain_split,help" -- "$@") || exit
 eval "set -- ${ARGS}"
 
 while true; do
@@ -40,7 +40,7 @@ while true; do
     (-o | --output_dir) output_dir="$2" shift 2;;
     (-p | --model_params) model_params="-p \"$2\"" shift 2;;
     (-h | --help) help 0;;
-    (--enable_domain_split) enable_domain_split=1 shift 1;;
+    (-s | --enable_domain_split) enable_domain_split=1 shift 1;;
     (--) shift 1; break;;
     (*) help 1;
   esac
@@ -48,18 +48,27 @@ done
 
 msa_tool_data_dir="${msa_tool_home}/CASP/data/${timestamp}"
 ${msa_tool_run} mkdir -p ${msa_tool_data_dir}/fasta
-# fasta上传远程
-${msa_tool_sync} $* ${msa_tool_srv}:${msa_tool_data_dir}/fasta/
-
-msa_tool_file_list=""
-for f in $*; do
-  f=$(basename ${f})
-  msa_tool_file_list="${msa_tool_file_list} ${msa_tool_data_dir}/fasta/${f}"
-done
 
 #########################
 # MSA preprocess modules
 #########################
+
+# fasta上传远程
+${msa_tool_sync} $* ${msa_tool_srv}:${msa_tool_data_dir}/fasta/
+
+# 创建msa_tool_file_list文件，里面存放的是各个fasta文件,空格分隔
+msa_tool_file_list=""
+if [ ${enable_domain_split} -eq 0]; then
+  for f in $*; do
+  f=$(basename ${f})
+  msa_tool_file_list="${msa_tool_file_list} ${msa_tool_data_dir}/fasta/${f}"
+done
+fi
+
+
+af2_pred_data_dir="${output_dir}/${timestamp}"
+mkdir -p ${af2_pred_data_dir}
+
 if [ ${enable_domain_split} -ne 0 ]; then
   # 远程对input1_fasta input2_fasta ...run seq_parser.py
   for f in $@; do
@@ -68,27 +77,21 @@ if [ ${enable_domain_split} -ne 0 ]; then
   done
 
   echo "parse_domain done"
-  af2_pred_data_dir="${output_dir}/${timestamp}"
-  mkdir -p ${af2_pred_data_dir}
 
   # 将远程的${msa_tool_data_dir}/fasta分好的同步到本地
-  if [ ${enable_domain_split} -ne 0 ]; then
-    parse_data_dir="${af2_pred_data_dir}/parse"
-    mkdir -p ${parse_data_dir}
-    ${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/fasta ${parse_data_dir}/
+  parse_data_dir="${af2_pred_data_dir}/parse"
+  mkdir -p ${parse_data_dir}
+  ${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/fasta ${parse_data_dir}/
 
+  for f in "${parse_data_dir}"/fasta/* ; do
+    f=$(basename ${f})
+    #echo "f:${f}"
+    msa_tool_file_list="${msa_tool_file_list} ${msa_tool_data_dir}/fasta/${f}"
+  done
 
-    # 创建msa_tool_file_list文件，里面存放的是各个fasta文件,空格分隔
-    msa_tool_file_list=""
-    for f in "${parse_data_dir}"/fasta/* ; do
-      f=$(basename ${f})
-      #echo "f:${f}"
-      msa_tool_file_list="${msa_tool_file_list} ${msa_tool_data_dir}/fasta/${f}"
-    done
-
-    echo "msa_tool_file_list: ${msa_tool_file_list}"
-  fi
+  echo "msa_tool_file_list: ${msa_tool_file_list}"
 fi
+
 
 echo "start run msa_tool"
 

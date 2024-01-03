@@ -39,11 +39,12 @@ def run_fupred(input_file, output_folder):
   # 运行FUpred程序 ./run-FUpred.pl seq.fasta -o fu.txt
   try:
 
-    command = f"./run-FUpred.pl {input_file}"
+    command = f"./FUpred/run-FUpred.pl {input_file}"
     subprocess.run(command, shell=True, check=True)
     # 获取输入文件的基本名称（去除路径和扩展名）
     input_base_name = os.path.splitext(os.path.basename(input_file))[0]
-    with open(f"{input_base_name}-FUpred.txt","r",encoding="utf-8") as fu_file:
+    with open(f"{input_base_name}-FUpred.txt", "r",
+              encoding="utf-8") as fu_file:
       domain_info = fu_file.read()  #文件中内容全部存在domain_info中
     #按照结构域信息裁剪fasta文件
     domain_list = domain_info.split(";")  #将domain_info按照;分割，得到一个列表
@@ -53,7 +54,7 @@ def run_fupred(input_file, output_folder):
 
       output_file = os.path.join(output_folder,
                                  f"{input_base_name}Domain{i}.fasta")
-      with open(output_file, "w",encoding="utf-8") as output_fasta:
+      with open(output_file, "w", encoding="utf-8") as output_fasta:
         #分割好的domain也有1-456,969-1147;的格式,所以将domain1的两个region的序列拼接在一起
         output_fasta.write(
             f">{input_base_name}_Domain{i}:{domain_list[i-1].strip()}\n")
