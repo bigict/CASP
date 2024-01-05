@@ -107,7 +107,7 @@ echo "msa_tool_run done"
 # MSA postprocess modules
 #########################
 if [ ${enable_domain_split} -ne 0 ]; then
-  # check whether exists msa ,use msa_tool_file_list
+  # run msa_assemble
   for f in $@; do
     f=$(basename ${f})
     f=${f%.*}

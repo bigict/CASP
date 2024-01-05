@@ -1,0 +1,60 @@
+                       ACADEMIC LICENSE AGREEMENT
+                             for our program 
+                                 
+A nonexclusive, nontransferable right to use the FUpred executable,   source 
+code   and   related   documentation   ("Licensed   Material")    is   granted 
+by  Wei Zheng ("Author") to
+
+                
+                   ....................................
+
+in exchange of the following commitments:
+
+I hereby certify and accept that
+
+    1. I am an academic user at an academic research institution. In using the
+       Licensed  Material, I will respect the interests of the  Author.       
+       
+    2. All rights, title, and interest in and to the Licensed Material shall at
+       all times remain with the Author.
+       
+    3. I may,  for internal use only,  execute, enhance, modify, or expand the  
+       Licensed Material,  may merge it into other material,  and may use  the 
+       Licensed Material as modified. All such modifications shall include the 
+       Author  copyright  notice.
+       
+    4. There  is  no  warranty  or other guarantee  of fitness of the Licensed 
+       Material. It is provided solely "as is".  The Author disclaims all res-
+       ponsibility  and liability with respect to this software's usage or its
+       effect upon hardware or computer systems.  The Author has no obligation 
+       to provide support  or  maintenance services for the Licensed Material.
+       
+    5. I will not use the software in commercial activities. Incorporation of
+       the Software into a commercial Web site or other fee paying service is
+       not allowed.
+
+    6. The program shall not be made available to users outside the recipient's
+       laboratory. I will suggest to other  interested research groups to 
+       contact the authors directly.
+
+    7. I will not alter or suppress the run-time copyright message.
+    
+    8. I will acknowledge the program authors on any publication of scientific 
+       results based in part  on use  of the program  and cite  the article in 
+       which the program was described:
+
+FUpred: Detecting protein domains through deep-learning based contact map prediction. Bioinformatics, (2020)
+W Zheng, X.G. Zhou, Q.Q.G. Wuyun, R Pearce, Y Li and Y Zhang. 
+ 	   
+    9. I will report evidence of program bugs to the Author.
+
+Purpose of research:
+
+
+Full name and institutional address:
+
+
+
+Internet email address:
+
+Date:                           Signature:
