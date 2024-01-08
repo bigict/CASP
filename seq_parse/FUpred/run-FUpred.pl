@@ -308,20 +308,26 @@ print "\n";
 print "\n";
 print "predicting domain and domain boundary...\n";
 ############### run FUpred
-print "domain boundary is in protein-FUpred.txt";
-#system("$bindir/FUpred -i protein.ce -2c 0.85 -2d 0.66 -chip 15 -label3c 0 -o protein >$work_dir/fu.txt");
-#改成输出文件的名字不叫fu.txt,而是叫protein-FUpred.txt
-system("$bindir/FUpred -i protein.ce -2c 0.85 -2d 0.66 -chip 15 -label3c 0 -o protein >$work_dir/protein-FUpred.txt");
+my($protein_name,$protein_path,$protein_suffix)=fileparse($infile,qr/\.[^.]*/);
+print("protein_name: $protein_name\n");
+$output_dir="$scriptsdir/./output";
+`/bin/mkdir -p $output_dir`;
+print "domain boundary is in $output_dir/$protein_name-FUpred.txt";
+
+system("$bindir/FUpred -i protein.ce -2c 0.85 -2d 0.66 -chip 15 -label3c 0 -o protein >$work_dir/fu.txt");
+#system("$bindir/FUpred -i protein.ce -2c 0.85 -2d 0.66 -chip 15 -label3c 0 -o protein >$work_dir/protein-FUpred.txt");
 #`cp protein.2c $datadir/`;
 #`cp protein.2d $datadir/`;
 system("cat $work_dir/protein-FUpred.txt");
 print "\n";
+
+system("/bin/mv $work_dir/fu.txt $output_dir/$protein_name-FUpred.txt");
 ################# endding procedure ######################
 $time=`date`;
 printf "ending time: $time";
 `sync`;
 sleep(1);
-`rm -fr $work_dir`;
+#`rm -fr $work_dir`;
 exit();
 
 
