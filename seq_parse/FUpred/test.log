@@ -497,7 +497,8 @@ ep -v '^>' /tmp/dbu/FUD_t5w3m1ZoTl/deepMSA/hmmsearch.60.a3m|sed 's/[a-z]//g' > /
 jackhmmer MSA has 0.1 Nf. Output anyway.
 run psipred...
 cuda is ready? : False
-                                                 [10%]/public/dbu/CASP/seq_parse/FUpred/lib/ResPre/aaweights.py:189: NumbaWarning: 
+
+                                                 [10%]/public/dbu/CASP/seq_parse/FUpred/lib/ResPre/aaweights.py:189: NumbaWarning: 
 Compilation is falling back to object mode WITH looplifting enabled because Function "cal_large_matrix1" failed type inference due to: No implementation of function Function(<built-in function zeros>) found for signature:
  
  >>> zeros(list(int64)<iv=None>)
