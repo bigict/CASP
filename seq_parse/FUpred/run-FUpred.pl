@@ -310,7 +310,7 @@ print "predicting domain and domain boundary...\n";
 ############### run FUpred
 my($protein_name,$protein_path,$protein_suffix)=fileparse($infile,qr/\.[^.]*/);
 print("protein_name: $protein_name\n");
-$output_dir="$scriptsdir/./output";
+$output_dir="$scriptsdir/../FUpredOutput";
 print("output_dir: $output_dir\n");
 `/bin/mkdir -p $output_dir`;
 

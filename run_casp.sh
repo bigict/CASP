@@ -33,18 +33,22 @@ enable_domain_split=0
 
 ARGS=$(getopt --options "t:o:p:sh" --longoptions "timestamp:,output_dir:,model_params:,enable_domain_split,help" -- "$@") || exit
 eval "set -- ${ARGS}"
-
+echo "ARGS: $*"
 while true; do
+  echo "1:$1"
+  echo "2:$2"
   case "$1" in
-    (-t | --timestamp) timestamp="$2" shift 2;;
-    (-o | --output_dir) output_dir="$2" shift 2;;
-    (-p | --model_params) model_params="-p \"$2\"" shift 2;;
-    (-h | --help) help 0;;
-    (-s | --enable_domain_split) enable_domain_split=1 shift 1;;
+    (-t | --timestamp) timestamp="$2"; shift 2;;
+    (-o | --output_dir) output_dir="$2"; shift 2;;
+    (-p | --model_params) model_params="-p \"$2\""; shift 2;;
+    (-h | --help) help 0 ;;
+    (-s | --enable_domain_split) enable_domain_split=1; shift 1;;
     (--) shift 1; break;;
     (*) help 1;
   esac
 done
+echo "timestamp: ${timestamp}"
+echo "enable_domain_split: ${enable_domain_split}"
 
 msa_tool_data_dir="${msa_tool_home}/CASP/data/${timestamp}"
 ${msa_tool_run} mkdir -p ${msa_tool_data_dir}/fasta
@@ -58,7 +62,7 @@ ${msa_tool_sync} $* ${msa_tool_srv}:${msa_tool_data_dir}/fasta/
 
 # 创建msa_tool_file_list文件，里面存放的是各个fasta文件,空格分隔
 msa_tool_file_list=""
-if [ ${enable_domain_split} -eq 0]; then
+if [ ${enable_domain_split} -eq 0 ]; then
   for f in $*; do
   f=$(basename ${f})
   msa_tool_file_list="${msa_tool_file_list} ${msa_tool_data_dir}/fasta/${f}"

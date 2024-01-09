@@ -1,0 +1,159 @@
+Query         T1104 EntV136 , Enterococcus faecalis, 117 residues|
+Match_columns 117
+No_of_seqs    21 out of 29
+Neff          2.88259
+Searched_HMMs 80799
+Date          Mon Jan  8 16:32:44 2024
+Command       /public/dbu/.local/bin/hhsearch -i /public/dbu/CASP/tmp/tmpu0ugmo3d/query.a3m -o /public/dbu/CASP/tmp/tmpu0ugmo3d/output.hhr -maxseq 1000000 -d /public/dbu/data/af2_db/pdb70/pdb70 
+
+ No Hit                             Prob E-value P-value  Score    SS Cols Query HMM  Template HMM
+  1 2HL7_A Cytochrome C-type bioge  34.0      35 0.00043   24.4   0.0   34    9-42     47-80  (84)
+  2 2KW0_A CcmH protein; oxidoredu  28.9      48 0.00059   24.1   0.0   38    9-46     44-81  (90)
+  3 3JVN_A Acetyltransferase (E.C.  26.6      56 0.00069   21.1   0.0   32   69-100    93-124 (166)
+  4 3D3M_A Eukaryotic translation   24.0      67 0.00083   24.2   0.0   32    9-40      3-34  (168)
+  5 3OAO_A uncharacterized protein  23.7      69 0.00085   23.5   0.0   44   10-53     55-98  (147)
+  6 2DXQ_A Acetyltransferase; acet  23.6      69 0.00086   19.8   0.0   26   74-99     91-116 (150)
+  7 2DXQ_B Acetyltransferase; acet  23.6      69 0.00086   19.8   0.0   26   74-99     91-116 (150)
+  8 3F0A_A N-ACETYLTRANSFERASE; N-  22.6      75 0.00093   20.3   0.0   38    3-40     12-53  (162)
+  9 2K2U_B RNA polymerase II trans  20.3      89  0.0011   20.4   0.0   11   12-22     18-28  (35)
+ 10 5UN0_3 Proteasome Activator; A  19.6      95  0.0012   25.2   0.0   24   78-101    88-111 (251)
+
+No 1
+>2HL7_A Cytochrome C-type biogenesis protein CcmH; Three-helices bundle, OXIDOREDUCTASE; HET: PG4; 1.7A {Pseudomonas aeruginosa}
+Probab=34.03  E-value=35  Score=24.42  Aligned_cols=34  Identities=9%  Similarity=0.188  Sum_probs=28.0  Template_Neff=6.200
+
+Q T1104             9 AVAKGLEEMYANGVTEDNFKNYVKNNFAQQEISS   42 (117)
+Q Consensus         9 ~VA~~LEkMF~nGVse~N~~~Yv~~Nfs~~EI~~   42 (117)
+                      ..-..+.+|...|-|++-..+|+.+.|++.=+..
+T Consensus        47 ~~R~~I~~~l~~G~s~~eI~~~~v~~YG~~IL~~   80 (84)
+T 2HL7_A           47 DLRKQIYGQLQQGKSDGEIVDYMVARYGDFVRYK   80 (84)
+T ss_dssp             HHHHHHHHHHHHTCCHHHHHHHHHHHHTTTCEEC
+T ss_pred             HHHHHHHHHHHCCCCHHHHHHHHHHHHCccceeC
+Confidence            3445678899999999999999999999865544
+
+
+No 2
+>2KW0_A CcmH protein; oxidoreductase, cytochrome c maturation; NMR {Escherichia coli}
+Probab=28.90  E-value=48  Score=24.13  Aligned_cols=38  Identities=8%  Similarity=0.178  Sum_probs=31.3  Template_Neff=6.000
+
+Q T1104             9 AVAKGLEEMYANGVTEDNFKNYVKNNFAQQEISSVEEE   46 (117)
+Q Consensus         9 ~VA~~LEkMF~nGVse~N~~~Yv~~Nfs~~EI~~AE~E   46 (117)
+                      ..-+.+.+|...|-|.+-..+|+.+.|++.=+..+...
+T Consensus        44 ~~R~~I~~~l~~G~s~~eI~~~~v~~YGe~IL~~P~~~   81 (90)
+T 2KW0_A           44 DLRQKVYELMQEGKSKKEIVDYMVARYGNFVTYDPPLT   81 (90)
+T ss_dssp             HHHHHHHHHHHHTCCHHHHHHHHHHHHTTTCBCSCCSC
+T ss_pred             HHHHHHHHHHHCCCCHHHHHHHHHHHHCceeeeCCCCC
+Confidence            44567788999999999999999999998877665544
+
+
+No 3
+>3JVN_A Acetyltransferase (E.C.2.3.1.-); alpha-beta protein, Structural Genomics, PSI-2; 2.61A {Vibrio fischeri}
+Probab=26.56  E-value=56  Score=21.06  Aligned_cols=32  Identities=13%  Similarity=0.103  Sum_probs=20.5  Template_Neff=12.500
+
+Q T1104            69 SISAIVKAAQKKAWKELAVTVLRFAKANGLKT  100 (117)
+Q Consensus        69 nv~~iv~~~qkkaWke~a~~v~~~~~~~g~k~  100 (117)
+                      .+.+.-.|-.+..-.++...+++++++.|++.
+T Consensus        93 ~~~v~~~~r~~G~~~~l~~~~~~~~~~~g~~~  124 (166)
+T 3JVN_A           93 ELYIEKEYRREGVAEQLMMRIEQELKDYGVKE  124 (166)
+T ss_dssp             EEEECTTTCSSSHHHHHHHHHHHHHHTTTCSE
+T ss_pred             EEEeCHHHhCCCHHHHHHHHHHHHHHHCCCCE
+Confidence            33333344455566777888888888877664
+
+
+No 4
+>3D3M_A Eukaryotic translation initiation factor 4; HEAT repeat domain, Structural Genomics; 1.9A {Homo sapiens}
+Probab=23.97  E-value=67  Score=24.23  Aligned_cols=32  Identities=13%  Similarity=0.172  Sum_probs=26.7  Template_Neff=8.500
+
+Q T1104             9 AVAKGLEEMYANGVTEDNFKNYVKNNFAQQEI   40 (117)
+Q Consensus         9 ~VA~~LEkMF~nGVse~N~~~Yv~~Nfs~~EI   40 (117)
+                      .|-+.|++++..|-+.+.+.+|+++|.+++..
+T Consensus         3 ~~~~~L~~~l~~~~~~~~i~~wi~~~v~~~~~   34 (168)
+T 3D3M_A            3 KLEKELLKQIKLDPSPQTIYKWIKDNISPKLH   34 (168)
+T ss_pred             HHHHHHHHHHhhCCCHHHHHHHHHHhCCHHHc
+Confidence            35568899999999999999999999887654
+
+
+No 5
+>3OAO_A uncharacterized protein from DUF2059 family; STRUCTURAL GENOMICS, JOINT CENTER FOR; HET: PO4; 2.72A {Pseudomonas aeruginosa}
+Probab=23.74  E-value=69  Score=23.51  Aligned_cols=44  Identities=9%  Similarity=0.170  Sum_probs=29.8  Template_Neff=8.700
+
+Q T1104            10 VAKGLEEMYANGVTEDNFKNYVKNNFAQQEISSVEEELNVNISD   53 (117)
+Q Consensus        10 VA~~LEkMF~nGVse~N~~~Yv~~Nfs~~EI~~AE~ELn~Ning   53 (117)
+                      +.+.+++.|....-.+.+.....+.||.+||...-.++++-...
+T Consensus        55 ~~~~~~~~~~~~~~~~~~~~~y~~~fT~eEl~~li~FY~SP~Gq   98 (147)
+T 3OAO_A           55 ANAELDRAIGWDKIKPELIKLYTTNFTESELKDLNAFYQSPLGK   98 (147)
+T ss_dssp             HHHHHHHHHCHHHHHHHHHHHHHHHSCHHHHHHHHHHHHSHHHH
+T ss_pred             HHHHHHHHcCHHHHHHHHHHHHHhcCCHHHHHHHHHHHhCHHHH
+Confidence            33444444554555566667888999999999988887775444
+
+
+No 6
+>2DXQ_A Acetyltransferase; acetyltransferase, Structural Genomics, PSI-2, Protein; HET: PO4; 1.8A {Agrobacterium tumefaciens str.}
+Probab=23.58  E-value=69  Score=19.76  Aligned_cols=26  Identities=4%  Similarity=-0.121  Sum_probs=17.7  Template_Neff=13.000
+
+Q T1104            74 VKAAQKKAWKELAVTVLRFAKANGLK   99 (117)
+Q Consensus        74 v~~~qkkaWke~a~~v~~~~~~~g~k   99 (117)
+                      =.|-.+...+.+...+.++++..|++
+T Consensus        91 ~~~r~~g~~~~l~~~~~~~~~~~g~~  116 (150)
+T 2DXQ_A           91 EARRGRGYGRTVVRHAIETAFGANCY  116 (150)
+T ss_dssp             GGGTTSSHHHHHHHHHHHHHHHTTCS
+T ss_pred             HhhcCCCHHHHHHHHHHHHHHhCCCC
+Confidence            34445556677778888888877764
+
+
+No 7
+>2DXQ_B Acetyltransferase; acetyltransferase, Structural Genomics, PSI-2, Protein; HET: MSE, PO4; 1.8A {Agrobacterium tumefaciens str.}
+Probab=23.58  E-value=69  Score=19.76  Aligned_cols=26  Identities=4%  Similarity=-0.121  Sum_probs=17.7  Template_Neff=13.000
+
+Q T1104            74 VKAAQKKAWKELAVTVLRFAKANGLK   99 (117)
+Q Consensus        74 v~~~qkkaWke~a~~v~~~~~~~g~k   99 (117)
+                      =.|-.+...+.+...+.++++..|++
+T Consensus        91 ~~~r~~g~~~~l~~~~~~~~~~~g~~  116 (150)
+T 2DXQ_B           91 EARRGRGYGRTVVRHAIETAFGANCY  116 (150)
+T ss_dssp             GGGTTSSHHHHHHHHHHHHHHHTTCS
+T ss_pred             HhhcCCCHHHHHHHHHHHHHHhCCCC
+Confidence            34445556677778888888877764
+
+
+No 8
+>3F0A_A N-ACETYLTRANSFERASE; N-ACETYLTRANSFERASE, THERMOPLASMA ACIDOPHILUM, ACETYL-COA, STRUCTURAL; HET: ACO; 2.5A {Thermoplasma acidophilum}
+Probab=22.55  E-value=75  Score=20.30  Aligned_cols=38  Identities=8%  Similarity=0.335  Sum_probs=23.1  Template_Neff=12.600
+
+Q T1104             3 EDSEVEAVAKGLEEMYANG----VTEDNFKNYVKNNFAQQEI   40 (117)
+Q Consensus         3 ~~~evd~VA~~LEkMF~nG----Vse~N~~~Yv~~Nfs~~EI   40 (117)
+                      ...+.+.+.+.+...|...    .+++.+..+....++.+++
+T Consensus        12 ~~~d~~~i~~l~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   53 (162)
+T 3F0A_A           12 SIEDLETLIEVARESWKWTYAGIYSEEYIESWIREKYSKEKL   53 (162)
+T ss_dssp             CGGGHHHHHHHHHHHHHHHTTTTSCHHHHHHHHHHHSCHHHH
+T ss_pred             CHHhHHHHHHHHHHHHHHHhhccCCHHHHHHHHHHHcCHHHH
+Confidence            4567777887777777655    3455555555555555443
+
+
+No 9
+>2K2U_B RNA polymerase II transcription factor; VP16, TFIIH, Tfb1, Activation, Transcription; NMR {Saccharomyces cerevisiae}
+Probab=20.32  E-value=89  Score=20.39  Aligned_cols=11  Identities=18%  Similarity=0.537  Sum_probs=8.5  Template_Neff=1.800
+
+Q T1104            12 KGLEEMYANGV   22 (117)
+Q Consensus        12 ~~LEkMF~nGV   22 (117)
+                      =++|+||++-.
+T Consensus        18 fEFEQMFtdaL   28 (35)
+T 2K2U_B           18 FEFEQMFTDAL   28 (35)
+T ss_dssp             HHHHHTTSCCC
+T ss_pred             chHHHHHHHHh
+Confidence            37899998754
+
+
+No 10
+>5UN0_3 Proteasome Activator; Activator, Apoptosis; 3.0A {Mycobacterium tuberculosis}
+Probab=19.57  E-value=95  Score=25.17  Aligned_cols=24  Identities=13%  Similarity=0.272  Sum_probs=20.6  Template_Neff=8.300
+
+Q T1104            78 QKKAWKELAVTVLRFAKANGLKTN  101 (117)
+Q Consensus        78 qkkaWke~a~~v~~~~~~~g~k~n  101 (117)
+                      +...|.+++..+++|+++.|++.=
+T Consensus        88 p~~~~~~f~~~i~~~~~~~gv~~i  111 (251)
+T 5UN0_3           88 PNMRWRTFCDELLAVIDKLNVDTV  111 (251)
+T ss_dssp             CSBCHHHHHHHHHHHHHHTTCCEE
+T ss_pred             cchhHHHHHHHHHHHHHHhCCCEE
+Confidence            456899999999999999998753
+
+
