@@ -1,0 +1,446 @@
+Query         T1125_Domain13:630-664 
+Match_columns 35
+No_of_seqs    1 out of 1
+Neff          1
+Searched_HMMs 80799
+Date          Tue Jan  9 14:26:37 2024
+Command       /public/dbu/.local/bin/hhsearch -i /public/dbu/CASP/tmp/tmp7jmvy3ua/query.a3m -o /public/dbu/CASP/tmp/tmp7jmvy3ua/output.hhr -maxseq 1000000 -d /public/dbu/data/af2_db/pdb70/pdb70 
+
+ No Hit                             Prob E-value P-value  Score    SS Cols Query HMM  Template HMM
+  1 2NS0_A Hypothetical protein RH  60.8     6.6 8.2E-05   22.8   0.0   21    3-23     24-44  (85)
+  2 2LF0_A Uncharacterized protein  52.7      11 0.00014   24.4   0.0   12   22-33    101-113 (123)
+  3 6R7Q_J 40S ribosomal protein S  40.3      24 0.00029   22.2   0.0   22    2-23    148-169 (170)
+  4 2ZI0_B Protein 2b/RNA Complex;  33.3      36 0.00045   20.8   0.0   24    1-26     36-59  (75)
+  5 6QMQ_C Nuclear transcription f  32.6      38 0.00047   17.5   0.0   21    3-23     71-91  (96)
+  6 4CSR_B NUCLEAR TRANSCRIPTION F  31.9      40 0.00049   17.2   0.0   20    3-22     69-88  (94)
+  7 5XY3_J Ribosomal protein L8, p  31.5      41  0.0005   21.0   0.0   20    2-21    148-167 (169)
+  8 4XXB_A 60S ribosomal protein L  31.1      42 0.00052   21.3   0.0   20    2-21    155-174 (178)
+  9 1VQ8_D 50S RIBOSOMAL SUBUNIT;   28.6      49 0.00061   21.0   0.0   18    1-18    155-172 (177)
+ 10 4V9F_D PROTEIN/RNA Complex; 50  28.6      49 0.00061   21.0   0.0   18    1-18    155-172 (177)
+ 11 5T5H_L PROTEIN/RNA Complex; Tr  28.3      50 0.00062   19.0   0.0   14    2-15     51-64  (65)
+ 12 3CZ3_C Protein 2b/RNA Complex;  27.7      52 0.00064   19.9   0.0   24    1-26     37-60  (70)
+ 13 3CZ3_D Protein 2b/RNA Complex;  27.7      52 0.00064   19.9   0.0   24    1-26     37-60  (70)
+ 14 4V8P_ED Ribosome; RIBOSOME, EU  27.7      52 0.00064   20.6   0.0   15    2-16    152-166 (172)
+ 15 4V8P_GD Ribosome; RIBOSOME, EU  27.7      52 0.00064   20.6   0.0   15    2-16    152-166 (172)
+ 16 4V6U_BE PROTEIN/RNA Complex; a  27.2      54 0.00066   20.9   0.0   15    2-16    164-178 (186)
+ 17 6AZ3_D ribosomal protein uL2,   27.0      55 0.00068   20.5   0.0   15    2-16    147-161 (168)
+ 18 4RSW_A HopA1; alpha/beta fold,  24.8      63 0.00078   21.7   0.0   19    3-21      5-23  (255)
+ 19 4KYD_A Maltose-binding peripla  23.8      68 0.00084   19.5   0.0   18    2-19    353-370 (420)
+ 20 1X93_B hypothetical protein HP  23.6      69 0.00086   15.2   0.0   18    3-20      7-24  (55)
+ 21 5T2A_K eL18, uL16, uL5, eL13,   22.9      73 0.00091   20.6   0.0   22    2-23    154-175 (188)
+ 22 6GAW_AQ Mitochondrial ribosoma  22.5      75 0.00093   19.2   0.0   17    5-21    110-126 (130)
+ 23 6GAZ_AQ Translation initiation  22.5      75 0.00093   19.2   0.0   17    5-21    110-126 (130)
+ 24 6RM3_LJ0 uL2, uS2, uL15, eS26,  22.1      78 0.00096   19.9   0.0   16    2-17    150-165 (171)
+ 25 2EYU_B twitching motility prot  22.0      78 0.00097   18.7   0.0   22    1-22    229-250 (261)
+ 26 4RSX_A Type III effector HopA1  21.4      82   0.001   21.2   0.0   20    2-21      4-23  (257)
+ 27 5CNL_A IcmL-like; type IV secr  21.1      84   0.001   19.4   0.0   15    2-16      1-15  (155)
+ 28 2BYK_A CHRAC-16, CHRAC-14; CHR  20.2      90  0.0011   17.6   0.0   26    3-28     73-98  (140)
+ 29 2BYK_C CHRAC-16, CHRAC-14; CHR  20.2      90  0.0011   17.6   0.0   26    3-28     73-98  (140)
+ 30 2BYM_A CHRAC-16, CHRAC-14; CHR  20.2      90  0.0011   17.6   0.0   26    3-28     73-98  (140)
+
+No 1
+>2NS0_A Hypothetical protein RHA04536; Rhodococcus Structural genomics, PSI-2, Protein; 2.005A {Rhodococcus sp.} SCOP: a.4.5.76
+Probab=60.77  E-value=6.6  Score=22.85  Aligned_cols=21  Identities=24%  Similarity=0.283  Sum_probs=13.9  Template_Neff=5.100
+
+Q T1125_Domain13    3 RISPSEAAKWAAQAKELKFLP   23 (35)
+Q Consensus         3 rispseaakwaaqakelkflp   23 (35)
+                      .|.|||+|+|.+-..--.++|
+T Consensus        24 sicPSEVAR~l~~~~Wr~~m~   44 (85)
+T 2NS0_A           24 SICPSDVARAVAPDDWRPLME   44 (85)
+T ss_dssp             CBCHHHHHHHHCTTSCGGGHH
+T ss_pred             CCCHHHHHHHHCccchHHhhH
+Confidence            489999999986433333444
+
+
+No 2
+>2LF0_A Uncharacterized protein yibL; two-domain protein, Structural Genomics, PSI-Biology; NMR {Shigella flexneri}
+Probab=52.68  E-value=11  Score=24.45  Aligned_cols=12  Identities=75%  Similarity=1.160  Sum_probs=9.1  Template_Neff=2.800
+
+Q T1125_Domain13   22 LPMIA-GREMGLS   33 (35)
+Q Consensus        22 lpmia-gremgls   33 (35)
+                      -||-| ||||||.
+T Consensus       101 HPMTaLGrEmgL~  113 (123)
+T 2LF0_A          101 HPMTALGREMGLE  113 (123)
+T ss_dssp             CSSSHHHHHTTCS
+T ss_pred             ccchHHHHHhCCc
+Confidence            37764 9999985
+
+
+No 3
+>6R7Q_J 40S ribosomal protein S30, 40S; translational pausing, XBP1, UPR, RIBOSOME; HET: MG; 3.9A {Oryctolagus cuniculus}
+Probab=40.29  E-value=24  Score=22.21  Aligned_cols=22  Identities=41%  Similarity=0.573  Sum_probs=16.2  Template_Neff=6.100
+
+Q T1125_Domain13    2 GRISPSEAAKWAAQAKELKFLP   23 (35)
+Q Consensus         2 grispseaakwaaqakelkflp   23 (35)
+                      -|||+.||.+|..+-=..++.|
+T Consensus       148 ~~i~~~~~~~~~~~~~~~~~~~  169 (170)
+T 6R7Q_J          148 HRISKEEAMRWFQQKYDGIILP  169 (170)
+T ss_pred             ccCCHHHHHHHHHHHcCcEEcC
+Confidence            4799999999987755554444
+
+
+No 4
+>2ZI0_B Protein 2b/RNA Complex; RNAi suppression, Nucleus, Suppressor of; HET: MSE; 2.82A {Tomato aspermy virus}
+Probab=33.28  E-value=36  Score=20.81  Aligned_cols=24  Identities=29%  Similarity=0.325  Sum_probs=15.8  Template_Neff=2.100
+
+Q T1125_Domain13    1 RGRISPSEAAKWAAQAKELKFLPMIA   26 (35)
+Q Consensus         1 rgrispseaakwaaqakelkflpmia   26 (35)
+                      ||--||||-+.--.  .-+.|||..+
+T Consensus        36 RGHKSPSEr~Rs~l--~lfr~LP~~~   59 (75)
+T 2ZI0_B           36 RGHKSPSEQRRSEL--WHARQVELSA   59 (75)
+T ss_dssp             HTCCCHHHHHHHHH--HHHHHHHHC-
+T ss_pred             hCCCCHHHHHHHHH--HHHHhchhhh
+Confidence            57789999876433  4567777654
+
+
+No 5
+>6QMQ_C Nuclear transcription factor Y subunit; stapled peptide histone fold transcription; HET: MKD; 2.5A {Homo sapiens}
+Probab=32.62  E-value=38  Score=17.45  Aligned_cols=21  Identities=14%  Similarity=0.227  Sum_probs=13.1  Template_Neff=8.900
+
+Q T1125_Domain13    3 RISPSEAAKWAAQAKELKFLP   23 (35)
+Q Consensus         3 rispseaakwaaqakelkflp   23 (35)
+                      .|+|++..+...+..++.||.
+T Consensus        71 ~i~~~di~~ai~~~~~~~fL~   91 (96)
+T 6QMQ_C           71 TLQRNDIAMAITKFDQFDFLI   91 (96)
+T ss_pred             ccCHHHHHHHHHcChhHHhhh
+Confidence            456666666666666666653
+
+
+No 6
+>4CSR_B NUCLEAR TRANSCRIPTION FACTOR Y SUBUNIT; TRANSCRIPTION, NF-Y, DNA-BINDING, CCAAT-BOX; HET: GOL; 1.5A {HOMO SAPIENS}
+Probab=31.87  E-value=40  Score=17.15  Aligned_cols=20  Identities=15%  Similarity=0.281  Sum_probs=10.9  Template_Neff=9.100
+
+Q T1125_Domain13    3 RISPSEAAKWAAQAKELKFL   22 (35)
+Q Consensus         3 rispseaakwaaqakelkfl   22 (35)
+                      .|+|++..+-..+..++.||
+T Consensus        69 ~i~~~di~~ai~~~~~~~fL   88 (94)
+T 4CSR_B           69 TLQRNDIAMAITKFDQFDFL   88 (94)
+T ss_dssp             EECHHHHHHHHHTCGGGGGG
+T ss_pred             ccCHHHHHHHHHhcccchhh
+Confidence            45555555555555555554
+
+
+No 7
+>5XY3_J Ribosomal protein L8, putative, Uncharacterized; Trichomonas vaginalis ribosome, rRNA, rprotein; 3.2A {Trichomonas vaginalis}
+Probab=31.48  E-value=41  Score=20.97  Aligned_cols=20  Identities=25%  Similarity=0.378  Sum_probs=15.0  Template_Neff=6.400
+
+Q T1125_Domain13    2 GRISPSEAAKWAAQAKELKF   21 (35)
+Q Consensus         2 grispseaakwaaqakelkf   21 (35)
+                      -||++.||.+|..+--+..+
+T Consensus       148 h~~~~~~~~~~~~~~~~~~~  167 (169)
+T 5XY3_J          148 QRVKREEAKEWFVQKFNGTL  167 (169)
+T ss_pred             cCCCHHHHHHHHHHHcCcEE
+Confidence            47889999999987554443
+
+
+No 8
+>4XXB_A 60S ribosomal protein L11,E3 ubiquitin-protein; MDM2, RPL11, ModPipe Model of; 2.4A {Homo sapiens}
+Probab=31.05  E-value=42  Score=21.29  Aligned_cols=20  Identities=35%  Similarity=0.438  Sum_probs=14.9  Template_Neff=6.100
+
+Q T1125_Domain13    2 GRISPSEAAKWAAQAKELKF   21 (35)
+Q Consensus         2 grispseaakwaaqakelkf   21 (35)
+                      -||++.|+.+|..+.=...+
+T Consensus       155 h~i~~~e~~~~~~~~~~~~~  174 (178)
+T 4XXB_A          155 HRISKEEAMRWFQQKYDGII  174 (178)
+T ss_dssp             CCCCHHHHHHHHHHHSCCEE
+T ss_pred             ccCCHHHHHHHHHHHcCcEE
+Confidence            47999999999877544433
+
+
+No 9
+>1VQ8_D 50S RIBOSOMAL SUBUNIT; ribosome 50S, PROTEIN-PROTEIN COMPLEX, RNA-RNA; HET: OMG, OMU, SR, UR3, CL, PSU, 1MA, NA, SPS, MG; 2.2A {Haloarcula marismortui} SCOP: d.77.1.1
+Probab=28.55  E-value=49  Score=20.97  Aligned_cols=18  Identities=17%  Similarity=0.508  Sum_probs=14.0  Template_Neff=6.100
+
+Q T1125_Domain13    1 RGRISPSEAAKWAAQAKE   18 (35)
+Q Consensus         1 rgrispseaakwaaqake   18 (35)
+                      +-|||+.|+.+|..+.=+
+T Consensus       155 ~~~v~~~e~~~~~~~~~~  172 (177)
+T 1VQ8_D          155 KHRLNPADAVAFIESTYD  172 (177)
+T ss_pred             CccCCHHHHHHHHHHHcC
+Confidence            358999999999876543
+
+
+No 10
+>4V9F_D PROTEIN/RNA Complex; 50S ribosomal subunit, ribonucleoprotein, ribosomal; HET: OMU, UR3, 1MA, NA, MG, CL, OMG, PSU, ACY; 2.404A {Haloarcula marismortui}
+Probab=28.55  E-value=49  Score=20.97  Aligned_cols=18  Identities=17%  Similarity=0.508  Sum_probs=14.0  Template_Neff=6.100
+
+Q T1125_Domain13    1 RGRISPSEAAKWAAQAKE   18 (35)
+Q Consensus         1 rgrispseaakwaaqake   18 (35)
+                      +-|||+.|+.+|..+.=+
+T Consensus       155 ~~~v~~~e~~~~~~~~~~  172 (177)
+T 4V9F_D          155 KHRLNPADAVAFIESTYD  172 (177)
+T ss_pred             CccCCHHHHHHHHHHHcC
+Confidence            358999999999876543
+
+
+No 11
+>5T5H_L PROTEIN/RNA Complex; Trypanosoma cruzi, ribosomal subunit, assmebly; HET: OMU, MG, A2M, 5MC, OMG, OMC, 7MG; 2.54A {Trypanosoma cruzi}
+Probab=28.28  E-value=50  Score=19.05  Aligned_cols=14  Identities=29%  Similarity=0.598  Sum_probs=10.7  Template_Neff=4.000
+
+Q T1125_Domain13    2 GRISPSEAAKWAAQ   15 (35)
+Q Consensus         2 grispseaakwaaq   15 (35)
+                      -+|++.|+.+|..+
+T Consensus        51 HrItkeEai~f~k~   64 (65)
+T 5T5H_L           51 HRVRKEEAMHWFER   64 (65)
+T ss_pred             cccCHHHHHHHHhh
+Confidence            36888999988754
+
+
+No 12
+>3CZ3_C Protein 2b/RNA Complex; protein-dsRNA complex, Coiled coil, Nucleus; 3.23A {Tomato aspermy virus}
+Probab=27.75  E-value=52  Score=19.92  Aligned_cols=24  Identities=29%  Similarity=0.325  Sum_probs=15.6  Template_Neff=2.200
+
+Q T1125_Domain13    1 RGRISPSEAAKWAAQAKELKFLPMIA   26 (35)
+Q Consensus         1 rgrispseaakwaaqakelkflpmia   26 (35)
+                      ||--||||-+.--.  .-+.|||..|
+T Consensus        37 RGHKSPSEr~Rs~l--~lfr~L~~~~   60 (70)
+T 3CZ3_C           37 RGHKSPSEQRRSEL--WHARQVELSA   60 (70)
+T ss_dssp             HTCCCHHHHHHHHH--HHHHHHHHCC
+T ss_pred             hCCCCHHHHHHHHH--HHHHhhhhhh
+Confidence            57789999876432  4456666654
+
+
+No 13
+>3CZ3_D Protein 2b/RNA Complex; protein-dsRNA complex, Coiled coil, Nucleus; 3.23A {Tomato aspermy virus}
+Probab=27.75  E-value=52  Score=19.92  Aligned_cols=24  Identities=29%  Similarity=0.325  Sum_probs=15.6  Template_Neff=2.200
+
+Q T1125_Domain13    1 RGRISPSEAAKWAAQAKELKFLPMIA   26 (35)
+Q Consensus         1 rgrispseaakwaaqakelkflpmia   26 (35)
+                      ||--||||-+.--.  .-+.|||..|
+T Consensus        37 RGHKSPSEr~Rs~l--~lfr~L~~~~   60 (70)
+T 3CZ3_D           37 RGHKSPSEQRRSEL--WHARQVELSA   60 (70)
+T ss_dssp             HTCCCHHHHHHHHH--HHHHHHHHCC
+T ss_pred             hCCCCHHHHHHHHH--HHHHhhhhhh
+Confidence            57789999876432  4456666654
+
+
+No 14
+>4V8P_ED Ribosome; RIBOSOME, EUKARYOTIC INITIATION FACTOR 6; HET: MG, ZN; 3.52A {TETRAHYMENA THERMOPHILA}
+Probab=27.74  E-value=52  Score=20.64  Aligned_cols=15  Identities=27%  Similarity=0.417  Sum_probs=12.4  Template_Neff=6.300
+
+Q T1125_Domain13    2 GRISPSEAAKWAAQA   16 (35)
+Q Consensus         2 grispseaakwaaqa   16 (35)
+                      -|||+.|+.+|..+.
+T Consensus       152 ~~~~~~e~~~~~~~~  166 (172)
+T 4V8P_ED         152 QMISKEECINWFKTE  166 (172)
+T ss_pred             cCCCHHHHHHHHHHH
+Confidence            478999999998764
+
+
+No 15
+>4V8P_GD Ribosome; RIBOSOME, EUKARYOTIC INITIATION FACTOR 6; HET: ZN, MG; 3.52A {TETRAHYMENA THERMOPHILA}
+Probab=27.74  E-value=52  Score=20.64  Aligned_cols=15  Identities=27%  Similarity=0.417  Sum_probs=12.4  Template_Neff=6.300
+
+Q T1125_Domain13    2 GRISPSEAAKWAAQA   16 (35)
+Q Consensus         2 grispseaakwaaqa   16 (35)
+                      -|||+.|+.+|..+.
+T Consensus       152 ~~~~~~e~~~~~~~~  166 (172)
+T 4V8P_GD         152 QMISKEECINWFKTE  166 (172)
+T ss_pred             cCCCHHHHHHHHHHH
+Confidence            478999999998764
+
+
+No 16
+>4V6U_BE PROTEIN/RNA Complex; archaea, archaeal, ribosomal, 70S, kink-turn; 6.6A {Pyrococcus furiosus}
+Probab=27.20  E-value=54  Score=20.95  Aligned_cols=15  Identities=7%  Similarity=0.253  Sum_probs=12.4  Template_Neff=6.100
+
+Q T1125_Domain13    2 GRISPSEAAKWAAQA   16 (35)
+Q Consensus         2 grispseaakwaaqa   16 (35)
+                      -+||+.|+.+|..+-
+T Consensus       164 h~v~~~e~~~~~~~~  178 (186)
+T 4V6U_BE         164 HKLTKEEGMVYMMEE  178 (186)
+T ss_pred             ccCCHHHHHHHHHHH
+Confidence            478999999998764
+
+
+No 17
+>6AZ3_D ribosomal protein uL2, ribosomal protein; Leishmania, ribosome, aminoglycoside, paromomycin, RIBOSOME-ANTIBIOTIC; HET: OMU, PAR, OMC, MG, A2M, OMG, C; 2.5A {Leishmania donovani}
+Probab=26.98  E-value=55  Score=20.47  Aligned_cols=15  Identities=27%  Similarity=0.565  Sum_probs=12.4  Template_Neff=6.300
+
+Q T1125_Domain13    2 GRISPSEAAKWAAQA   16 (35)
+Q Consensus         2 grispseaakwaaqa   16 (35)
+                      -+||+.|+.+|..+.
+T Consensus       147 ~~~~~~e~~~~~~~~  161 (168)
+T 6AZ3_D          147 HHVTKEEAMKWFEKV  161 (168)
+T ss_dssp             SSCCHHHHHHHCCCC
+T ss_pred             CCCCHHHHHHHHHHH
+Confidence            478999999998764
+
+
+No 18
+>4RSW_A HopA1; alpha/beta fold, effector, SIGNALING PROTEIN; HET: MSE; 1.9A {Pseudomonas syringae pv. syringae}
+Probab=24.84  E-value=63  Score=21.65  Aligned_cols=19  Identities=21%  Similarity=0.356  Sum_probs=13.8  Template_Neff=6.000
+
+Q T1125_Domain13    3 RISPSEAAKWAAQAKELKF   21 (35)
+Q Consensus         3 rispseaakwaaqakelkf   21 (35)
+                      +-+-+..-+||.||+.++-
+T Consensus         5 ~~~~~sl~~wa~~a~~~~~   23 (255)
+T 4RSW_A            5 KQTFASFQQWAEKAEALGR   23 (255)
+T ss_dssp             HHHHHHHHHHHHHHHHHTC
+T ss_pred             HHHHHHHHHHHHHHHHcCC
+Confidence            4455566789999998764
+
+
+No 19
+>4KYD_A Maltose-binding periplasmic protein, Phosphoprotein; 3 helix bundle, binding protein; HET: MPO, MAL; 2.21A {Escherichia coli, Human parainfluenza virus 4b}
+Probab=23.82  E-value=68  Score=19.48  Aligned_cols=18  Identities=22%  Similarity=0.134  Sum_probs=13.1  Template_Neff=10.600
+
+Q T1125_Domain13    2 GRISPSEAAKWAAQAKEL   19 (35)
+Q Consensus         2 grispseaakwaaqakel   19 (35)
+                      |+.|+.||.+.++..-++
+T Consensus       353 g~~~~~~a~~~~~~~~~~  370 (420)
+T 4KYD_A          353 GRQTVDAALAAAQTNAAA  370 (420)
+T ss_pred             CCCCHHHHHHHHHHHHHh
+Confidence            677888888777666555
+
+
+No 20
+>1X93_B hypothetical protein HP0222; HP0222, JHP0208, helicobacter, pylori, transcription; NMR {Helicobacter pylori} SCOP: a.43.1.3
+Probab=23.59  E-value=69  Score=15.25  Aligned_cols=18  Identities=22%  Similarity=0.123  Sum_probs=11.9  Template_Neff=8.300
+
+Q T1125_Domain13    3 RISPSEAAKWAAQAKELK   20 (35)
+Q Consensus         3 rispseaakwaaqakelk   20 (35)
+                      |+++++..+..+.|++..
+T Consensus         7 rl~~~~~~~l~~~A~~~g   24 (55)
+T 1X93_B            7 YFSDEQYQKLEKMANEEE   24 (55)
+T ss_dssp             EECHHHHHHHHHHHHHTT
+T ss_pred             EcCHHHHHHHHHHHHHcC
+Confidence            567777777776666543
+
+
+No 21
+>5T2A_K eL18, uL16, uL5, eL13, uL13; ribosome, Leishmania donovani; 2.9A {Leishmania donovani}
+Probab=22.86  E-value=73  Score=20.59  Aligned_cols=22  Identities=18%  Similarity=0.380  Sum_probs=16.1  Template_Neff=5.800
+
+Q T1125_Domain13    2 GRISPSEAAKWAAQAKELKFLP   23 (35)
+Q Consensus         2 grispseaakwaaqakelkflp   23 (35)
+                      -||++.||.+|..+.=+--+||
+T Consensus       154 h~i~~~e~~~~~~~~~~~~~~~  175 (188)
+T 5T2A_K          154 HHVTKEEAMKWFEKVHDGIIFQ  175 (188)
+T ss_pred             CCCCHHHHHHHHHHHhCCeeCC
+Confidence            4789999999998755544444
+
+
+No 22
+>6GAW_AQ Mitochondrial ribosomal protein L12, Mitochondrial; translation initiation, initiation factor IF2; HET: GTP, MG, SPM, GSP, FME, 5GP; 3.2A {Sus scrofa}
+Probab=22.48  E-value=75  Score=19.23  Aligned_cols=17  Identities=12%  Similarity=0.290  Sum_probs=13.2  Template_Neff=6.100
+
+Q T1125_Domain13    5 SPSEAAKWAAQAKELKF   21 (35)
+Q Consensus         5 spseaakwaaqakelkf   21 (35)
+                      -+.|-++|++|+++|..
+T Consensus       110 ~~~~~~~~~~~~~~~~~  126 (130)
+T 6GAW_AQ         110 ISPESTRLTKNLEALQL  126 (130)
+T ss_pred             CCcHHHHHHHHHHHhcc
+Confidence            45677889999998864
+
+
+No 23
+>6GAZ_AQ Translation initiation factor IF-2, mitochondrial; translation initiation, initiation factor IF2; HET: SPM, MG, GTP, GSP, FME; 3.1A {Sus scrofa}
+Probab=22.48  E-value=75  Score=19.23  Aligned_cols=17  Identities=12%  Similarity=0.290  Sum_probs=13.2  Template_Neff=6.100
+
+Q T1125_Domain13    5 SPSEAAKWAAQAKELKF   21 (35)
+Q Consensus         5 spseaakwaaqakelkf   21 (35)
+                      -+.|-++|++|+++|..
+T Consensus       110 ~~~~~~~~~~~~~~~~~  126 (130)
+T 6GAZ_AQ         110 ISPESTRLTKNLEALQL  126 (130)
+T ss_pred             CCcHHHHHHHHHHHhcc
+Confidence            45677889999998864
+
+
+No 24
+>6RM3_LJ0 uL2, uS2, uL15, eS26, uL3; Microsporidia, Ribosome, Intracellular Parasite; HET: MG; 3.4A {Vairimorpha necatrix}
+Probab=22.06  E-value=78  Score=19.86  Aligned_cols=16  Identities=31%  Similarity=0.538  Sum_probs=12.8  Template_Neff=6.300
+
+Q T1125_Domain13    2 GRISPSEAAKWAAQAK   17 (35)
+Q Consensus         2 grispseaakwaaqak   17 (35)
+                      -||+..||.+|..+.=
+T Consensus       150 h~~~~~~~~~~~~~~~  165 (171)
+T 6RM3_LJ0        150 QKISKEDAQKWFVDTF  165 (171)
+T ss_pred             CCCCHHHHHHHHHHHh
+Confidence            4789999999987643
+
+
+No 25
+>2EYU_B twitching motility protein PilT; Pilus Retraction Motor  C-terminal; HET: MSE; 1.87A {Aquifex aeolicus}
+Probab=21.96  E-value=78  Score=18.66  Aligned_cols=22  Identities=27%  Similarity=0.388  Sum_probs=15.3  Template_Neff=9.600
+
+Q T1125_Domain13    1 RGRISPSEAAKWAAQAKELKFL   22 (35)
+Q Consensus         1 rgrispseaakwaaqakelkfl   22 (35)
+                      +|.||+.|+.+.......++-+
+T Consensus       229 ~g~~~~~~~~~~~~~~~~~~~~  250 (261)
+T 2EYU_B          229 QGLITLEDAMEASPDPKELERM  250 (261)
+T ss_dssp             TTCSCHHHHHHHCSCHHHHHHH
+T ss_pred             CCCCCHHHHHHhCCCHHHHHHH
+Confidence            3678888888777766665543
+
+
+No 26
+>4RSX_A Type III effector HopA1; alpha/beta fold, effector, SIGNALING PROTEIN; 2.303A {Pseudomonas syringae pv. tomato str. DC3000}
+Probab=21.38  E-value=82  Score=21.23  Aligned_cols=20  Identities=20%  Similarity=0.368  Sum_probs=14.2  Template_Neff=5.900
+
+Q T1125_Domain13    2 GRISPSEAAKWAAQAKELKF   21 (35)
+Q Consensus         2 grispseaakwaaqakelkf   21 (35)
+                      |+-+-+...+||.||+.++-
+T Consensus         4 ~~~~~~~~~~wa~~a~~~~~   23 (257)
+T 4RSX_A            4 AQSTFNSFHEWAKQAEAMRN   23 (257)
+T ss_dssp             HHHHHHHHHHHHHHHHTSSS
+T ss_pred             hhHHHHHHHHHHHHHHHcCC
+Confidence            34455667789999988764
+
+
+No 27
+>5CNL_A IcmL-like; type IV secretion system, protein; HET: MSE, SO4, PEG, PGE; 2.65A {Legionella pneumophila subsp. pneumophila}
+Probab=21.13  E-value=84  Score=19.37  Aligned_cols=15  Identities=33%  Similarity=0.563  Sum_probs=11.0  Template_Neff=6.400
+
+Q T1125_Domain13    2 GRISPSEAAKWAAQA   16 (35)
+Q Consensus         2 grispseaakwaaqa   16 (35)
+                      |.++.++...|+.++
+T Consensus         1 ~~~~~~~V~~Wa~~a   15 (155)
+T 5CNL_A            1 GGPDRAQLAVWANEA   15 (155)
+T ss_dssp             CCSCHHHHHHHHHHH
+T ss_pred             CCCCHHHHHHHHHHH
+Confidence            457778888887765
+
+
+No 28
+>2BYK_A CHRAC-16, CHRAC-14; CHRAC-14, NUCLEOSOME SLIDING, HISTONE FOLD; HET: SO4; 2.4A {DROSOPHILA MELANOGASTER} SCOP: a.22.1.3
+Probab=20.24  E-value=90  Score=17.60  Aligned_cols=26  Identities=19%  Similarity=0.266  Sum_probs=15.1  Template_Neff=8.300
+
+Q T1125_Domain13    3 RISPSEAAKWAAQAKELKFLPMIAGR   28 (35)
+Q Consensus         3 rispseaakwaaqakelkflpmiagr   28 (35)
+                      .|+++....-.....++.||.-+.-.
+T Consensus        73 tI~~~dl~~ai~~~~~l~FL~~~~p~   98 (140)
+T 2BYK_A           73 ALKYEHLSQVVNKNKNLEFLLQIVPQ   98 (140)
+T ss_dssp             EECHHHHHHHHHTCSTTGGGTTTSCS
+T ss_pred             ccCHHHHHHHHHhCcchhhHHhhcCC
+Confidence            35666666555555577777644433
+
+
+No 29
+>2BYK_C CHRAC-16, CHRAC-14; CHRAC-14, NUCLEOSOME SLIDING, HISTONE FOLD; HET: SO4; 2.4A {DROSOPHILA MELANOGASTER} SCOP: a.22.1.3
+Probab=20.24  E-value=90  Score=17.60  Aligned_cols=26  Identities=19%  Similarity=0.266  Sum_probs=15.1  Template_Neff=8.300
+
+Q T1125_Domain13    3 RISPSEAAKWAAQAKELKFLPMIAGR   28 (35)
+Q Consensus         3 rispseaakwaaqakelkflpmiagr   28 (35)
+                      .|+++....-.....++.||.-+.-.
+T Consensus        73 tI~~~dl~~ai~~~~~l~FL~~~~p~   98 (140)
+T 2BYK_C           73 ALKYEHLSQVVNKNKNLEFLLQIVPQ   98 (140)
+T ss_dssp             EECHHHHHHHHHHCGGGGGGTTTSCC
+T ss_pred             ccCHHHHHHHHHhCcchhhHHhhcCC
+Confidence            35666666555555577777644433
+
+
+No 30
+>2BYM_A CHRAC-16, CHRAC-14; CHRAC-14, NUCLEOSOME SLIDING, HISTONE FOLD; 2.8A {DROSOPHILA MELANOGASTER} SCOP: a.22.1.3
+Probab=20.24  E-value=90  Score=17.60  Aligned_cols=26  Identities=19%  Similarity=0.266  Sum_probs=15.1  Template_Neff=8.300
+
+Q T1125_Domain13    3 RISPSEAAKWAAQAKELKFLPMIAGR   28 (35)
+Q Consensus         3 rispseaakwaaqakelkflpmiagr   28 (35)
+                      .|+++....-.....++.||.-+.-.
+T Consensus        73 tI~~~dl~~ai~~~~~l~FL~~~~p~   98 (140)
+T 2BYM_A           73 ALKYEHLSQVVNKNKNLEFLLQIVPQ   98 (140)
+T ss_dssp             EECHHHHHHHTTTCGGGGGGTTTSCC
+T ss_pred             ccCHHHHHHHHHhCcchhhHHhhcCC
+Confidence            35666666555555577777644433
+
+

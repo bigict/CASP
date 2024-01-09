@@ -1,0 +1,381 @@
+Query         T1125_Domain14:665-700 
+Match_columns 36
+No_of_seqs    1 out of 1
+Neff          1
+Searched_HMMs 80799
+Date          Tue Jan  9 14:26:54 2024
+Command       /public/dbu/.local/bin/hhsearch -i /public/dbu/CASP/tmp/tmp02lb93x5/query.a3m -o /public/dbu/CASP/tmp/tmp02lb93x5/output.hhr -maxseq 1000000 -d /public/dbu/data/af2_db/pdb70/pdb70 
+
+ No Hit                             Prob E-value P-value  Score    SS Cols Query HMM  Template HMM
+  1 2QZ7_A Uncharacterized protein  51.1      12 0.00015   22.1   0.0   15    3-17    179-193 (194)
+  2 2QZ7_B Uncharacterized protein  51.1      12 0.00015   22.1   0.0   15    3-17    179-193 (194)
+  3 2QNG_A Uncharacterized protein  49.6      14 0.00017   22.6   0.0   13    3-15    186-198 (199)
+  4 2KXT_A Tellurite resistance pr  35.1      32  0.0004   20.4   0.0   13    3-15    180-192 (200)
+  5 3IBZ_A Putative tellurium resi  34.4      34 0.00042   20.1   0.0   12    3-14    180-191 (191)
+  6 4LCT_B COP9 signalosome comple  32.6      38 0.00047   20.6   0.0   14    3-16    324-337 (348)
+  7 2LBF_A 60S acidic ribosomal pr  31.5      40  0.0005   17.6   0.0   24    2-25     27-50  (69)
+  8 2WIU_B PROTEIN HIPA (E.C.2.7.1  31.1      42 0.00051   15.7   0.0   14    3-16     57-70  (88)
+  9 2XIU_A CYLR2; DNA BINDING PROT  30.8      42 0.00052   13.6   0.0    9    5-13     48-56  (66)
+ 10 4A1G_E MITOTIC CHECKPOINT SERI  29.4      46 0.00057   19.1   0.0   11   18-28      3-13  (53)
+ 11 4A1G_H MITOTIC CHECKPOINT SERI  29.4      46 0.00057   19.1   0.0   11   18-28      3-13  (53)
+ 12 2QLC_E DNA repair protein radC  28.6      49 0.00061   18.3   0.0   23    2-24     94-123 (126)
+ 13 2QLC_F DNA repair protein radC  28.6      49 0.00061   18.3   0.0   23    2-24     94-123 (126)
+ 14 2GPF_A conserved hypothetical   28.4      49 0.00061   18.8   0.0   11   13-23     16-26  (72)
+ 15 2L1A_A Formin-C; fruiting body  26.8      55 0.00068   20.5   0.0   29    2-30     48-78  (107)
+ 16 1XWR_A Regulatory protein CII;  25.4      61 0.00075   16.8   0.0   21    3-23     51-71  (97)
+ 17 5JA1_B Enterobactin synthase c  25.3      61 0.00076   18.6   0.0   12   13-24     20-31  (74)
+ 18 2XT4_B MCBG-LIKE PROTEIN; CELL  22.6      75 0.00092   17.3   0.0   15    2-16    180-194 (194)
+ 19 2K9Q_B uncharacterized protein  21.4      82   0.001   14.8   0.0   13    3-15     47-59  (77)
+ 20 2LPD_A Uncharacterized protein  21.0      85   0.001   19.3   0.0   12   13-24     31-42  (95)
+ 21 3B7H_A Prophage Lp1 protein 11  20.7      86  0.0011   14.1   0.0   14    3-16     53-66  (78)
+ 22 2JVO_A Nucleolar protein 3; Pr  20.7      87  0.0011   14.5   0.0    9   21-29      1-9   (108)
+ 23 4YG7_C HipB, HipA/DNA Complex;  20.3      90  0.0011   13.6   0.0   12    3-14     54-65  (71)
+ 24 4Z59_A E.coli transcription re  20.3      90  0.0011   13.6   0.0   12    3-14     54-65  (71)
+ 25 4Z5H_A E.coli transcription re  20.2      90  0.0011   13.4   0.0   11    4-14     56-66  (72)
+
+No 1
+>2QZ7_A Uncharacterized protein SCO6318; APC7352, homologue of telluride resistance; 2.1A {Streptomyces coelicolor A3(2)}
+Probab=51.09  E-value=12  Score=22.14  Aligned_cols=15  Identities=20%  Similarity=0.264  Sum_probs=12.7  Template_Neff=8.400
+
+Q T1125_Domain14    3 IATLAKTFGVEVDEG   17 (36)
+Q Consensus         3 iatlaktfgvevdeg   17 (36)
+                      ++.|++.||+++..|
+T Consensus       179 l~~l~~~~g~~~~~~  193 (194)
+T 2QZ7_A          179 PVLFATEMGSAPRPG  193 (194)
+T ss_dssp             HHHHHHHTTSCCCCC
+T ss_pred             hHHHHHHcCCCCCCC
+Confidence            578999999998776
+
+
+No 2
+>2QZ7_B Uncharacterized protein SCO6318; APC7352, homologue of telluride resistance; HET: MSE; 2.1A {Streptomyces coelicolor A3(2)}
+Probab=51.09  E-value=12  Score=22.14  Aligned_cols=15  Identities=20%  Similarity=0.264  Sum_probs=10.6  Template_Neff=8.400
+
+Q T1125_Domain14    3 IATLAKTFGVEVDEG   17 (36)
+Q Consensus         3 iatlaktfgvevdeg   17 (36)
+                      ++.|++.||+++..|
+T Consensus       179 l~~l~~~~g~~~~~~  193 (194)
+T 2QZ7_B          179 PVLFATEMGSAPRPG  193 (194)
+T ss_dssp             HHHHHHHTTSCC---
+T ss_pred             hHHHHHHcCCCCCCC
+Confidence            578999999998776
+
+
+No 3
+>2QNG_A Uncharacterized protein SAV2460; Streptomyces avermitilis, Structural Genomics, PSI-2; 1.4A {Streptomyces avermitilis}
+Probab=49.56  E-value=14  Score=22.57  Aligned_cols=13  Identities=38%  Similarity=0.460  Sum_probs=10.5  Template_Neff=7.800
+
+Q T1125_Domain14    3 IATLAKTFGVEVD   15 (36)
+Q Consensus         3 iatlaktfgvevd   15 (36)
+                      ++.|++.|||++|
+T Consensus       186 l~~l~~~~gv~~~  198 (199)
+T 2QNG_A          186 PATFARVMGGRQD  198 (199)
+T ss_dssp             HHHHHHHTTCCC-
+T ss_pred             HHHHHHHhCCcCC
+Confidence            5678999999987
+
+
+No 4
+>2KXT_A Tellurite resistance protein; KP-TerD, tellurite resistance, Ca2+ binding; NMR {Klebsiella pneumoniae}
+Probab=35.08  E-value=32  Score=20.43  Aligned_cols=13  Identities=15%  Similarity=0.639  Sum_probs=10.7  Template_Neff=8.500
+
+Q T1125_Domain14    3 IATLAKTFGVEVD   15 (36)
+Q Consensus         3 iatlaktfgvevd   15 (36)
+                      ++.|++.||++++
+T Consensus       180 l~~l~~~~g~~~~  192 (200)
+T 2KXT_A          180 LASVCAQYGINAS  192 (200)
+T ss_dssp             TTHHHHHTTSCCC
+T ss_pred             HHHHHHHhCceee
+Confidence            5678999999986
+
+
+No 5
+>3IBZ_A Putative tellurium resistant like protein; structural genomics, stress protein, tellurium; HET: SO4; 1.78A {Streptomyces coelicolor A3(2)}
+Probab=34.37  E-value=34  Score=20.12  Aligned_cols=12  Identities=42%  Similarity=0.808  Sum_probs=9.4  Template_Neff=8.600
+
+Q T1125_Domain14    3 IATLAKTFGVEV   14 (36)
+Q Consensus         3 iatlaktfgvev   14 (36)
+                      ++.|++.||++|
+T Consensus       180 l~~l~~~~G~~v  191 (191)
+T 3IBZ_A          180 LRGIAQDFGVNV  191 (191)
+T ss_dssp             HHHHHHHTTCCC
+T ss_pred             HHHHHHHhCccC
+Confidence            467888999875
+
+
+No 6
+>4LCT_B COP9 signalosome complex subunit 1; SIGNALING PROTEIN; HET: SO4; 2.7A {Arabidopsis thaliana}
+Probab=32.62  E-value=38  Score=20.61  Aligned_cols=14  Identities=21%  Similarity=0.458  Sum_probs=11.6  Template_Neff=10.000
+
+Q T1125_Domain14    3 IATLAKTFGVEVDE   16 (36)
+Q Consensus         3 iatlaktfgvevde   16 (36)
+                      |..||+.||+++++
+T Consensus       324 l~~la~~l~i~~~~  337 (348)
+T 4LCT_B          324 LSRMADAFKTSVSG  337 (348)
+T ss_dssp             HHHHHHHTTSCHHH
+T ss_pred             HHHHHHHHCCCHHH
+Confidence            56799999998764
+
+
+No 7
+>2LBF_A 60S acidic ribosomal protein P1; ribosome, stalk, P1/P2, RIBOSOMAL PROTEIN; NMR {Homo sapiens}
+Probab=31.51  E-value=40  Score=17.61  Aligned_cols=24  Identities=29%  Similarity=0.260  Sum_probs=17.1  Template_Neff=7.300
+
+Q T1125_Domain14    2 QIATLAKTFGVEVDEGQYSMAASH   25 (36)
+Q Consensus         2 qiatlaktfgvevdegqysmaash   25 (36)
+                      .|..+.+..|+++|....+.-.+-
+T Consensus        27 ~i~~il~aaGvevd~~~~~~f~~~   50 (69)
+T 2LBF_A           27 KINALIKAAGVNVEPFWPGLFAKA   50 (69)
+T ss_dssp             HHHHHHHHHTCCCCTHHHHHHHHH
+T ss_pred             HHHHHHHHcCCCCCcchHHHHHHH
+Confidence            466778889999988765554443
+
+
+No 8
+>2WIU_B PROTEIN HIPA (E.C.2.7.11.1), HTH-TYPE TRANSCRIPTIONAL; TRANSFERASE TRANSCRIPTION COMPLEX, SERINE KINASE; HET: CL; 2.35A {ESCHERICHIA COLI}
+Probab=31.10  E-value=42  Score=15.65  Aligned_cols=14  Identities=0%  Similarity=0.131  Sum_probs=9.8  Template_Neff=10.700
+
+Q T1125_Domain14    3 IATLAKTFGVEVDE   16 (36)
+Q Consensus         3 iatlaktfgvevde   16 (36)
+                      +..+++.||++.++
+T Consensus        57 ~~~i~~~~~~~~~~   70 (88)
+T 2WIU_B           57 FFKILQSLELSMTL   70 (88)
+T ss_dssp             HHHHHHHTTCEEEE
+T ss_pred             HHHHHHHcCCChhH
+Confidence            45677788887654
+
+
+No 9
+>2XIU_A CYLR2; DNA BINDING PROTEIN, HTH-DNA BINDING; HET: MTN; 1.5A {ENTEROCOCCUS FAECALIS}
+Probab=30.84  E-value=42  Score=13.58  Aligned_cols=9  Identities=11%  Similarity=0.121  Sum_probs=4.2  Template_Neff=12.100
+
+Q T1125_Domain14    5 TLAKTFGVE   13 (36)
+Q Consensus         5 tlaktfgve   13 (36)
+                      .+++.||+.
+T Consensus        48 ~l~~~~~~~   56 (66)
+T 2XIU_A           48 KIAYYLNCP   56 (66)
+T ss_dssp             HHHHHHTSC
+T ss_pred             HHHHHhCCC
+Confidence            344455544
+
+
+No 10
+>4A1G_E MITOTIC CHECKPOINT SERINE/THREONINE-PROTEIN KINASE BUB1; CELL CYCLE, TRANSFERASE, SPINDLE ASSEMBLY; 2.6A {HOMO SAPIENS}
+Probab=29.43  E-value=46  Score=19.15  Aligned_cols=11  Identities=36%  Similarity=0.549  Sum_probs=9.1  Template_Neff=2.800
+
+Q T1125_Domain14   18 QYSMAASHTAY   28 (36)
+Q Consensus        18 qysmaashtay   28 (36)
+                      |.-|.||||+.
+T Consensus         3 ~MDmTaSHTvv   13 (53)
+T 4A1G_E            3 QMDLTSSHTVM   13 (53)
+T ss_pred             ccccccceeEE
+Confidence            66799999985
+
+
+No 11
+>4A1G_H MITOTIC CHECKPOINT SERINE/THREONINE-PROTEIN KINASE BUB1; CELL CYCLE, TRANSFERASE, SPINDLE ASSEMBLY; 2.6A {HOMO SAPIENS}
+Probab=29.43  E-value=46  Score=19.15  Aligned_cols=11  Identities=36%  Similarity=0.549  Sum_probs=9.1  Template_Neff=2.800
+
+Q T1125_Domain14   18 QYSMAASHTAY   28 (36)
+Q Consensus        18 qysmaashtay   28 (36)
+                      |.-|.||||+.
+T Consensus         3 ~MDmTaSHTvv   13 (53)
+T 4A1G_H            3 QMDLTSSHTVM   13 (53)
+T ss_pred             ccccccceeEE
+Confidence            66799999985
+
+
+No 12
+>2QLC_E DNA repair protein radC homolog; DNA repair protein, RadC, MCSG; 2.3A {Chlorobium tepidum TLS}
+Probab=28.60  E-value=49  Score=18.35  Aligned_cols=23  Identities=9%  Similarity=0.183  Sum_probs=15.6  Template_Neff=8.400
+
+Q T1125_Domain14    2 QIATLAKTFGVEVDE-------GQYSMAAS   24 (36)
+Q Consensus         2 qiatlaktfgvevde-------gqysmaas   24 (36)
+                      ++...++.+|+++-+       |-|||..+
+T Consensus        94 ~l~~~~~~lgi~l~DhiIi~~~~~~S~~~~  123 (126)
+T 2QLC_E           94 ILKKAGDLLQIELLDHVIVGNNDWFSFRDH  123 (126)
+T ss_dssp             HHHHHHHHHTCEEEEEEEECSSCEEETTTT
+T ss_pred             HHHHHHHhcCcEEeeeEEEcCCcEEEeccc
+Confidence            456677888888643       67777643
+
+
+No 13
+>2QLC_F DNA repair protein radC homolog; DNA repair protein, RadC, MCSG; 2.3A {Chlorobium tepidum TLS}
+Probab=28.60  E-value=49  Score=18.35  Aligned_cols=23  Identities=9%  Similarity=0.183  Sum_probs=15.6  Template_Neff=8.400
+
+Q T1125_Domain14    2 QIATLAKTFGVEVDE-------GQYSMAAS   24 (36)
+Q Consensus         2 qiatlaktfgvevde-------gqysmaas   24 (36)
+                      ++...++.+|+++-+       |-|||..+
+T Consensus        94 ~l~~~~~~lgi~l~DhiIi~~~~~~S~~~~  123 (126)
+T 2QLC_F           94 ILKKAGDLLQIELLDHVIVGNNDWFSFRDH  123 (126)
+T ss_dssp             HHHHHHHHHTCEEEEEEEEETTEEEESGGG
+T ss_pred             HHHHHHHhcCcEEeeeEEEcCCcEEEeccc
+Confidence            456677888888643       67777643
+
+
+No 14
+>2GPF_A conserved hypothetical protein PA2412; BETA/ALPHA protein, Structural Genomics, PSI-2; NMR {Pseudomonas aeruginosa} SCOP: d.100.2.1
+Probab=28.45  E-value=49  Score=18.75  Aligned_cols=11  Identities=36%  Similarity=0.335  Sum_probs=7.9  Template_Neff=5.300
+
+Q T1125_Domain14   13 EVDEGQYSMAA   23 (36)
+Q Consensus        13 evdegqysmaa   23 (36)
+                      --+|||||+--
+T Consensus        16 vN~e~QySlWP   26 (72)
+T 2GPF_A           16 VNHEEQYSIWP   26 (72)
+T ss_dssp             EETTCCEEEEE
+T ss_pred             eCCccceecch
+Confidence            34789999743
+
+
+No 15
+>2L1A_A Formin-C; fruiting body formation, actin binding; NMR {Dictyostelium discoideum}
+Probab=26.78  E-value=55  Score=20.54  Aligned_cols=29  Identities=24%  Similarity=0.366  Sum_probs=20.5  Template_Neff=4.000
+
+Q T1125_Domain14    2 QIATLAKTFGVE-VDEGQYSMA-ASHTAYKE   30 (36)
+Q Consensus         2 qiatlaktfgve-vdegqysma-ashtayke   30 (36)
+                      ++.+|++.||++ .+++.|... .+-..|-+
+T Consensus        48 ~~~~l~~lFgI~~~~~~~Y~Lq~~~s~~Yl~   78 (107)
+T 2L1A_A           48 HIKVLLTHFKIPVDKVSSYALQNPFTLAYVE   78 (107)
+T ss_dssp             HHHHHHHHTTCCGGGGGGEEEECTTTCCBCC
+T ss_pred             HHHHHHHHcCCCHHhccceeeeCcccceecc
+Confidence            678899999998 356777776 44455554
+
+
+No 16
+>1XWR_A Regulatory protein CII; all-alpha fold, DNA binding protein; HET: IPA; 2.56A {Bacteriophage lambda} SCOP: a.35.1.9
+Probab=25.41  E-value=61  Score=16.80  Aligned_cols=21  Identities=14%  Similarity=0.102  Sum_probs=14.2  Template_Neff=8.900
+
+Q T1125_Domain14    3 IATLAKTFGVEVDEGQYSMAA   23 (36)
+Q Consensus         3 iatlaktfgvevdegqysmaa   23 (36)
+                      +..+++.||+.+++.++...+
+T Consensus        51 l~~l~~~lgv~~~~~~~~~~~   71 (97)
+T 1XWR_A           51 FSMLLAVLEWGVVDDDMARLA   71 (97)
+T ss_pred             HHHHHHHcCCCCCchHHHHHH
+Confidence            446677888888877665443
+
+
+No 17
+>5JA1_B Enterobactin synthase component F (E.C.6.3.2.14); NONRIBOSOMAL PEPTIDE SYNTHETASE, NRPS, CONDENSATION; HET: 75C; 3.0A {Escherichia coli (strain K12)}
+Probab=25.28  E-value=61  Score=18.64  Aligned_cols=12  Identities=25%  Similarity=0.443  Sum_probs=8.4  Template_Neff=5.000
+
+Q T1125_Domain14   13 EVDEGQYSMAAS   24 (36)
+Q Consensus        13 evdegqysmaas   24 (36)
+                      --+|||||+--+
+T Consensus        20 vN~e~QySLWP~   31 (74)
+T 5JA1_B           20 RNAQGQFSLWPQ   31 (74)
+T ss_dssp             ECTTSCEEEEET
+T ss_pred             ECCCCCeecccc
+Confidence            347899997543
+
+
+No 18
+>2XT4_B MCBG-LIKE PROTEIN; CELL CYCLE, RIGHT HANDED QUADRILATERAL; 2.394A {XANTHOMONAS ALBILINEANS}
+Probab=22.59  E-value=75  Score=17.33  Aligned_cols=15  Identities=20%  Similarity=0.527  Sum_probs=9.3  Template_Neff=10.400
+
+Q T1125_Domain14    2 QIATLAKTFGVEVDE   16 (36)
+Q Consensus         2 qiatlaktfgvevde   16 (36)
+                      |+..+.+.+|+.+++
+T Consensus       180 ~~~~~~~~~gi~~~~  194 (194)
+T 2XT4_B          180 EAASLLNSLDIELSD  194 (194)
+T ss_dssp             GGGGGGGGSCCEEC-
+T ss_pred             HHHHHHHHcCceecC
+Confidence            445567777777654
+
+
+No 19
+>2K9Q_B uncharacterized protein; all helix, helix-turn-helix, Plasmid, Structural; NMR {Bacteroides thetaiotaomicron}
+Probab=21.41  E-value=82  Score=14.80  Aligned_cols=13  Identities=15%  Similarity=0.450  Sum_probs=7.7  Template_Neff=10.000
+
+Q T1125_Domain14    3 IATLAKTFGVEVD   15 (36)
+Q Consensus         3 iatlaktfgvevd   15 (36)
+                      +..+++.+|+.++
+T Consensus        47 ~~~l~~~l~~~~~   59 (77)
+T 2K9Q_B           47 YIAFLRSKGVDLN   59 (77)
+T ss_dssp             HHHHHHHTTCCHH
+T ss_pred             HHHHHHHhCCCHH
+Confidence            4456666666654
+
+
+No 20
+>2LPD_A Uncharacterized protein; infectious disease, melioidosis, Seattle Structural; NMR {Burkholderia pseudomallei}
+Probab=20.96  E-value=85  Score=19.28  Aligned_cols=12  Identities=42%  Similarity=0.587  Sum_probs=8.4  Template_Neff=4.200
+
+Q T1125_Domain14   13 EVDEGQYSMAAS   24 (36)
+Q Consensus        13 evdegqysmaas   24 (36)
+                      --+|||||+--+
+T Consensus        31 vN~EgQySLWP~   42 (95)
+T 2LPD_A           31 RNNEGQYSVWMD   42 (95)
+T ss_dssp             ECSSCSCEEEET
+T ss_pred             ECCCCCeeeecC
+Confidence            347899997543
+
+
+No 21
+>3B7H_A Prophage Lp1 protein 11; prophage Lp1 protein 11, structural; 2.0A {Lactobacillus plantarum WCFS1}
+Probab=20.71  E-value=86  Score=14.05  Aligned_cols=14  Identities=29%  Similarity=0.610  Sum_probs=8.4  Template_Neff=10.900
+
+Q T1125_Domain14    3 IATLAKTFGVEVDE   16 (36)
+Q Consensus         3 iatlaktfgvevde   16 (36)
+                      +..+++.||+.+.+
+T Consensus        53 ~~~l~~~l~~~~~~   66 (78)
+T 3B7H_A           53 IRKVCGTLGISVHD   66 (78)
+T ss_dssp             HHHHHHHHTCCHHH
+T ss_pred             HHHHHHHhCCCHHH
+Confidence            34566777766543
+
+
+No 22
+>2JVO_A Nucleolar protein 3; Protein, Nucleus, Phosphorylation, Ribonucleoprotein, Ribosome; NMR {Saccharomyces cerevisiae}
+Probab=20.67  E-value=87  Score=14.50  Aligned_cols=9  Identities=33%  Similarity=0.423  Sum_probs=4.6  Template_Neff=11.500
+
+Q T1125_Domain14   21 MAASHTAYK   29 (36)
+Q Consensus        21 maashtayk   29 (36)
+                      |..||.+|-
+T Consensus         1 ~~~~~~~~~    9 (108)
+T 2JVO_A            1 MGSSHHHHH    9 (108)
+T ss_pred             CCCchhhcc
+Confidence            344555554
+
+
+No 23
+>4YG7_C HipB, HipA/DNA Complex; persistence, multidrug tolerance, autorepression, promoter; 3.77A {Escherichia coli (strain K12)}
+Probab=20.26  E-value=90  Score=13.57  Aligned_cols=12  Identities=0%  Similarity=0.229  Sum_probs=6.3  Template_Neff=11.100
+
+Q T1125_Domain14    3 IATLAKTFGVEV   14 (36)
+Q Consensus         3 iatlaktfgvev   14 (36)
+                      +..++..||+.+
+T Consensus        54 ~~~l~~~~~~~~   65 (71)
+T 4YG7_C           54 FFKILQSLELSM   65 (71)
+T ss_dssp             HHHHHHHTTCEE
+T ss_pred             HHHHHHHcCCCc
+Confidence            344555666554
+
+
+No 24
+>4Z59_A E.coli transcription repressor, HipB/DNA Complex; HTH motif, Transcription repressor, HipA; 2.3A {Escherichia coli}
+Probab=20.26  E-value=90  Score=13.57  Aligned_cols=12  Identities=0%  Similarity=0.229  Sum_probs=6.3  Template_Neff=11.100
+
+Q T1125_Domain14    3 IATLAKTFGVEV   14 (36)
+Q Consensus         3 iatlaktfgvev   14 (36)
+                      +..++..||+.+
+T Consensus        54 ~~~l~~~~~~~~   65 (71)
+T 4Z59_A           54 FFKILQSLELSM   65 (71)
+T ss_dssp             HHHHHHHTTCCC
+T ss_pred             HHHHHHHcCCCc
+Confidence            344555666554
+
+
+No 25
+>4Z5H_A E.coli transcription repressor, HipB subunit; HTH motif, Transcription repressor, HipA; 2.1A {Escherichia coli}
+Probab=20.23  E-value=90  Score=13.37  Aligned_cols=11  Identities=0%  Similarity=0.220  Sum_probs=5.3  Template_Neff=11.400
+
+Q T1125_Domain14    4 ATLAKTFGVEV   14 (36)
+Q Consensus         4 atlaktfgvev   14 (36)
+                      ..+++.||+++
+T Consensus        56 ~~~~~~l~~~~   66 (72)
+T 4Z5H_A           56 FKILQSLELSM   66 (72)
+T ss_dssp             HHHHHHTTCCC
+T ss_pred             HHHHHHcCCCc
+Confidence            34455555544
+
+

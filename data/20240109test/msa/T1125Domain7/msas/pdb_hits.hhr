@@ -1,0 +1,1027 @@
+Query         T1125_Domain7:375-416 
+Match_columns 42
+No_of_seqs    1 out of 1
+Neff          1
+Searched_HMMs 80799
+Date          Tue Jan  9 14:26:32 2024
+Command       /public/dbu/.local/bin/hhsearch -i /public/dbu/CASP/tmp/tmpf6u5mqod/query.a3m -o /public/dbu/CASP/tmp/tmpf6u5mqod/output.hhr -maxseq 1000000 -d /public/dbu/data/af2_db/pdb70/pdb70 
+
+ No Hit                             Prob E-value P-value  Score    SS Cols Query HMM  Template HMM
+  1 2OXL_B Hypothetical protein ym  85.1     0.5 6.1E-06   26.4   0.0   34    7-41     27-63  (64)
+  2 1U2B_A Cytohesin 3; PH domain,  81.5    0.92 1.1E-05   23.5   0.0   27   16-42    112-138 (138)
+  3 1FGY_A GRP1; PH DOMAIN, SIGNAL  71.8     2.8 3.5E-05   20.1   0.0   27   16-42    101-127 (127)
+  4 5MR1_A Interactor protein for   53.3      11 0.00013   16.6   0.0   21   16-36     82-102 (103)
+  5 2A26_A Calcyclin-binding prote  46.7      16  0.0002   19.6   0.0   25    9-33     15-39  (50)
+  6 2A26_B Calcyclin-binding prote  46.7      16  0.0002   19.6   0.0   25    9-33     15-39  (50)
+  7 1YSM_A Calcyclin-binding prote  41.8      22 0.00027   20.1   0.0   25    9-33     14-38  (77)
+  8 3VIA_B Pleckstrin homology dom  37.7      28 0.00034   15.6   0.0   18   16-33     92-109 (112)
+  9 2D9V_A Pleckstrin homology dom  36.2      30 0.00037   16.4   0.0   21   16-36     95-115 (130)
+ 10 1WGQ_A FYVE, RhoGEF and PH dom  35.7      31 0.00039   15.3   0.0   20   16-35     84-103 (109)
+ 11 1U5D_A Src Kinase-associated P  34.4      34 0.00042   15.0   0.0   19   16-34     86-104 (108)
+ 12 1U5D_B Src Kinase-associated P  34.4      34 0.00042   15.0   0.0   19   16-34     86-104 (108)
+ 13 2ROV_A Rho-associated protein   34.1      34 0.00043   16.2   0.0   20   16-35     96-115 (117)
+ 14 1P6S_A RAC-beta serine/threoni  33.5      36 0.00044   15.2   0.0   18   16-33     89-106 (111)
+ 15 3AJ4_B Pleckstrin homology dom  33.1      37 0.00045   15.2   0.0   18   16-33     92-109 (112)
+ 16 3MKB_C Hemoglobin subunit alph  32.9      37 0.00046   17.7   0.0   18   17-34    115-132 (140)
+ 17 2HBG_A HEMOGLOBIN (DEOXY); OXY  31.6      40  0.0005   17.8   0.0   23   12-34    116-138 (147)
+ 18 1EAZ_A TANDEM PH DOMAIN CONTAI  31.3      41 0.00051   15.6   0.0   20   16-35     92-111 (125)
+ 19 2R80_B Hemoglobin subunit alph  29.9      45 0.00055   17.7   0.0   18   17-34    121-138 (146)
+ 20 4HRR_C Globin-2 A chain, Hemog  29.8      45 0.00056   17.6   0.0   17   17-33    130-146 (150)
+ 21 3W4U_A Hemoglobin subunit zeta  29.8      45 0.00056   17.4   0.0   26    9-34    109-134 (142)
+ 22 2R80_C Hemoglobin subunit alph  29.7      45 0.00056   17.3   0.0   18   17-34    116-133 (141)
+ 23 3MKB_B Hemoglobin subunit alph  29.3      47 0.00058   17.3   0.0   18   17-34    111-128 (136)
+ 24 3D1K_A Hemoglobin subunit alph  28.9      48 0.00059   17.3   0.0   18   17-34    117-134 (142)
+ 25 1TU9_A hypothetical protein PA  28.8      48  0.0006   17.4   0.0   17   18-34    109-125 (134)
+ 26 3MKB_D Hemoglobin subunit alph  27.8      52 0.00064   17.1   0.0   18   17-34    111-128 (136)
+ 27 1XQ5_A Hemoglobin alpha-1 chai  27.7      52 0.00064   17.3   0.0   18   17-34    118-135 (143)
+ 28 1WMU_B Hemoglobin D alpha chai  27.2      54 0.00067   17.3   0.0   25   10-34    114-138 (146)
+ 29 2Z6N_B Hemoglobin D subunit al  27.2      54 0.00067   17.3   0.0   25   10-34    114-138 (146)
+ 30 3D1K_B Hemoglobin subunit alph  27.0      55 0.00068   17.5   0.0   24   11-34    115-138 (146)
+ 31 3NG6_D Hemoglobin subunit alph  27.0      55 0.00068   17.5   0.0   24   11-34    115-138 (146)
+ 32 6IYI_B Alpha chain, Beta chain  26.5      56  0.0007   17.3   0.0   18   17-34    121-138 (146)
+ 33 2W72_D HUMAN HEMOGLOBIN A; IRO  26.2      58 0.00071   17.2   0.0   18   17-34    121-138 (146)
+ 34 1GCV_D HEMOGLOBIN; Hemoglobin,  26.1      58 0.00072   17.1   0.0   17   18-34    112-128 (136)
+ 35 4A5K_B PHOSPHATIDYLINOSITOL 4,  26.1      58 0.00072   15.5   0.0   21   14-34     95-115 (118)
+ 36 5LKV_B Dehaloperoxidase B; imi  25.8      59 0.00073   17.3   0.0   25    9-34    104-128 (137)
+ 37 2MDX_A Pleckstrin homology dom  25.7      60 0.00074   14.5   0.0   20   16-35     82-101 (108)
+ 38 5V5R_A Dehaloperoxidase A; per  25.6      60 0.00074   17.2   0.0   15   20-34    114-128 (137)
+ 39 3BJ2_A hemoglobin alpha, hemog  25.2      62 0.00076   17.0   0.0   18   17-34    117-134 (142)
+ 40 5O18_A Neuroglobin; globin, ox  25.1      62 0.00077   16.9   0.0   19   16-34    121-139 (148)
+ 41 2D9Y_A Pleckstrin homology dom  25.0      63 0.00078   14.8   0.0   19   16-34     90-108 (117)
+ 42 1V5U_A SET binding factor 1; S  24.8      63 0.00078   14.6   0.0   21   16-36     92-112 (117)
+ 43 1MBA_A MYOGLOBIN (MET) (PH 7.0  24.8      64 0.00079   16.9   0.0   17   18-34    123-139 (147)
+ 44 2H8F_D Hemoglobin alpha subuni  23.4      70 0.00087   16.9   0.0   24   11-34    115-138 (146)
+ 45 1V4W_B hemoglobin alpha chain/  23.1      72 0.00089   16.9   0.0   24   10-33    114-137 (146)
+ 46 1V4X_D hemoglobin alpha chain/  23.1      72 0.00089   16.9   0.0   24   10-33    114-137 (146)
+ 47 2DKP_A Pleckstrin homology dom  23.0      73  0.0009   15.1   0.0   20   16-35    100-119 (128)
+ 48 2RLO_A Centaurin-gamma 1; Spli  22.8      74 0.00091   15.3   0.0   18   16-33    105-122 (128)
+ 49 2DC3_A Cytoglobin; cytoglobin,  22.4      76 0.00094   18.2   0.0   18   17-34    145-162 (193)
+ 50 2DC3_B Cytoglobin; cytoglobin,  22.4      76 0.00094   18.2   0.0   18   17-34    145-162 (193)
+ 51 1GCV_A HEMOGLOBIN; Hemoglobin,  22.4      76 0.00094   16.4   0.0   18   17-34    115-132 (140)
+ 52 6IYH_A Alpha chain, Beta chain  21.9      79 0.00098   16.6   0.0   18   17-34    117-134 (142)
+ 53 6NLY_B Alanine--tRNA ligase, m  21.8      79 0.00098   18.6   0.0   14   28-41      1-14  (192)
+ 54 1V75_A Hemoglobin D alpha chai  21.6      81   0.001   16.4   0.0   18   17-34    116-133 (141)
+ 55 1WMU_A Hemoglobin D alpha chai  21.6      81   0.001   16.4   0.0   18   17-34    116-133 (141)
+ 56 2Z6N_A Hemoglobin D subunit al  21.6      81   0.001   16.4   0.0   18   17-34    116-133 (141)
+ 57 2COC_A FYVE, RhoGEF and PH dom  21.5      81   0.001   14.5   0.0   21   16-36     87-107 (112)
+ 58 3S1I_B Hemoglobin-like flavopr  21.1      84   0.001   16.3   0.0   19   18-36    111-129 (139)
+ 59 1PLS_A PLECKSTRIN (N-TERMINAL   21.1      84   0.001   14.2   0.0   20   17-36     83-102 (113)
+ 60 3HW2_B Protein sifA, Pleckstri  21.0      84   0.001   13.8   0.0   19   16-34     84-102 (105)
+ 61 1FAO_A DUAL ADAPTOR OF PHOSPHO  20.8      85  0.0011   14.9   0.0   20   16-35     93-112 (126)
+ 62 2RSG_A Collagen type IV alpha-  20.8      86  0.0011   13.0   0.0   16   17-32     76-91  (94)
+ 63 3CXB_B Protein sifA, Pleckstri  20.7      86  0.0011   14.3   0.0   20   16-35     82-101 (112)
+ 64 4BPT_A PHENYLALANINE-4-HYDROXY  20.6      87  0.0011   22.4   0.0   16   19-34     21-36  (272)
+ 65 1V89_A Hypothetical protein KI  20.5      88  0.0011   14.1   0.0   19   16-34     93-111 (118)
+ 66 4MQJ_C Hemoglobin subunit alph  20.2      90  0.0011   16.3   0.0   16   18-33    117-132 (141)
+ 67 2LKO_A Fermitin family homolog  20.2      90  0.0011   15.7   0.0   22   16-37     95-116 (138)
+ 68 5XJ0_Y DNA-directed RNA polyme  20.0      91  0.0011   18.7   0.0   35    6-40      9-44  (54)
+
+No 1
+>2OXL_B Hypothetical protein ymgB; bacterial protein, biofilm, acid resistance; HET: MSE, BOG; 1.8A {Escherichia coli}
+Probab=85.13  E-value=0.5  Score=26.42  Aligned_cols=34  Identities=38%  Similarity=0.384  Sum_probs=24.8  Template_Neff=5.900
+
+Q T1125_Domain7:    7 KAILKKL---LETADRPEEQAVWRAAIERLVIGNTAYD   41 (42)
+Q Consensus         7 kailkkl---letadrpeeqavwraaierlvigntayd   41 (42)
+                      |+|+.+|   +|+.+.|.++.+.|.++|- |.|.|.-|
+T Consensus        27 KaIi~~Li~~le~e~D~~~~~~~r~~Le~-Vv~~t~dd   63 (64)
+T 2OXL_B           27 KNIILSLIHSLETTSDILKADVIRKTLEI-VLRYTADD   63 (64)
+T ss_dssp             HHHHHHHHHHHHTCCCHHHHHHHHHHHHH-HHHHHHC-
+T ss_pred             HHHHHHHHHHHhcCCCHHHHHHHHHHHHH-HHhcCCCC
+Confidence            5565555   5778899999999999985 55666544
+
+
+No 2
+>1U2B_A Cytohesin 3; PH domain, lipid binding, phosphoinositides; HET: SO4; 1.8A {Mus musculus} SCOP: b.55.1.1
+Probab=81.51  E-value=0.92  Score=23.49  Aligned_cols=27  Identities=30%  Similarity=0.602  Sum_probs=22.8  Template_Neff=10.900
+
+Q T1125_Domain7:   16 TADRPEEQAVWRAAIERLVIGNTAYDL   42 (42)
+Q Consensus        16 tadrpeeqavwraaierlvigntaydl   42 (42)
+                      .++..++..-|..+|...+-+++.+||
+T Consensus       112 ~a~s~~e~~~W~~~l~~~~~~~~~~~~  138 (138)
+T 1U2B_A          112 SAPSPEEKEEWMKSIKASISRDPFYDM  138 (138)
+T ss_dssp             ECSSHHHHHHHHHHHHHHHHHCTTSCC
+T ss_pred             ECCCHHHHHHHHHHHHHHHhcCCcccC
+Confidence            456677888999999999999999886
+
+
+No 3
+>1FGY_A GRP1; PH DOMAIN, SIGNALING PROTEIN; HET: 4IP; 1.5A {Mus musculus} SCOP: b.55.1.1
+Probab=71.84  E-value=2.8  Score=20.12  Aligned_cols=27  Identities=30%  Similarity=0.602  Sum_probs=21.1  Template_Neff=12.100
+
+Q T1125_Domain7:   16 TADRPEEQAVWRAAIERLVIGNTAYDL   42 (42)
+Q Consensus        16 tadrpeeqavwraaierlvigntaydl   42 (42)
+                      .++..++...|..+|.+..-+.+.+|+
+T Consensus       101 ~~~~~~~~~~W~~~l~~~~~~~~~~~~  127 (127)
+T 1FGY_A          101 SAPSPEEKEEWMKSIKASISRDPFYDM  127 (127)
+T ss_dssp             ECSSHHHHHHHHHHHHHHHHHCTTTTC
+T ss_pred             ECCCHHHHHHHHHHHHHHHhcCCcccC
+Confidence            456677888999999988877777664
+
+
+No 4
+>5MR1_A Interactor protein for cytohesin exchange; cytohesin, scaffold protien, Pleckstrin homology; 1.2A {Homo sapiens}
+Probab=53.32  E-value=11  Score=16.58  Aligned_cols=21  Identities=29%  Similarity=0.469  Sum_probs=14.8  Template_Neff=12.900
+
+Q T1125_Domain7:   16 TADRPEEQAVWRAAIERLVIG   36 (42)
+Q Consensus        16 tadrpeeqavwraaierlvig   36 (42)
+                      .++..++..-|..+|...+.+
+T Consensus        82 ~~~~~~~~~~W~~~l~~~~~~  102 (103)
+T 5MR1_A           82 AAENVQEMNVWLNKLGSAVIH  102 (103)
+T ss_dssp             ECSSHHHHHHHHHHHHHHTCC
+T ss_pred             EcCCHHHHHHHHHHHHHHHhc
+Confidence            456667777888888776654
+
+
+No 5
+>2A26_A Calcyclin-binding protein; helical hairpin, dimerization, APOPTOSIS; HET: CXS; 1.2A {Homo sapiens} SCOP: a.2.16.1
+Probab=46.66  E-value=16  Score=19.62  Aligned_cols=25  Identities=28%  Similarity=0.318  Sum_probs=19.9  Template_Neff=5.800
+
+Q T1125_Domain7:    9 ILKKLLETADRPEEQAVWRAAIERL   33 (42)
+Q Consensus         9 ilkklletadrpeeqavwraaierl   33 (42)
+                      =|+.|+..|.||.-+......|.++
+T Consensus        15 EL~~Ll~~a~R~~Vk~~L~~ei~~l   39 (50)
+T 2A26_A           15 EVKVLLEKATRKRVRDALTAEKSKI   39 (50)
+T ss_dssp             HHHHHHHHCCSHHHHHHHHHHHHHH
+T ss_pred             HHHHHHHHhcCHHHHHHHHHHHHHH
+Confidence            4678888899999888887777654
+
+
+No 6
+>2A26_B Calcyclin-binding protein; helical hairpin, dimerization, APOPTOSIS; HET: CXS; 1.2A {Homo sapiens} SCOP: a.2.16.1
+Probab=46.66  E-value=16  Score=19.62  Aligned_cols=25  Identities=28%  Similarity=0.318  Sum_probs=19.9  Template_Neff=5.800
+
+Q T1125_Domain7:    9 ILKKLLETADRPEEQAVWRAAIERL   33 (42)
+Q Consensus         9 ilkklletadrpeeqavwraaierl   33 (42)
+                      =|+.|+..|.||.-+......|.++
+T Consensus        15 EL~~Ll~~a~R~~Vk~~L~~ei~~l   39 (50)
+T 2A26_B           15 EVKVLLEKATRKRVRDALTAEKSKI   39 (50)
+T ss_dssp             HHHHHHHHCCCHHHHHHHHHHHHHH
+T ss_pred             HHHHHHHHhcCHHHHHHHHHHHHHH
+Confidence            4678888899999888887777654
+
+
+No 7
+>1YSM_A Calcyclin-binding protein; helix-turn-helix, Metal Binding Protein; NMR {Mus musculus} SCOP: a.2.16.1
+Probab=41.78  E-value=22  Score=20.06  Aligned_cols=25  Identities=20%  Similarity=0.270  Sum_probs=18.7  Template_Neff=6.600
+
+Q T1125_Domain7:    9 ILKKLLETADRPEEQAVWRAAIERL   33 (42)
+Q Consensus         9 ilkklletadrpeeqavwraaierl   33 (42)
+                      =|+.|+..+.||.-+......|.++
+T Consensus        14 EL~~Ll~~a~R~~Vk~~L~~ei~~l   38 (77)
+T 1YSM_A           14 EVKVLLEKSTRKRLRDTLTSEKSKI   38 (77)
+T ss_dssp             HHHHHHHHTTTTTHHHHHHHHHHHH
+T ss_pred             HHHHHHHHhcCHHHHHHHHHHHHHH
+Confidence            3677888888888888777766654
+
+
+No 8
+>3VIA_B Pleckstrin homology domain-containing family B; antiparallel BETA sheet, PROTEIN TRANSPORT; 1.75A {Homo sapiens}
+Probab=37.74  E-value=28  Score=15.60  Aligned_cols=18  Identities=11%  Similarity=0.440  Sum_probs=13.0  Template_Neff=12.800
+
+Q T1125_Domain7:   16 TADRPEEQAVWRAAIERL   33 (42)
+Q Consensus        16 tadrpeeqavwraaierl   33 (42)
+                      .++.+++...|..+|...
+T Consensus        92 ~~~~~~~~~~W~~~l~~~  109 (112)
+T 3VIA_B           92 CAESTDDCLAWKFTLQDS  109 (112)
+T ss_dssp             ECSSHHHHHHHHHHHHHH
+T ss_pred             ECCCHHHHHHHHHHHHHH
+Confidence            456677888888887654
+
+
+No 9
+>2D9V_A Pleckstrin homology domain-containing protein family; PH domain, PHRET1, structural genomics; NMR {Mus musculus}
+Probab=36.22  E-value=30  Score=16.39  Aligned_cols=21  Identities=14%  Similarity=0.363  Sum_probs=15.7  Template_Neff=12.300
+
+Q T1125_Domain7:   16 TADRPEEQAVWRAAIERLVIG   36 (42)
+Q Consensus        16 tadrpeeqavwraaierlvig   36 (42)
+                      .++..++...|..+|.+....
+T Consensus        95 ~a~~~~~~~~W~~~l~~~~~~  115 (130)
+T 2D9V_A           95 CAETRDDAIAWKTALMEANST  115 (130)
+T ss_dssp             ECSSHHHHHHHHHHHHHHHTC
+T ss_pred             EeCCHHHHHHHHHHHHHHhcC
+Confidence            456778888999998876544
+
+
+No 10
+>1WGQ_A FYVE, RhoGEF and PH domain; pleckstrin homoloy domain, signal transduction; NMR {Mus musculus} SCOP: b.55.1.1
+Probab=35.66  E-value=31  Score=15.33  Aligned_cols=20  Identities=20%  Similarity=0.356  Sum_probs=13.9  Template_Neff=12.800
+
+Q T1125_Domain7:   16 TADRPEEQAVWRAAIERLVI   35 (42)
+Q Consensus        16 tadrpeeqavwraaierlvi   35 (42)
+                      .++.+++..-|..+|.....
+T Consensus        84 ~~~~~~e~~~W~~~l~~~~~  103 (109)
+T 1WGQ_A           84 KADDAHSTQRWIDAFQEGTV  103 (109)
+T ss_dssp             ECSSHHHHHHHHHHHHHHHS
+T ss_pred             ECCCHHHHHHHHHHHHHHhc
+Confidence            35566777789888876543
+
+
+No 11
+>1U5D_A Src Kinase-associated Phosphoprotein of 55; PH Domain, SIGNALING PROTEIN; HET: SO4; 1.7A {Homo sapiens} SCOP: b.55.1.1
+Probab=34.40  E-value=34  Score=15.01  Aligned_cols=19  Identities=37%  Similarity=0.539  Sum_probs=13.0  Template_Neff=13.000
+
+Q T1125_Domain7:   16 TADRPEEQAVWRAAIERLV   34 (42)
+Q Consensus        16 tadrpeeqavwraaierlv   34 (42)
+                      .++.+++..-|..+|...+
+T Consensus        86 ~~~~~~~~~~W~~~i~~~~  104 (108)
+T 1U5D_A           86 TATSPAEARDWVDQISFLL  104 (108)
+T ss_dssp             ECSSHHHHHHHHHHHHHHH
+T ss_pred             EeCCHHHHHHHHHHHHHHH
+Confidence            4556677778888776643
+
+
+No 12
+>1U5D_B Src Kinase-associated Phosphoprotein of 55; PH Domain, SIGNALING PROTEIN; HET: SO4; 1.7A {Homo sapiens} SCOP: b.55.1.1
+Probab=34.40  E-value=34  Score=15.01  Aligned_cols=19  Identities=37%  Similarity=0.539  Sum_probs=13.0  Template_Neff=13.000
+
+Q T1125_Domain7:   16 TADRPEEQAVWRAAIERLV   34 (42)
+Q Consensus        16 tadrpeeqavwraaierlv   34 (42)
+                      .++.+++..-|..+|...+
+T Consensus        86 ~~~~~~~~~~W~~~i~~~~  104 (108)
+T 1U5D_B           86 TATSPAEARDWVDQISFLL  104 (108)
+T ss_dssp             ECSSHHHHHHHHHHHHHHH
+T ss_pred             EeCCHHHHHHHHHHHHHHH
+Confidence            4556677778888776643
+
+
+No 13
+>2ROV_A Rho-associated protein kinase 2 (E.C.2.7.11.1); protein, ATP-binding, Kinase, Membrane, Metal-binding; NMR {Rattus norvegicus}
+Probab=34.09  E-value=34  Score=16.23  Aligned_cols=20  Identities=25%  Similarity=0.433  Sum_probs=14.2  Template_Neff=11.900
+
+Q T1125_Domain7:   16 TADRPEEQAVWRAAIERLVI   35 (42)
+Q Consensus        16 tadrpeeqavwraaierlvi   35 (42)
+                      .++..+|...|..+|...+.
+T Consensus        96 ~~~s~~e~~~W~~~l~~~~~  115 (117)
+T 2ROV_A           96 LANSTEEQQKWVSRLVKKIP  115 (117)
+T ss_dssp             ECSSHHHHHHHHHHHHHHCT
+T ss_pred             EcCCHHHHHHHHHHHHhhcC
+Confidence            45667778889888876553
+
+
+No 14
+>1P6S_A RAC-beta serine/threonine protein kinase (E.C.2.7.1.-); PLECKSTRIN HOMOLOGY DOMAIN, PKB, AKT; NMR {Homo sapiens} SCOP: b.55.1.1
+Probab=33.54  E-value=36  Score=15.20  Aligned_cols=18  Identities=33%  Similarity=0.702  Sum_probs=12.9  Template_Neff=12.800
+
+Q T1125_Domain7:   16 TADRPEEQAVWRAAIERL   33 (42)
+Q Consensus        16 tadrpeeqavwraaierl   33 (42)
+                      .++.+++...|..+|...
+T Consensus        89 ~~~~~~~~~~W~~~l~~~  106 (111)
+T 1P6S_A           89 HVDSPDEREEWMRAIQMV  106 (111)
+T ss_dssp             EESSHHHHHHHHHHHHHH
+T ss_pred             EeCCHHHHHHHHHHHHHH
+Confidence            356677778888887654
+
+
+No 15
+>3AJ4_B Pleckstrin homology domain-containing family B; antiparallel BETA sheet, PROTEIN TRANSPORT; HET: SEP, EDO; 1.0A {Homo sapiens}
+Probab=33.12  E-value=37  Score=15.19  Aligned_cols=18  Identities=11%  Similarity=0.440  Sum_probs=12.3  Template_Neff=12.800
+
+Q T1125_Domain7:   16 TADRPEEQAVWRAAIERL   33 (42)
+Q Consensus        16 tadrpeeqavwraaierl   33 (42)
+                      .++.+++...|..+|.+.
+T Consensus        92 ~~~~~~~~~~W~~~l~~~  109 (112)
+T 3AJ4_B           92 CAESTDDCLAWKFTLQDS  109 (112)
+T ss_dssp             ECSSHHHHHHHHHHHHHH
+T ss_pred             ECCCHHHHHHHHHHHHHH
+Confidence            355667777888877654
+
+
+No 16
+>3MKB_C Hemoglobin subunit alpha, Hemoglobin subunit; Hemoglobin, Oxygen Affinity, Isurus oxyrinchus; HET: HEM; 1.9A {Isurus oxyrinchus}
+Probab=32.91  E-value=37  Score=17.66  Aligned_cols=18  Identities=6%  Similarity=0.082  Sum_probs=13.2  Template_Neff=10.800
+
+Q T1125_Domain7:   17 ADRPEEQAVWRAAIERLV   34 (42)
+Q Consensus        17 adrpeeqavwraaierlv   34 (42)
+                      .-.|+.+..|+.++..++
+T Consensus       115 ~~~~e~~~aW~~~~~~i~  132 (140)
+T 3MKB_C          115 EFSPATHCAVDKLLSAIS  132 (140)
+T ss_dssp             CCCHHHHHHHHHHHHHHH
+T ss_pred             cCCHHHHHHHHHHHHHHH
+Confidence            445677889998887654
+
+
+No 17
+>2HBG_A HEMOGLOBIN (DEOXY); OXYGEN TRANSPORT; HET: HEM; 1.5A {Glycera dibranchiata} SCOP: a.1.1.2
+Probab=31.57  E-value=40  Score=17.85  Aligned_cols=23  Identities=13%  Similarity=0.248  Sum_probs=15.2  Template_Neff=10.600
+
+Q T1125_Domain7:   12 KLLETADRPEEQAVWRAAIERLV   34 (42)
+Q Consensus        12 klletadrpeeqavwraaierlv   34 (42)
+                      +.+.....|+.+..|+.++..++
+T Consensus       116 ~~~~~~~~~~~~~aW~~~~~~i~  138 (147)
+T 2HBG_A          116 HRIGGKMNAAAKDAWAAAYADIS  138 (147)
+T ss_dssp             HHHGGGSCHHHHHHHHHHHHHHH
+T ss_pred             HHhCcCCCHHHHHHHHHHHHHHH
+Confidence            33333456788889998887544
+
+
+No 18
+>1EAZ_A TANDEM PH DOMAIN CONTAINING PROTEIN-1; LIPID-BINDING PROTEIN, LIPID DEGRADATION, PH; HET: CIT; 1.4A {HOMO SAPIENS} SCOP: b.55.1.1
+Probab=31.29  E-value=41  Score=15.63  Aligned_cols=20  Identities=35%  Similarity=0.667  Sum_probs=14.7  Template_Neff=12.500
+
+Q T1125_Domain7:   16 TADRPEEQAVWRAAIERLVI   35 (42)
+Q Consensus        16 tadrpeeqavwraaierlvi   35 (42)
+                      .++..++...|..+|...+.
+T Consensus        92 ~a~~~~~~~~W~~~l~~~~~  111 (125)
+T 1EAZ_A           92 QADSPEEMHSWIKAVSGAIV  111 (125)
+T ss_dssp             ECSSHHHHHHHHHHHHHHHH
+T ss_pred             ECCCHHHHHHHHHHHHHHHH
+Confidence            45667788889988876543
+
+
+No 19
+>2R80_B Hemoglobin subunit alpha-A, Hemoglobin subunit; OXYGEN TRANPORT/STORAGE, Heme, Iron, Metal-binding; HET: HEM; 1.44A {Columba livia}
+Probab=29.94  E-value=45  Score=17.66  Aligned_cols=18  Identities=28%  Similarity=0.481  Sum_probs=12.7  Template_Neff=10.600
+
+Q T1125_Domain7:   17 ADRPEEQAVWRAAIERLV   34 (42)
+Q Consensus        17 adrpeeqavwraaierlv   34 (42)
+                      .-.|+.+..|+.++..++
+T Consensus       121 ~~~~~~~~AW~~~~~~i~  138 (146)
+T 2R80_B          121 DFTPECQAAWQKLVRVVA  138 (146)
+T ss_dssp             GSCHHHHHHHHHHHHHHH
+T ss_pred             CCCHHHHHHHHHHHHHHH
+Confidence            345777889998886543
+
+
+No 20
+>4HRR_C Globin-2 A chain, Hemoglobin B; hemoglobin, oxygen transport, Globin fold; HET: HEM, CMO, ACE; 1.25A {Scapharca inaequivalvis}
+Probab=29.83  E-value=45  Score=17.64  Aligned_cols=17  Identities=12%  Similarity=0.241  Sum_probs=12.3  Template_Neff=10.700
+
+Q T1125_Domain7:   17 ADRPEEQAVWRAAIERL   33 (42)
+Q Consensus        17 adrpeeqavwraaierl   33 (42)
+                      ...+|.+..|+.++..+
+T Consensus       130 ~~~~e~~~aW~~~~~~i  146 (150)
+T 4HRR_C          130 YYSDDVAGAWAALVGVV  146 (150)
+T ss_dssp             GCCHHHHHHHHHHHHHH
+T ss_pred             CCCHHHHHHHHHHHHHH
+Confidence            44577788898887654
+
+
+No 21
+>3W4U_A Hemoglobin subunit zeta, Hemoglobin subunit; globin fold, oxygen transport, oxygen; HET: CMO, HEM; 1.95A {Homo sapiens}
+Probab=29.78  E-value=45  Score=17.38  Aligned_cols=26  Identities=15%  Similarity=0.234  Sum_probs=16.6  Template_Neff=10.800
+
+Q T1125_Domain7:    9 ILKKLLETADRPEEQAVWRAAIERLV   34 (42)
+Q Consensus         9 ilkklletadrpeeqavwraaierlv   34 (42)
+                      .+++.+.....|+....|+.++..++
+T Consensus       109 ~l~~~l~~~~~~~~~~aW~~~~~~~~  134 (142)
+T 3W4U_A          109 TLAARFPADFTAEAHAAWDKFLSVVS  134 (142)
+T ss_dssp             HHHHHCTTTCCHHHHHHHHHHHHHHH
+T ss_pred             HHHHHCCcCCCHHHHHHHHHHHHHHH
+Confidence            34444444556777888988876543
+
+
+No 22
+>2R80_C Hemoglobin subunit alpha-A, Hemoglobin subunit; OXYGEN TRANPORT/STORAGE, Heme, Iron, Metal-binding; HET: HEM; 1.44A {Columba livia}
+Probab=29.71  E-value=45  Score=17.35  Aligned_cols=18  Identities=17%  Similarity=0.021  Sum_probs=12.7  Template_Neff=10.800
+
+Q T1125_Domain7:   17 ADRPEEQAVWRAAIERLV   34 (42)
+Q Consensus        17 adrpeeqavwraaierlv   34 (42)
+                      ...++....|+.++..++
+T Consensus       116 ~~~~~~~~AW~~~~~~i~  133 (141)
+T 2R80_C          116 LLTPEVHASLDKFVLAVG  133 (141)
+T ss_dssp             TCCHHHHHHHHHHHHHHH
+T ss_pred             cCCHHHHHHHHHHHHHHH
+Confidence            344667889998887654
+
+
+No 23
+>3MKB_B Hemoglobin subunit alpha, Hemoglobin subunit; Hemoglobin, Oxygen Affinity, Isurus oxyrinchus; HET: HEM; 1.9A {Isurus oxyrinchus}
+Probab=29.29  E-value=47  Score=17.28  Aligned_cols=18  Identities=28%  Similarity=0.324  Sum_probs=13.3  Template_Neff=10.700
+
+Q T1125_Domain7:   17 ADRPEEQAVWRAAIERLV   34 (42)
+Q Consensus        17 adrpeeqavwraaierlv   34 (42)
+                      ...|+.+..|+.+++.++
+T Consensus       111 ~~~~e~~~aW~~~~~~v~  128 (136)
+T 3MKB_B          111 AFTPFVFAVWIKFFQVVI  128 (136)
+T ss_pred             cCCHHHHHHHHHHHHHHH
+Confidence            345778899998887654
+
+
+No 24
+>3D1K_A Hemoglobin subunit alpha-1, Hemoglobin subunit; antarctic fish hemoglobin, intermediate R/T; HET: HEM; 1.25A {?} SCOP: a.1.1.2
+Probab=28.93  E-value=48  Score=17.29  Aligned_cols=18  Identities=11%  Similarity=0.132  Sum_probs=12.6  Template_Neff=10.800
+
+Q T1125_Domain7:   17 ADRPEEQAVWRAAIERLV   34 (42)
+Q Consensus        17 adrpeeqavwraaierlv   34 (42)
+                      ...|+.+..|+.++..++
+T Consensus       117 ~~~~~~~~aW~~~~~~i~  134 (142)
+T 3D1K_A          117 EFTPEAHVSLDKFLSGVA  134 (142)
+T ss_dssp             TCCHHHHHHHHHHHHHHH
+T ss_pred             cCCHHHHHHHHHHHHHHH
+Confidence            344677888998877654
+
+
+No 25
+>1TU9_A hypothetical protein PA3967; Structural genomics, Heme, hemoglobin, Pseudomonas; HET: HEM; 1.2A {Pseudomonas aeruginosa} SCOP: a.1.1.2
+Probab=28.80  E-value=48  Score=17.44  Aligned_cols=17  Identities=24%  Similarity=0.499  Sum_probs=12.3  Template_Neff=10.400
+
+Q T1125_Domain7:   18 DRPEEQAVWRAAIERLV   34 (42)
+Q Consensus        18 drpeeqavwraaierlv   34 (42)
+                      -.+|....|+.++..++
+T Consensus       109 ~~~e~~~aW~~~~~~i~  125 (134)
+T 1TU9_A          109 CDAETRDAWRDVMGRGI  125 (134)
+T ss_pred             CCHHHHHHHHHHHHHHH
+Confidence            35566788999887754
+
+
+No 26
+>3MKB_D Hemoglobin subunit alpha, Hemoglobin subunit; Hemoglobin, Oxygen Affinity, Isurus oxyrinchus; HET: HEM; 1.9A {Isurus oxyrinchus}
+Probab=27.77  E-value=52  Score=17.11  Aligned_cols=18  Identities=28%  Similarity=0.324  Sum_probs=13.2  Template_Neff=10.700
+
+Q T1125_Domain7:   17 ADRPEEQAVWRAAIERLV   34 (42)
+Q Consensus        17 adrpeeqavwraaierlv   34 (42)
+                      .-.++.++.|+.+++.++
+T Consensus       111 ~~~~e~~~aW~~~~~~i~  128 (136)
+T 3MKB_D          111 AFTPFVFAVWIKFFQVVI  128 (136)
+T ss_dssp             GCCHHHHHHHHHHHHHHH
+T ss_pred             cCCHHHHHHHHHHHHHHH
+Confidence            345677899998887654
+
+
+No 27
+>1XQ5_A Hemoglobin alpha-1 chain, Hemoglobin beta-2; Fish Hemoglobin, rapid oxidation, structural; HET: HEM; 1.9A {Perca flavescens} SCOP: a.1.1.2
+Probab=27.66  E-value=52  Score=17.34  Aligned_cols=18  Identities=17%  Similarity=0.178  Sum_probs=12.7  Template_Neff=10.600
+
+Q T1125_Domain7:   17 ADRPEEQAVWRAAIERLV   34 (42)
+Q Consensus        17 adrpeeqavwraaierlv   34 (42)
+                      ...++.+..|+.++.-++
+T Consensus       118 ~~~~~~~~AW~~~~~~i~  135 (143)
+T 1XQ5_A          118 DFTPEVHISYDKFFSALA  135 (143)
+T ss_dssp             GCCHHHHHHHHHHHHHHH
+T ss_pred             cCCHHHHHHHHHHHHHHH
+Confidence            345777889998886543
+
+
+No 28
+>1WMU_B Hemoglobin D alpha chain/Hemoglobin A; HEMOGLOBIN D, REPTILIA, THE ALDABRA; HET: HEM; 1.65A {Dipsochelys dussumieri} SCOP: a.1.1.2
+Probab=27.20  E-value=54  Score=17.27  Aligned_cols=25  Identities=20%  Similarity=0.393  Sum_probs=15.8  Template_Neff=10.700
+
+Q T1125_Domain7:   10 LKKLLETADRPEEQAVWRAAIERLV   34 (42)
+Q Consensus        10 lkklletadrpeeqavwraaierlv   34 (42)
+                      ++..+.....++.+..|+.++..++
+T Consensus       114 l~~~l~~~~~~~~~~AW~~~~~~i~  138 (146)
+T 1WMU_B          114 LATHFPKEFTPASQAAWTKLVNAVA  138 (146)
+T ss_dssp             HHHHCTTTCCHHHHHHHHHHHHHHH
+T ss_pred             HHHHCCccCCHHHHHHHHHHHHHHH
+Confidence            3444433446777889998886543
+
+
+No 29
+>2Z6N_B Hemoglobin D subunit alpha, Hemoglobin; HEMOGLOBIN D, REPTILIA, THE ALDABRA; HET: HEM; 1.86A {Dipsochelys dussumieri} SCOP: a.1.1.2
+Probab=27.20  E-value=54  Score=17.27  Aligned_cols=25  Identities=20%  Similarity=0.393  Sum_probs=15.8  Template_Neff=10.700
+
+Q T1125_Domain7:   10 LKKLLETADRPEEQAVWRAAIERLV   34 (42)
+Q Consensus        10 lkklletadrpeeqavwraaierlv   34 (42)
+                      ++..+.....++.+..|+.++..++
+T Consensus       114 l~~~l~~~~~~~~~~AW~~~~~~i~  138 (146)
+T 2Z6N_B          114 LATHFPKEFTPASQAAWTKLVNAVA  138 (146)
+T ss_dssp             HHHHCTTTCCHHHHHHHHHHHHHHH
+T ss_pred             HHHHCCccCCHHHHHHHHHHHHHHH
+Confidence            3444433446777889998886543
+
+
+No 30
+>3D1K_B Hemoglobin subunit alpha-1, Hemoglobin subunit; antarctic fish hemoglobin, intermediate R/T; HET: HEM; 1.25A {?} SCOP: a.1.1.2
+Probab=26.97  E-value=55  Score=17.50  Aligned_cols=24  Identities=17%  Similarity=0.188  Sum_probs=15.2  Template_Neff=10.400
+
+Q T1125_Domain7:   11 KKLLETADRPEEQAVWRAAIERLV   34 (42)
+Q Consensus        11 kklletadrpeeqavwraaierlv   34 (42)
+                      +..+...-.+|.+..|+.++..++
+T Consensus       115 ~~~~~~~~~~e~~~aW~~~~~~i~  138 (146)
+T 3D1K_B          115 AAKMGHAFTAETQGAFQKFLAAVV  138 (146)
+T ss_dssp             HHHHGGGSCHHHHHHHHHHHHHHH
+T ss_pred             HHHHcccCCHHHHHHHHHHHHHHH
+Confidence            333333335677889998887665
+
+
+No 31
+>3NG6_D Hemoglobin subunit alpha-1, Hemoglobin subunit; Root effect, fish hemoglobin, antarctic; HET: HEM; 2.2A {Trematomus newnesi}
+Probab=26.97  E-value=55  Score=17.50  Aligned_cols=24  Identities=17%  Similarity=0.188  Sum_probs=15.2  Template_Neff=10.400
+
+Q T1125_Domain7:   11 KKLLETADRPEEQAVWRAAIERLV   34 (42)
+Q Consensus        11 kklletadrpeeqavwraaierlv   34 (42)
+                      +..+...-.+|.+..|+.++..++
+T Consensus       115 ~~~~~~~~~~e~~~aW~~~~~~i~  138 (146)
+T 3NG6_D          115 AAKMGHAFTAETQGAFQKFLAAVV  138 (146)
+T ss_dssp             HHHHGGGSCHHHHHHHHHHHHHHH
+T ss_pred             HHHHcccCCHHHHHHHHHHHHHHH
+Confidence            333333335677889998887665
+
+
+No 32
+>6IYI_B Alpha chain, Beta chain; methemoglobin, heme, iron containing, oxygen-carrying; HET: HEM; 2.2A {Acipenser stellatus}
+Probab=26.49  E-value=56  Score=17.28  Aligned_cols=18  Identities=28%  Similarity=0.630  Sum_probs=12.6  Template_Neff=10.600
+
+Q T1125_Domain7:   17 ADRPEEQAVWRAAIERLV   34 (42)
+Q Consensus        17 adrpeeqavwraaierlv   34 (42)
+                      .-.++.+..|+.++..++
+T Consensus       121 ~~~~~~~~aW~~~~~~i~  138 (146)
+T 6IYI_B          121 AYTPDVHAAWQKMIAVII  138 (146)
+T ss_dssp             GSCHHHHHHHHHHHHHHH
+T ss_pred             cCCHHHHHHHHHHHHHHH
+Confidence            344677889998887554
+
+
+No 33
+>2W72_D HUMAN HEMOGLOBIN A; IRON, HEME, GLYCATION, TRANSPORT, ACETYLATION; HET: SO4, XE, HEM; 1.07A {HOMO SAPIENS}
+Probab=26.19  E-value=58  Score=17.24  Aligned_cols=18  Identities=17%  Similarity=0.279  Sum_probs=12.8  Template_Neff=10.600
+
+Q T1125_Domain7:   17 ADRPEEQAVWRAAIERLV   34 (42)
+Q Consensus        17 adrpeeqavwraaierlv   34 (42)
+                      ...++.+..|+.++..++
+T Consensus       121 ~~~~~~~~aW~~~~~~i~  138 (146)
+T 2W72_D          121 EFTPPVQAAYQKVVAGVA  138 (146)
+T ss_dssp             GSCHHHHHHHHHHHHHHH
+T ss_pred             cCCHHHHHHHHHHHHHHH
+Confidence            345777889998877554
+
+
+No 34
+>1GCV_D HEMOGLOBIN; Hemoglobin, DEOXY FORM, OXYGEN STORAGE-TRANSPORT; HET: HEM; 2.0A {Mustelus griseus} SCOP: a.1.1.2
+Probab=26.13  E-value=58  Score=17.10  Aligned_cols=17  Identities=24%  Similarity=0.503  Sum_probs=12.3  Template_Neff=10.500
+
+Q T1125_Domain7:   18 DRPEEQAVWRAAIERLV   34 (42)
+Q Consensus        18 drpeeqavwraaierlv   34 (42)
+                      -.++.+..|+.++..++
+T Consensus       112 ~~~~~~~aW~~~~~~i~  128 (136)
+T 1GCV_D          112 FTPHIQGIWDKFFEVVI  128 (136)
+T ss_dssp             SCHHHHHHHHHHHHHHH
+T ss_pred             CCHHHHHHHHHHHHHHH
+Confidence            34677889998887554
+
+
+No 35
+>4A5K_B PHOSPHATIDYLINOSITOL 4,5-BISPHOSPHATE-BINDING PROTEIN SLM 1; SIGNALING PROTEIN, NON-CANONICAL BINDING SITE; HET: SO4; 1.76A {SACCHAROMYCES CEREVISIAE}
+Probab=26.05  E-value=58  Score=15.46  Aligned_cols=21  Identities=24%  Similarity=0.301  Sum_probs=14.5  Template_Neff=11.900
+
+Q T1125_Domain7:   14 LETADRPEEQAVWRAAIERLV   34 (42)
+Q Consensus        14 letadrpeeqavwraaierlv   34 (42)
+                      .-.++..++...|..++...+
+T Consensus        95 ~~~a~~~~e~~~W~~~l~~~~  115 (118)
+T 4A5K_B           95 VFKADSYESMMSWFDNLKILT  115 (118)
+T ss_dssp             EEECSSHHHHHHHHHHHHHHH
+T ss_pred             EEEcCCHHHHHHHHHHHHHHh
+Confidence            335667778888888876543
+
+
+No 36
+>5LKV_B Dehaloperoxidase B; imidazole, dehaloperoxidase, heme, oxidoreductase; HET: GOL, SO4, IMD, HEM; 1.08A {Amphitrite ornata}
+Probab=25.77  E-value=59  Score=17.25  Aligned_cols=25  Identities=12%  Similarity=0.282  Sum_probs=15.2  Template_Neff=10.300
+
+Q T1125_Domain7:    9 ILKKLLETADRPEEQAVWRAAIERLV   34 (42)
+Q Consensus         9 ilkklletadrpeeqavwraaierlv   34 (42)
+                      ++.-+.+. ..++.++.|+.++..++
+T Consensus       104 ~~~~l~~~-~~~~~~~aW~~~~~~i~  128 (137)
+T 5LKV_B          104 LVEYMRAS-GQSFDSQSWDRFGKNLV  128 (137)
+T ss_dssp             HHHHHHHT-TSCCCHHHHHHHHHHHH
+T ss_pred             HHHHHHHh-CCCccHHHHHHHHHHHH
+Confidence            33334444 34556888998887664
+
+
+No 37
+>2MDX_A Pleckstrin homology domain-containing family A; pleckstrin homology, phosphoinositide, MEMBRANE PROTEIN; NMR {Homo sapiens}
+Probab=25.70  E-value=60  Score=14.46  Aligned_cols=20  Identities=20%  Similarity=0.248  Sum_probs=13.4  Template_Neff=12.700
+
+Q T1125_Domain7:   16 TADRPEEQAVWRAAIERLVI   35 (42)
+Q Consensus        16 tadrpeeqavwraaierlvi   35 (42)
+                      .++..++...|..+|.....
+T Consensus        82 ~~~~~~~~~~W~~~l~~~~~  101 (108)
+T 2MDX_A           82 KAVNAAERQRWLVALGSSKA  101 (108)
+T ss_dssp             EESSHHHHHHHHHHHHHHST
+T ss_pred             EcCCHHHHHHHHHHHHHHHH
+Confidence            35566777788888776543
+
+
+No 38
+>5V5R_A Dehaloperoxidase A; peroxidase, peroxygenase, globin, mutant, OXYGEN; HET: SO4, HEM; 1.2A {Amphitrite ornata}
+Probab=25.59  E-value=60  Score=17.23  Aligned_cols=15  Identities=20%  Similarity=0.304  Sum_probs=11.3  Template_Neff=10.300
+
+Q T1125_Domain7:   20 PEEQAVWRAAIERLV   34 (42)
+Q Consensus        20 peeqavwraaierlv   34 (42)
+                      ++.++.|+.++..++
+T Consensus       114 ~~~~~aW~~~~~~~~  128 (137)
+T 5V5R_A          114 SFDSQSWDRFGKNLV  128 (137)
+T ss_dssp             CCCHHHHHHHHHHHH
+T ss_pred             chhHHHHHHHHHHHH
+Confidence            455888998887765
+
+
+No 39
+>3BJ2_A hemoglobin alpha, hemoglobin beta; hemoglobin, autooxidation, heme loss, OXYGEN; HET: HEM; 2.0A {Perca flavescens}
+Probab=25.20  E-value=62  Score=16.96  Aligned_cols=18  Identities=11%  Similarity=0.130  Sum_probs=12.7  Template_Neff=10.700
+
+Q T1125_Domain7:   17 ADRPEEQAVWRAAIERLV   34 (42)
+Q Consensus        17 adrpeeqavwraaierlv   34 (42)
+                      ...++....|+.++..++
+T Consensus       117 ~~~~~~~~AW~~~~~~i~  134 (142)
+T 3BJ2_A          117 DFTPEVHLSYDKFFSAVA  134 (142)
+T ss_dssp             GCCHHHHHHHHHHHHHHH
+T ss_pred             cCCHHHHHHHHHHHHHHH
+Confidence            445677889998886553
+
+
+No 40
+>5O18_A Neuroglobin; globin, oxygen transporter, transport protein; HET: HEM; 1.86A {Mus musculus}
+Probab=25.15  E-value=62  Score=16.91  Aligned_cols=19  Identities=16%  Similarity=0.310  Sum_probs=13.1  Template_Neff=10.900
+
+Q T1125_Domain7:   16 TADRPEEQAVWRAAIERLV   34 (42)
+Q Consensus        16 tadrpeeqavwraaierlv   34 (42)
+                      ....++.+..|+.++..++
+T Consensus       121 ~~~~~~~~~aW~~~~~~v~  139 (148)
+T 5O18_A          121 PDFTPATRTAWSRLYGAWV  139 (148)
+T ss_dssp             GGCCHHHHHHHHHHHHHHH
+T ss_pred             cCCCHHHHHHHHHHHHHHH
+Confidence            3446777888988876543
+
+
+No 41
+>2D9Y_A Pleckstrin homology domain-containing protein family; PH domain, PEPP-3, structural genomics; NMR {Homo sapiens}
+Probab=25.00  E-value=63  Score=14.80  Aligned_cols=19  Identities=37%  Similarity=0.685  Sum_probs=13.7  Template_Neff=12.500
+
+Q T1125_Domain7:   16 TADRPEEQAVWRAAIERLV   34 (42)
+Q Consensus        16 tadrpeeqavwraaierlv   34 (42)
+                      .++..++...|..+|.+.+
+T Consensus        90 ~~~~~~~~~~W~~~i~~~~  108 (117)
+T 2D9Y_A           90 SAESPEEQEAWIQAMGEAA  108 (117)
+T ss_dssp             ECSSHHHHHHHHHHHHHTT
+T ss_pred             ECCCHHHHHHHHHHHHHHH
+Confidence            4556677788988887754
+
+
+No 42
+>1V5U_A SET binding factor 1; Sbf1, MTMR5, the Pleckstrin Homology; NMR {Mus musculus} SCOP: b.55.1.1
+Probab=24.84  E-value=63  Score=14.61  Aligned_cols=21  Identities=14%  Similarity=0.227  Sum_probs=14.4  Template_Neff=12.700
+
+Q T1125_Domain7:   16 TADRPEEQAVWRAAIERLVIG   36 (42)
+Q Consensus        16 tadrpeeqavwraaierlvig   36 (42)
+                      .++.+++...|..+|.+....
+T Consensus        92 ~a~~~~~~~~W~~~l~~~~~~  112 (117)
+T 1V5U_A           92 CAQDVPSAQQWVDRIQSCLSS  112 (117)
+T ss_dssp             ECSSHHHHHHHHHHHHTTCCC
+T ss_pred             EcCCHHHHHHHHHHHHHHHhc
+Confidence            355667777888888776543
+
+
+No 43
+>1MBA_A MYOGLOBIN (MET) (PH 7.0); OXYGEN STORAGE; HET: HEM; 1.6A {Aplysia limacina} SCOP: a.1.1.2
+Probab=24.79  E-value=64  Score=16.93  Aligned_cols=17  Identities=12%  Similarity=0.347  Sum_probs=12.6  Template_Neff=10.800
+
+Q T1125_Domain7:   18 DRPEEQAVWRAAIERLV   34 (42)
+Q Consensus        18 drpeeqavwraaierlv   34 (42)
+                      ..++.++.|+.++..++
+T Consensus       123 ~~~~~~~aw~~~~~~i~  139 (147)
+T 1MBA_A          123 PPAGADAAWTKLFGLII  139 (147)
+T ss_dssp             CCTTHHHHHHHHHHHHH
+T ss_pred             CCHHHHHHHHHHHHHHH
+Confidence            46788889998877654
+
+
+No 44
+>2H8F_D Hemoglobin alpha subunit, Hemoglobin beta; Root effect, pH, cooperativity, hemoglobin; HET: HEM; 1.3A {Trematomus bernacchii} SCOP: a.1.1.2
+Probab=23.37  E-value=70  Score=16.91  Aligned_cols=24  Identities=17%  Similarity=0.169  Sum_probs=15.1  Template_Neff=10.600
+
+Q T1125_Domain7:   11 KKLLETADRPEEQAVWRAAIERLV   34 (42)
+Q Consensus        11 kklletadrpeeqavwraaierlv   34 (42)
+                      ++.+.....++.+..|+.++..++
+T Consensus       115 ~~~~~~~~~~~~~~aW~~~~~~i~  138 (146)
+T 2H8F_D          115 AAKMGHAFTAETQGAFQKFLAVVV  138 (146)
+T ss_dssp             HHHHGGGSCHHHHHHHHHHHHHHH
+T ss_pred             HHHHcccCCHHHHHHHHHHHHHHH
+Confidence            333333445677889998876554
+
+
+No 45
+>1V4W_B hemoglobin alpha chain/hemoglobin beta chain; OXYGEN TRANSPORT, HEME, RESPIRATORY PROTEIN; HET: HEM; 1.7A {Thunnus thynnus} SCOP: a.1.1.2
+Probab=23.07  E-value=72  Score=16.87  Aligned_cols=24  Identities=17%  Similarity=0.140  Sum_probs=14.2  Template_Neff=10.600
+
+Q T1125_Domain7:   10 LKKLLETADRPEEQAVWRAAIERL   33 (42)
+Q Consensus        10 lkklletadrpeeqavwraaierl   33 (42)
+                      +++.+.....++.+..|+.++..+
+T Consensus       114 l~~~~~~~~~~~~~~AW~~~~~~i  137 (146)
+T 1V4W_B          114 IAANLGDAFTVETQCAFQKFLAVV  137 (146)
+T ss_dssp             HHHHHGGGSCHHHHHHHHHHHHHH
+T ss_pred             HHHHHcccCCHHHHHHHHHHHHHH
+Confidence            333333334456688898887654
+
+
+No 46
+>1V4X_D hemoglobin alpha chain/hemoglobin beta chain; OXYGEN TRANSPORT, HEME, RESPIRATORY PROTEIN; HET: HEM; 1.6A {Thunnus thynnus} SCOP: a.1.1.2
+Probab=23.07  E-value=72  Score=16.87  Aligned_cols=24  Identities=17%  Similarity=0.140  Sum_probs=14.2  Template_Neff=10.600
+
+Q T1125_Domain7:   10 LKKLLETADRPEEQAVWRAAIERL   33 (42)
+Q Consensus        10 lkklletadrpeeqavwraaierl   33 (42)
+                      +++.+.....++.+..|+.++..+
+T Consensus       114 l~~~~~~~~~~~~~~AW~~~~~~i  137 (146)
+T 1V4X_D          114 IAANLGDAFTVETQCAFQKFLAVV  137 (146)
+T ss_dssp             HHHHHGGGSCHHHHHHHHHHHHHH
+T ss_pred             HHHHHcccCCHHHHHHHHHHHHHH
+Confidence            333333334456688898887654
+
+
+No 47
+>2DKP_A Pleckstrin homology domain-containing family A; PH domain, Pleckstrin homology domain-containing; NMR {Homo sapiens}
+Probab=22.96  E-value=73  Score=15.11  Aligned_cols=20  Identities=20%  Similarity=0.405  Sum_probs=14.3  Template_Neff=12.200
+
+Q T1125_Domain7:   16 TADRPEEQAVWRAAIERLVI   35 (42)
+Q Consensus        16 tadrpeeqavwraaierlvi   35 (42)
+                      .++.+++...|..+|...+.
+T Consensus       100 ~~~~~~~~~~W~~~l~~~~~  119 (128)
+T 2DKP_A          100 CTDTGKEMELWMKAMLDAAL  119 (128)
+T ss_dssp             ECSSHHHHHHHHHHHHHHHS
+T ss_pred             EcCCHHHHHHHHHHHHHHHh
+Confidence            45667778889888876654
+
+
+No 48
+>2RLO_A Centaurin-gamma 1; Split PH domain, ANK repeat; NMR {Homo sapiens}
+Probab=22.77  E-value=74  Score=15.34  Aligned_cols=18  Identities=39%  Similarity=0.495  Sum_probs=12.8  Template_Neff=11.900
+
+Q T1125_Domain7:   16 TADRPEEQAVWRAAIERL   33 (42)
+Q Consensus        16 tadrpeeqavwraaierl   33 (42)
+                      .++.+++...|..+|...
+T Consensus       105 ~a~s~~~~~~W~~al~~~  122 (128)
+T 2RLO_A          105 EAASFEERDAWVQAIESQ  122 (128)
+T ss_dssp             EESSHHHHHHHHHHHHHH
+T ss_pred             EcCCHHHHHHHHHHHHHH
+Confidence            455677778888887754
+
+
+No 49
+>2DC3_A Cytoglobin; cytoglobin, myoglobin, heme, oxygen transport; HET: HEM; 1.68A {Homo sapiens}
+Probab=22.42  E-value=76  Score=18.21  Aligned_cols=18  Identities=22%  Similarity=0.296  Sum_probs=13.1  Template_Neff=9.900
+
+Q T1125_Domain7:   17 ADRPEEQAVWRAAIERLV   34 (42)
+Q Consensus        17 adrpeeqavwraaierlv   34 (42)
+                      ...++.++.|+.++..++
+T Consensus       145 ~~~~e~~~AW~~~~~~i~  162 (193)
+T 2DC3_A          145 DFPPETQRAWAKLRGLIY  162 (193)
+T ss_dssp             GCCHHHHHHHHHHHHHHH
+T ss_pred             cCCHHHHHHHHHHHHHHH
+Confidence            455777889998877654
+
+
+No 50
+>2DC3_B Cytoglobin; cytoglobin, myoglobin, heme, oxygen transport; HET: HEM; 1.68A {Homo sapiens}
+Probab=22.42  E-value=76  Score=18.21  Aligned_cols=18  Identities=22%  Similarity=0.296  Sum_probs=13.1  Template_Neff=9.900
+
+Q T1125_Domain7:   17 ADRPEEQAVWRAAIERLV   34 (42)
+Q Consensus        17 adrpeeqavwraaierlv   34 (42)
+                      ...++.++.|+.++..++
+T Consensus       145 ~~~~e~~~AW~~~~~~i~  162 (193)
+T 2DC3_B          145 DFPPETQRAWAKLRGLIY  162 (193)
+T ss_dssp             SCCHHHHHHHHHHHHHHH
+T ss_pred             cCCHHHHHHHHHHHHHHH
+Confidence            455777889998877654
+
+
+No 51
+>1GCV_A HEMOGLOBIN; Hemoglobin, DEOXY FORM, OXYGEN STORAGE-TRANSPORT; HET: HEM; 2.0A {Mustelus griseus} SCOP: a.1.1.2
+Probab=22.39  E-value=76  Score=16.41  Aligned_cols=18  Identities=6%  Similarity=0.150  Sum_probs=12.0  Template_Neff=10.900
+
+Q T1125_Domain7:   17 ADRPEEQAVWRAAIERLV   34 (42)
+Q Consensus        17 adrpeeqavwraaierlv   34 (42)
+                      .-.|+.+..|+.++..++
+T Consensus       115 ~~~~~~~~aW~~~~~~i~  132 (140)
+T 1GCV_A          115 EFSPDTHCAVDKLLSAIC  132 (140)
+T ss_dssp             CCCHHHHHHHHHHHHHHH
+T ss_pred             cCCHHHHHHHHHHHHHHH
+Confidence            344667788988776543
+
+
+No 52
+>6IYH_A Alpha chain, Beta chain; methemoglobin, heme, iron containing, oxygen-carrying; HET: HEM; 1.7A {Acipenser persicus}
+Probab=21.88  E-value=79  Score=16.64  Aligned_cols=18  Identities=11%  Similarity=0.073  Sum_probs=12.3  Template_Neff=10.600
+
+Q T1125_Domain7:   17 ADRPEEQAVWRAAIERLV   34 (42)
+Q Consensus        17 adrpeeqavwraaierlv   34 (42)
+                      ...++.+..|+.++..++
+T Consensus       117 ~~~~~~~~aW~~~~~~i~  134 (142)
+T 6IYH_A          117 DFTPEVHLACDKFLASVS  134 (142)
+T ss_dssp             TCCHHHHHHHHHHHHHHH
+T ss_pred             cCCHHHHHHHHHHHHHHH
+Confidence            344667888988876553
+
+
+No 53
+>6NLY_B Alanine--tRNA ligase, mitochondrial (E.C.6.1.1.7); Alanyl-tRNA synthetase, mitochondria, C-terminal domain; 2.307A {Homo sapiens}
+Probab=21.82  E-value=79  Score=18.61  Aligned_cols=14  Identities=43%  Similarity=0.570  Sum_probs=6.2  Template_Neff=9.300
+
+Q T1125_Domain7:   28 AAIERLVIGNTAYD   41 (42)
+Q Consensus        28 aaierlvigntayd   41 (42)
+                      +|-+|+++|+.|++
+T Consensus         1 ~~~~~~~~G~rA~~   14 (192)
+T 6NLY_B            1 AATERLSLGSRDVA   14 (192)
+T ss_dssp             ------CHHHHHHH
+T ss_pred             CchhhhhcCHHHHH
+Confidence            45678888887765
+
+
+No 54
+>1V75_A Hemoglobin D alpha chain/Hemoglobin A; HEMOGLOBIN D, REPTILIA, THE ALDABRA; HET: HEM; 2.02A {Dipsochelys dussumieri} SCOP: a.1.1.2
+Probab=21.55  E-value=81  Score=16.41  Aligned_cols=18  Identities=11%  Similarity=0.213  Sum_probs=12.4  Template_Neff=10.800
+
+Q T1125_Domain7:   17 ADRPEEQAVWRAAIERLV   34 (42)
+Q Consensus        17 adrpeeqavwraaierlv   34 (42)
+                      ...++.+..|..++..++
+T Consensus       116 ~~~~~~~~aW~~~~~~i~  133 (141)
+T 1V75_A          116 EYTPQVQVAYDKFLAAVS  133 (141)
+T ss_dssp             GSCHHHHHHHHHHHHHHH
+T ss_pred             cCCHHHHHHHHHHHHHHH
+Confidence            345677888988876543
+
+
+No 55
+>1WMU_A Hemoglobin D alpha chain/Hemoglobin A; HEMOGLOBIN D, REPTILIA, THE ALDABRA; HET: HEM; 1.65A {Dipsochelys dussumieri} SCOP: a.1.1.2
+Probab=21.55  E-value=81  Score=16.41  Aligned_cols=18  Identities=11%  Similarity=0.213  Sum_probs=12.4  Template_Neff=10.800
+
+Q T1125_Domain7:   17 ADRPEEQAVWRAAIERLV   34 (42)
+Q Consensus        17 adrpeeqavwraaierlv   34 (42)
+                      ...++.+..|..++..++
+T Consensus       116 ~~~~~~~~aW~~~~~~i~  133 (141)
+T 1WMU_A          116 EYTPQVQVAYDKFLAAVS  133 (141)
+T ss_dssp             GCCHHHHHHHHHHHHHHH
+T ss_pred             cCCHHHHHHHHHHHHHHH
+Confidence            345677888988876543
+
+
+No 56
+>2Z6N_A Hemoglobin D subunit alpha, Hemoglobin; HEMOGLOBIN D, REPTILIA, THE ALDABRA; HET: HEM; 1.86A {Dipsochelys dussumieri} SCOP: a.1.1.2
+Probab=21.55  E-value=81  Score=16.41  Aligned_cols=18  Identities=11%  Similarity=0.213  Sum_probs=12.4  Template_Neff=10.800
+
+Q T1125_Domain7:   17 ADRPEEQAVWRAAIERLV   34 (42)
+Q Consensus        17 adrpeeqavwraaierlv   34 (42)
+                      ...++.+..|..++..++
+T Consensus       116 ~~~~~~~~aW~~~~~~i~  133 (141)
+T 2Z6N_A          116 EYTPQVQVAYDKFLAAVS  133 (141)
+T ss_dssp             GSCHHHHHHHHHHHHHHH
+T ss_pred             cCCHHHHHHHHHHHHHHH
+Confidence            345677888988876543
+
+
+No 57
+>2COC_A FYVE, RhoGEF and PH domain; FYVE, RhoGEF and PH domain; NMR {Homo sapiens} SCOP: b.55.1.1
+Probab=21.47  E-value=81  Score=14.46  Aligned_cols=21  Identities=19%  Similarity=0.300  Sum_probs=14.1  Template_Neff=12.300
+
+Q T1125_Domain7:   16 TADRPEEQAVWRAAIERLVIG   36 (42)
+Q Consensus        16 tadrpeeqavwraaierlvig   36 (42)
+                      .++..++...|..+|.....+
+T Consensus        87 ~~~~~~~~~~W~~~l~~~~~~  107 (112)
+T 2COC_A           87 SASSAELQQQWLETLSTAAHS  107 (112)
+T ss_dssp             EESSHHHHHHHHHHHHHHHSC
+T ss_pred             EcCCHHHHHHHHHHHHHHhhc
+Confidence            456667777888877765443
+
+
+No 58
+>3S1I_B Hemoglobin-like flavoprotein; GLOBIN, HEME, OXYGEN-BOUND, AUTOXIDATION, OXYGEN; HET: HEM, SO4; 1.77A {Methylacidiphilum infernorum}
+Probab=21.11  E-value=84  Score=16.31  Aligned_cols=19  Identities=16%  Similarity=0.106  Sum_probs=13.7  Template_Neff=10.800
+
+Q T1125_Domain7:   18 DRPEEQAVWRAAIERLVIG   36 (42)
+Q Consensus        18 drpeeqavwraaierlvig   36 (42)
+                      -.++.++.|+.+++.++-+
+T Consensus       111 ~~~~~~~aw~~~~~~i~~~  129 (139)
+T 3S1I_B          111 FTEEAKAAWTKVYGIAAQV  129 (139)
+T ss_dssp             SCHHHHHHHHHHHHHHHHH
+T ss_pred             CCHHHHHHHHHHHHHHHHH
+Confidence            3467788999888776543
+
+
+No 59
+>1PLS_A PLECKSTRIN (N-TERMINAL PLECKSTRIN HOMOLOGY DOMAIN); PHOSPHORYLATION; NMR {Homo sapiens} SCOP: b.55.1.1
+Probab=21.08  E-value=84  Score=14.18  Aligned_cols=20  Identities=25%  Similarity=0.365  Sum_probs=13.2  Template_Neff=12.600
+
+Q T1125_Domain7:   17 ADRPEEQAVWRAAIERLVIG   36 (42)
+Q Consensus        17 adrpeeqavwraaierlvig   36 (42)
+                      ++..++..-|..+|...+-.
+T Consensus        83 ~~~~~~~~~W~~~l~~~~~~  102 (113)
+T 1PLS_A           83 AAFLEERDAWVRDINKAIKC  102 (113)
+T ss_dssp             CSSHHHHHHHHHHHHHHHHH
+T ss_pred             cCCHHHHHHHHHHHHHHHHh
+Confidence            45566667788887766533
+
+
+No 60
+>3HW2_B Protein sifA, Pleckstrin homology domain-containing; sifa, protein complex, salmonella infection; 3.3A {Salmonella enterica subsp. enterica serovar Typhimurium}
+Probab=21.04  E-value=84  Score=13.79  Aligned_cols=19  Identities=26%  Similarity=0.422  Sum_probs=12.2  Template_Neff=12.800
+
+Q T1125_Domain7:   16 TADRPEEQAVWRAAIERLV   34 (42)
+Q Consensus        16 tadrpeeqavwraaierlv   34 (42)
+                      .++.+++..-|..+|...+
+T Consensus        84 ~~~~~~~~~~W~~~l~~~~  102 (105)
+T 3HW2_B           84 SAESEAEMAEWMQHLCQAV  102 (105)
+T ss_dssp             EESSHHHHHHHHHHHHHHH
+T ss_pred             ECCCHHHHHHHHHHHHHHH
+Confidence            3455666677887776543
+
+
+No 61
+>1FAO_A DUAL ADAPTOR OF PHOSPHOTYROSINE AND; PLECKSTRIN, 3-PHOSPHOINOSITIDES, INOSITOL TETRAKISPHOSPHATE SIGNAL; HET: 4IP; 1.8A {Homo sapiens} SCOP: b.55.1.1
+Probab=20.84  E-value=85  Score=14.90  Aligned_cols=20  Identities=15%  Similarity=0.169  Sum_probs=14.2  Template_Neff=12.100
+
+Q T1125_Domain7:   16 TADRPEEQAVWRAAIERLVI   35 (42)
+Q Consensus        16 tadrpeeqavwraaierlvi   35 (42)
+                      .++..++...|..+|...+.
+T Consensus        93 ~~~~~~~~~~W~~~i~~~~~  112 (126)
+T 1FAO_A           93 CAKTGVEADEWIKILRWKLS  112 (126)
+T ss_dssp             ECSSHHHHHHHHHHHHHHHH
+T ss_pred             EcCCHHHHHHHHHHHHHHHH
+Confidence            35566777788888877654
+
+
+No 62
+>2RSG_A Collagen type IV alpha-3-binding protein; pleckstrin homology, LIPID TRANSPORT; NMR {Homo sapiens}
+Probab=20.77  E-value=86  Score=13.01  Aligned_cols=16  Identities=38%  Similarity=0.761  Sum_probs=9.2  Template_Neff=13.300
+
+Q T1125_Domain7:   17 ADRPEEQAVWRAAIER   32 (42)
+Q Consensus        17 adrpeeqavwraaier   32 (42)
+                      ++.+++..-|..+|..
+T Consensus        76 ~~~~~~~~~W~~~l~~   91 (94)
+T 2RSG_A           76 AQDPDHRQQWIDAIEQ   91 (94)
+T ss_dssp             CCSSCCTHHHHHHHHH
+T ss_pred             cCCHHHHHHHHHHHHh
+Confidence            4445566667666553
+
+
+No 63
+>3CXB_B Protein sifA, Pleckstrin homology domain-containing; sifa, skip, complex, Virulence, Membrane; 2.6A {Salmonella typhimurium}
+Probab=20.72  E-value=86  Score=14.28  Aligned_cols=20  Identities=25%  Similarity=0.371  Sum_probs=14.0  Template_Neff=12.400
+
+Q T1125_Domain7:   16 TADRPEEQAVWRAAIERLVI   35 (42)
+Q Consensus        16 tadrpeeqavwraaierlvi   35 (42)
+                      .++.+++...|..+|...+.
+T Consensus        82 ~~~~~~~~~~W~~~l~~~~~  101 (112)
+T 3CXB_B           82 SAESEAEMAEWMQHLCQAVS  101 (112)
+T ss_dssp             ECSSHHHHHHHHHHHHHHHT
+T ss_pred             EcCCHHHHHHHHHHHHHHHH
+Confidence            45667777888888776543
+
+
+No 64
+>4BPT_A PHENYLALANINE-4-HYDROXYLASE (PAH) (PHE-4-MONOOXYGENASE) (E.C.1.14.16.1); OXIDOREDUCTASE, PYOMELANIN SYNTHESIS, THERMOSTABILITY, AGGREGATION; HET: PEG; 2.5A {LEGIONELLA PNEUMOPHILA}
+Probab=20.58  E-value=87  Score=22.38  Aligned_cols=16  Identities=25%  Similarity=0.638  Sum_probs=13.3  Template_Neff=5.300
+
+Q T1125_Domain7:   19 RPEEQAVWRAAIERLV   34 (42)
+Q Consensus        19 rpeeqavwraaierlv   34 (42)
+                      .+||+++|+...+|+.
+T Consensus        21 T~ee~~~W~~l~~~~~   36 (272)
+T 4BPT_A           21 SAQENRIWNILFERQL   36 (272)
+T ss_dssp             CHHHHHHHHHHHHHHH
+T ss_pred             CHHHHHHHHHHHHHHH
+Confidence            4689999999988864
+
+
+No 65
+>1V89_A Hypothetical protein KIAA0053; pleckstrin homology domain, phosphatidylinositol binding; NMR {Homo sapiens} SCOP: b.55.1.1
+Probab=20.54  E-value=88  Score=14.08  Aligned_cols=19  Identities=21%  Similarity=0.385  Sum_probs=13.0  Template_Neff=12.800
+
+Q T1125_Domain7:   16 TADRPEEQAVWRAAIERLV   34 (42)
+Q Consensus        16 tadrpeeqavwraaierlv   34 (42)
+                      .++.+++..-|..+|....
+T Consensus        93 ~~~~~~~~~~W~~~l~~~~  111 (118)
+T 1V89_A           93 MASSQAEMEEWVKFLRRVA  111 (118)
+T ss_dssp             ECSSHHHHHHHHHHHHHHH
+T ss_pred             ECCCHHHHHHHHHHHHHHH
+Confidence            4566677778888776543
+
+
+No 66
+>4MQJ_C Hemoglobin subunit alpha, Hemoglobin subunit; oxygen-transport, autooxidation, OXYGEN TRANSPORT; HET: HEM; 1.8A {Homo sapiens}
+Probab=20.18  E-value=90  Score=16.32  Aligned_cols=16  Identities=13%  Similarity=0.092  Sum_probs=11.3  Template_Neff=10.700
+
+Q T1125_Domain7:   18 DRPEEQAVWRAAIERL   33 (42)
+Q Consensus        18 drpeeqavwraaierl   33 (42)
+                      -.++.++.|+..+..+
+T Consensus       117 ~~~~~~~AW~~~~~~i  132 (141)
+T 4MQJ_C          117 FTPAVHASLDKFLASV  132 (141)
+T ss_dssp             CCHHHHHHHHHHHHHH
+T ss_pred             CCHHHHHHHHHHHHHH
+Confidence            3467788898877654
+
+
+No 67
+>2LKO_A Fermitin family homolog 2; CELL ADHESION; HET: 4IP; NMR {Homo sapiens}
+Probab=20.16  E-value=90  Score=15.67  Aligned_cols=22  Identities=27%  Similarity=0.364  Sum_probs=15.7  Template_Neff=11.400
+
+Q T1125_Domain7:   16 TADRPEEQAVWRAAIERLVIGN   37 (42)
+Q Consensus        16 tadrpeeqavwraaierlvign   37 (42)
+                      .++.++|...|..+|.....++
+T Consensus        95 ~a~s~~e~~~W~~~l~~~~~~~  116 (138)
+T 2LKO_A           95 RCDNEKQYAHWMAACRLASKGK  116 (138)
+T ss_dssp             CCCCHHHHHHHHHHHHHHHHSC
+T ss_pred             EcCCHHHHHHHHHHHHHHHcCC
+Confidence            4667777888988887765543
+
+
+No 68
+>5XJ0_Y DNA-directed RNA polymerase subunit alpha; Transcription regulation by bacteriophage-encoded proteins; 4.004A {Thermus thermophilus HB8}
+Probab=20.04  E-value=91  Score=18.74  Aligned_cols=35  Identities=40%  Similarity=0.526  Sum_probs=25.7  Template_Neff=1.000
+
+Q T1125_Domain7:    6 TKAILKKLL-ETADRPEEQAVWRAAIERLVIGNTAY   40 (42)
+Q Consensus         6 tkailkkll-etadrpeeqavwraaierlvigntay   40 (42)
+                      ..+|...|. |.+-||||-+-+-.-|..|-||...+
+T Consensus         9 veaivealvaegalrpeeiadfverittldigtdif   44 (54)
+T 5XJ0_Y            9 VEAIVEALVAEGALRPEEIADFVERITTLDIGTDIF   44 (54)
+T ss_pred             HHHHHHHHHHcCCCCHHHHHHHHHHHhhcccCcccc
+Confidence            346666654 67889999998887787788886543
+
+

@@ -1,0 +1,10 @@
+# STOCKHOLM 1.0
+
+#=GS UniRef90_A7XXD0/145-200     DE [subseq from] Tape tail measure protein n=3 Tax=Oshimavirus TaxID=1623293 RepID=A7XXD0_BP234
+#=GS UniRef90_A0A397SEN2/142-176 DE [subseq from] Uncharacterized protein n=1 Tax=Glomus cerebriforme TaxID=658196 RepID=A0A397SEN2_9GLOM
+
+T1125_Domain2:145-200               ALLTAERLADAYLNRIREALKQDKSSPLYQAFSALAKGTGEKLSPDEAKFRAGLFA
+UniRef90_A7XXD0/145-200             ALLTAERLADAYLNRIREALKQDKSSPLYQAFSALAKGTGEKLSPDEAKFRAGLFA
+UniRef90_A0A397SEN2/142-176         ------NLADCYINGIGTSIDKQKAFELYQKAANLENSSGN---------------
+#=GC RF                             xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//

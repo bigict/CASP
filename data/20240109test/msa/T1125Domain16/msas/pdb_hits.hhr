@@ -1,0 +1,528 @@
+Query         T1125_Domain16:763-829 
+Match_columns 67
+No_of_seqs    3 out of 7
+Neff          1.51024
+Searched_HMMs 80799
+Date          Tue Jan  9 14:26:31 2024
+Command       /public/dbu/.local/bin/hhsearch -i /public/dbu/CASP/tmp/tmpkjmq24wm/query.a3m -o /public/dbu/CASP/tmp/tmpkjmq24wm/output.hhr -maxseq 1000000 -d /public/dbu/data/af2_db/pdb70/pdb70 
+
+ No Hit                             Prob E-value P-value  Score    SS Cols Query HMM  Template HMM
+  1 4QIW_I DNA-directed RNA polyme  41.9      22 0.00027   29.9   0.0   22    4-25    448-469 (906)
+  2 2GHO_D DNA-directed RNA polyme  38.0      27 0.00033   31.1   0.0   24    3-26    434-457 (1233)
+  3 1HQM_D DNA-DIRECTED RNA POLYME  33.5      36 0.00044   30.5   0.0   23    4-26    466-488 (1265)
+  4 6FBV_D DNA-directed RNA polyme  33.2      36 0.00045   30.7   0.0   24    3-26    521-544 (1316)
+  5 3RPF_C Molybdopterin synthase   33.2      36 0.00045   18.7   0.0    7    5-11     46-52  (74)
+  6 3RPF_D Molybdopterin synthase   33.2      36 0.00045   18.7   0.0    7    5-11     46-52  (74)
+  7 6AWD_04 DNA-directed RNA polym  32.9      37 0.00046   30.2   0.0   24    3-26    439-462 (1369)
+  8 4YFK_D Escherichia coli RNA po  32.8      37 0.00046   30.6   0.0   24    3-26    446-469 (1407)
+  9 5ZX3_D DNA-directed RNA polyme  32.5      38 0.00047   30.7   0.0   24    3-26    522-545 (1317)
+ 10 6DV9_D DNA-directed RNA polyme  32.3      39 0.00048   30.6   0.0   24    3-26    521-544 (1316)
+ 11 4AYB_A DNA-DIRECTED RNA POLYME  31.3      41 0.00051   28.2   0.0   21    5-25    444-464 (880)
+ 12 3P12_C D-ribose pyranase (E.C.  30.9      42 0.00052   23.3   0.0   31    6-36      9-39  (144)
+ 13 3P13_B D-ribose pyranase (E.C.  30.9      42 0.00052   23.3   0.0   31    6-36      9-39  (144)
+ 14 6PST_J DNA-directed RNA polyme  30.8      42 0.00052   30.7   0.0   24    3-26    446-469 (1430)
+ 15 2A6H_D DNA-directed RNA polyme  29.0      47 0.00059   31.2   0.0   24    3-26    725-748 (1524)
+ 16 4G7H_N DNA-directed RNA polyme  29.0      47 0.00059   31.2   0.0   24    3-26    725-748 (1524)
+ 17 6J9E_D DNA-directed RNA polyme  29.0      48 0.00059   30.2   0.0   23    4-26    447-469 (1405)
+ 18 6J9F_D DNA-directed RNA polyme  29.0      48 0.00059   30.2   0.0   23    4-26    447-469 (1405)
+ 19 1IBX_A DNA FRAGMENTATION FACTO  27.6      52 0.00065   21.8   0.0   29   13-44     36-64  (86)
+ 20 6OY6_D DNA-directed RNA polyme  27.0      55 0.00067   30.7   0.0   24    3-26    725-748 (1502)
+ 21 5BTY_A lpg1496; bacterial effe  26.8      55 0.00068   24.5   0.0   25   10-34     39-71  (138)
+ 22 3OR1_F Sulfite reductase alpha  26.0      58 0.00072   21.1   0.0   21   16-36      4-24  (105)
+ 23 5ZTB_F Sulfur carrier protein   25.5      60 0.00075   19.0   0.0    9    4-12     46-54  (74)
+ 24 6RFL_A 15 kDa core protein; Va  24.1      67 0.00083   28.9   0.0   22    4-25    402-423 (1286)
+ 25 6RIE_A DNA-dependent RNA polym  24.1      67 0.00083   28.9   0.0   22    4-25    402-423 (1286)
+ 26 1OGD_C HIGH AFFINITY RIBOSE TR  23.7      69 0.00085   21.5   0.0   29    7-35      8-36  (131)
+ 27 3J0K_A DNA-directed RNA polyme  23.5      70 0.00087   28.7   0.0   22    5-26    469-490 (1455)
+ 28 3E7N_B D-ribose high-affinity   22.2      77 0.00095   21.9   0.0   29    7-35     11-39  (142)
+ 29 3E7N_G D-ribose high-affinity   22.2      77 0.00095   21.9   0.0   29    7-35     11-39  (142)
+ 30 2WCV_C L-FUCOSE MUTAROTASE (E.  22.2      77 0.00095   21.9   0.0   17   19-35     22-38  (140)
+ 31 2WCV_H L-FUCOSE MUTAROTASE (E.  22.2      77 0.00095   21.9   0.0   17   19-35     22-38  (140)
+ 32 2L3N_A DNA-binding protein rap  21.4      82   0.001   22.7   0.0   22   33-58     46-67  (104)
+ 33 5ZTB_E Sulfur carrier protein   21.3      82   0.001   18.4   0.0    9    4-12     46-54  (74)
+ 34 3MVK_G protein FucU; PSI, MCSG  20.6      87  0.0011   21.6   0.0   17   19-35     22-38  (148)
+ 35 1SF0_A hypothetical protein PF  20.2      90  0.0011   18.1   0.0    6    6-11     51-56  (77)
+
+No 1
+>4QIW_I DNA-directed RNA polymerase (E.C.2.7.7.6), DNA-directed; Transcription, DNA-directed RNA polymerase; HET: ZN; 3.5A {Thermococcus kodakarensis}
+Probab=41.87  E-value=22  Score=29.94  Aligned_cols=22  Identities=27%  Similarity=0.446  Sum_probs=17.6  Template_Neff=8.300
+
+Q T1125_Domain16    4 VVVNQEYAKSTGVDFDGDTLVV   25 (67)
+Q Consensus         4 ~~~~~~~~~~~~~~~~~~s~~i   25 (67)
+                      +-+|.-..++.+.|||||...+
+T Consensus       448 ~~~~~~~c~~~naDFDGD~m~~  469 (906)
+T 4QIW_I          448 FRLNLPVCPPYNADFDGDEMNL  469 (906)
+T ss_pred             eeecCCCCCCCCCCCCCceeee
+Confidence            4466777899999999998754
+
+
+No 2
+>2GHO_D DNA-directed RNA polymerase alpha chain; Thermus aquaticus RNA polymerase, recombinant; 5.0A {Thermus aquaticus} SCOP: e.29.1.2
+Probab=38.05  E-value=27  Score=31.14  Aligned_cols=24  Identities=25%  Similarity=0.484  Sum_probs=19.0  Template_Neff=7.500
+
+Q T1125_Domain16    3 AVVVNQEYAKSTGVDFDGDTLVVL   26 (67)
+Q Consensus         3 ~~~~~~~~~~~~~~~~~~~s~~i~   26 (67)
+                      ++-+|.-..++.+.|||||.+.+.
+T Consensus       434 ti~i~p~~c~~~NADFDGDem~~~  457 (1233)
+T 2GHO_D          434 SIQLHPLVCEAFNADFDGDQMAVH  457 (1233)
+T ss_dssp             SEEECTGGGGTTTCCCSSCEEEEE
+T ss_pred             eeEecccccCcCCCCCCCCcccee
+Confidence            345677778999999999998764
+
+
+No 3
+>1HQM_D DNA-DIRECTED RNA POLYMERASE (E.C.2.7.7.6); Transferase, DNA-directed RNA polymerase; 3.3A {Thermus aquaticus} SCOP: i.8.1.1
+Probab=33.46  E-value=36  Score=30.45  Aligned_cols=23  Identities=26%  Similarity=0.489  Sum_probs=18.2  Template_Neff=7.600
+
+Q T1125_Domain16    4 VVVNQEYAKSTGVDFDGDTLVVL   26 (67)
+Q Consensus         4 ~~~~~~~~~~~~~~~~~~s~~i~   26 (67)
+                      +-+|.-.+++.+.|||||...+.
+T Consensus       466 i~~~p~~c~~~NADFDGDem~~~  488 (1265)
+T 1HQM_D          466 IQLHPLVCEAFNADFDGDQMAVH  488 (1265)
+T ss_dssp             EEECGGGHHHHCCCSSSCBCCCC
+T ss_pred             eecChhhHhhcCCCCCCCcceEE
+Confidence            44566778899999999998764
+
+
+No 4
+>6FBV_D DNA-directed RNA polymerase subunit alpha; Lipiarmycin, RNA pol, RNAP, inhibitor; HET: FI8; 3.5A {Mycobacterium tuberculosis (strain ATCC 25618 / H37Rv)}
+Probab=33.23  E-value=36  Score=30.70  Aligned_cols=24  Identities=29%  Similarity=0.502  Sum_probs=19.0  Template_Neff=7.400
+
+Q T1125_Domain16    3 AVVVNQEYAKSTGVDFDGDTLVVL   26 (67)
+Q Consensus         3 ~~~~~~~~~~~~~~~~~~~s~~i~   26 (67)
+                      ++-+|.-.+++.+.|||||...|.
+T Consensus       521 ti~l~p~vc~~~NADFDGDem~v~  544 (1316)
+T 6FBV_D          521 AIQLHPLVCEAFNADFDGDQMAVH  544 (1316)
+T ss_dssp             SEEECGGGTTTTTCCSSSCEEEEE
+T ss_pred             eeecccccccccCCCCCCccccee
+Confidence            345667788899999999998764
+
+
+No 5
+>3RPF_C Molybdopterin synthase catalytic subunit (E.C.2.-.-.-); MCSG, PSI-Biology, Structural Genomics, Midwest; HET: EDO, SO4; 1.9A {Helicobacter pylori}
+Probab=33.22  E-value=36  Score=18.67  Aligned_cols=7  Identities=14%  Similarity=0.297  Sum_probs=3.1  Template_Neff=9.500
+
+Q T1125_Domain16    5 VVNQEYA   11 (67)
+Q Consensus         5 ~~~~~~~   11 (67)
+                      .+|.++.
+T Consensus        46 ~vn~~~~   52 (74)
+T 3RPF_C           46 ALNDHLI   52 (74)
+T ss_dssp             EESSSEE
+T ss_pred             EECCEEc
+Confidence            3444444
+
+
+No 6
+>3RPF_D Molybdopterin synthase catalytic subunit (E.C.2.-.-.-); MCSG, PSI-Biology, Structural Genomics, Midwest; HET: MSE, SO4, EDO; 1.9A {Helicobacter pylori}
+Probab=33.22  E-value=36  Score=18.67  Aligned_cols=7  Identities=14%  Similarity=0.297  Sum_probs=3.1  Template_Neff=9.500
+
+Q T1125_Domain16    5 VVNQEYA   11 (67)
+Q Consensus         5 ~~~~~~~   11 (67)
+                      .+|.++.
+T Consensus        46 ~vn~~~~   52 (74)
+T 3RPF_D           46 ALNDHLI   52 (74)
+T ss_dssp             EESSSEE
+T ss_pred             EECCEEc
+Confidence            3444444
+
+
+No 7
+>6AWD_04 DNA-directed RNA polymerase subunit alpha; 30S subunit, RNA polymerase, complex; 8.1A {Escherichia coli}
+Probab=32.87  E-value=37  Score=30.17  Aligned_cols=24  Identities=29%  Similarity=0.484  Sum_probs=18.5  Template_Neff=8.200
+
+Q T1125_Domain16    3 AVVVNQEYAKSTGVDFDGDTLVVL   26 (67)
+Q Consensus         3 ~~~~~~~~~~~~~~~~~~~s~~i~   26 (67)
+                      ++-+|.-.+++.+.|||||...+.
+T Consensus       439 ti~~~p~~c~~~naDFDGD~m~~~  462 (1369)
+T 6AWD_04         439 AIQLHPLVCAAYNADFDGDQMAVH  462 (1369)
+T ss_pred             eEEeChhhHhhcCCCCCCCcceee
+Confidence            344566778899999999987654
+
+
+No 8
+>4YFK_D Escherichia coli RNA polymerase alpha; switch region, squaramide, transcription-inhibitor complex; HET: 4C6; 3.571A {Escherichia coli O139:H28 (strain E24377A / ETEC)}
+Probab=32.83  E-value=37  Score=30.58  Aligned_cols=24  Identities=29%  Similarity=0.484  Sum_probs=18.8  Template_Neff=7.800
+
+Q T1125_Domain16    3 AVVVNQEYAKSTGVDFDGDTLVVL   26 (67)
+Q Consensus         3 ~~~~~~~~~~~~~~~~~~~s~~i~   26 (67)
+                      ++-+|.-.+++.+.|||||...+.
+T Consensus       446 ti~~~p~~c~~~naDFDGD~m~~~  469 (1407)
+T 4YFK_D          446 AIQLHPLVCAAYNADFDGDQMAVH  469 (1407)
+T ss_dssp             SEEECTTGGGTTTCCSSSCEEEEE
+T ss_pred             eeEeccchhhccCCCCCCCcceeE
+Confidence            345677778899999999998754
+
+
+No 9
+>5ZX3_D DNA-directed RNA polymerase subunit alpha; Mycobacterium tuberculosis, RNA polymerase, holoenzyme; 2.751A {Mycobacterium tuberculosis H37Rv}
+Probab=32.47  E-value=38  Score=30.66  Aligned_cols=24  Identities=29%  Similarity=0.502  Sum_probs=18.9  Template_Neff=7.300
+
+Q T1125_Domain16    3 AVVVNQEYAKSTGVDFDGDTLVVL   26 (67)
+Q Consensus         3 ~~~~~~~~~~~~~~~~~~~s~~i~   26 (67)
+                      ++-+|.-.+++.+.|||||...|.
+T Consensus       522 ti~l~p~vc~~~NADFDGDem~v~  545 (1317)
+T 5ZX3_D          522 AIQLHPLVCEAFNADFDGDQMAVH  545 (1317)
+T ss_dssp             SEEECTTSHHHHTCCTTTCEEEEE
+T ss_pred             eeeecccccccCCCCCCCccccee
+Confidence            344667788899999999998764
+
+
+No 10
+>6DV9_D DNA-directed RNA polymerase/ECF RNA polymerase; Mycobacterium tuberculosis, RNA polymerase, ECF; 3.8A {Mycobacterium tuberculosis (strain ATCC 25618 / H37Rv)}
+Probab=32.28  E-value=39  Score=30.63  Aligned_cols=24  Identities=29%  Similarity=0.502  Sum_probs=18.9  Template_Neff=7.300
+
+Q T1125_Domain16    3 AVVVNQEYAKSTGVDFDGDTLVVL   26 (67)
+Q Consensus         3 ~~~~~~~~~~~~~~~~~~~s~~i~   26 (67)
+                      ++-+|.-.+++.+.|||||...|.
+T Consensus       521 ti~l~p~vc~~fNADFDGDem~v~  544 (1316)
+T 6DV9_D          521 AIQLHPLVCEAFNADFDGDQMAVH  544 (1316)
+T ss_dssp             SEEECTTTHHHHTCCSSSCEEEEE
+T ss_pred             eeecccccccccCCCCCCccccee
+Confidence            344667788899999999998764
+
+
+No 11
+>4AYB_A DNA-DIRECTED RNA POLYMERASE (E.C.2.7.7.6); TRANSFERASE, MULTI-SUBUNIT, TRANSCRIPTION; HET: ZN; 3.202A {SULFOLOBUS SHIBATAE}
+Probab=31.32  E-value=41  Score=28.21  Aligned_cols=21  Identities=29%  Similarity=0.430  Sum_probs=16.1  Template_Neff=8.400
+
+Q T1125_Domain16    5 VVNQEYAKSTGVDFDGDTLVV   25 (67)
+Q Consensus         5 ~~~~~~~~~~~~~~~~~s~~i   25 (67)
+                      -+|.-.+++.+.|||||..-|
+T Consensus       444 ~~n~~~c~~~naDFDGDem~~  464 (880)
+T 4AYB_A          444 RLNLLVCPPYNADFDGDEMNL  464 (880)
+T ss_dssp             EECGGGHHHHTCCSSSCEEEE
+T ss_pred             EEccccCCCCCCCCCcceeee
+Confidence            345566788999999998754
+
+
+No 12
+>3P12_C D-ribose pyranase (E.C.5.5.1.n1); RbsD, D-ribose Pyranase, Sa240, Carbohydrate; HET: GOL; 2.35A {Staphylococcus aureus}
+Probab=30.88  E-value=42  Score=23.26  Aligned_cols=31  Identities=19%  Similarity=0.264  Sum_probs=21.5  Template_Neff=6.400
+
+Q T1125_Domain16    6 VNQEYAKSTGVDFDGDTLVVLPKGLPVDPHR   36 (67)
+Q Consensus         6 ~~~~~~~~~~~~~~~~s~~i~~~GL~vdphK   36 (67)
+                      .|.+.++...-==-||+++|.|.|+|+.++-
+T Consensus         9 LnpeLl~~La~mGHgD~I~I~DagfP~p~~~   39 (144)
+T 3P12_C            9 LNEHISKAIATIGHFDLLTINDAGMPIPNDH   39 (144)
+T ss_dssp             CCHHHHHHHHTCCTTCEEEEECTTSCCCSST
+T ss_pred             CCHHHHHHHHhcCCCCEEEEcCCCCCCCCCC
+Confidence            4455554443334689999999999997664
+
+
+No 13
+>3P13_B D-ribose pyranase (E.C.5.5.1.n1); RbsD, D-ribose Pyranase, Sa240, Carbohydrate; HET: RIP; 2.35A {Staphylococcus aureus}
+Probab=30.88  E-value=42  Score=23.26  Aligned_cols=31  Identities=19%  Similarity=0.264  Sum_probs=21.5  Template_Neff=6.400
+
+Q T1125_Domain16    6 VNQEYAKSTGVDFDGDTLVVLPKGLPVDPHR   36 (67)
+Q Consensus         6 ~~~~~~~~~~~~~~~~s~~i~~~GL~vdphK   36 (67)
+                      .|.+.++...-==-||+++|.|.|+|+.++-
+T Consensus         9 LnpeLl~~La~mGHgD~I~I~DagfP~p~~~   39 (144)
+T 3P13_B            9 LNEHISKAIATIGHFDLLTINDAGMPIPNDH   39 (144)
+T ss_dssp             CCHHHHHHHHHCCTTCEEEEECTTSCCCSST
+T ss_pred             CCHHHHHHHHhcCCCCEEEEcCCCCCCCCCC
+Confidence            4455554443334689999999999997664
+
+
+No 14
+>6PST_J DNA-directed RNA polymerase subunit alpha; TRANSCRIPTION, transcription-dna complex; HET: 1N7; 3.0A {Escherichia coli}
+Probab=30.85  E-value=42  Score=30.68  Aligned_cols=24  Identities=29%  Similarity=0.484  Sum_probs=19.1  Template_Neff=7.300
+
+Q T1125_Domain16    3 AVVVNQEYAKSTGVDFDGDTLVVL   26 (67)
+Q Consensus         3 ~~~~~~~~~~~~~~~~~~~s~~i~   26 (67)
+                      ++-+|.-.+++.+.|||||...+.
+T Consensus       446 ~i~~~p~~c~~~naDFDGD~m~~~  469 (1430)
+T 6PST_J          446 AIQLHPLVCAAYNADFDGDQMAVH  469 (1430)
+T ss_pred             eeEeccccccccCCCCCCCcceeE
+Confidence            345677788999999999998764
+
+
+No 15
+>2A6H_D DNA-directed RNA polymerase alpha chain; RNA POLYMERASE HOLOENZYME, STREPTOLYDIGIN, ANTIBIOTIC; HET: STD; 2.4A {Thermus thermophilus} SCOP: e.29.1.2
+Probab=29.04  E-value=47  Score=31.20  Aligned_cols=24  Identities=25%  Similarity=0.484  Sum_probs=18.9  Template_Neff=6.400
+
+Q T1125_Domain16    3 AVVVNQEYAKSTGVDFDGDTLVVL   26 (67)
+Q Consensus         3 ~~~~~~~~~~~~~~~~~~~s~~i~   26 (67)
+                      ++-+|.-.+++.+.|||||.+.|-
+T Consensus       725 ti~l~p~vc~~fNADFDGDeM~vh  748 (1524)
+T 2A6H_D          725 SIQLHPLVCEAFNADFDGDQMAVH  748 (1524)
+T ss_dssp             CEEECSGGGTTTTCCTTTCEEEEE
+T ss_pred             eeecCcchhcccCCCCCCCeeeEE
+Confidence            345677788999999999988763
+
+
+No 16
+>4G7H_N DNA-directed RNA polymerase subunit alpha; protein-DNA complex, transcription initiation complex; HET: MG; 2.9A {Thermus thermophilus}
+Probab=29.04  E-value=47  Score=31.20  Aligned_cols=24  Identities=25%  Similarity=0.484  Sum_probs=18.9  Template_Neff=6.400
+
+Q T1125_Domain16    3 AVVVNQEYAKSTGVDFDGDTLVVL   26 (67)
+Q Consensus         3 ~~~~~~~~~~~~~~~~~~~s~~i~   26 (67)
+                      ++-+|.-.+++.+.|||||.+.|-
+T Consensus       725 ti~l~p~vc~~fNADFDGDeM~vh  748 (1524)
+T 4G7H_N          725 SIQLHPLVCEAFNADFDGDQMAVH  748 (1524)
+T ss_pred             eeecCcchhcccCCCCCCCeeeEE
+Confidence            345677788999999999988763
+
+
+No 17
+>6J9E_D DNA-directed RNA polymerase subunit alpha; RNA polymerase, transcription termination, anti-termination; 3.41A {Xanthomonas oryzae pv. oryzae (strain PXO99A)}
+Probab=29.03  E-value=48  Score=30.18  Aligned_cols=23  Identities=26%  Similarity=0.473  Sum_probs=18.1  Template_Neff=7.500
+
+Q T1125_Domain16    4 VVVNQEYAKSTGVDFDGDTLVVL   26 (67)
+Q Consensus         4 ~~~~~~~~~~~~~~~~~~s~~i~   26 (67)
+                      +-+|.-..++.+.|||||...+.
+T Consensus       447 i~~~p~~c~~~NADFDGDeM~~~  469 (1405)
+T 6J9E_D          447 IQLHPLVCTAFNADFDGDQMAVH  469 (1405)
+T ss_dssp             EEECTTTHHHHTCCSSSCEEEEE
+T ss_pred             eEecccccCcCCCCCCCCeeeee
+Confidence            44566778899999999998764
+
+
+No 18
+>6J9F_D DNA-directed RNA polymerase subunit alpha; RNA polymerase, transcription termination, anti-termination; 3.95A {Xanthomonas oryzae pv. oryzae PXO99A}
+Probab=29.03  E-value=48  Score=30.18  Aligned_cols=23  Identities=26%  Similarity=0.473  Sum_probs=18.1  Template_Neff=7.500
+
+Q T1125_Domain16    4 VVVNQEYAKSTGVDFDGDTLVVL   26 (67)
+Q Consensus         4 ~~~~~~~~~~~~~~~~~~s~~i~   26 (67)
+                      +-+|.-..++.+.|||||...+.
+T Consensus       447 i~~~p~~c~~~NADFDGDeM~~~  469 (1405)
+T 6J9F_D          447 IQLHPLVCTAFNADFDGDQMAVH  469 (1405)
+T ss_dssp             EEECTTTHHHHTCCSSSCEEEEE
+T ss_pred             eEecccccCcCCCCCCCCeeeee
+Confidence            44566778899999999998764
+
+
+No 19
+>1IBX_A DNA FRAGMENTATION FACTOR 40/DNA FRAGMENTATION; DFF40, DFF45, protein-protein complex, CIDE; NMR {Homo sapiens} SCOP: d.15.2.1
+Probab=27.64  E-value=52  Score=21.76  Aligned_cols=29  Identities=14%  Similarity=0.224  Sum_probs=21.0  Template_Neff=5.200
+
+Q T1125_Domain16   13 STGVDFDGDTLVVLPKGLPVDPHRLEVFQTLM   44 (67)
+Q Consensus        13 ~~~~~~~~~s~~i~~~GL~vdphKle~~qtL~   44 (67)
+                      ..+++-.+-+++..+||..||   -|-||+|-
+T Consensus        36 kl~l~~~~~~lvLeeDGT~Vd---eeyF~~Lp   64 (86)
+T 1IBX_A           36 RFQLPERGSRLCLYEDGTELT---EDYFPSVP   64 (86)
+T ss_dssp             HTTCCTTTSEEEESSSCSCCC---SSSCSSCC
+T ss_pred             hhCCCCCCcEEEEcCCCCEec---cchHhhCC
+Confidence            344544456778888999998   48888884
+
+
+No 20
+>6OY6_D DNA-directed RNA polymerase subunit alpha; RNA polymerase, pyrG, reiterative transcription; HET: GTP; 3.096A {Thermus thermophilus}
+Probab=26.99  E-value=55  Score=30.73  Aligned_cols=24  Identities=25%  Similarity=0.484  Sum_probs=18.9  Template_Neff=6.500
+
+Q T1125_Domain16    3 AVVVNQEYAKSTGVDFDGDTLVVL   26 (67)
+Q Consensus         3 ~~~~~~~~~~~~~~~~~~~s~~i~   26 (67)
+                      ++-+|.-.+++.+.|||||...|-
+T Consensus       725 tirl~p~vc~~fNADFDGDeM~vh  748 (1502)
+T 6OY6_D          725 SIQLHPLVCEAFNADFDGDQMAVH  748 (1502)
+T ss_dssp             CEEECSTTHHHHTCCSSSCEEEEE
+T ss_pred             eeecCCcccCCCCCCCCCCeeeEE
+Confidence            344677788999999999998664
+
+
+No 21
+>5BTY_A lpg1496; bacterial effector, alpha-beta fold, nucleotide; HET: MSE; 1.15A {Legionella pneumophila subsp. pneumophila ATCC 43290}
+Probab=26.78  E-value=55  Score=24.51  Aligned_cols=25  Identities=28%  Similarity=0.505  Sum_probs=17.1  Template_Neff=1.500
+
+Q T1125_Domain16   10 YAKSTGVDF--------DGDTLVVLPKGLPVDP   34 (67)
+Q Consensus        10 ~~~~~~~~~--------~~~s~~i~~~GL~vdp   34 (67)
+                      -|++.|+||        .+.+|+|-+.-.|..|
+T Consensus        39 KA~~LG~~~sthP~~~~~~~~~~ik~S~YP~N~   71 (138)
+T 5BTY_A           39 KAKSLGVNISTHPFEIKEPNMVLIKPSKYPDNK   71 (138)
+T ss_dssp             HHHHHTCCCSSSSEEEETTTEEEECBCBTTTBS
+T ss_pred             HHHHcCCccccCCceecCCCeEEEccccCCCCC
+Confidence            589999999        4566666665555443
+
+
+No 22
+>3OR1_F Sulfite reductase alpha, Sulfite reductase; Dissimilatory sulfite reductase, sulfate reduction; HET: SRM, SF4; 1.76A {desulfovibrio gigas}
+Probab=26.00  E-value=58  Score=21.12  Aligned_cols=21  Identities=24%  Similarity=0.320  Sum_probs=16.5  Template_Neff=6.900
+
+Q T1125_Domain16   16 VDFDGDTLVVLPKGLPVDPHR   36 (67)
+Q Consensus        16 ~~~~~~s~~i~~~GL~vdphK   36 (67)
+                      +.++|..+-++++|+.+||.-
+T Consensus         4 ~~~~~~~~~~d~~g~l~~~~~   24 (105)
+T 3OR1_F            4 VEFAGSAFEVDEDGFLNAFDD   24 (105)
+T ss_dssp             EEETTEEEEBCTTCCBSCGGG
+T ss_pred             eeeCCEEeeeCCCCccCCHHH
+Confidence            346788888999999988853
+
+
+No 23
+>5ZTB_F Sulfur carrier protein TtuB, tRNA-5-methyluridine(54); Sulfur transfer, iron-sulfur cluster, tRNA; HET: SO4, ATP, SF4; 2.2A {Thermus thermophilus (strain HB27 / ATCC BAA-163 / DSM 7039)}
+Probab=25.54  E-value=60  Score=19.00  Aligned_cols=9  Identities=22%  Similarity=0.228  Sum_probs=4.5  Template_Neff=8.000
+
+Q T1125_Domain16    4 VVVNQEYAK   12 (67)
+Q Consensus         4 ~~~~~~~~~   12 (67)
+                      +.+|++++.
+T Consensus        46 v~vNg~~v~   54 (74)
+T 5ZTB_F           46 AVRGEELLT   54 (74)
+T ss_pred             EEECCEEcC
+Confidence            444555554
+
+
+No 24
+>6RFL_A 15 kDa core protein; Vaccinia, RNA polymerase, RNA Polymerase; HET: SEP; 2.76A {Vaccinia virus GLV-1h68}
+Probab=24.07  E-value=67  Score=28.87  Aligned_cols=22  Identities=32%  Similarity=0.507  Sum_probs=17.4  Template_Neff=7.700
+
+Q T1125_Domain16    4 VVVNQEYAKSTGVDFDGDTLVV   25 (67)
+Q Consensus         4 ~~~~~~~~~~~~~~~~~~s~~i   25 (67)
+                      +-+|.-..++.+.|||||..-+
+T Consensus       402 ~~~n~~~c~~~naDFDGDem~~  423 (1286)
+T 6RFL_A          402 IKISPGIANSQNADFDGDEEWM  423 (1286)
+T ss_pred             eecCccccccCCCCCCCCccce
+Confidence            3456777889999999998754
+
+
+No 25
+>6RIE_A DNA-dependent RNA polymerase subunit rpo147; Vaccinia, RNA polymerase, Transcription, Gene; HET: SAM, GDP; 3.1A {Vaccinia virus}
+Probab=24.07  E-value=67  Score=28.87  Aligned_cols=22  Identities=32%  Similarity=0.507  Sum_probs=17.4  Template_Neff=7.700
+
+Q T1125_Domain16    4 VVVNQEYAKSTGVDFDGDTLVV   25 (67)
+Q Consensus         4 ~~~~~~~~~~~~~~~~~~s~~i   25 (67)
+                      +-+|.-..++.+.|||||..-+
+T Consensus       402 ~~~n~~~c~~~naDFDGDem~~  423 (1286)
+T 6RIE_A          402 IKISPGIANSQNADFDGDEEWM  423 (1286)
+T ss_dssp             EEECGGGTTTTTCCTTTCEEEE
+T ss_pred             eecCccccccCCCCCCCCccce
+Confidence            3456777889999999998754
+
+
+No 26
+>1OGD_C HIGH AFFINITY RIBOSE TRANSPORT PROTEIN; RIBOSE, TRANSPORT, SUGAR TRANSPORT; HET: RIP; 1.95A {BACILLUS SUBTILIS} SCOP: c.133.1.1
+Probab=23.72  E-value=69  Score=21.50  Aligned_cols=29  Identities=31%  Similarity=0.291  Sum_probs=19.1  Template_Neff=7.000
+
+Q T1125_Domain16    7 NQEYAKSTGVDFDGDTLVVLPKGLPVDPH   35 (67)
+Q Consensus         7 ~~~~~~~~~~~~~~~s~~i~~~GL~vdph   35 (67)
+                      |.+..+...-==-||.++|.|.|+|...+
+T Consensus         8 ~~eL~~~La~mGHgD~i~I~Da~~P~~~~   36 (131)
+T 1OGD_C            8 NSHLAKILADLGHTDKIVIADAGLPVPDG   36 (131)
+T ss_dssp             CHHHHHHHHHCCTTCEEEEECTTCCCCTT
+T ss_pred             CHHHHHHHHHCCCCCEEEEecCCCCCCcc
+Confidence            33443333333358999999999998764
+
+
+No 27
+>3J0K_A DNA-directed RNA polymerase II largest; TRANSFERASE-TRANSCRIPTION complex; 36.0A {Homo sapiens}
+Probab=23.47  E-value=70  Score=28.73  Aligned_cols=22  Identities=27%  Similarity=0.439  Sum_probs=16.7  Template_Neff=8.300
+
+Q T1125_Domain16    5 VVNQEYAKSTGVDFDGDTLVVL   26 (67)
+Q Consensus         5 ~~~~~~~~~~~~~~~~~s~~i~   26 (67)
+                      -+|.-..++.+.|||||.+-+-
+T Consensus       469 ~in~~~c~~~NADFDGDemn~~  490 (1455)
+T 3J0K_A          469 RLNLSVTSPYNADFDGDEMNLH  490 (1455)
+T ss_dssp             EECGGGSTTTTCCTTTCEEEEE
+T ss_pred             EecccccCCCCCCCCCCceeee
+Confidence            3566677889999999987553
+
+
+No 28
+>3E7N_B D-ribose high-affinity transport system; D-ribose transport system, rbsD, CSGID; HET: EDO, MSE; 2.45A {Salmonella typhimurium}
+Probab=22.17  E-value=77  Score=21.90  Aligned_cols=29  Identities=34%  Similarity=0.345  Sum_probs=19.6  Template_Neff=6.500
+
+Q T1125_Domain16    7 NQEYAKSTGVDFDGDTLVVLPKGLPVDPH   35 (67)
+Q Consensus         7 ~~~~~~~~~~~~~~~s~~i~~~GL~vdph   35 (67)
+                      |.+..+...-==-||+++|.|.|+|+.++
+T Consensus        11 np~Ll~~La~mGHgD~I~I~Da~~P~~~~   39 (142)
+T 3E7N_B           11 NSEISSVISRLGHTDTLVVCDAGLPIPNS   39 (142)
+T ss_dssp             CHHHHHHHHHCCTTCEEEEECTTCCCCTT
+T ss_pred             CHHHHHHHHHcCCCCEEEEecCCCCCCCC
+Confidence            34443333333368999999999998865
+
+
+No 29
+>3E7N_G D-ribose high-affinity transport system; D-ribose transport system, rbsD, CSGID; HET: EDO, MSE; 2.45A {Salmonella typhimurium}
+Probab=22.17  E-value=77  Score=21.90  Aligned_cols=29  Identities=34%  Similarity=0.345  Sum_probs=19.6  Template_Neff=6.500
+
+Q T1125_Domain16    7 NQEYAKSTGVDFDGDTLVVLPKGLPVDPH   35 (67)
+Q Consensus         7 ~~~~~~~~~~~~~~~s~~i~~~GL~vdph   35 (67)
+                      |.+..+...-==-||+++|.|.|+|+.++
+T Consensus        11 np~Ll~~La~mGHgD~I~I~Da~~P~~~~   39 (142)
+T 3E7N_G           11 NSEISSVISRLGHTDTLVVCDAGLPIPNS   39 (142)
+T ss_dssp             CHHHHHHHHHCCTTCEEEEECTTCCCCTT
+T ss_pred             CHHHHHHHHHcCCCCEEEEecCCCCCCCC
+Confidence            34443333333368999999999998865
+
+
+No 30
+>2WCV_C L-FUCOSE MUTAROTASE (E.C.5.1.3.-); RIBOSE, PYRANASE, ISOMERASE, FUCOSE METABOLISM; HET: FUC; 1.9A {ESCHERICHIA COLI}
+Probab=22.17  E-value=77  Score=21.85  Aligned_cols=17  Identities=18%  Similarity=0.436  Sum_probs=15.4  Template_Neff=6.500
+
+Q T1125_Domain16   19 DGDTLVVLPKGLPVDPH   35 (67)
+Q Consensus        19 ~~~s~~i~~~GL~vdph   35 (67)
+                      .||+++|.|.|+|+..+
+T Consensus        22 HgD~i~I~Dag~P~~~~   38 (140)
+T 2WCV_C           22 HGDEIIFSDAHFPAHSM   38 (140)
+T ss_dssp             TTCEEEEECTTSCGGGT
+T ss_pred             CCCEEEEecCCCCcccC
+Confidence            58999999999999876
+
+
+No 31
+>2WCV_H L-FUCOSE MUTAROTASE (E.C.5.1.3.-); RIBOSE, PYRANASE, ISOMERASE, FUCOSE METABOLISM; HET: FUC; 1.9A {ESCHERICHIA COLI}
+Probab=22.17  E-value=77  Score=21.85  Aligned_cols=17  Identities=18%  Similarity=0.436  Sum_probs=15.4  Template_Neff=6.500
+
+Q T1125_Domain16   19 DGDTLVVLPKGLPVDPH   35 (67)
+Q Consensus        19 ~~~s~~i~~~GL~vdph   35 (67)
+                      .||+++|.|.|+|+..+
+T Consensus        22 HgD~i~I~Dag~P~~~~   38 (140)
+T 2WCV_H           22 HGDEIIFSDAHFPAHSM   38 (140)
+T ss_dssp             TTCEEEEECTTSCGGGT
+T ss_pred             CCCEEEEecCCCCcccC
+Confidence            58999999999999876
+
+
+No 32
+>2L3N_A DNA-binding protein rap1, Telomere length; RAP1, TAZ1, DNA BINDING PROTEIN; NMR {Schizosaccharomyces pombe, synthetic}
+Probab=21.37  E-value=82  Score=22.74  Aligned_cols=22  Identities=41%  Similarity=0.454  Sum_probs=14.3  Template_Neff=1.500
+
+Q T1125_Domain16   33 DPHRLEVFQTLMAHAGLAGGRKGGGS   58 (67)
+Q Consensus        33 dphKle~~qtL~~h~G~~gG~kgGGS   58 (67)
+                      ---|+-.|+    .+|-+||+|-|||
+T Consensus        46 aiakll~~s----~~~~~~~~~~~~~   67 (104)
+T 2L3N_A           46 AIAKLLSKQ----TSGGSGGSKLGGS   67 (104)
+T ss_dssp             HHHHHHTTS----CCCCSSCCCCCCC
+T ss_pred             HHHHHHhhc----ccCCCCccccCCC
+Confidence            334554444    4788999996665
+
+
+No 33
+>5ZTB_E Sulfur carrier protein TtuB, tRNA-5-methyluridine(54); Sulfur transfer, iron-sulfur cluster, tRNA; HET: SO4, SF4, ATP; 2.2A {Thermus thermophilus (strain HB27 / ATCC BAA-163 / DSM 7039)}
+Probab=21.31  E-value=82  Score=18.44  Aligned_cols=9  Identities=22%  Similarity=0.228  Sum_probs=4.3  Template_Neff=8.000
+
+Q T1125_Domain16    4 VVVNQEYAK   12 (67)
+Q Consensus         4 ~~~~~~~~~   12 (67)
+                      +.+|++++.
+T Consensus        46 v~vN~~~v~   54 (74)
+T 5ZTB_E           46 AVRGEELLT   54 (74)
+T ss_pred             EEECCEECC
+Confidence            344555544
+
+
+No 34
+>3MVK_G protein FucU; PSI, MCSG, Structural Genomics, Midwest; HET: GOL, NA, PGE; 1.65A {Bifidobacterium longum subsp. infantis}
+Probab=20.57  E-value=87  Score=21.65  Aligned_cols=17  Identities=29%  Similarity=0.593  Sum_probs=15.4  Template_Neff=6.700
+
+Q T1125_Domain16   19 DGDTLVVLPKGLPVDPH   35 (67)
+Q Consensus        19 ~~~s~~i~~~GL~vdph   35 (67)
+                      .||+++|.|.|+|+..+
+T Consensus        22 HgD~i~I~Dag~P~~~~   38 (148)
+T 3MVK_G           22 HGDQLVIADGNFPAESI   38 (148)
+T ss_dssp             TTCEEEEECTTSCHHHH
+T ss_pred             CCCEEEEeCCCCCcccc
+Confidence            58999999999999876
+
+
+No 35
+>1SF0_A hypothetical protein PF1061; RESIDUAL DIPOLAR COUPLINGS, STRUCTURAL GENOMICS; NMR {Pyrococcus furiosus} SCOP: d.15.3.2
+Probab=20.15  E-value=90  Score=18.10  Aligned_cols=6  Identities=33%  Similarity=0.357  Sum_probs=2.5  Template_Neff=8.400
+
+Q T1125_Domain16    6 VNQEYA   11 (67)
+Q Consensus         6 ~~~~~~   11 (67)
+                      +|+++.
+T Consensus        51 vN~~~v   56 (77)
+T 1SF0_A           51 VNGKVV   56 (77)
+T ss_dssp             ETTEEC
+T ss_pred             ECCEEc
+Confidence            344443
+
+

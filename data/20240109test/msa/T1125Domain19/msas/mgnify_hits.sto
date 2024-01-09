@@ -1,0 +1,14 @@
+# STOCKHOLM 1.0
+
+#=GS MGYP000198941642/24-48   DE [subseq from] PL=11 UP=0 BIOMES=0101000000000
+#=GS MGYP000198941642/150-175 DE [subseq from] PL=11 UP=0 BIOMES=0101000000000
+#=GS MGYP000677421072/79-102  DE [subseq from] PL=11 UP=0 BIOMES=1000000000000
+#=GS MGYP000677421072/122-148 DE [subseq from] PL=11 UP=0 BIOMES=1000000000000
+
+T1125_Domain19:1075-1170         NLPVEEVADTVYDASGQAVEERVPLKQSATRSLVKGLLDLASGKVKEDPDGTVAEDLADLPVFGELEQLYGLVADAKYDPSSLKSALVKPNKPQGS
+MGYP000198941642/24-48           --PLNQRTSTVYDAAGQSVANIDPLAR---------------------------------------------------------------------
+MGYP000198941642/150-175         --PLNQRSSTVYDAAGQSVANLDPLNRR--------------------------------------------------------------------
+MGYP000677421072/79-102          --PVGEIISTVFDAAGQAIRSSNSLG----------------------------------------------------------------------
+MGYP000677421072/122-148         ---VGEISTTVYDAAGRSTQQINPLGEIST------------------------------------------------------------------
+#=GC RF                          xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//

@@ -1,0 +1,160 @@
+Query         T1125_Domain5:303-338 
+Match_columns 36
+No_of_seqs    1 out of 1
+Neff          1
+Searched_HMMs 80799
+Date          Tue Jan  9 14:27:23 2024
+Command       /public/dbu/.local/bin/hhsearch -i /public/dbu/CASP/tmp/tmpa0bu6vf2/query.a3m -o /public/dbu/CASP/tmp/tmpa0bu6vf2/output.hhr -maxseq 1000000 -d /public/dbu/data/af2_db/pdb70/pdb70 
+
+ No Hit                             Prob E-value P-value  Score    SS Cols Query HMM  Template HMM
+  1 1WJ0_A squamosa promoter-bindi  34.2      34 0.00042   18.5   0.0   11   26-36     44-54  (60)
+  2 6BBM_D Replicative DNA helicas  31.5      40  0.0005   21.2   0.0   11   23-33      2-12  (471)
+  3 6BBM_C Replicative DNA helicas  31.4      41  0.0005   21.1   0.0   11   23-33      2-12  (471)
+  4 1UL4_A squamosa promoter bindi  27.8      52 0.00064   19.7   0.0   12   25-36     48-59  (94)
+  5 3JTZ_A Integrase; four strande  26.6      56 0.00069   16.9   0.0   22    6-27     60-81  (88)
+  6 1XAK_A SARS ORF7A ACCESSORY PR  22.2      77 0.00095   19.9   0.0   13   18-30     23-35  (83)
+  7 1UL5_A squamosa promoter bindi  21.7      80 0.00099   18.5   0.0   12   25-36     43-54  (88)
+  8 1YO4_A Hypothetical protein X4  21.4      82   0.001   19.9   0.0   13   18-30     23-35  (87)
+  9 4H8O_D CC-Hex-N24; CC-Hex, par  18.3 1.1E+02  0.0013   16.5   0.0   23    7-30      8-30  (32)
+ 10 1Q0V_A hydrophilic protein  ha  17.7 1.1E+02  0.0014   17.3   0.0   24    6-29     55-78  (81)
+
+No 1
+>1WJ0_A squamosa promoter-binding protein-like 12; DNA-binding domain, STRUCTURAL GENOMICS, RIKEN; HET: ZN; NMR {Arabidopsis thaliana} SCOP: g.72.1.1
+Probab=34.24  E-value=34  Score=18.54  Aligned_cols=11  Identities=55%  Similarity=0.942  Sum_probs=9.5  Template_Neff=5.700
+
+Q T1125_Domain5:   26 KPFAQQTGRFH   36 (36)
+Q Consensus        26 kpfaqqtgrfh   36 (36)
+                      .-|-||-+|||
+T Consensus        44 ~RFCQqC~rfH   54 (60)
+T 1WJ0_A           44 QRFCQQCSRFH   54 (60)
+T ss_dssp             ECCCSSSCSCC
+T ss_pred             EEEccCCCCce
+Confidence            36999999998
+
+
+No 2
+>6BBM_D Replicative DNA helicase (E.C.3.6.4.12), Bacteriophage; Helicase Loader, Helicase, DNA replication; HET: ADP; 4.1A {Escherichia coli O111:NM}
+Probab=31.53  E-value=40  Score=21.15  Aligned_cols=11  Identities=55%  Similarity=0.987  Sum_probs=0.0  Template_Neff=10.300
+
+Q T1125_Domain5:   23 EGNKPFAQQTG   33 (36)
+Q Consensus        23 egnkpfaqqtg   33 (36)
+                      .|||||..|.-
+T Consensus         2 ~~~~~~~~~~~   12 (471)
+T 6BBM_D            2 AGNKPFNKQQA   12 (471)
+T ss_dssp             -----------
+T ss_pred             CCccccccccC
+Confidence            48999986543
+
+
+No 3
+>6BBM_C Replicative DNA helicase (E.C.3.6.4.12), Bacteriophage; Helicase Loader, Helicase, DNA replication; HET: ADP; 4.1A {Escherichia coli O111:NM}
+Probab=31.41  E-value=41  Score=21.14  Aligned_cols=11  Identities=55%  Similarity=0.987  Sum_probs=0.0  Template_Neff=10.300
+
+Q T1125_Domain5:   23 EGNKPFAQQTG   33 (36)
+Q Consensus        23 egnkpfaqqtg   33 (36)
+                      .|||||..|.-
+T Consensus         2 ~~~~~~~~~~~   12 (471)
+T 6BBM_C            2 AGNKPFNKQQA   12 (471)
+T ss_dssp             -----------
+T ss_pred             CCCCCccccCC
+Confidence            48999986543
+
+
+No 4
+>1UL4_A squamosa promoter binding protein-like 4; Transcription factor, SBP, Flower development; HET: ZN; NMR {Arabidopsis thaliana} SCOP: g.72.1.1
+Probab=27.79  E-value=52  Score=19.70  Aligned_cols=12  Identities=58%  Similarity=0.969  Sum_probs=10.0  Template_Neff=5.000
+
+Q T1125_Domain5:   25 NKPFAQQTGRFH   36 (36)
+Q Consensus        25 nkpfaqqtgrfh   36 (36)
+                      ..-|-||-+|||
+T Consensus        48 ~~RFCQQC~rfH   59 (94)
+T 1UL4_A           48 NQRFCQQCSRFH   59 (94)
+T ss_dssp             EEEECTTTSSEE
+T ss_pred             EEEEccccceec
+Confidence            356999999998
+
+
+No 5
+>3JTZ_A Integrase; four stranded beta-sheet, DNA BINDING; 1.3A {Yersinia pestis}
+Probab=26.61  E-value=56  Score=16.87  Aligned_cols=22  Identities=14%  Similarity=0.110  Sum_probs=12.4  Template_Neff=8.600
+
+Q T1125_Domain5:    6 DAEEARRVALSLRSVTKEGNKP   27 (36)
+Q Consensus         6 daeearrvalslrsvtkegnkp   27 (36)
+                      +.++||..|..++..-.+|..|
+T Consensus        60 tl~~AR~~A~~~~~~l~~G~~~   81 (88)
+T 3JTZ_A           60 SLSDARQQREGIRKMLALNINL   81 (88)
+T ss_dssp             CHHHHHHHHHHHHHHHTCC---
+T ss_pred             CHHHHHHHHHHHHHHHHCCCCC
+Confidence            3457777777776655666554
+
+
+No 6
+>1XAK_A SARS ORF7A ACCESSORY PROTEIN; I-SET IG DOMAIN, BETA SANDWICH; 1.8A {SARS coronavirus} SCOP: b.1.24.1
+Probab=22.23  E-value=77  Score=19.89  Aligned_cols=13  Identities=54%  Similarity=0.670  Sum_probs=10.4  Template_Neff=1.300
+
+Q T1125_Domain5:   18 RSVTKEGNKPFAQ   30 (36)
+Q Consensus        18 rsvtkegnkpfaq   30 (36)
+                      .|-|-|||.||+.
+T Consensus        23 ~~~tyegnspfhp   35 (83)
+T 1XAK_A           23 PSGTYEGNSPFHP   35 (83)
+T ss_dssp             TTCEEEESSCCCE
+T ss_pred             CCCCccCCCCccc
+Confidence            4678899999974
+
+
+No 7
+>1UL5_A squamosa promoter binding protein-like 7; Transcription factor, SBP, Flower development; HET: ZN; NMR {Arabidopsis thaliana} SCOP: g.72.1.1
+Probab=21.74  E-value=80  Score=18.54  Aligned_cols=12  Identities=58%  Similarity=1.079  Sum_probs=10.0  Template_Neff=5.300
+
+Q T1125_Domain5:   25 NKPFAQQTGRFH   36 (36)
+Q Consensus        25 nkpfaqqtgrfh   36 (36)
+                      ..-|-||-+|||
+T Consensus        43 ~~RFCQqC~rfH   54 (88)
+T 1UL5_A           43 NKRYCQQCGKFH   54 (88)
+T ss_dssp             EEEECTTTSSEE
+T ss_pred             eEEEecccceec
+Confidence            356999999998
+
+
+No 8
+>1YO4_A Hypothetical protein X4; beta-sandwich, immunoglobulin-like domain, VIRAL PROTEIN; NMR {SARS coronavirus}
+Probab=21.38  E-value=82  Score=19.91  Aligned_cols=13  Identities=54%  Similarity=0.670  Sum_probs=10.4  Template_Neff=1.300
+
+Q T1125_Domain5:   18 RSVTKEGNKPFAQ   30 (36)
+Q Consensus        18 rsvtkegnkpfaq   30 (36)
+                      .|-|-|||.||+.
+T Consensus        23 ~~~tyegnspfhp   35 (87)
+T 1YO4_A           23 PSGTYEGNSPFHP   35 (87)
+T ss_dssp             SSCEEESSSCCCE
+T ss_pred             CCCCccCCCCCcc
+Confidence            4678899999974
+
+
+No 9
+>4H8O_D CC-Hex-N24; CC-Hex, parallel, hexameric coiled coil; HET: ACE; 1.598A {N/A}
+Probab=18.31  E-value=1.1e+02  Score=16.47  Aligned_cols=23  Identities=43%  Similarity=0.667  Sum_probs=16.4  Template_Neff=1.000
+
+Q T1125_Domain5:    7 AEEARRVALSLRSVTKEGNKPFAQ   30 (36)
+Q Consensus         7 aeearrvalslrsvtkegnkpfaq   30 (36)
+                      +.|...+|..|..+.|| ||..+|
+T Consensus         8 aqelkaiayelkaiake-nkaiaq   30 (32)
+T 4H8O_D            8 AQELKAIAYELKAIAKE-NKAIAQ   30 (32)
+T ss_dssp             HHHHHHHHHHHHHHHHH-HHHHHT
+T ss_pred             HHHHHHHHHHHHHHHHH-HHHHhc
+Confidence            46777788888888776 566655
+
+
+No 10
+>1Q0V_A hydrophilic protein  has cysteine; Stable, non-interacting alpha-helices, TRANSPORT BINDING; NMR {Saccharomyces cerevisiae} SCOP: j.105.1.1
+Probab=17.74  E-value=1.1e+02  Score=17.35  Aligned_cols=24  Identities=17%  Similarity=0.144  Sum_probs=15.3  Template_Neff=5.900
+
+Q T1125_Domain5:    6 DAEEARRVALSLRSVTKEGNKPFA   29 (36)
+Q Consensus         6 daeearrvalslrsvtkegnkpfa   29 (36)
+                      |.+-.+.+++||+.......++++
+T Consensus        55 D~dL~~AI~aSL~e~~~~~~~~~~   78 (81)
+T 1Q0V_A           55 DPDLKAAIQESLREAEEAKLRSER   78 (81)
+T ss_dssp             CHHHHHHHHHHHHHHHHHHCC-C-
+T ss_pred             CHHHHHHHHHHHHHHHHHHHHHHH
+Confidence            445567788899887766555544
+
+

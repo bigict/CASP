@@ -1,0 +1,159 @@
+Query         T1125_Domain10:516-557 
+Match_columns 42
+No_of_seqs    5 out of 5
+Neff          1.9591
+Searched_HMMs 80799
+Date          Tue Jan  9 14:27:33 2024
+Command       /public/dbu/.local/bin/hhsearch -i /public/dbu/CASP/tmp/tmpae01mj52/query.a3m -o /public/dbu/CASP/tmp/tmpae01mj52/output.hhr -maxseq 1000000 -d /public/dbu/data/af2_db/pdb70/pdb70 
+
+ No Hit                             Prob E-value P-value  Score    SS Cols Query HMM  Template HMM
+  1 4HJI_A CS1 fimbrial subunit A;  45.7      17 0.00021   24.2   0.0   26    4-29    139-164 (175)
+  2 4HJI_B CS1 fimbrial subunit A;  45.7      17 0.00021   24.2   0.0   26    4-29    139-164 (175)
+  3 6JCS_R Capsid protein, Dyslexi  23.9      68 0.00084   16.8   0.0   18    8-26     66-83  (97)
+  4 4FFU_D oxidase (E.C.1.4.3.4);   21.8      79 0.00098   19.1   0.0   29   13-41    142-170 (176)
+  5 4FFU_I oxidase (E.C.1.4.3.4);   21.8      79 0.00098   19.1   0.0   29   13-41    142-170 (176)
+  6 1POQ_A YPM; Jelly roll fold, I  20.4      88  0.0011   21.2   0.0   27    9-35      6-40  (118)
+  7 1PM4_B YPM; Jelly roll fold, T  20.4      89  0.0011   21.2   0.0   27    9-35      7-41  (119)
+  8 4BHU_E UNCHARACTERIZED PROTEIN  20.2      90  0.0011   21.3   0.0   30   12-42     99-129 (130)
+  9 2E7M_A Protein KIAA0319; PKD d  20.2      90  0.0011   17.7   0.0   19    8-27     75-93  (113)
+ 10 4Y2O_B CFA/I pili chaperone Cf  19.7      94  0.0012   20.0   0.0   17    4-20    123-139 (142)
+
+No 1
+>4HJI_A CS1 fimbrial subunit A; CS1 pilus, COLONIZATION FACTOR, pilin; 1.6A {Escherichia coli}
+Probab=45.66  E-value=17  Score=24.17  Aligned_cols=26  Identities=15%  Similarity=0.123  Sum_probs=19.2  Template_Neff=6.100
+
+Q T1125_Domain10    4 SLGLPEDYTGVVQVRGELADPEGNVY   29 (42)
+Q Consensus         4 sL~~p~Nytgvl~VRgelAdpege~~   29 (42)
+                      .-..+.+|+|+|.+-+|-+-..+.+.
+T Consensus       139 ~~~~~G~YsG~V~LvFe~~~~~~~~~  164 (175)
+T 4HJI_A          139 GALTAGQYQGLVSIILTKSTDNKQVE  164 (175)
+T ss_dssp             SCCCSEEEEEEEEEEEEETTCCCCEE
+T ss_pred             CCCCCEEEEEEEEEEEEeCCCCceee
+Confidence            34567799999999988776655544
+
+
+No 2
+>4HJI_B CS1 fimbrial subunit A; CS1 pilus, COLONIZATION FACTOR, pilin; 1.6A {Escherichia coli}
+Probab=45.66  E-value=17  Score=24.17  Aligned_cols=26  Identities=15%  Similarity=0.123  Sum_probs=19.2  Template_Neff=6.100
+
+Q T1125_Domain10    4 SLGLPEDYTGVVQVRGELADPEGNVY   29 (42)
+Q Consensus         4 sL~~p~Nytgvl~VRgelAdpege~~   29 (42)
+                      .-..+.+|+|+|.+-+|-+-..+.+.
+T Consensus       139 ~~~~~G~YsG~V~LvFe~~~~~~~~~  164 (175)
+T 4HJI_B          139 GALTAGQYQGLVSIILTKSTDNKQVE  164 (175)
+T ss_dssp             SCCCSEEEEEEEEEEEEETTCCCCEE
+T ss_pred             CCCCCEEEEEEEEEEEEeCCCCceee
+Confidence            34567799999999988776655544
+
+
+No 3
+>6JCS_R Capsid protein, Dyslexia-associated protein KIAA0319-like; adeno-associated virus, AAV5, receptor, AAVR;{Adeno-associated virus - 5}
+Probab=23.90  E-value=68  Score=16.85  Aligned_cols=18  Identities=6%  Similarity=0.106  Sum_probs=12.5  Template_Neff=10.000
+
+Q T1125_Domain10    8 PEDYTGVVQVRGELADPEG   26 (42)
+Q Consensus         8 p~Nytgvl~VRgelAdpeg   26 (42)
+                      +..-.|..++++.+.| ++
+T Consensus        66 ~~~~~g~y~~~l~vtd-~~   83 (97)
+T 6JCS_R           66 SKLTPGLYEFKVIVEG-QN   83 (97)
+T ss_pred             EeCCCEEEEEEEEEEc-CC
+Confidence            3334578888888888 44
+
+
+No 4
+>4FFU_D oxidase (E.C.1.4.3.4); STRUCTURAL GENOMICS, PROTEIN STRUCTURE INITIATIVE; HET: MSE; 1.8A {Sinorhizobium meliloti}
+Probab=21.78  E-value=79  Score=19.14  Aligned_cols=29  Identities=28%  Similarity=0.397  Sum_probs=18.3  Template_Neff=9.100
+
+Q T1125_Domain10   13 GVVQVRGELADPEGNVYAGLKGTVIVDPR   41 (42)
+Q Consensus        13 gvl~VRgelAdpege~~A~lk~t~i~~pr   41 (42)
+                      +.++++..+.+.+++..+..+.+.++.+|
+T Consensus       142 ~~v~~~~~~~~~~g~~v~~~~~~~~~~~~  170 (176)
+T 4FFU_D          142 GRVVERCEVINQRGEVVLAADHILIVERK  170 (176)
+T ss_dssp             EEEEEEEEEECTTSCEEEEEEEEEEEECC
+T ss_pred             eEEEEEEEEEeCCCCEEEEEEEEEEEecC
+Confidence            45666667766666666666666666543
+
+
+No 5
+>4FFU_I oxidase (E.C.1.4.3.4); STRUCTURAL GENOMICS, PROTEIN STRUCTURE INITIATIVE; 1.8A {Sinorhizobium meliloti}
+Probab=21.78  E-value=79  Score=19.14  Aligned_cols=29  Identities=28%  Similarity=0.397  Sum_probs=18.3  Template_Neff=9.100
+
+Q T1125_Domain10   13 GVVQVRGELADPEGNVYAGLKGTVIVDPR   41 (42)
+Q Consensus        13 gvl~VRgelAdpege~~A~lk~t~i~~pr   41 (42)
+                      +.++++..+.+.+++..+..+.+.++.+|
+T Consensus       142 ~~v~~~~~~~~~~g~~v~~~~~~~~~~~~  170 (176)
+T 4FFU_I          142 GRVVERCEVINQRGEVVLAADHILIVERK  170 (176)
+T ss_dssp             EEEEEEEEEECTTSCEEEEEEEEEEEECC
+T ss_pred             eEEEEEEEEEeCCCCEEEEEEEEEEEecC
+Confidence            45666667766666666666666666543
+
+
+No 6
+>1POQ_A YPM; Jelly roll fold, IMMUNE SYSTEM; NMR {Yersinia pseudotuberculosis} SCOP: b.135.1.1
+Probab=20.43  E-value=88  Score=21.16  Aligned_cols=27  Identities=41%  Similarity=0.699  Sum_probs=19.6  Template_Neff=1.100
+
+Q T1125_Domain10    9 EDYTGVVQVRGELA--------DPEGNVYAGLKGT   35 (42)
+Q Consensus         9 ~Nytgvl~VRgelA--------dpege~~A~lk~t   35 (42)
+                      +.|+|+||=.+||.        ...||.+|++..|
+T Consensus         6 ~tytgtiqgkgevci~gnkegk~rggelyavl~st   40 (118)
+T 1POQ_A            6 ATYTGTIQGKGEVCIIGNKEGKTRGGELYAVLHST   40 (118)
+T ss_dssp             EEEEEEECSSCEEEECCCCCCCSCCCTTEEEEECC
+T ss_pred             eeeeeEeeccceEEEEcccccccccceeEEEEeeC
+Confidence            56999999888874        3346777877655
+
+
+No 7
+>1PM4_B YPM; Jelly roll fold, TOXIN; 1.755A {Yersinia pseudotuberculosis} SCOP: b.135.1.1
+Probab=20.36  E-value=89  Score=21.18  Aligned_cols=27  Identities=41%  Similarity=0.699  Sum_probs=19.6  Template_Neff=1.100
+
+Q T1125_Domain10    9 EDYTGVVQVRGELA--------DPEGNVYAGLKGT   35 (42)
+Q Consensus         9 ~Nytgvl~VRgelA--------dpege~~A~lk~t   35 (42)
+                      +.|+|+||=.+||.        ...||.+|++..|
+T Consensus         7 ~tytgtiqgkgevci~gnkegk~rggelyavl~st   41 (119)
+T 1PM4_B            7 ATYTGTIQGKGEVCIIGNKEGKTRGGELYAVLHST   41 (119)
+T ss_dssp             EEEEEEECTTCEEEEEECTTCCCCCEEEEEEEECS
+T ss_pred             eeeeeEeecCceEEEEcccccccccceeEEEEeeC
+Confidence            46999999888874        3346777877655
+
+
+No 8
+>4BHU_E UNCHARACTERIZED PROTEIN YUAB; STRUCTURAL PROTEIN, BIOFILM; HET: MLY, GOL, MSE, CL; 1.91A {BACILLUS SUBTILIS SUBSP. SUBTILIS}
+Probab=20.23  E-value=90  Score=21.27  Aligned_cols=30  Identities=17%  Similarity=0.123  Sum_probs=19.3  Template_Neff=3.400
+
+Q T1125_Domain10   12 TGVVQVRGELADPEGNVYA-GLKGTVIVDPRA   42 (42)
+Q Consensus        12 tgvl~VRgelAdpege~~A-~lk~t~i~~pra   42 (42)
+                      +|+-.++.+ +|.+|.+.. .-+-++.|+||.
+T Consensus        99 AGtY~f~~~-~dadg~G~~~~ae~~~~i~~r~  129 (130)
+T 4BHU_E           99 AGTYTFRAE-NKSLSIGNKFYAEASIDVAKRS  129 (130)
+T ss_dssp             SEEEEEEEE-ECSSEESSCCEEEEEEEEBCSC
+T ss_pred             CeEEEEEEE-EccCCCcceeEEEEEEEeeccC
+Confidence            355555554 466776664 667788888883
+
+
+No 9
+>2E7M_A Protein KIAA0319; PKD domain, Protein KIAA0319 precursor; NMR {Homo sapiens}
+Probab=20.19  E-value=90  Score=17.74  Aligned_cols=19  Identities=11%  Similarity=0.151  Sum_probs=13.5  Template_Neff=8.800
+
+Q T1125_Domain10    8 PEDYTGVVQVRGELADPEGN   27 (42)
+Q Consensus         8 p~Nytgvl~VRgelAdpege   27 (42)
+                      .+.-.|..++++++.| ++.
+T Consensus        75 ~~~~~g~y~f~ltVtD-~g~   93 (113)
+T 2E7M_A           75 SQLSVGLYVFKVTVSS-ENA   93 (113)
+T ss_dssp             CSCCSEEEEECCEEEE-TTE
+T ss_pred             EecCCEEEEEEEEEEc-CCc
+Confidence            3444688889999998 553
+
+
+No 10
+>4Y2O_B CFA/I pili chaperone CfaA, CFA/I; Enterotoxigenic Escherichia coli, periplasmic chaperone; HET: PGE; 2.419A {Escherichia coli O78:H11 (strain H10407 / ETEC)}
+Probab=19.73  E-value=94  Score=19.98  Aligned_cols=17  Identities=24%  Similarity=0.358  Sum_probs=12.6  Template_Neff=6.400
+
+Q T1125_Domain10    4 SLGLPEDYTGVVQVRGE   20 (42)
+Q Consensus         4 sL~~p~Nytgvl~VRge   20 (42)
+                      ....+.+|+|+|.+-++
+T Consensus       123 ~~~~~G~YsG~V~Lvf~  139 (142)
+T 4Y2O_B          123 TAPTAGNYSGVVSLVMT  139 (142)
+T ss_dssp             CCCCCSCCEEEEEEEEE
+T ss_pred             CCCCCEEEEEEEEEEEe
+Confidence            34566799999988765
+
+

@@ -1,0 +1,16 @@
+# STOCKHOLM 1.0
+
+#=GS UniRef90_A7XXD0/516-557        DE [subseq from] Tape tail measure protein n=3 Tax=Oshimavirus TaxID=1623293 RepID=A7XXD0_BP234
+#=GS UniRef90_UPI000D4FE318/292-323 DE [subseq from] tetratricopeptide repeat protein n=1 Tax=Saccharopolyspora hirsuta TaxID=1837 RepID=UPI000D4FE318
+#=GS UniRef90_UPI000D4FE318/334-365 DE [subseq from] tetratricopeptide repeat protein n=1 Tax=Saccharopolyspora hirsuta TaxID=1837 RepID=UPI000D4FE318
+#=GS UniRef90_UPI0011BE1923/108-149 DE [subseq from] T9SS type A sorting domain-containing protein n=1 Tax=Adhaeribacter aerolatus TaxID=670289 RepID=UPI0011BE1923
+#=GS UniRef90_UPI0011BE1923/496-518 DE [subseq from] T9SS type A sorting domain-containing protein n=1 Tax=Adhaeribacter aerolatus TaxID=670289 RepID=UPI0011BE1923
+
+T1125_Domain10:516-557                 RPQSLGLPEDYTGVVQVRGELADPEGNVY--A-GLKGTVIVDPRA
+UniRef90_A7XXD0/516-557                RPQSLGLPEDYTGVVQVRGELADPEGNVY--A-GLKGTVIVDPRA
+UniRef90_UPI000D4FE318/292-323         -PRTLGTRNNFALVLRIRGELAEAEAEFQ--A-VLK---------
+UniRef90_UPI000D4FE318/334-365         -PDTLATRHNLASVLQIRGELAEAEAEFQ--A-VLK---------
+UniRef90_UPI0011BE1923/108-149         ---SVNIPANYTGTITVRLTVADPDGEGPCQAVSDERTIIINPRA
+UniRef90_UPI0011BE1923/496-518         ---SLSVPANYTGSVVVRLSVADPDG-------------------
+#=GC RF                                xxxxxxxxxxxxxxxxxxxxxxxxxxxxx..x.xxxxxxxxxxxx
+//

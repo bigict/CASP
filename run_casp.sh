@@ -64,16 +64,16 @@ ${msa_tool_sync} $* ${msa_tool_srv}:${msa_tool_data_dir}/fasta/
 msa_tool_file_list=""
 if [ ${enable_domain_split} -eq 0 ]; then
   for f in $*; do
-  f=$(basename ${f})
-  msa_tool_file_list="${msa_tool_file_list} ${msa_tool_data_dir}/fasta/${f}"
-done
+    f=$(basename ${f})
+    msa_tool_file_list="${msa_tool_file_list} ${msa_tool_data_dir}/fasta/${f}"
+  done
 fi
 
 
 af2_pred_data_dir="${output_dir}/${timestamp}"
 mkdir -p ${af2_pred_data_dir}
 
-if [ ${enable_domain_split} -ne 0 ]; then
+if [ ${enable_domain_split} -eq 1 ]; then
   # 远程对input1_fasta input2_fasta ...run seq_parser.py
   for f in $@; do
     f=$(basename ${f})
@@ -110,7 +110,7 @@ echo "msa_tool_run done"
 #########################
 # MSA postprocess modules
 #########################
-if [ ${enable_domain_split} -ne 0 ]; then
+if [ ${enable_domain_split} -eq 1 ]; then
   # run msa_assemble
   for f in $@; do
     f=$(basename ${f})
@@ -121,8 +121,10 @@ if [ ${enable_domain_split} -ne 0 ]; then
       -o "${msa_tool_data_dir}/msa/${f}_assembled"
   done
 fi
-
 ${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/msa ${af2_pred_data_dir}/
+#########################
+# running alphafold
+#########################
 
 if [ x"${model_params}" == x"" ]; then
   model_params="-p --use_precomputed_msas"
@@ -133,9 +135,13 @@ else
   fi
 fi
 
-bash -x run_alphafold.sh \
+if [ ${enable_domain_split} -eq 0 ]; then
+  bash -x run_alphafold.sh \
      -m alphafold \
      -d db \
      -o ${af2_pred_data_dir} \
      ${model_params} \
      ${msa_tool_file_list}
+fi
+
+
