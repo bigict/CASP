@@ -1,0 +1,157 @@
+Query         T1125_Domain20:1171-1200 
+Match_columns 30
+No_of_seqs    1 out of 1
+Neff          1
+Searched_HMMs 80799
+Date          Thu Jan 11 13:26:36 2024
+Command       /public/dbu/.local/bin/hhsearch -i /public/dbu/CASP/tmp/tmpj84q6vwk/query.a3m -o /public/dbu/CASP/tmp/tmpj84q6vwk/output.hhr -maxseq 1000000 -d /public/dbu/data/af2_db/pdb70/pdb70 
+
+ No Hit                             Prob E-value P-value  Score    SS Cols Query HMM  Template HMM
+  1 2JN9_A YkvR protein; YkvR, SR3  50.0      13 0.00016   22.7   0.0   14    1-14     38-51  (105)
+  2 5M1G_B Gag protein; GAG, VIRAL  24.5      65  0.0008   19.9   0.0   13    8-20     14-26  (99)
+  3 2KXI_A Putative uncharacterize  18.7   1E+02  0.0013   18.9   0.0   12    6-17      3-14  (153)
+  4 5M1H_A Gag protein; GAG, VIRAL  12.1   2E+02  0.0024   19.5   0.0   11    9-19     96-106 (180)
+  5 6EY5_B T9SS component cytoplas  11.6 2.1E+02  0.0026   18.8   0.0   20    5-24    109-128 (300)
+  6 6EY6_F T9SS component cytoplas  10.9 2.3E+02  0.0028   19.0   0.0   20    5-24    124-143 (315)
+  7 2IFC_C Citrate Synthase (E.C.2  10.5 2.4E+02   0.003   18.3   0.0   22    6-28     30-51  (385)
+  8 3H0O_A Beta-glucanase (E.C.3.2   8.3 3.3E+02  0.0041   15.9   0.0   12   14-26    229-240 (240)
+  9 4Z80_C EGF family domain-conta   8.3 3.3E+02  0.0041   14.5   0.0   10   11-20      6-15  (37)
+ 10 5N82_A Tyrocidine synthase 1 (   8.0 3.5E+02  0.0043   14.7   0.0    9   10-18     10-18  (427)
+
+No 1
+>2JN9_A YkvR protein; YkvR, SR358, Bacillus subtilis, NESG; NMR {Bacillus subtilis} SCOP: b.45.3.1
+Probab=50.00  E-value=13  Score=22.70  Aligned_cols=14  Identities=43%  Similarity=0.721  Sum_probs=10.9  Template_Neff=3.400
+
+Q T1125_Domain20    1 YAEITTLLYRGIAN   14 (30)
+Q Consensus         1 yaeittllyrgian   14 (30)
+                      |-.|++|||.+..+
+T Consensus        38 YHdIatLLY~~~Fd   51 (105)
+T 2JN9_A           38 YHDIAVLLYEKTFN   51 (105)
+T ss_dssp             HHHHTTCBSCSCEE
+T ss_pred             chhHheeeeeceee
+Confidence            55799999988654
+
+
+No 2
+>5M1G_B Gag protein; GAG, VIRAL PROTEIN, FOAMY VIRUS; NMR {Human spumaretrovirus}
+Probab=24.48  E-value=65  Score=19.92  Aligned_cols=13  Identities=46%  Similarity=0.864  Sum_probs=10.2  Template_Neff=2.600
+
+Q T1125_Domain20    8 LYRGIANQEGLAE   20 (30)
+Q Consensus         8 lyrgianqeglae   20 (30)
+                      ..++|+|+||.+-
+T Consensus        14 vL~~i~~~eGi~~   26 (99)
+T 5M1G_B           14 VIKGIVDQEGVAT   26 (99)
+T ss_dssp             HHHHHHHHTCHHH
+T ss_pred             HHHHHhcccchhH
+Confidence            3589999999763
+
+
+No 3
+>2KXI_A Putative uncharacterized protein; ADP ribosyltransferase, TRANSFERASE; NMR {Neisseria meningitidis serogroup B}
+Probab=18.71  E-value=1e+02  Score=18.86  Aligned_cols=12  Identities=50%  Similarity=0.927  Sum_probs=9.0  Template_Neff=5.700
+
+Q T1125_Domain20    6 TLLYRGIANQEG   17 (30)
+Q Consensus         6 tllyrgianqeg   17 (30)
+                      ..||||+.....
+T Consensus         3 ~~lyrg~~~~~~   14 (153)
+T 2KXI_A            3 NFLYRGISCQQD   14 (153)
+T ss_dssp             CEEEEEESCHHH
+T ss_pred             ceeeecccccch
+Confidence            468999987654
+
+
+No 4
+>5M1H_A Gag protein; GAG, VIRAL PROTEIN, FOAMY VIRUS; NMR {Human spumaretrovirus}
+Probab=12.09  E-value=2e+02  Score=19.51  Aligned_cols=11  Identities=55%  Similarity=0.969  Sum_probs=9.2  Template_Neff=2.600
+
+Q T1125_Domain20    9 YRGIANQEGLA   19 (30)
+Q Consensus         9 yrgianqegla   19 (30)
+                      .++|+++||.+
+T Consensus        96 L~~i~~~eGi~  106 (180)
+T 5M1H_A           96 IKGIVDQEGVA  106 (180)
+T ss_dssp             HHHHHHHTCHH
+T ss_pred             HHHHHhhcCch
+Confidence            57999999975
+
+
+No 5
+>6EY5_B T9SS component cytoplasmic membrane protein; Type IV Secretion System (T9SS); 2.85A {Porphyromonas gingivalis}
+Probab=11.57  E-value=2.1e+02  Score=18.75  Aligned_cols=20  Identities=30%  Similarity=0.507  Sum_probs=13.3  Template_Neff=6.700
+
+Q T1125_Domain20    5 TTLLYRGIANQEGLAETNLP   24 (30)
+Q Consensus         5 ttllyrgianqeglaetnlp   24 (30)
+                      ...||||+.|.-..+--+++
+T Consensus       109 mNVlY~Gv~NpisIsvpgv~  128 (300)
+T 6EY5_B          109 MNVLYAGIDNPINIAVPGVA  128 (300)
+T ss_dssp             GCEEETTSCEEEEEECTTSC
+T ss_pred             cceEEcCCCCcEEEEeCCCC
+Confidence            45799999997655444443
+
+
+No 6
+>6EY6_F T9SS component cytoplasmic membrane protein; Type IV Secretion System (T9SS); 2.1A {Porphyromonas gingivalis}
+Probab=10.85  E-value=2.3e+02  Score=18.95  Aligned_cols=20  Identities=30%  Similarity=0.507  Sum_probs=13.4  Template_Neff=6.300
+
+Q T1125_Domain20    5 TTLLYRGIANQEGLAETNLP   24 (30)
+Q Consensus         5 ttllyrgianqeglaetnlp   24 (30)
+                      ...||||+.|.-..+--+++
+T Consensus       124 mNVlY~Gv~NpisIsvpGv~  143 (315)
+T 6EY6_F          124 MNVLYAGIDNPINIAVPGVA  143 (315)
+T ss_dssp             TCEEETTSCEEEEEECTTCC
+T ss_pred             cceEEcCCCCcEEEEeCCCC
+Confidence            45799999997655544443
+
+
+No 7
+>2IFC_C Citrate Synthase (E.C.2.3.3.1); Citrate synthase, Oxaloacetate, EC 2.3.3.1; HET: OAA; 1.7A {Thermoplasma acidophilum}
+Probab=10.46  E-value=2.4e+02  Score=18.30  Aligned_cols=22  Identities=23%  Similarity=0.427  Sum_probs=10.9  Template_Neff=8.000
+
+Q T1125_Domain20    6 TLLYRGIANQEGLAETNLPRDEV   28 (30)
+Q Consensus         6 tllyrgianqeglaetnlprdev   28 (30)
+                      .|.|||.-- +.|++.+.+-+||
+T Consensus        30 ~L~YRG~~i-~dLa~~~~~fEev   51 (385)
+T 2IFC_C           30 ILRYGGYSV-EDIIASGAQDEEI   51 (385)
+T ss_dssp             EEEETTEEH-HHHHHHTCCHHHH
+T ss_pred             EEEECCeeH-HHHHHcCCCHHHH
+Confidence            357888743 3344433333443
+
+
+No 8
+>3H0O_A Beta-glucanase (E.C.3.2.1.73); 1,3-1,4-beta-D-Glucanase, CH-Pi stacking interactions, Tris; HET: ACT; 1.4A {Fibrobacter succinogenes}
+Probab=8.29  E-value=3.3e+02  Score=15.89  Aligned_cols=12  Identities=42%  Similarity=0.756  Sum_probs=6.1  Template_Neff=8.900
+
+Q T1125_Domain20   14 NQEGLAETNLPRD   26 (30)
+Q Consensus        14 nqeglaetnlprd   26 (30)
+                      ++|.++ .++|+|
+T Consensus       229 ~~~~~~-~~~~~~  240 (240)
+T 3H0O_A          229 GQESFN-GQVPRD  240 (240)
+T ss_dssp             TCCCCC-SCCCCC
+T ss_pred             Cccccc-CCCCCC
+Confidence            344554 455554
+
+
+No 9
+>4Z80_C EGF family domain-containing protein; Apicomplexa, invasion, moving junction, parasite; HET: NAG, GOL, SO4; 1.53A {Toxoplasma gondii}
+Probab=8.26  E-value=3.3e+02  Score=14.47  Aligned_cols=10  Identities=40%  Similarity=0.381  Sum_probs=7.9  Template_Neff=2.100
+
+Q T1125_Domain20   11 GIANQEGLAE   20 (30)
+Q Consensus        11 gianqeglae   20 (30)
+                      ..+||.|+|.
+T Consensus         6 ~v~NqSg~A~   15 (37)
+T 4Z80_C            6 IVQNQSSLAP   15 (37)
+T ss_pred             ccccccccCh
+Confidence            4679999886
+
+
+No 10
+>5N82_A Tyrocidine synthase 1 (E.C.5.1.1.11); nonribosomal peptide synthetase, adenylation domain; HET: 8PZ, BTB; 1.708A {Brevibacillus parabrevis}
+Probab=8.01  E-value=3.5e+02  Score=14.66  Aligned_cols=9  Identities=56%  Similarity=0.796  Sum_probs=0.0  Template_Neff=12.600
+
+Q T1125_Domain20   10 RGIANQEGL   18 (30)
+Q Consensus        10 rgianqegl   18 (30)
+                      |.++||.++
+T Consensus        10 ~~~~~~~~~   18 (427)
+T 5N82_A           10 RSVANQANL   18 (427)
+T ss_pred             chHHHHhch
+
+

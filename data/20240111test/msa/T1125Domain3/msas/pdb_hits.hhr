@@ -1,0 +1,592 @@
+Query         T1125_Domain3:201-235 
+Match_columns 35
+No_of_seqs    1 out of 1
+Neff          1
+Searched_HMMs 80799
+Date          Thu Jan 11 13:26:18 2024
+Command       /public/dbu/.local/bin/hhsearch -i /public/dbu/CASP/tmp/tmpa7tinm9h/query.a3m -o /public/dbu/CASP/tmp/tmpa7tinm9h/output.hhr -maxseq 1000000 -d /public/dbu/data/af2_db/pdb70/pdb70 
+
+ No Hit                             Prob E-value P-value  Score    SS Cols Query HMM  Template HMM
+  1 3HLS_A Guanylate cyclase solub  54.1      10 0.00013   18.8   0.0   19    7-25     48-66  (66)
+  2 3HLS_D Guanylate cyclase solub  54.1      10 0.00013   18.8   0.0   19    7-25     48-66  (66)
+  3 3YGS_P APOPTOTIC PROTEASE ACTI  53.5      11 0.00013   18.5   0.0   25    5-29     73-97  (97)
+  4 5MVW_A Centrosomin; Centrosome  47.0      16  0.0002   21.3   0.0   20    9-28     39-58  (70)
+  5 5MW9_A Centrosomin; Centrosome  47.0      16  0.0002   21.3   0.0   20    9-28     39-58  (70)
+  6 2LFW_B PhyR sigma-like domain,  37.9      27 0.00034   19.8   0.0   11    2-12     44-54  (62)
+  7 4DNY_A Metalloprotease stcE (E  35.8      31 0.00038   20.9   0.0   18   18-35     55-72  (126)
+  8 5MSN_A Sister chromatid cohesi  32.6      38 0.00047   21.3   0.0   29    1-29    237-272 (293)
+  9 3LHR_B Zinc finger protein 24;  30.1      44 0.00055   17.8   0.0   20    2-21     53-72  (93)
+ 10 5UXX_D BaquA.17208.a, BaquA.17  29.9      45 0.00056   19.2   0.0   11    2-12     42-52  (67)
+ 11 4QIC_D Sensory transduction re  28.8      48  0.0006   20.0   0.0   11    2-12     56-66  (81)
+ 12 5MSN_D Sister chromatid cohesi  28.6      49 0.00061   20.7   0.0   28    1-28    237-271 (293)
+ 13 4E6S_A Zinc finger and SCAN do  28.4      50 0.00061   18.0   0.0   20    2-21     53-72  (93)
+ 14 1P71_A DNA-BINDING PROTEIN HU/  26.0      58 0.00072   16.2   0.0   16   13-28     27-42  (94)
+ 15 1P78_B DNA BINDING PROTEIN/DNA  26.0      58 0.00072   16.2   0.0   16   13-28     27-42  (94)
+ 16 1B8Z_B HISTONELIKE PROTEIN HU;  25.8      59 0.00073   15.9   0.0   16   13-28     27-42  (90)
+ 17 4BHX_A PATERNALLY-EXPRESSED GE  25.6      60 0.00074   17.5   0.0   20    2-21     54-73  (94)
+ 18 1Y7Q_B Zinc finger protein 174  25.6      60 0.00074   17.6   0.0   19    2-20     56-74  (98)
+ 19 5EKA_A DNA-binding protein HU;  25.3      61 0.00076   16.2   0.0   16   13-28     32-47  (96)
+ 20 3T0Y_B Response regulator, Nep  25.2      62 0.00076   19.0   0.0   11    2-12     50-60  (68)
+ 21 3T0Y_D Response regulator, Nep  25.2      62 0.00076   19.0   0.0   11    2-12     50-60  (68)
+ 22 4HH1_A AppA protein; BLUF doma  25.0      62 0.00077   21.1   0.0   16   17-32    150-165 (406)
+ 23 4HH1_B AppA protein; BLUF doma  25.0      62 0.00077   21.1   0.0   16   17-32    150-165 (406)
+ 24 4EUT_A Serine/threonine-protei  24.3      66 0.00082   19.0   0.0   25    4-28    302-326 (396)
+ 25 5LVT_C DNA-binding protein HU;  24.0      67 0.00083   15.7   0.0   16   13-28     28-43  (91)
+ 26 2FI2_B Zinc finger protein 42;  23.2      71 0.00088   17.0   0.0   19    3-21     55-73  (94)
+ 27 4BHX_B PATERNALLY-EXPRESSED GE  22.9      73  0.0009   17.1   0.0   20    2-21     54-73  (94)
+ 28 1USU_B HEAT SHOCK PROTEIN HSP8  22.9      73 0.00091   19.3   0.0   22    3-24    142-163 (170)
+ 29 1RIY_A Hu DNA-binding protein;  22.1      78 0.00096   15.5   0.0   16   13-28     27-42  (90)
+ 30 1USV_F HEAT SHOCK PROTEIN HSP8  22.0      78 0.00097   19.3   0.0   22    3-24    142-163 (170)
+ 31 4YFT_A DNA-binding protein HU-  21.6      80   0.001   15.3   0.0   16   13-28     27-42  (90)
+ 32 5MSM_A Sister chromatid cohesi  21.5      81   0.001   20.6   0.0   28    1-28    324-358 (380)
+ 33 5OKC_B Sister chromatid cohesi  21.5      81   0.001   20.6   0.0   28    1-28    324-358 (380)
+ 34 2D7C_C Ras-related protein Rab  21.5      81   0.001   16.2   0.0   13   12-24     18-30  (42)
+ 35 6O8Q_F DNA-binding protein/DNA  20.9      85  0.0011   15.5   0.0   15   14-28     29-43  (91)
+ 36 3NAT_A Uncharacterized protein  20.9      85  0.0011   20.4   0.0   26    8-33      3-28  (164)
+ 37 4ZV0_B Uncharacterized protein  20.6      87  0.0011   18.8   0.0   13   16-28     79-91  (94)
+ 38 5JTK_A Uncharacterized protein  20.6      87  0.0011   18.8   0.0   13   16-28     79-91  (94)
+ 39 4HH0_A AppA protein; BLUF doma  20.4      89  0.0011   20.4   0.0   16   17-32    150-165 (406)
+
+No 1
+>3HLS_A Guanylate cyclase soluble subunit beta-1; coiled-coil domain, signaling helix, S-helix; 2.15A {Rattus norvegicus}
+Probab=54.08  E-value=10  Score=18.78  Aligned_cols=19  Identities=26%  Similarity=0.312  Sum_probs=12.6  Template_Neff=8.300
+
+Q T1125_Domain3:    7 LALLKQDLQSYIADQLKRG   25 (35)
+Q Consensus         7 lallkqdlqsyiadqlkrg   25 (35)
+                      ..+|.+-+-..||++|+.|
+T Consensus        48 ~~lL~~~lP~~vA~~Lk~g   66 (66)
+T 3HLS_A           48 DTLLYSVLPPSVANELRHK   66 (66)
+T ss_dssp             HHHHHHTSCHHHHHHHHC-
+T ss_pred             HHHHHhhCCHHHHHHHhcC
+Confidence            3456666777788888765
+
+
+No 2
+>3HLS_D Guanylate cyclase soluble subunit beta-1; coiled-coil domain, signaling helix, S-helix; HET: MSE; 2.15A {Rattus norvegicus}
+Probab=54.08  E-value=10  Score=18.78  Aligned_cols=19  Identities=26%  Similarity=0.312  Sum_probs=11.9  Template_Neff=8.300
+
+Q T1125_Domain3:    7 LALLKQDLQSYIADQLKRG   25 (35)
+Q Consensus         7 lallkqdlqsyiadqlkrg   25 (35)
+                      ..+|.+-+-..||++|+.|
+T Consensus        48 ~~lL~~~lP~~vA~~Lk~g   66 (66)
+T 3HLS_D           48 DTLLYSVLPPSVANELRHK   66 (66)
+T ss_dssp             HHHHHTTSCHHHHHHHC--
+T ss_pred             HHHHHhhCCHHHHHHHhcC
+Confidence            3456666777788888765
+
+
+No 3
+>3YGS_P APOPTOTIC PROTEASE ACTIVATING FACTOR 1; APOPTOSIS, CASPASE ACTIVATION, CASPASE RECRUITMENT; 2.5A {Homo sapiens} SCOP: a.77.1.3
+Probab=53.54  E-value=11  Score=18.46  Aligned_cols=25  Identities=24%  Similarity=0.388  Sum_probs=14.7  Template_Neff=10.100
+
+Q T1125_Domain3:    5 RFLALLKQDLQSYIADQLKRGHAVG   29 (35)
+Q Consensus         5 rflallkqdlqsyiadqlkrghavg   29 (35)
+                      .|...|+..-++++++.|+.+...|
+T Consensus        73 ~f~~~L~~~~~~~l~~~l~~~~~~~   97 (97)
+T 3YGS_P           73 LFISCLEDTGQDMLASFLRTNRQAG   97 (97)
+T ss_dssp             HHHHHHHTTTCHHHHHHHHHHHHCC
+T ss_pred             HHHHHHHHhCCHHHHHHHHhhccCC
+Confidence            4555555555566777777665544
+
+
+No 4
+>5MVW_A Centrosomin; Centrosome, Centriole, Coiled-coil, Mitosis, cell; HET: EDO; 1.82A {Drosophila melanogaster}
+Probab=46.98  E-value=16  Score=21.30  Aligned_cols=20  Identities=25%  Similarity=0.356  Sum_probs=17.2  Template_Neff=4.000
+
+Q T1125_Domain3:    9 LLKQDLQSYIADQLKRGHAV   28 (35)
+Q Consensus         9 llkqdlqsyiadqlkrghav   28 (35)
+                      .+|+.+..+|.+||.+-|.|
+T Consensus        39 q~Ke~mE~~I~~Ql~~T~~V   58 (70)
+T 5MVW_A           39 KAKAQVEKDIKNQILKTHNV   58 (70)
+T ss_dssp             HHHHHHHHHHHHHHHHHHHH
+T ss_pred             HHHHHHHHHHHHHHHHHHHH
+Confidence            37888999999999998876
+
+
+No 5
+>5MW9_A Centrosomin; Centrosome, Centriole, Coiled-coil, Mitosis, Cell; 2.2A {Drosophila melanogaster}
+Probab=46.98  E-value=16  Score=21.30  Aligned_cols=20  Identities=25%  Similarity=0.356  Sum_probs=17.2  Template_Neff=4.000
+
+Q T1125_Domain3:    9 LLKQDLQSYIADQLKRGHAV   28 (35)
+Q Consensus         9 llkqdlqsyiadqlkrghav   28 (35)
+                      .+|+.+..+|.+||.+-|.|
+T Consensus        39 q~Ke~mE~~I~~Ql~~T~~V   58 (70)
+T 5MW9_A           39 KAKAQVEKDIKNQILKTHNV   58 (70)
+T ss_dssp             HHHHHHHHHHHHHHHHHHHH
+T ss_pred             HHHHHHHHHHHHHHHHHHHH
+Confidence            37888999999999998876
+
+
+No 6
+>2LFW_B PhyR sigma-like domain, NepR anti; signal transduction, response regulator, sigma; NMR {Sphingomonas sp. Fr1}
+Probab=37.92  E-value=27  Score=19.84  Aligned_cols=11  Identities=45%  Similarity=0.703  Sum_probs=8.5  Template_Neff=4.200
+
+Q T1125_Domain3:    2 VRDRFLALLKQ   12 (35)
+Q Consensus         2 vrdrflallkq   12 (35)
+                      |-|+|+.||.|
+T Consensus        44 vPDrFldLL~q   54 (62)
+T 2LFW_B           44 VPDEMLDLLNK   54 (62)
+T ss_dssp             CCCTTGGGSTT
+T ss_pred             CCHHHHHHHHH
+Confidence            55889988865
+
+
+No 7
+>4DNY_A Metalloprotease stcE (E.C.3.4.24.-); metzincin, bacterial zinc metalloprotease, O-linked; 1.61A {Escherichia coli}
+Probab=35.83  E-value=31  Score=20.89  Aligned_cols=18  Identities=33%  Similarity=0.449  Sum_probs=13.2  Template_Neff=5.900
+
+Q T1125_Domain3:   18 IADQLKRGHAVGDIKLPD   35 (35)
+Q Consensus        18 iadqlkrghavgdiklpd   35 (35)
+                      +.=++..|+=+.+|.||.
+T Consensus        55 v~i~~~DGnW~~~I~LP~   72 (126)
+T 4DNY_A           55 VEIHTANGRWVRDIYLPQ   72 (126)
+T ss_dssp             EEEEEETTBCCSEEECCC
+T ss_pred             EEEEecCCCccceEECCC
+Confidence            344566788889999984
+
+
+No 8
+>5MSN_A Sister chromatid cohesion protein DCC1; winged-helix, DNA repair, cell cycle; 2.002A {Saccharomyces cerevisiae S288c}
+Probab=32.64  E-value=38  Score=21.31  Aligned_cols=29  Identities=28%  Similarity=0.607  Sum_probs=20.3  Template_Neff=8.400
+
+Q T1125_Domain3:    1 DVRDRFLALLK-------QDLQSYIADQLKRGHAVG   29 (35)
+Q Consensus         1 dvrdrflallk-------qdlqsyiadqlkrghavg   29 (35)
+                      |+++||.+|++       .++.-||.+....+..+.
+T Consensus       237 dp~~Rf~~LF~~k~~W~~~ei~pyi~~l~~~~~~~~  272 (293)
+T 5MSN_A          237 DPKERFKVLFRLQSQWDLEDIKPLIEELNSRGMKID  272 (293)
+T ss_pred             CHHHHHHHHHhhCCCCCHHHHHHHHHHHCCCCCcHH
+Confidence            46788888764       578888888766555443
+
+
+No 9
+>3LHR_B Zinc finger protein 24; SCAN DOMAIN, protein structure initiative; 1.9A {Homo sapiens}
+Probab=30.14  E-value=44  Score=17.79  Aligned_cols=20  Identities=35%  Similarity=0.795  Sum_probs=14.2  Template_Neff=8.000
+
+Q T1125_Domain3:    2 VRDRFLALLKQDLQSYIADQ   21 (35)
+Q Consensus         2 vrdrflallkqdlqsyiadq   21 (35)
+                      |.+.|+..+-.+++.++.++
+T Consensus        53 vlEQFl~~lP~~~~~~v~~~   72 (93)
+T 3LHR_B           53 VLEQFVAILPKELQTWVRDH   72 (93)
+T ss_dssp             HHHHHHHHSCHHHHHHHHHT
+T ss_pred             HHHHHHHHCCHHHHHHHHHh
+Confidence            34677777777888777764
+
+
+No 10
+>5UXX_D BaquA.17208.a, BaquA.17842.a; SSGCID, Bartonella quintana, sigma factor; HET: SO4, MSE; 2.45A {Bartonella quintana}
+Probab=29.87  E-value=45  Score=19.17  Aligned_cols=11  Identities=36%  Similarity=0.667  Sum_probs=8.0  Template_Neff=4.300
+
+Q T1125_Domain3:    2 VRDRFLALLKQ   12 (35)
+Q Consensus         2 vrdrflallkq   12 (35)
+                      |-|||+.||.+
+T Consensus        42 vPDrf~~LL~~   52 (67)
+T 5UXX_D           42 LPARLLELLER   52 (67)
+T ss_dssp             CCHHHHHHHHH
+T ss_pred             cCHHHHHHHHH
+Confidence            45788888765
+
+
+No 11
+>4QIC_D Sensory transduction regulatory protein, Anti-anti-sigma; like domain, are two-component signaling; HET: MPD; 2.05A {Bartonella quintana}
+Probab=28.81  E-value=48  Score=20.01  Aligned_cols=11  Identities=36%  Similarity=0.667  Sum_probs=8.0  Template_Neff=3.600
+
+Q T1125_Domain3:    2 VRDRFLALLKQ   12 (35)
+Q Consensus         2 vrdrflallkq   12 (35)
+                      |-|||+.||.+
+T Consensus        56 VPDrFldLL~q   66 (81)
+T 4QIC_D           56 LPARLLELLER   66 (81)
+T ss_pred             CCHHHHHHHHH
+Confidence            55788888765
+
+
+No 12
+>5MSN_D Sister chromatid cohesion protein DCC1; winged-helix, DNA repair, cell cycle; 2.002A {Saccharomyces cerevisiae S288c}
+Probab=28.59  E-value=49  Score=20.74  Aligned_cols=28  Identities=29%  Similarity=0.628  Sum_probs=19.5  Template_Neff=8.500
+
+Q T1125_Domain3:    1 DVRDRFLALLK-------QDLQSYIADQLKRGHAV   28 (35)
+Q Consensus         1 dvrdrflallk-------qdlqsyiadqlkrghav   28 (35)
+                      |+++||.+|++       .++.-||.+....+..+
+T Consensus       237 dp~~Rf~~LF~~k~~W~~~ei~pyi~~l~~~~~~~  271 (293)
+T 5MSN_D          237 DPKERFKVLFRLQSQWDLEDIKPLIEELNSRGMKI  271 (293)
+T ss_dssp             SHHHHHHHHHHHCSEEEHHHHHHHHGGGCTTCCCH
+T ss_pred             CHHHHHHHHHhhCCCCCHHHHHHHHHHHccCCCCH
+Confidence            46788888775       57888888876555443
+
+
+No 13
+>4E6S_A Zinc finger and SCAN domain-containing; SCAN domain, protein interaction, other; 1.85A {Mus musculus}
+Probab=28.40  E-value=50  Score=17.97  Aligned_cols=20  Identities=25%  Similarity=0.424  Sum_probs=14.8  Template_Neff=7.500
+
+Q T1125_Domain3:    2 VRDRFLALLKQDLQSYIADQ   21 (35)
+Q Consensus         2 vrdrflallkqdlqsyiadq   21 (35)
+                      |.+.|+..+-.+++.+|.++
+T Consensus        53 vlEQFl~~lP~e~~~~v~e~   72 (93)
+T 4E6S_A           53 VLEQFLSVLPPHVLSRLHGA   72 (93)
+T ss_dssp             HHHHHHHTSCHHHHGGGTTC
+T ss_pred             HHHHHHHHCCHHHHHHHcCC
+Confidence            45678888888888887664
+
+
+No 14
+>1P71_A DNA-BINDING PROTEIN HU/DNA Complex; protein-DNA complex, DNA bending, HU; 1.9A {Anabaena sp.} SCOP: a.55.1.1
+Probab=26.03  E-value=58  Score=16.22  Aligned_cols=16  Identities=19%  Similarity=0.264  Sum_probs=11.4  Template_Neff=9.500
+
+Q T1125_Domain3:   13 DLQSYIADQLKRGHAV   28 (35)
+Q Consensus        13 dlqsyiadqlkrghav   28 (35)
+                      .+.+.|++.|..|+.|
+T Consensus        27 ~~~~~i~~~L~~G~~V   42 (94)
+T 1P71_A           27 AALETIIEAVSSGDKV   42 (94)
+T ss_dssp             HHHHHHHHHHHTTCCE
+T ss_pred             HHHHHHHHHHHcCCeE
+Confidence            3456777888888766
+
+
+No 15
+>1P78_B DNA BINDING PROTEIN/DNA Complex; protein-DNA complex, DNA bending, HU; 2.25A {Anabaena sp.} SCOP: a.55.1.1
+Probab=26.03  E-value=58  Score=16.22  Aligned_cols=16  Identities=19%  Similarity=0.264  Sum_probs=11.4  Template_Neff=9.500
+
+Q T1125_Domain3:   13 DLQSYIADQLKRGHAV   28 (35)
+Q Consensus        13 dlqsyiadqlkrghav   28 (35)
+                      .+.+.|++.|..|+.|
+T Consensus        27 ~~~~~i~~~L~~G~~V   42 (94)
+T 1P78_B           27 AALETIIEAVSSGDKV   42 (94)
+T ss_dssp             HHHHHHHHHHHTTCCE
+T ss_pred             HHHHHHHHHHHcCCeE
+Confidence            3456777888888766
+
+
+No 16
+>1B8Z_B HISTONELIKE PROTEIN HU; THERMOTOGA MARITIMA, THERMOSTABLE DNA BINDING; 1.6A {Thermotoga maritima} SCOP: a.55.1.1
+Probab=25.80  E-value=59  Score=15.91  Aligned_cols=16  Identities=25%  Similarity=0.478  Sum_probs=11.9  Template_Neff=9.700
+
+Q T1125_Domain3:   13 DLQSYIADQLKRGHAV   28 (35)
+Q Consensus        13 dlqsyiadqlkrghav   28 (35)
+                      .+...|.+.|..|+.|
+T Consensus        27 ~~~~~i~~~L~~G~~V   42 (90)
+T 1B8Z_B           27 TILETITEALAKGEKV   42 (90)
+T ss_dssp             HHHHHHHHHHHTTCCE
+T ss_pred             HHHHHHHHHHHcCCcE
+Confidence            4556777888888877
+
+
+No 17
+>4BHX_A PATERNALLY-EXPRESSED GENE 3 PROTEIN; DNA BINDING PROTEIN, PEG3; HET: PGE, EDO, PEG; 1.95A {HOMO SAPIENS}
+Probab=25.62  E-value=60  Score=17.47  Aligned_cols=20  Identities=15%  Similarity=0.600  Sum_probs=14.0  Template_Neff=7.800
+
+Q T1125_Domain3:    2 VRDRFLALLKQDLQSYIADQ   21 (35)
+Q Consensus         2 vrdrflallkqdlqsyiadq   21 (35)
+                      |.+.|+..|-.+++.++.++
+T Consensus        54 vlEQfl~~lp~~~~~~v~~~   73 (94)
+T 4BHX_A           54 VLEQYLTIIPEKLKPWVRAK   73 (94)
+T ss_dssp             HHHHHHHHSCGGGHHHHHHH
+T ss_pred             HHHHHHHHCCHHHHHHHHHH
+Confidence            34667777777777777664
+
+
+No 18
+>1Y7Q_B Zinc finger protein 174; SCAN domain  retroviral capsid; NMR {Homo sapiens} SCOP: a.28.3.2
+Probab=25.57  E-value=60  Score=17.59  Aligned_cols=19  Identities=26%  Similarity=0.628  Sum_probs=13.3  Template_Neff=7.800
+
+Q T1125_Domain3:    2 VRDRFLALLKQDLQSYIAD   20 (35)
+Q Consensus         2 vrdrflallkqdlqsyiad   20 (35)
+                      |.+.|+..|-.+++.++.+
+T Consensus        56 vlEQFl~~lp~e~~~~v~~   74 (98)
+T 1Y7Q_B           56 VMEQFLTILPEEIQARVRH   74 (98)
+T ss_dssp             HHHHHHHHSCTHHHHHHTS
+T ss_pred             HHHHHHHHCCHHHHHHHHH
+Confidence            4567777777777777755
+
+
+No 19
+>5EKA_A DNA-binding protein HU; HU PROTEIN, HISTONE-LIKE PROTEIN, THERMOSTABLE; 1.69A {Thermus thermophilus HB8}
+Probab=25.30  E-value=61  Score=16.20  Aligned_cols=16  Identities=25%  Similarity=0.418  Sum_probs=11.6  Template_Neff=9.500
+
+Q T1125_Domain3:   13 DLQSYIADQLKRGHAV   28 (35)
+Q Consensus        13 dlqsyiadqlkrghav   28 (35)
+                      .+.+.|.++|..|+.|
+T Consensus        32 ~~~~~i~~~L~~G~~V   47 (96)
+T 5EKA_A           32 ALLAKVEEALANGSKV   47 (96)
+T ss_dssp             HHHHHHHHHHHTTCCE
+T ss_pred             HHHHHHHHHHHCCCcE
+Confidence            4556777888888776
+
+
+No 20
+>3T0Y_B Response regulator, NepR; sigma factor, anti-sigma factor, receiver; 2.102A {Caulobacter vibrioides}
+Probab=25.21  E-value=62  Score=18.97  Aligned_cols=11  Identities=55%  Similarity=0.969  Sum_probs=7.5  Template_Neff=3.700
+
+Q T1125_Domain3:    2 VRDRFLALLKQ   12 (35)
+Q Consensus         2 vrdrflallkq   12 (35)
+                      |-|||++||.|
+T Consensus        50 VPDrf~dLL~q   60 (68)
+T 3T0Y_B           50 VPDEFLAILRK   60 (68)
+T ss_dssp             CCHHHHHHHHT
+T ss_pred             CCHHHHHHHHH
+Confidence            45788887754
+
+
+No 21
+>3T0Y_D Response regulator, NepR; sigma factor, anti-sigma factor, receiver; HET: MSE; 2.102A {Caulobacter vibrioides}
+Probab=25.21  E-value=62  Score=18.97  Aligned_cols=11  Identities=55%  Similarity=0.969  Sum_probs=7.5  Template_Neff=3.700
+
+Q T1125_Domain3:    2 VRDRFLALLKQ   12 (35)
+Q Consensus         2 vrdrflallkq   12 (35)
+                      |-|||++||.|
+T Consensus        50 VPDrf~dLL~q   60 (68)
+T 3T0Y_D           50 VPDEFLAILRK   60 (68)
+T ss_dssp             CCHHHHHHHHC
+T ss_pred             CCHHHHHHHHH
+Confidence            45788887754
+
+
+No 22
+>4HH1_A AppA protein; BLUF domain, SCHIC domain, photoreceptor; HET: FMN; 3.501A {Rhodobacter sphaeroides}
+Probab=25.03  E-value=62  Score=21.10  Aligned_cols=16  Identities=0%  Similarity=-0.051  Sum_probs=13.1  Template_Neff=8.700
+
+Q T1125_Domain3:   17 YIADQLKRGHAVGDIK   32 (35)
+Q Consensus        17 yiadqlkrghavgdik   32 (35)
+                      -|.+.+.+|+++|+++
+T Consensus       150 ~I~~~l~~Gv~i~~v~  165 (406)
+T 4HH1_A          150 RFLSDVCAARTLAPDT  165 (406)
+T ss_dssp             HHHHHHHHHHHHCTTS
+T ss_pred             HHHHHHHhhcccCCCC
+Confidence            4577889999999886
+
+
+No 23
+>4HH1_B AppA protein; BLUF domain, SCHIC domain, photoreceptor; HET: FMN; 3.501A {Rhodobacter sphaeroides}
+Probab=25.03  E-value=62  Score=21.10  Aligned_cols=16  Identities=0%  Similarity=-0.051  Sum_probs=13.1  Template_Neff=8.700
+
+Q T1125_Domain3:   17 YIADQLKRGHAVGDIK   32 (35)
+Q Consensus        17 yiadqlkrghavgdik   32 (35)
+                      -|.+.+.+|+++|+++
+T Consensus       150 ~I~~~l~~Gv~i~~v~  165 (406)
+T 4HH1_B          150 RFLSDVCAARTLAPDT  165 (406)
+T ss_dssp             HHHHHHHHHHHHCTTC
+T ss_pred             HHHHHHHhhcccCCCC
+Confidence            4577889999999886
+
+
+No 24
+>4EUT_A Serine/threonine-protein kinase TBK1 (E.C.2.7.11.1); Kinase, ATP Binding, Phosphorylation, TRANSFERASE-TRANSFERASE; HET: SO4, BX7; 2.6A {Homo sapiens}
+Probab=24.28  E-value=66  Score=19.03  Aligned_cols=25  Identities=12%  Similarity=0.093  Sum_probs=17.2  Template_Neff=11.000
+
+Q T1125_Domain3:    4 DRFLALLKQDLQSYIADQLKRGHAV   28 (35)
+Q Consensus         4 drflallkqdlqsyiadqlkrghav   28 (35)
+                      .++.++|.+-+...++.+|++|+.+
+T Consensus       302 ~~~~~~l~~~lp~~~a~~l~~~~~~  326 (396)
+T 4EUT_A          302 AETSDILHRMVIHVFSLQQMTAHKI  326 (396)
+T ss_pred             HHHHHHHHhhCCHHHHHHHhcCCCC
+Confidence            3455566666777788888887754
+
+
+No 25
+>5LVT_C DNA-binding protein HU; HU PROTEIN, DNA BINDING, LACTOCOCCUS; HET: SO4, ACT; 2.1A {Lactococcus lactis subsp. lactis (strain IL1403)}
+Probab=24.05  E-value=67  Score=15.75  Aligned_cols=16  Identities=19%  Similarity=0.416  Sum_probs=11.0  Template_Neff=9.700
+
+Q T1125_Domain3:   13 DLQSYIADQLKRGHAV   28 (35)
+Q Consensus        13 dlqsyiadqlkrghav   28 (35)
+                      .+.+.|.+.|..|+.|
+T Consensus        28 ~~~~~i~~~L~~g~~V   43 (91)
+T 5LVT_C           28 AFGEVVTEFLAKGEKV   43 (91)
+T ss_dssp             HHHHHHHHHHHTTCCE
+T ss_pred             HHHHHHHHHHHCCCeE
+Confidence            3455677788888765
+
+
+No 26
+>2FI2_B Zinc finger protein 42; SCAN domain, Znf-42, MZF-1, homodimer; NMR {Homo sapiens} SCOP: a.28.3.2
+Probab=23.24  E-value=71  Score=16.96  Aligned_cols=19  Identities=26%  Similarity=0.504  Sum_probs=12.0  Template_Neff=8.100
+
+Q T1125_Domain3:    3 RDRFLALLKQDLQSYIADQ   21 (35)
+Q Consensus         3 rdrflallkqdlqsyiadq   21 (35)
+                      .+.|+..+-.+++.++.++
+T Consensus        55 lEQfl~~lp~~~~~~v~~~   73 (94)
+T 2FI2_B           55 LEQFLGALPPEIQARVQGQ   73 (94)
+T ss_dssp             HHHHHHHSCHHHHHHHHTT
+T ss_pred             HHHHHHHCCHHHHHHHhhc
+Confidence            4566666666666666653
+
+
+No 27
+>4BHX_B PATERNALLY-EXPRESSED GENE 3 PROTEIN; DNA BINDING PROTEIN, PEG3; HET: PEG, EDO, PGE; 1.95A {HOMO SAPIENS}
+Probab=22.88  E-value=73  Score=17.14  Aligned_cols=20  Identities=15%  Similarity=0.600  Sum_probs=10.5  Template_Neff=7.800
+
+Q T1125_Domain3:    2 VRDRFLALLKQDLQSYIADQ   21 (35)
+Q Consensus         2 vrdrflallkqdlqsyiadq   21 (35)
+                      |.+.|+..|-.+++.++.++
+T Consensus        54 vlEQfl~~lp~~~~~~v~~~   73 (94)
+T 4BHX_B           54 VLEQYLTIIPEKLKPWVRAK   73 (94)
+T ss_dssp             HHHHHHHHCCH----HHHHH
+T ss_pred             HHHHHHHHCCHHHHHHHHHH
+Confidence            34567777777777777664
+
+
+No 28
+>1USU_B HEAT SHOCK PROTEIN HSP82, AHA1; CHAPERONE-COMPLEX, CHAPERONE, ACTIVATOR, HSP90; 2.15A {SACCHAROMYCES CEREVISIAE} SCOP: d.83.2.1
+Probab=22.85  E-value=73  Score=19.33  Aligned_cols=22  Identities=32%  Similarity=0.410  Sum_probs=13.3  Template_Neff=7.200
+
+Q T1125_Domain3:    3 RDRFLALLKQDLQSYIADQLKR   24 (35)
+Q Consensus         3 rdrflallkqdlqsyiadqlkr   24 (35)
+                      +..+...|++.|+.++.+..+.
+T Consensus       142 k~~~~~~l~~~l~~F~~el~~~  163 (170)
+T 1USU_B          142 RSELLPKLRQIFQQFGKDLLAT  163 (170)
+T ss_dssp             CCCCHHHHHHHHHHHHHHHHHH
+T ss_pred             HhhcHHHHHHHHHHHHHHHHHH
+Confidence            4556666677777766655443
+
+
+No 29
+>1RIY_A Hu DNA-binding protein; HISTONE-LIKE PROTEIN, THERMOSTABLE DNA-BINDING PROTEIN; 1.8A {Thermotoga maritima} SCOP: a.55.1.1
+Probab=22.07  E-value=78  Score=15.49  Aligned_cols=16  Identities=19%  Similarity=0.472  Sum_probs=11.0  Template_Neff=9.700
+
+Q T1125_Domain3:   13 DLQSYIADQLKRGHAV   28 (35)
+Q Consensus        13 dlqsyiadqlkrghav   28 (35)
+                      .+.+.|.+.|..|+.|
+T Consensus        27 ~~~~~i~~~L~~g~~V   42 (90)
+T 1RIY_A           27 TILETITEALAKGEKI   42 (90)
+T ss_dssp             HHHHHHHHHHHTTCCE
+T ss_pred             HHHHHHHHHHHcCCCE
+Confidence            3455677778888776
+
+
+No 30
+>1USV_F HEAT SHOCK PROTEIN HSP82, AHA1; CHAPERONE-COMPLEX, CHAPERONE, ACTIVATOR, HSP90; 2.7A {SACCHAROMYCES CEREVISIAE} SCOP: d.83.2.1
+Probab=21.98  E-value=78  Score=19.28  Aligned_cols=22  Identities=32%  Similarity=0.410  Sum_probs=13.6  Template_Neff=7.100
+
+Q T1125_Domain3:    3 RDRFLALLKQDLQSYIADQLKR   24 (35)
+Q Consensus         3 rdrflallkqdlqsyiadqlkr   24 (35)
+                      +..+...|++.|+.++.+....
+T Consensus       142 kk~~~~~l~~~l~~F~~el~~~  163 (170)
+T 1USV_F          142 RSELLPKLRQIFQQFGKDLLAT  163 (170)
+T ss_dssp             CCCCHHHHHHHHHHHHHHHHTT
+T ss_pred             HhhcHHHHHHHHHHHHHHHHHH
+Confidence            4455666777777776665544
+
+
+No 31
+>4YFT_A DNA-binding protein HU-beta, DNA-binding protein; HU-DNA, transcription, pathogenicity, DNA BINDING; 2.914A {Escherichia coli}
+Probab=21.61  E-value=80  Score=15.28  Aligned_cols=16  Identities=25%  Similarity=0.503  Sum_probs=10.6  Template_Neff=9.900
+
+Q T1125_Domain3:   13 DLQSYIADQLKRGHAV   28 (35)
+Q Consensus        13 dlqsyiadqlkrghav   28 (35)
+                      .+-..|.++|..|+.|
+T Consensus        27 ~~~~~i~~~L~~G~~V   42 (90)
+T 4YFT_A           27 AIIASVTESLKEGDDV   42 (90)
+T ss_dssp             HHHHHHHHHHHTTCCE
+T ss_pred             HHHHHHHHHHHcCCcE
+Confidence            3445677777777765
+
+
+No 32
+>5MSM_A Sister chromatid cohesion protein DCC1; winged-helix, DNA repair, cell cycle; 2.29A {Saccharomyces cerevisiae S288c}
+Probab=21.49  E-value=81  Score=20.56  Aligned_cols=28  Identities=29%  Similarity=0.628  Sum_probs=19.6  Template_Neff=8.500
+
+Q T1125_Domain3:    1 DVRDRFLALLK-------QDLQSYIADQLKRGHAV   28 (35)
+Q Consensus         1 dvrdrflallk-------qdlqsyiadqlkrghav   28 (35)
+                      |.++||.+|++       .++.-||.+....+..+
+T Consensus       324 dp~~Rf~~LF~~k~~W~~~ei~pyi~~l~~~~~~~  358 (380)
+T 5MSM_A          324 DPKERFKVLFRLQSQWDLEDIKPLIEELNSRGMKI  358 (380)
+T ss_dssp             SHHHHHHHHHHHCSSEEHHHHHHHHGGGCTTCCCH
+T ss_pred             CHHHHHHHHHhhCCCCCHHHHHHHHHHHccCCCCH
+Confidence            46788888764       57788888876655444
+
+
+No 33
+>5OKC_B Sister chromatid cohesion protein DCC1; Clamp loader DNA-binding protein Triple; HET: NO3, MSE; 2.3A {Saccharomyces cerevisiae S288c}
+Probab=21.49  E-value=81  Score=20.56  Aligned_cols=28  Identities=29%  Similarity=0.628  Sum_probs=19.6  Template_Neff=8.500
+
+Q T1125_Domain3:    1 DVRDRFLALLK-------QDLQSYIADQLKRGHAV   28 (35)
+Q Consensus         1 dvrdrflallk-------qdlqsyiadqlkrghav   28 (35)
+                      |.++||.+|++       .++.-||.+....+..+
+T Consensus       324 dp~~Rf~~LF~~k~~W~~~ei~pyi~~l~~~~~~~  358 (380)
+T 5OKC_B          324 DPKERFKVLFRLQSQWDLEDIKPLIEELNSRGMKI  358 (380)
+T ss_dssp             SHHHHHHHHHHHCSSBCHHHHHHHHGGGCCSCCCH
+T ss_pred             CHHHHHHHHHhhCCCCCHHHHHHHHHHHccCCCCH
+Confidence            46788888764       57788888876655444
+
+
+No 34
+>2D7C_C Ras-related protein Rab-11A, Rab11 family-interacting; GTP-ase, coiled-coil, PROTEIN TRANSPORT, Structural; HET: GTP, MSE, MES; 1.75A {Homo sapiens} SCOP: h.1.31.1
+Probab=21.46  E-value=81  Score=16.21  Aligned_cols=13  Identities=31%  Similarity=0.363  Sum_probs=9.4  Template_Neff=5.200
+
+Q T1125_Domain3:   12 QDLQSYIADQLKR   24 (35)
+Q Consensus        12 qdlqsyiadqlkr   24 (35)
+                      ++|++||-..|.|
+T Consensus        18 ~~L~~YId~LL~r   30 (42)
+T 2D7C_C           18 FRLQDYIDRIIVA   30 (42)
+T ss_dssp             HHHHHHHHHHHHH
+T ss_pred             HHHHHHHHHHHHH
+Confidence            4788898776654
+
+
+No 35
+>6O8Q_F DNA-binding protein/DNA Complex; Nucleoid Associated Protein, DNA supercoiling; 3.216A {Escherichia coli (strain K12)}
+Probab=20.94  E-value=85  Score=15.46  Aligned_cols=15  Identities=40%  Similarity=0.532  Sum_probs=10.0  Template_Neff=9.600
+
+Q T1125_Domain3:   14 LQSYIADQLKRGHAV   28 (35)
+Q Consensus        14 lqsyiadqlkrghav   28 (35)
+                      +-..|.++|..|+.|
+T Consensus        29 ~~~~i~~~L~~G~~V   43 (91)
+T 6O8Q_F           29 TLAAITESLKEGDAV   43 (91)
+T ss_dssp             HHHHHHHHHHHSCCE
+T ss_pred             HHHHHHHHHHcCCcE
+Confidence            345667778878765
+
+
+No 36
+>3NAT_A Uncharacterized protein; alpha-beta half sandwich, Structural Genomics; HET: CIT, MSE; 2.925A {Enterococcus faecalis}
+Probab=20.91  E-value=85  Score=20.38  Aligned_cols=26  Identities=23%  Similarity=0.408  Sum_probs=19.8  Template_Neff=5.000
+
+Q T1125_Domain3:    8 ALLKQDLQSYIADQLKRGHAVGDIKL   33 (35)
+Q Consensus         8 allkqdlqsyiadqlkrghavgdikl   33 (35)
+                      |..|+++-+|+.++|..-.--||+.+
+T Consensus         3 ~M~k~~ll~~L~e~l~~~~fd~d~~l   28 (164)
+T 3NAT_A            3 AMKKATMLTYLEEQLEKHLGDYEVGL   28 (164)
+T ss_dssp             CCCCCCHHHHHHHHHHHHCTTSEEEE
+T ss_pred             hhhHhcHHHHHHHHHHHhcCCCcEEE
+Confidence            56688888999888887766677654
+
+
+No 37
+>4ZV0_B Uncharacterized protein; T6SS effector-immunity pair, PROTEIN BINDING; HET: MSE, IOD; 1.401A {Pseudomonas aeruginosa (strain ATCC 15692 / PAO1 / 1C / PRS 101 / LMG 12228)}
+Probab=20.65  E-value=87  Score=18.78  Aligned_cols=13  Identities=31%  Similarity=0.442  Sum_probs=10.7  Template_Neff=4.800
+
+Q T1125_Domain3:   16 SYIADQLKRGHAV   28 (35)
+Q Consensus        16 syiadqlkrghav   28 (35)
+                      .||++|..||-.|
+T Consensus        79 ~yia~q~~~glkv   91 (94)
+T 4ZV0_B           79 YYVGIRTGRGLKV   91 (94)
+T ss_dssp             HHHHHHHHTTCCC
+T ss_pred             HHhHhhccCCcee
+Confidence            5899999999765
+
+
+No 38
+>5JTK_A Uncharacterized protein; Structural Genomics, Seattle Structural Genomics; NMR {Pseudomonas aeruginosa (strain ATCC 15692 / PAO1 / 1C / PRS 101 / LMG 12228)}
+Probab=20.65  E-value=87  Score=18.78  Aligned_cols=13  Identities=31%  Similarity=0.442  Sum_probs=10.7  Template_Neff=4.800
+
+Q T1125_Domain3:   16 SYIADQLKRGHAV   28 (35)
+Q Consensus        16 syiadqlkrghav   28 (35)
+                      .||++|..||-.|
+T Consensus        79 ~yia~q~~~glkv   91 (94)
+T 5JTK_A           79 YYVGIRTGRGLKV   91 (94)
+T ss_dssp             HHHHHHHHHTCCC
+T ss_pred             HHhHhhccCCcee
+Confidence            5899999999765
+
+
+No 39
+>4HH0_A AppA protein; BLUF domain, SCHIC domain, photoreceptor; HET: FMN, CL; 2.6A {Rhodobacter sphaeroides}
+Probab=20.36  E-value=89  Score=20.43  Aligned_cols=16  Identities=0%  Similarity=-0.051  Sum_probs=13.0  Template_Neff=8.700
+
+Q T1125_Domain3:   17 YIADQLKRGHAVGDIK   32 (35)
+Q Consensus        17 yiadqlkrghavgdik   32 (35)
+                      -|.+.+.+|+++|+++
+T Consensus       150 ~i~~wl~~Gv~i~~v~  165 (406)
+T 4HH0_A          150 RFLSDVCAARTLAPDT  165 (406)
+T ss_dssp             HHHHHHHHHHHHCTTS
+T ss_pred             HHHHHHHHhccCCCCC
+Confidence            4667888999999876
+
+

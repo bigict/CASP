@@ -1,0 +1,20 @@
+# STOCKHOLM 1.0
+
+#=GS UniRef90_A7XXD0/763-829        DE [subseq from] Tape tail measure protein n=3 Tax=Oshimavirus TaxID=1623293 RepID=A7XXD0_BP234
+#=GS UniRef90_A0A285NL61/96-125     DE [subseq from] Predicted chitinase n=1 Tax=Terribacillus aidingensis TaxID=586416 RepID=A0A285NL61_9BACI
+#=GS UniRef90_A0A285NL61/157-186    DE [subseq from] Predicted chitinase n=1 Tax=Terribacillus aidingensis TaxID=586416 RepID=A0A285NL61_9BACI
+#=GS UniRef90_UPI00187AAC59/380-406 DE [subseq from] tandem-95 repeat protein n=1 Tax=Shewanella benthica TaxID=43661 RepID=UPI00187AAC59
+#=GS UniRef90_UPI00187AAC59/475-501 DE [subseq from] tandem-95 repeat protein n=1 Tax=Shewanella benthica TaxID=43661 RepID=UPI00187AAC59
+#=GS UniRef90_A0A350X5I8/150-191    DE [subseq from] Uncharacterized protein n=1 Tax=Cyanobacteria bacterium UBA11372 TaxID=2055768 RepID=A0A350X5I8_9CYAN
+#=GS UniRef90_A0A350X5I8/199-239    DE [subseq from] Uncharacterized protein n=1 Tax=Cyanobacteria bacterium UBA11372 TaxID=2055768 RepID=A0A350X5I8_9CYAN
+
+T1125_Domain16:763-829                 LNAVVVNQE-YAKSTGVDFDGDTLVVLPKGLPVDPHRLEVFQTLMAHAGLAGGRK--GGGSVEPSPGELR
+UniRef90_A7XXD0/763-829                LNAVVVNQE-YAKSTGVDFDGDTLVVLPKGLPVDPHRLEVFQTLMAHAGLAGGRK--GGGSVEPSPGELR
+UniRef90_A0A285NL61/96-125             --------------------------------TDPNKLQIGQKLKVYSS-SGGST--GGGSTRPT-----
+UniRef90_A0A285NL61/157-186            --------------------------------TDPNKLQIGQNLKVYS-TSGGST--GGGSTRPT-----
+UniRef90_UPI00187AAC59/380-406         ------NQAYYFKGTGQDIDGDTLYFSATGLPT-------------------------------------
+UniRef90_UPI00187AAC59/475-501         ------NQAYYFKATGQDIDGDTLYFSATGLPT-------------------------------------
+UniRef90_A0A350X5I8/150-191            ----------------------SVAITDDGLVVEVHKSETWNTLWYHVGRVEGNKINWGGSIQY------
+UniRef90_A0A350X5I8/199-239            -----------------------VAITDDGLVVEVHKSETWDTLWYHVGRVEGNKINWGGSIQY------
+#=GC RF                                xxxxxxxxx.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..xxxxxxxxxxxxx
+//

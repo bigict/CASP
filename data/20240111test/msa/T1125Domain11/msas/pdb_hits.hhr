@@ -1,0 +1,953 @@
+Query         T1125_Domain11:558-594 
+Match_columns 37
+No_of_seqs    1 out of 1
+Neff          1
+Searched_HMMs 80799
+Date          Thu Jan 11 13:26:24 2024
+Command       /public/dbu/.local/bin/hhsearch -i /public/dbu/CASP/tmp/tmpvs9v78ho/query.a3m -o /public/dbu/CASP/tmp/tmpvs9v78ho/output.hhr -maxseq 1000000 -d /public/dbu/data/af2_db/pdb70/pdb70 
+
+ No Hit                             Prob E-value P-value  Score    SS Cols Query HMM  Template HMM
+  1 2I3S_B Cell cycle arrest prote  62.4     5.9 7.3E-05   18.4   0.0   25    5-33      7-31  (36)
+  2 4QKX_A Beta-2 adrenergic recep  61.6     6.3 7.8E-05   23.6   0.0   22   15-36     65-86  (469)
+  3 4BL0_E CELL CYCLE ARREST PROTE  56.3     8.9 0.00011   21.4   0.0   25    5-33     37-61  (75)
+  4 2I3T_D Cell cycle arrest prote  52.5      11 0.00014   21.0   0.0   31    4-34      7-39  (54)
+  5 2I3T_F Cell cycle arrest prote  52.5      11 0.00014   21.0   0.0   31    4-34      7-39  (54)
+  6 2WUJ_A SEPTUM SITE-DETERMINING  49.5      14 0.00017   18.6   0.0   14   20-33     18-31  (57)
+  7 6GQN_A Cell cycle protein GpsB  47.5      15 0.00019   18.9   0.0   14   20-33     20-33  (62)
+  8 4UG3_A CELL CYCLE PROTEIN GPSB  43.5      20 0.00024   19.1   0.0   15   20-34     26-40  (71)
+  9 5I14_A mutated and truncated T  40.9      23 0.00028   19.8   0.0   22   15-36      8-29  (121)
+ 10 6MXT_A Fusion protein of Lysoz  40.7      23 0.00028   21.3   0.0   21   16-36     52-72  (472)
+ 11 2WUK_C SEPTUM SITE-DETERMINING  40.5      23 0.00029   17.7   0.0   14   20-33     18-31  (57)
+ 12 6GPZ_A Cell cycle protein GpsB  39.7      24  0.0003   18.2   0.0   14   20-33     22-35  (63)
+ 13 3OAO_A uncharacterized protein  38.0      27 0.00034   19.7   0.0   14   19-32     77-90  (147)
+ 14 4UG1_B CELL CYCLE PROTEIN GPSB  35.4      32 0.00039   18.8   0.0   14   20-33     28-41  (76)
+ 15 1L4Z_B Plasminogen/Streptokina  35.2      32  0.0004   22.5   0.0   23   14-36     55-77  (136)
+ 16 1L4D_B PLASMINOGEN/STREPTOKINA  35.1      32  0.0004   22.2   0.0   23   14-36     41-63  (122)
+ 17 2MJ2_A Agnoprotein; Agnoprotei  34.3      34 0.00042   18.8   0.0   15    7-21     20-34  (36)
+ 18 1SSN_A STAPHYLOKINASE; HYDROLA  34.0      35 0.00043   22.1   0.0   19   18-36     51-69  (136)
+ 19 1C76_A STAPHYLOKINASE; BETA-GR  34.0      35 0.00043   22.1   0.0   19   18-36     51-69  (136)
+ 20 1C77_A STAPHYLOKINASE; BETA-GR  34.0      35 0.00043   22.1   0.0   19   18-36     51-69  (136)
+ 21 2SAK_A STAPHYLOKINASE, 2-AMINO  33.5      36 0.00044   21.5   0.0   19   18-36     36-54  (121)
+ 22 5NJT_b 30S ribosomal protein S  33.1      37 0.00045   18.2   0.0   15   16-30    109-123 (123)
+ 23 1BOL_A PROTEIN (RIBONUCLEASE R  31.7      40 0.00049   20.7   0.0   26   10-35    149-174 (222)
+ 24 6F03_A BPSL2520; Antigen, Burk  31.1      41 0.00051   20.9   0.0   17   16-32    131-147 (199)
+ 25 6F03_B BPSL2520; Antigen, Burk  31.1      41 0.00051   20.9   0.0   17   16-32    131-147 (199)
+ 26 6EK0_LD 60S ribosomal protein   31.0      42 0.00052   23.8   0.0   24    5-28    113-136 (297)
+ 27 6KKS_A Transcription factor WE  29.6      46 0.00057   16.7   0.0   18   14-31      2-19  (119)
+ 28 3RFW_A Cell-binding factor 2;   29.1      47 0.00058   18.7   0.0   18   16-33      5-22  (252)
+ 29 4LDE_A Lysozyme, Beta-2 adrene  28.4      50 0.00061   19.9   0.0   21   16-36     66-86  (469)
+ 30 2P10_C Mll9387 protein; PUTATI  27.8      52 0.00064   20.9   0.0   18   19-36      8-25  (286)
+ 31 2P10_F Mll9387 protein; PUTATI  27.8      52 0.00064   20.9   0.0   18   19-36      8-25  (286)
+ 32 3LQV_P Pre-mRNA branch site pr  26.9      55 0.00068   16.9   0.0   17   16-32     17-33  (39)
+ 33 3LQV_Q Pre-mRNA branch site pr  26.7      55 0.00069   16.9   0.0   17   16-32     17-33  (39)
+ 34 5NDD_A Lysozyme,Proteinase-act  26.7      56 0.00069   20.9   0.0   20   17-36     75-94  (619)
+ 35 5HTF_A PrsA1; PrsA, PPIase, po  26.5      56  0.0007   19.5   0.0   18   16-33     10-27  (283)
+ 36 6MTC_D 80S ribosome; translati  26.3      57 0.00071   23.0   0.0   24    5-28    111-134 (293)
+ 37 1TO0_D Hypothetical UPF0247 pr  25.2      62 0.00076   20.2   0.0   20    7-26    142-161 (167)
+ 38 1TO0_F Hypothetical UPF0247 pr  25.2      62 0.00076   20.2   0.0   20    7-26    142-161 (167)
+ 39 2JUZ_B UPF0352 protein HI0840;  24.7      64 0.00079   19.8   0.0   16   20-35      5-20  (80)
+ 40 2JR2_B UPF0352 protein CPS_261  24.4      65 0.00081   19.6   0.0   16   20-35      5-20  (76)
+ 41 2OTA_A UPF0352 protein CPS_261  24.4      65 0.00081   19.6   0.0   16   20-35      5-20  (76)
+ 42 2JUW_B UPF0352 protein SO_2176  24.0      67 0.00083   19.7   0.0   16   20-35      5-20  (80)
+ 43 2QTI_A UPF0352 protein SO_2176  24.0      67 0.00083   19.7   0.0   16   20-35      5-20  (80)
+ 44 6H9D_A Lysozyme (E.C.3.2.1.17)  24.0      67 0.00083   17.8   0.0   19   17-35     43-61  (149)
+ 45 2JRX_A UPF0352 protein yejL; h  23.4      70 0.00087   19.8   0.0   16   20-35      5-20  (83)
+ 46 1NS5_A Hypothetical protein yb  23.3      71 0.00088   19.6   0.0   19    7-25    137-155 (155)
+ 47 1NS5_B Hypothetical protein yb  23.3      71 0.00088   19.6   0.0   19    7-25    137-155 (155)
+ 48 6DZI_I CONSERVED PROTEIN DOMAI  23.1      72 0.00089   17.1   0.0   15   16-30    109-123 (126)
+ 49 2JPQ_A UPF0352 protein VP2129;  23.0      72  0.0009   19.7   0.0   16   20-35      5-20  (83)
+ 50 5SUP_H ATP-dependent RNA helic  22.7      74 0.00092   16.0   0.0   16   19-34     13-28  (32)
+ 51 5SUP_I ATP-dependent RNA helic  22.7      74 0.00092   16.0   0.0   16   19-34     13-28  (32)
+ 52 4DXT_A SUN domain-containing p  22.7      74 0.00092   18.8   0.0   18   19-36      1-18  (198)
+ 53 1KOO_C TIP ASSOCIATING PROTEIN  22.5      75 0.00093   19.3   0.0   20   15-34     28-47  (277)
+ 54 3JU3_A Probable 2-oxoacid ferr  22.4      76 0.00093   17.0   0.0   20   17-36     98-117 (118)
+ 55 1IOO_A SF11-RNASE, D-XYLITOL;   22.4      76 0.00094   18.6   0.0   29    6-34    116-144 (196)
+ 56 2FHO_A spliceosomal protein SF  22.1      78 0.00096   17.1   0.0   18   15-32     15-32  (47)
+ 57 5A9Z_AI RIBOSOME/RNA Complex,   21.5      82   0.001   17.8   0.0   16   16-31    108-123 (153)
+ 58 3RW6_A nuclear RNA export fact  21.0      85   0.001   18.8   0.0   20   15-34     28-47  (267)
+ 59 2IYV_A SHIKIMATE KINASE (E.C.2  20.9      85  0.0011   16.3   0.0   22   14-35    145-166 (184)
+ 60 1A5J_A B-MYB; DNA-BINDING PROT  20.7      87  0.0011   15.4   0.0   16   17-32      5-20  (110)
+ 61 2PV3_A Chaperone surA (E.C.5.2  20.5      88  0.0011   18.3   0.0   17   16-32     11-27  (299)
+ 62 5WKN_D Nucleoprotein, Phosphop  20.3      89  0.0011   16.9   0.0   15   21-35      6-20  (49)
+ 63 1M5Y_D survival protein surA (  20.3      89  0.0011   19.4   0.0   18   16-33     11-28  (408)
+ 64 4WO7_A PrsA (E.C.5.2.1.8); fol  20.2      90  0.0011   18.1   0.0   17   16-32     13-29  (263)
+
+No 1
+>2I3S_B Cell cycle arrest protein BUB3; WD40 protein, beta-propeller, GLEBS motif; 1.9A {Saccharomyces cerevisiae}
+Probab=62.39  E-value=5.9  Score=18.39  Aligned_cols=25  Identities=28%  Similarity=0.591  Sum_probs=18.7  Template_Neff=7.400
+
+Q T1125_Domain11    5 LNLNDLYRGDTVVDGKKYTKEEVDALIRE   33 (37)
+Q Consensus         5 lnlndlyrgdtvvdgkkytkeevdalire   33 (37)
+                      .|++.+|.++    |..++-||+.|..+.
+T Consensus         7 ~n~~~ly~~~----~~E~sfEEvrA~~~~   31 (36)
+T 2I3S_B            7 FNFNLIYPEN----DEEFNTEEILAMIKG   31 (36)
+T ss_dssp             SCHHHHSTTS----SCCCCHHHHHHHHTT
+T ss_pred             eeHHHccCCC----CCccCHHHHHHHHcc
+Confidence            4667777743    789999999986654
+
+
+No 2
+>4QKX_A Beta-2 adrenergic receptor (E.C.3.2.1.17), R9; 7-transmembrane helices, Signal transduction, G; HET: 35V; 3.3A {Enterobacteria phage T4}
+Probab=61.57  E-value=6.3  Score=23.58  Aligned_cols=22  Identities=18%  Similarity=0.241  Sum_probs=16.8  Template_Neff=11.400
+
+Q T1125_Domain11   15 TVVDGKKYTKEEVDALIREKLK   36 (37)
+Q Consensus        15 tvvdgkkytkeevdalireklk   36 (37)
+                      .+.-|+..|++|.+++.++.++
+T Consensus        65 ~~~~~~~it~~~a~~~l~~d~~   86 (469)
+T 4QKX_A           65 GRNTNGVITKDEAEKLFNQDVD   86 (469)
+T ss_dssp             SSCCTTBCCHHHHHHHHHHHHH
+T ss_pred             CCCcCcccCHHHHHHHHHHHHH
+Confidence            3455788999999998877654
+
+
+No 3
+>4BL0_E CELL CYCLE ARREST PROTEIN BUB3; CELL CYCLE, BUBR1, MAD3, RAE1; 1.95A {SACCHAROMYCES CEREVISIAE}
+Probab=56.31  E-value=8.9  Score=21.39  Aligned_cols=25  Identities=28%  Similarity=0.591  Sum_probs=19.4  Template_Neff=6.100
+
+Q T1125_Domain11    5 LNLNDLYRGDTVVDGKKYTKEEVDALIRE   33 (37)
+Q Consensus         5 lnlndlyrgdtvvdgkkytkeevdalire   33 (37)
+                      .|++.+|.++    |..++-|||.|..+.
+T Consensus        37 ~n~~llY~~~----g~E~SfEElRA~~~~   61 (75)
+T 4BL0_E           37 FNFNLIYPEN----DEEFNTEEILAMIKG   61 (75)
+T ss_pred             EeHHHccCCC----CCccCHHHHHHHHhh
+Confidence            4667778765    889999999987654
+
+
+No 4
+>2I3T_D Cell cycle arrest protein BUB3; WD40 protein, beta propeller, mitotic; 2.8A {Saccharomyces cerevisiae}
+Probab=52.54  E-value=11  Score=21.00  Aligned_cols=31  Identities=26%  Similarity=0.219  Sum_probs=22.1  Template_Neff=4.300
+
+Q T1125_Domain11    4 FLNLNDLYRGDTV--VDGKKYTKEEVDALIREK   34 (37)
+Q Consensus         4 flnlndlyrgdtv--vdgkkytkeevdalirek   34 (37)
+                      +.|++-||..+.-  --|..|+-|||-|+-|..
+T Consensus         7 ~~NfdLlYp~~~e~~E~~~E~S~EEILA~sR~~   39 (54)
+T 2I3T_D            7 DCNFKLIYCEDEESKGGRLEFSLEEVLAISRNV   39 (54)
+T ss_dssp             SSCHHHHBCSSCSTTCCCCBCCHHHHHHHHTTC
+T ss_pred             eeeeceeecCcccccCCCceeCHHHHHHHHchh
+Confidence            4678888876532  245569999999988754
+
+
+No 5
+>2I3T_F Cell cycle arrest protein BUB3; WD40 protein, beta propeller, mitotic; 2.8A {Saccharomyces cerevisiae}
+Probab=52.54  E-value=11  Score=21.00  Aligned_cols=31  Identities=26%  Similarity=0.219  Sum_probs=19.7  Template_Neff=4.300
+
+Q T1125_Domain11    4 FLNLNDLYRGDTV--VDGKKYTKEEVDALIREK   34 (37)
+Q Consensus         4 flnlndlyrgdtv--vdgkkytkeevdalirek   34 (37)
+                      +.|++-||..+.-  --|..|+-|||-|+-|..
+T Consensus         7 ~~NfdLlYp~~~e~~E~~~E~S~EEILA~sR~~   39 (54)
+T 2I3T_F            7 DCNFKLIYCEDEESKGGRLEFSLEEVLAISRNV   39 (54)
+T ss_dssp             SSCHHHHBCC--------CBCCHHHHHHHHTTC
+T ss_pred             eeeeceeecCcccccCCCceeCHHHHHHHHchh
+Confidence            4678888876532  245569999999988754
+
+
+No 6
+>2WUJ_A SEPTUM SITE-DETERMINING PROTEIN DIVIVA; BACTERIAL CELL DIVISION, SEPTATION, CELL; 1.4A {BACILLUS SUBTILIS}
+Probab=49.47  E-value=14  Score=18.58  Aligned_cols=14  Identities=21%  Similarity=0.676  Sum_probs=11.8  Template_Neff=7.600
+
+Q T1125_Domain11   20 KKYTKEEVDALIRE   33 (37)
+Q Consensus        20 kkytkeevdalire   33 (37)
+                      .-|.++|||+.|.+
+T Consensus        18 rGYd~~eVd~~L~~   31 (57)
+T 2WUJ_A           18 RGYDEDEVNEFLAQ   31 (57)
+T ss_dssp             TEEEHHHHHHHHHH
+T ss_pred             CCCCHHHHHHHHHH
+Confidence            56999999998865
+
+
+No 7
+>6GQN_A Cell cycle protein GpsB, PBP1A; Bacterial cell division regulator, peptidoglycan; HET: SO4; 1.8A {Streptococcus pneumoniae R6}
+Probab=47.50  E-value=15  Score=18.92  Aligned_cols=14  Identities=36%  Similarity=0.717  Sum_probs=11.7  Template_Neff=7.300
+
+Q T1125_Domain11   20 KKYTKEEVDALIRE   33 (37)
+Q Consensus        20 kkytkeevdalire   33 (37)
+                      .-|.++|||+.|.+
+T Consensus        20 rGYd~~eVd~~L~~   33 (62)
+T 6GQN_A           20 RGYNKVEVDEFLDD   33 (62)
+T ss_dssp             EEECHHHHHHHHHH
+T ss_pred             CCCCHHHHHHHHHH
+Confidence            46999999998865
+
+
+No 8
+>4UG3_A CELL CYCLE PROTEIN GPSB; CELL CYCLE, BACTERIAL GROWTH REGULATION; 2.8A {BACILLUS SUBTILIS}
+Probab=43.46  E-value=20  Score=19.14  Aligned_cols=15  Identities=27%  Similarity=0.565  Sum_probs=12.0  Template_Neff=7.100
+
+Q T1125_Domain11   20 KKYTKEEVDALIREK   34 (37)
+Q Consensus        20 kkytkeevdalirek   34 (37)
+                      .-|.++|||+.|.+-
+T Consensus        26 rGYd~~eVD~fL~~v   40 (71)
+T 4UG3_A           26 RGYKQEDVDKFLDMI   40 (71)
+T ss_pred             CCCCHHHHHHHHHHH
+Confidence            459999999988753
+
+
+No 9
+>5I14_A mutated and truncated T4 lysozyme; T4 lysozyme, hydrolase; 1.745A {Enterobacteria phage T4}
+Probab=40.90  E-value=23  Score=19.78  Aligned_cols=22  Identities=14%  Similarity=0.327  Sum_probs=16.7  Template_Neff=8.200
+
+Q T1125_Domain11   15 TVVDGKKYTKEEVDALIREKLK   36 (37)
+Q Consensus        15 tvvdgkkytkeevdalireklk   36 (37)
+                      .|.-|..+|++|.+++..+.++
+T Consensus         8 ~v~~g~~iT~~qa~~ll~~dl~   29 (121)
+T 5I14_A            8 RIDEGGGSGGDEAEKLFNQDVD   29 (121)
+T ss_dssp             HHHSCCCTTHHHHHHHHHHHHH
+T ss_pred             ccCCCCCCCHHHHHHHHHHHHH
+Confidence            3556788999999998876553
+
+
+No 10
+>6MXT_A Fusion protein of Lysozyme and; G protein-coupled receptor, adrenergic receptor; HET: OLA, K5Y, OLC, P33, HTO, YCM; 2.95934213525A {Enterobacteria phage T4}
+Probab=40.75  E-value=23  Score=21.29  Aligned_cols=21  Identities=19%  Similarity=0.270  Sum_probs=16.5  Template_Neff=11.400
+
+Q T1125_Domain11   16 VVDGKKYTKEEVDALIREKLK   36 (37)
+Q Consensus        16 vvdgkkytkeevdalireklk   36 (37)
+                      +.-|..+|++|.+++.++.++
+T Consensus        52 ~~~~~~~t~~~~~~~~~~~~~   72 (472)
+T 6MXT_A           52 RNTNGVITKDEAEKLFNQDVD   72 (472)
+T ss_dssp             SCCTTBCCHHHHHHHHHHHHH
+T ss_pred             CCCCCcCCHHHHHHHHHHHHH
+Confidence            455788999999998887654
+
+
+No 11
+>2WUK_C SEPTUM SITE-DETERMINING PROTEIN DIVIVA; BACTERIAL CELL DIVISION, SEPTATION, CELL; 1.9A {BACILLUS SUBTILIS}
+Probab=40.53  E-value=23  Score=17.74  Aligned_cols=14  Identities=21%  Similarity=0.676  Sum_probs=11.4  Template_Neff=7.600
+
+Q T1125_Domain11   20 KKYTKEEVDALIRE   33 (37)
+Q Consensus        20 kkytkeevdalire   33 (37)
+                      .-|.++|||+.|.+
+T Consensus        18 rGYd~~eVd~~L~~   31 (57)
+T 2WUK_C           18 RGYDEDEVNEFLAQ   31 (57)
+T ss_dssp             EEECHHHHHHHHHH
+T ss_pred             CCCCHHHHHHHHHH
+Confidence            34999999998865
+
+
+No 12
+>6GPZ_A Cell cycle protein GpsB, PBP1A; Bacterial cell division regulator, peptidoglycan; 1.6A { Bacillus subtilis subsp. subtilis str. 168}
+Probab=39.72  E-value=24  Score=18.22  Aligned_cols=14  Identities=29%  Similarity=0.665  Sum_probs=11.6  Template_Neff=7.300
+
+Q T1125_Domain11   20 KKYTKEEVDALIRE   33 (37)
+Q Consensus        20 kkytkeevdalire   33 (37)
+                      .-|.+.|||+.|.+
+T Consensus        22 ~GYd~~eVd~fL~~   35 (63)
+T 6GPZ_A           22 RGYKQEDVDEFLDM   35 (63)
+T ss_pred             CCCCHHHHHHHHHH
+Confidence            56999999998865
+
+
+No 13
+>3OAO_A uncharacterized protein from DUF2059 family; STRUCTURAL GENOMICS, JOINT CENTER FOR; HET: PO4; 2.72A {Pseudomonas aeruginosa}
+Probab=38.00  E-value=27  Score=19.70  Aligned_cols=14  Identities=21%  Similarity=0.359  Sum_probs=11.1  Template_Neff=8.700
+
+Q T1125_Domain11   19 GKKYTKEEVDALIR   32 (37)
+Q Consensus        19 gkkytkeevdalir   32 (37)
+                      -+.||.+|++++|.
+T Consensus        77 ~~~fT~eEl~~li~   90 (147)
+T 3OAO_A           77 TTNFTESELKDLNA   90 (147)
+T ss_dssp             HHHSCHHHHHHHHH
+T ss_pred             HhcCCHHHHHHHHH
+Confidence            46789999998873
+
+
+No 14
+>4UG1_B CELL CYCLE PROTEIN GPSB; CELL CYCLE, PEPTIDOGLYCAN SYNTHESIS, BACTERIAL; HET: IMD; 1.6A {LISTERIA MONOCYTOGENES}
+Probab=35.40  E-value=32  Score=18.77  Aligned_cols=14  Identities=29%  Similarity=0.648  Sum_probs=11.5  Template_Neff=6.800
+
+Q T1125_Domain11   20 KKYTKEEVDALIRE   33 (37)
+Q Consensus        20 kkytkeevdalire   33 (37)
+                      +-|.++|||+.|.+
+T Consensus        28 rGYd~~eVD~fL~~   41 (76)
+T 4UG1_B           28 RGYSPEDVDEFLDM   41 (76)
+T ss_dssp             TCECHHHHHHHHHH
+T ss_pred             CCCCHHHHHHHHHH
+Confidence            45999999998864
+
+
+No 15
+>1L4Z_B Plasminogen/Streptokinase (E.C.3.4.21.7); plasminogen, streptokinase, protein complex, HYDROLASE-BLOOD; 2.8A {Homo sapiens} SCOP: d.15.5.1
+Probab=35.16  E-value=32  Score=22.54  Aligned_cols=23  Identities=26%  Similarity=0.244  Sum_probs=17.0  Template_Neff=3.800
+
+Q T1125_Domain11   14 DTVVDGKKYTKEEVDALIREKLK   36 (37)
+Q Consensus        14 dtvvdgkkytkeevdalireklk   36 (37)
+                      |.-.-|+++||+++-..|++.|.
+T Consensus        55 ~~~~~g~~ltK~~LL~~IQ~~L~   77 (136)
+T 1L4Z_B           55 DSGAMPHKLEKADLLKAIQEQLI   77 (136)
+T ss_dssp             ---CBCSEEEHHHHHHHHHHHHH
+T ss_pred             CCCCCCceecHHHHHHHHHHHHH
+Confidence            33344899999999999998774
+
+
+No 16
+>1L4D_B PLASMINOGEN/STREPTOKINASE (E.C.3.4.21.7); streptokinase, plasminogen, protein complex, HYDROLASE-HYDROLASE; HET: SO4; 2.3A {Homo sapiens} SCOP: d.15.5.1
+Probab=35.06  E-value=32  Score=22.17  Aligned_cols=23  Identities=26%  Similarity=0.244  Sum_probs=16.5  Template_Neff=3.800
+
+Q T1125_Domain11   14 DTVVDGKKYTKEEVDALIREKLK   36 (37)
+Q Consensus        14 dtvvdgkkytkeevdalireklk   36 (37)
+                      |.-.-|+++||+|+-..|++.|.
+T Consensus        41 ~~~~~g~~ltK~~LL~~Iq~~l~   63 (122)
+T 1L4D_B           41 DSGAMPHKLEKADLLKAIQEQLI   63 (122)
+T ss_dssp             ----EESEEEHHHHHHHHHHHHH
+T ss_pred             CCCCCCceecHHHHHHHHHHHHH
+Confidence            33445899999999999988764
+
+
+No 17
+>2MJ2_A Agnoprotein; Agnoprotein, polyomavirus JCV, DNA replication; NMR {N/A}
+Probab=34.27  E-value=34  Score=18.79  Aligned_cols=15  Identities=53%  Similarity=0.809  Sum_probs=12.3  Template_Neff=1.500
+
+Q T1125_Domain11    7 LNDLYRGDTVVDGKK   21 (37)
+Q Consensus         7 lndlyrgdtvvdgkk   21 (37)
+                      |-++-+|...||||+
+T Consensus        20 LL~fc~gedsvdgk~   34 (36)
+T 2MJ2_A           20 LLDFCTGEDSVDGKK   34 (36)
+T ss_pred             HHHHHhCccccCCcc
+Confidence            457789999999986
+
+
+No 18
+>1SSN_A STAPHYLOKINASE; HYDROLASE, STAPHYLOKINASE; NMR {Staphylococcus aureus} SCOP: d.15.5.1
+Probab=34.04  E-value=35  Score=22.09  Aligned_cols=19  Identities=26%  Similarity=0.414  Sum_probs=16.1  Template_Neff=4.400
+
+Q T1125_Domain11   18 DGKKYTKEEVDALIREKLK   36 (37)
+Q Consensus        18 dgkkytkeevdalireklk   36 (37)
+                      .|+++||+|+-..|++.|.
+T Consensus        51 ~G~~ltK~~LL~~Vq~~l~   69 (136)
+T 1SSN_A           51 PGTTLTKEKIEYYVEWALD   69 (136)
+T ss_pred             CCCeeCHHHHHHHHHHHHH
+Confidence            3899999999999988764
+
+
+No 19
+>1C76_A STAPHYLOKINASE; BETA-GRASP FAMILY, HYDROLASE; 2.25A {Staphylococcus aureus} SCOP: d.15.5.1
+Probab=34.02  E-value=35  Score=22.08  Aligned_cols=19  Identities=26%  Similarity=0.414  Sum_probs=16.1  Template_Neff=4.400
+
+Q T1125_Domain11   18 DGKKYTKEEVDALIREKLK   36 (37)
+Q Consensus        18 dgkkytkeevdalireklk   36 (37)
+                      .|+++||+|+-..|++.|.
+T Consensus        51 ~G~~ltK~~LL~~Vq~~l~   69 (136)
+T 1C76_A           51 PGTTLTKEKIEYYVEWALD   69 (136)
+T ss_pred             CCCeeCHHHHHHHHHHHHH
+Confidence            3899999999999988764
+
+
+No 20
+>1C77_A STAPHYLOKINASE; BETA-GRASP FAMILY, HYDROLASE; 2.3A {Staphylococcus aureus} SCOP: d.15.5.1
+Probab=34.02  E-value=35  Score=22.08  Aligned_cols=19  Identities=26%  Similarity=0.414  Sum_probs=16.1  Template_Neff=4.400
+
+Q T1125_Domain11   18 DGKKYTKEEVDALIREKLK   36 (37)
+Q Consensus        18 dgkkytkeevdalireklk   36 (37)
+                      .|+++||+|+-..|++.|.
+T Consensus        51 ~G~~ltK~~LL~~Vq~~l~   69 (136)
+T 1C77_A           51 PGTTLTKEKIEYYVEWALD   69 (136)
+T ss_dssp             TTCEECHHHHHHHHHHHHT
+T ss_pred             CCCeeCHHHHHHHHHHHHH
+Confidence            3899999999999988764
+
+
+No 21
+>2SAK_A STAPHYLOKINASE, 2-AMINO-2-HYDROXYMETHYL-PROPANE-1,3-DIOL; PLASMINOGEN ACTIVATION, FIBRINOLYSIS, STAPHYLOKINASE, HYDROLASE; 1.8A {Staphylococcus aureus} SCOP: d.15.5.1
+Probab=33.51  E-value=36  Score=21.53  Aligned_cols=19  Identities=26%  Similarity=0.414  Sum_probs=16.0  Template_Neff=4.600
+
+Q T1125_Domain11   18 DGKKYTKEEVDALIREKLK   36 (37)
+Q Consensus        18 dgkkytkeevdalireklk   36 (37)
+                      .|+++||+++-..|++.|.
+T Consensus        36 ~G~~ltK~~Ll~~vq~~l~   54 (121)
+T 2SAK_A           36 PGTTLTKEKIEYYVEWALD   54 (121)
+T ss_dssp             TTCEECHHHHHHHHHHHHT
+T ss_pred             CCCeeCHHHHHHHHHHHHH
+Confidence            3899999999999988764
+
+
+No 22
+>5NJT_b 30S ribosomal protein S2, 30S; 100S, Bacillus subtilis, cryo-EM, Hibernation;{Bacillus subtilis subsp. subtilis str. 168}
+Probab=33.15  E-value=37  Score=18.22  Aligned_cols=15  Identities=60%  Similarity=0.749  Sum_probs=10.7  Template_Neff=9.200
+
+Q T1125_Domain11   16 VVDGKKYTKEEVDAL   30 (37)
+Q Consensus        16 vvdgkkytkeevdal   30 (37)
+                      ++||+-++.+++.++
+T Consensus       109 ~~~~~~~~~~~~~~l  123 (123)
+T 5NJT_b          109 VIEGKVSTVEEVKAL  123 (123)
+T ss_pred             EECCEEeCHHHHhcC
+Confidence            467788888877653
+
+
+No 23
+>1BOL_A PROTEIN (RIBONUCLEASE RH); RIBONUCLEASES, HYDROLASE; 2.0A {Rhizopus niveus} SCOP: d.124.1.1
+Probab=31.75  E-value=40  Score=20.72  Aligned_cols=26  Identities=19%  Similarity=0.431  Sum_probs=17.4  Template_Neff=8.200
+
+Q T1125_Domain11   10 LYRGDTVVDGKKYTKEEVDALIREKL   35 (37)
+Q Consensus        10 lyrgdtvvdgkkytkeevdalirekl   35 (37)
+                      +.+..-++.|+.|+.+++.+.|++..
+T Consensus       149 ~L~~~gI~p~~~y~~~~i~~al~~~~  174 (222)
+T 1BOL_A          149 AFSSNGITPGGTYTATEMQSAIESYF  174 (222)
+T ss_dssp             HHHTTTCCSSEEEEHHHHHHHHHHHH
+T ss_pred             HHHhCCCCCCCceeHHHHHHHHHHHH
+Confidence            33333344556899999998887653
+
+
+No 24
+>6F03_A BPSL2520; Antigen, Burkholderia, putative exported protein; HET: GOL, ACT, MSE; 2.2A {Burkholderia pseudomallei K96243}
+Probab=31.13  E-value=41  Score=20.93  Aligned_cols=17  Identities=24%  Similarity=0.309  Sum_probs=13.0  Template_Neff=7.400
+
+Q T1125_Domain11   16 VVDGKKYTKEEVDALIR   32 (37)
+Q Consensus        16 vvdgkkytkeevdalir   32 (37)
+                      -+=-+.||.+|+++++.
+T Consensus       131 ~iYa~~FT~eEL~alia  147 (199)
+T 6F03_A          131 DAYAKYYSTSEIKDLTT  147 (199)
+T ss_dssp             HHHHHHCCHHHHHHHHH
+T ss_pred             HHHHHhCCHHHHHHHHH
+Confidence            34457899999999873
+
+
+No 25
+>6F03_B BPSL2520; Antigen, Burkholderia, putative exported protein; HET: ACT, GOL, MSE; 2.2A {Burkholderia pseudomallei K96243}
+Probab=31.13  E-value=41  Score=20.93  Aligned_cols=17  Identities=24%  Similarity=0.309  Sum_probs=13.0  Template_Neff=7.400
+
+Q T1125_Domain11   16 VVDGKKYTKEEVDALIR   32 (37)
+Q Consensus        16 vvdgkkytkeevdalir   32 (37)
+                      -+=-+.||.+|+++++.
+T Consensus       131 ~iYa~~FT~eEL~alia  147 (199)
+T 6F03_B          131 DAYAKYYSTSEIKDLTT  147 (199)
+T ss_dssp             HHHHHHSCHHHHHHHHH
+T ss_pred             HHHHHhCCHHHHHHHHH
+Confidence            34457899999999873
+
+
+No 26
+>6EK0_LD 60S ribosomal protein L8, 60S; Human 80S ribosome, rRNA, rRNA; HET: P4U, M7A, MA6, OMU, B8K, BGH, B9H, HMT, 6MZ, B8N, MHG, E6G, 2MG, B9B, OMC, I4U, 5MC, B8H, 1MA, 5MU, A2M, E7G, P7G, OMG, PSU, B8W, 4AC, B8T, MG, HYG, E3C, MLZ, UR3, B8Q, 7MG; 2.9A {Homo sapiens}
+Probab=31.00  E-value=42  Score=23.77  Aligned_cols=24  Identities=29%  Similarity=0.756  Sum_probs=20.7  Template_Neff=5.100
+
+Q T1125_Domain11    5 LNLNDLYRGDTVVDGKKYTKEEVD   28 (37)
+Q Consensus         5 lnlndlyrgdtvvdgkkytkeevd   28 (37)
+                      ++|.++|.|.+.++|.-|.-|+++
+T Consensus       113 ~~l~~~~~g~~~~~g~~~~~e~~~  136 (297)
+T 6EK0_LD         113 FGMDKIYEGQVEVTGDEYNVESID  136 (297)
+T ss_pred             cCCCccccCceeccCceeeeeecC
+Confidence            578899999999999999888764
+
+
+No 27
+>6KKS_A Transcription factor WER/DNA Complex; Transcription factor, DNA BINDING PROTEIN-DNA; 2.15A {Arabidopsis thaliana}
+Probab=29.59  E-value=46  Score=16.67  Aligned_cols=18  Identities=22%  Similarity=0.211  Sum_probs=11.3  Template_Neff=10.500
+
+Q T1125_Domain11   14 DTVVDGKKYTKEEVDALI   31 (37)
+Q Consensus        14 dtvvdgkkytkeevdali   31 (37)
+                      +.-.....+|.+|.+.|+
+T Consensus         2 ~~~~~~~~Wt~~E~~~l~   19 (119)
+T 6KKS_A            2 NNEYKKGLWTVEEDKILM   19 (119)
+T ss_dssp             -CCSCCSCCCHHHHHHHH
+T ss_pred             CcccccCCCCHHHHHHHH
+Confidence            444556678888876664
+
+
+No 28
+>3RFW_A Cell-binding factor 2; SurA-like, chaperone; 2.2A {Campylobacter jejuni}
+Probab=29.13  E-value=47  Score=18.72  Aligned_cols=18  Identities=28%  Similarity=0.484  Sum_probs=13.3  Template_Neff=10.700
+
+Q T1125_Domain11   16 VVDGKKYTKEEVDALIRE   33 (37)
+Q Consensus        16 vvdgkkytkeevdalire   33 (37)
+                      .|+|..+|..|+...+..
+T Consensus         5 ~V~g~~It~~e~~~~~~~   22 (252)
+T 3RFW_A            5 TVNGKSISDTEVSEFFAP   22 (252)
+T ss_dssp             EETTEEEEHHHHHHHHHH
+T ss_pred             EECCEEeeHHHHHHHHHH
+Confidence            578888888888776553
+
+
+No 29
+>4LDE_A Lysozyme, Beta-2 adrenergic receptor (E.C.3.2.1.17); G protein coupled receptor, MEMBRANE; HET: P0G, 1WV; 2.79A {Enterobacteria phage T4, Homo sapiens}
+Probab=28.37  E-value=50  Score=19.90  Aligned_cols=21  Identities=19%  Similarity=0.270  Sum_probs=15.4  Template_Neff=11.400
+
+Q T1125_Domain11   16 VVDGKKYTKEEVDALIREKLK   36 (37)
+Q Consensus        16 vvdgkkytkeevdalireklk   36 (37)
+                      +.-|..+|++|.+++.++.++
+T Consensus        66 ~~~~~~~t~~~~~~~~~~d~~   86 (469)
+T 4LDE_A           66 RNTNGVITKDEAEKLFNQDVD   86 (469)
+T ss_dssp             SCCTTBCCHHHHHHHHHHHHH
+T ss_pred             cCCCCCCCHHHHHHHHHHHHH
+Confidence            345778899999988766553
+
+
+No 30
+>2P10_C Mll9387 protein; PUTATIVE PHOSPHONOPYRUVATE HYDROLASE, STRUCTURAL GENOMICS; HET: ACT, GOL; 2.15A {Mesorhizobium loti} SCOP: c.1.12.9
+Probab=27.82  E-value=52  Score=20.95  Aligned_cols=18  Identities=22%  Similarity=0.300  Sum_probs=13.7  Template_Neff=8.300
+
+Q T1125_Domain11   19 GKKYTKEEVDALIREKLK   36 (37)
+Q Consensus        19 gkkytkeevdalireklk   36 (37)
+                      =|+||++|+-+.+++++.
+T Consensus         8 ~~~~~~~~~~~~l~~~~~   25 (286)
+T 2P10_C            8 IKRPTRSELVDRFQKKIR   25 (286)
+T ss_dssp             --CCCHHHHHHHHHHHHH
+T ss_pred             cCCCCHHHHHHHHHHHHH
+Confidence            379999999998887764
+
+
+No 31
+>2P10_F Mll9387 protein; PUTATIVE PHOSPHONOPYRUVATE HYDROLASE, STRUCTURAL GENOMICS; HET: GOL, ACT, MSE; 2.15A {Mesorhizobium loti} SCOP: c.1.12.9
+Probab=27.82  E-value=52  Score=20.95  Aligned_cols=18  Identities=22%  Similarity=0.300  Sum_probs=13.7  Template_Neff=8.300
+
+Q T1125_Domain11   19 GKKYTKEEVDALIREKLK   36 (37)
+Q Consensus        19 gkkytkeevdalireklk   36 (37)
+                      =|+||++|+-+.+++++.
+T Consensus         8 ~~~~~~~~~~~~l~~~~~   25 (286)
+T 2P10_F            8 IKRPTRSELVDRFQKKIR   25 (286)
+T ss_dssp             --CCCHHHHHHHHHHHHH
+T ss_pred             cCCCCHHHHHHHHHHHHH
+Confidence            379999999998887764
+
+
+No 32
+>3LQV_P Pre-mRNA branch site protein p14; Cysless mutant, pre-mRNA splicing, adenine; HET: ADE; 2.38A {Homo sapiens}
+Probab=26.88  E-value=55  Score=16.94  Aligned_cols=17  Identities=24%  Similarity=0.362  Sum_probs=13.4  Template_Neff=4.900
+
+Q T1125_Domain11   16 VVDGKKYTKEEVDALIR   32 (37)
+Q Consensus        16 vvdgkkytkeevdalir   32 (37)
+                      ...++..|.||+|+++=
+T Consensus        17 ~~rnrpltDEeLD~lLP   33 (39)
+T 3LQV_P           17 DERNRPLSDEELDAMFP   33 (39)
+T ss_pred             cccCCCCCHHHHHHhCC
+Confidence            45577889999999874
+
+
+No 33
+>3LQV_Q Pre-mRNA branch site protein p14; Cysless mutant, pre-mRNA splicing, adenine; HET: ADE; 2.38A {Homo sapiens}
+Probab=26.74  E-value=55  Score=16.93  Aligned_cols=17  Identities=24%  Similarity=0.362  Sum_probs=13.4  Template_Neff=4.900
+
+Q T1125_Domain11   16 VVDGKKYTKEEVDALIR   32 (37)
+Q Consensus        16 vvdgkkytkeevdalir   32 (37)
+                      ...++..|.||+|+++=
+T Consensus        17 ~~rnrpltDEeLD~lLP   33 (39)
+T 3LQV_Q           17 DERNRPLSDEELDAMFP   33 (39)
+T ss_dssp             HHTTCCCCHHHHHHTCC
+T ss_pred             hhccCCCCHHHHHHhCC
+Confidence            45577889999999874
+
+
+No 34
+>5NDD_A Lysozyme,Proteinase-activated receptor 2,Soluble cytochrome b562,Proteinase-activated; MEMBRANE PROTEIN, GPCR, 7TM; HET: 8TZ; 2.801A {Enterobacteria phage T4}
+Probab=26.66  E-value=56  Score=20.88  Aligned_cols=20  Identities=20%  Similarity=0.317  Sum_probs=15.7  Template_Neff=11.000
+
+Q T1125_Domain11   17 VDGKKYTKEEVDALIREKLK   36 (37)
+Q Consensus        17 vdgkkytkeevdalireklk   36 (37)
+                      .-|+.+|++|.+++.++.++
+T Consensus        75 ~~~~~~~~~~~~~~l~~~~~   94 (619)
+T 5NDD_A           75 NTNGVITKDEAEKLFNQDVD   94 (619)
+T ss_dssp             CCTTBCCHHHHHHHHHHHHH
+T ss_pred             CCCCccCHHHHHHHHHHHHH
+Confidence            34788999999999886653
+
+
+No 35
+>5HTF_A PrsA1; PrsA, PPIase, post-translocation chaperone, secretion; HET: MPD; 2.1A {Listeria monocytogenes}
+Probab=26.55  E-value=56  Score=19.53  Aligned_cols=18  Identities=17%  Similarity=0.272  Sum_probs=13.7  Template_Neff=9.800
+
+Q T1125_Domain11   16 VVDGKKYTKEEVDALIRE   33 (37)
+Q Consensus        16 vvdgkkytkeevdalire   33 (37)
+                      .|+|..+|..|+...+..
+T Consensus        10 ~Vng~~It~~e~~~~~~~   27 (283)
+T 5HTF_A           10 KTDAGSVTQDELYEAMKT   27 (283)
+T ss_dssp             EETTEEEEHHHHHHHHCC
+T ss_pred             EECCEEEeHHHHHHHHHH
+Confidence            478888888888776654
+
+
+No 36
+>6MTC_D 80S ribosome; translation, RIBOSOME; HET: E7G, 5MC, PSU, MHG, B8H, OMC, OMG, B9B, OMU, B8K, B8N, MLZ, UR3, M7A, 7MG, B8T, B8Q, BGH, B9H, P7G, 6MZ, 4AC, P4U, B8W, I4U, MA6, 5MU, 2MG, E6G, 1MA, E3C, A2M, MG; 3.4A {Oryctolagus cuniculus}
+Probab=26.28  E-value=57  Score=22.96  Aligned_cols=24  Identities=29%  Similarity=0.756  Sum_probs=20.6  Template_Neff=5.300
+
+Q T1125_Domain11    5 LNLNDLYRGDTVVDGKKYTKEEVD   28 (37)
+Q Consensus         5 lnlndlyrgdtvvdgkkytkeevd   28 (37)
+                      ++|.++|.|.+.++|.-|+.|+++
+T Consensus       111 ~~~~~~~~~~~~~~~~~~~~~~~~  134 (293)
+T 6MTC_D          111 FGMDKIYEGQVEVTGDEYNVESID  134 (293)
+T ss_pred             cCCCccccCeeeccCceeeeeecC
+Confidence            567889999999999998888775
+
+
+No 37
+>1TO0_D Hypothetical UPF0247 protein yyda; STRUCTURAL GENOMICS, UNKNOWN FUNCTION, PSI; 2.5A {Bacillus subtilis} SCOP: c.116.1.3
+Probab=25.22  E-value=62  Score=20.23  Aligned_cols=20  Identities=30%  Similarity=0.567  Sum_probs=14.6  Template_Neff=6.600
+
+Q T1125_Domain11    7 LNDLYRGDTVVDGKKYTKEE   26 (37)
+Q Consensus         7 lndlyrgdtvvdgkkytkee   26 (37)
+                      +..|||.-|...|.+|-|-|
+T Consensus       142 lEQiYRA~tI~~g~pYH~~~  161 (167)
+T 1TO0_D          142 VEQIYRAFRINRGEPYHKLE  161 (167)
+T ss_dssp             HHHHHHHHHHHHSCCC----
+T ss_pred             HHHHHHHHHHHcCCCcccCC
+Confidence            56799999999999998754
+
+
+No 38
+>1TO0_F Hypothetical UPF0247 protein yyda; STRUCTURAL GENOMICS, UNKNOWN FUNCTION, PSI; HET: MSE; 2.5A {Bacillus subtilis} SCOP: c.116.1.3
+Probab=25.22  E-value=62  Score=20.23  Aligned_cols=20  Identities=30%  Similarity=0.567  Sum_probs=11.8  Template_Neff=6.600
+
+Q T1125_Domain11    7 LNDLYRGDTVVDGKKYTKEE   26 (37)
+Q Consensus         7 lndlyrgdtvvdgkkytkee   26 (37)
+                      +..|||.-|...|.+|-|-|
+T Consensus       142 lEQiYRA~tI~~g~pYH~~~  161 (167)
+T 1TO0_F          142 VEQIYRAFRINRGEPYHKLE  161 (167)
+T ss_dssp             HHHHHHHHHHHHC-------
+T ss_pred             HHHHHHHHHHHcCCCcccCC
+Confidence            56799999999999998754
+
+
+No 39
+>2JUZ_B UPF0352 protein HI0840; homodimer, helix, Structural Genomics, PSI-2; NMR {Haemophilus influenzae} SCOP: a.284.1.1
+Probab=24.65  E-value=64  Score=19.82  Aligned_cols=16  Identities=19%  Similarity=0.621  Sum_probs=13.1  Template_Neff=3.200
+
+Q T1125_Domain11   20 KKYTKEEVDALIREKL   35 (37)
+Q Consensus        20 kkytkeevdalirekl   35 (37)
+                      .||+.++|++++.+-+
+T Consensus         5 SKYsd~qvE~ll~dl~   20 (80)
+T 2JUZ_B            5 SKYSDAQLSAIVNDMI   20 (80)
+T ss_dssp             CSSCHHHHHHHHHHHH
+T ss_pred             CCCCHHHHHHHHHHHH
+Confidence            4899999999987643
+
+
+No 40
+>2JR2_B UPF0352 protein CPS_2611; dimer, all alpha helix, homodimer; NMR {Colwellia psychrerythraea} SCOP: a.284.1.1
+Probab=24.42  E-value=65  Score=19.63  Aligned_cols=16  Identities=38%  Similarity=0.750  Sum_probs=13.0  Template_Neff=3.200
+
+Q T1125_Domain11   20 KKYTKEEVDALIREKL   35 (37)
+Q Consensus        20 kkytkeevdalirekl   35 (37)
+                      .||+.++|++++.+-+
+T Consensus         5 SKYs~~qvE~ll~el~   20 (76)
+T 2JR2_B            5 SKYSNERVEKIIQDLL   20 (76)
+T ss_dssp             CCSCHHHHHHHHHHHH
+T ss_pred             CCCCHHHHHHHHHHHH
+Confidence            4899999999987643
+
+
+No 41
+>2OTA_A UPF0352 protein CPS_2611; NESG, Y2611_COLP3, UPF0352, CPS_2611, Structural; HET: MSE; 2.2A {Colwellia psychrerythraea} SCOP: a.284.1.1
+Probab=24.42  E-value=65  Score=19.63  Aligned_cols=16  Identities=38%  Similarity=0.750  Sum_probs=11.7  Template_Neff=3.200
+
+Q T1125_Domain11   20 KKYTKEEVDALIREKL   35 (37)
+Q Consensus        20 kkytkeevdalirekl   35 (37)
+                      .||+.++|++++.+-+
+T Consensus         5 SKYs~~qvE~ll~el~   20 (76)
+T 2OTA_A            5 SKYSNERVEKIIQDLL   20 (76)
+T ss_dssp             --CCHHHHHHHHHHHH
+T ss_pred             CCCCHHHHHHHHHHHH
+Confidence            4899999999987643
+
+
+No 42
+>2JUW_B UPF0352 protein SO_2176; homodimer, helix, dimer, all alpha; NMR {Shewanella oneidensis} SCOP: a.284.1.1
+Probab=24.04  E-value=67  Score=19.74  Aligned_cols=16  Identities=44%  Similarity=0.731  Sum_probs=13.0  Template_Neff=3.200
+
+Q T1125_Domain11   20 KKYTKEEVDALIREKL   35 (37)
+Q Consensus        20 kkytkeevdalirekl   35 (37)
+                      .||+.++|++++.+-+
+T Consensus         5 SKYsd~qvE~ll~dl~   20 (80)
+T 2JUW_B            5 SKYSNTQVESLIAEIL   20 (80)
+T ss_dssp             CSSCHHHHHHHHHHHH
+T ss_pred             CCCCHHHHHHHHHHHH
+Confidence            4899999999987643
+
+
+No 43
+>2QTI_A UPF0352 protein SO_2176; Y2176_SHEON, UPF0352, SO_2176, PF07208, NESG; 2.3A {Shewanella oneidensis} SCOP: a.284.1.1
+Probab=24.04  E-value=67  Score=19.74  Aligned_cols=16  Identities=44%  Similarity=0.731  Sum_probs=10.8  Template_Neff=3.200
+
+Q T1125_Domain11   20 KKYTKEEVDALIREKL   35 (37)
+Q Consensus        20 kkytkeevdalirekl   35 (37)
+                      .||+.++|++++.+-+
+T Consensus         5 SKYsd~qvE~ll~dl~   20 (80)
+T 2QTI_A            5 SKYSNTQVESLIAEIL   20 (80)
+T ss_dssp             ---CHHHHHHHHHHHH
+T ss_pred             CCCCHHHHHHHHHHHH
+Confidence            4899999999987643
+
+
+No 44
+>6H9D_A Lysozyme (E.C.3.2.1.17); lysozyme, peptidoglycan hydrolase, cell morphogenesis; HET: GOL; 1.9A {Asticcacaulis excentricus}
+Probab=24.03  E-value=67  Score=17.78  Aligned_cols=19  Identities=42%  Similarity=0.636  Sum_probs=14.5  Template_Neff=9.200
+
+Q T1125_Domain11   17 VDGKKYTKEEVDALIREKL   35 (37)
+Q Consensus        17 vdgkkytkeevdalirekl   35 (37)
+                      ..|..+|++|.+++.++.+
+T Consensus        43 ~~g~~~t~~~a~~ll~~~i   61 (149)
+T 6H9D_A           43 REGARVTAEDADALLRFDL   61 (149)
+T ss_dssp             CTTCBCCHHHHHHHHHHHH
+T ss_pred             CCCCCCCHHHHHHHHHhhH
+Confidence            3578899999988877654
+
+
+No 45
+>2JRX_A UPF0352 protein yejL; homodimer, alpha helix, Structural Genomics; NMR {Escherichia coli} SCOP: a.284.1.1
+Probab=23.43  E-value=70  Score=19.77  Aligned_cols=16  Identities=38%  Similarity=0.740  Sum_probs=13.1  Template_Neff=3.200
+
+Q T1125_Domain11   20 KKYTKEEVDALIREKL   35 (37)
+Q Consensus        20 kkytkeevdalirekl   35 (37)
+                      .||+.++|++++.+-+
+T Consensus         5 SKYsd~qvE~ll~dl~   20 (83)
+T 2JRX_A            5 SRYSDEQVEQLLAELL   20 (83)
+T ss_dssp             TCTTHHHHHHHHHHHH
+T ss_pred             CCCCHHHHHHHHHHHH
+Confidence            4899999999987644
+
+
+No 46
+>1NS5_A Hypothetical protein ybeA; Structural Genomics, PSI, Protein Structure; HET: MSE; 1.68A {Escherichia coli} SCOP: c.116.1.3
+Probab=23.27  E-value=71  Score=19.60  Aligned_cols=19  Identities=26%  Similarity=0.541  Sum_probs=14.9  Template_Neff=6.800
+
+Q T1125_Domain11    7 LNDLYRGDTVVDGKKYTKE   25 (37)
+Q Consensus         7 lndlyrgdtvvdgkkytke   25 (37)
+                      +..+||.-+...|.+|-++
+T Consensus       137 ~EQiYRA~tI~~~~pYHk~  155 (155)
+T 1NS5_A          137 AESLYRAWSITTNHPYHRE  155 (155)
+T ss_dssp             HHHHHHHHHHHTTCTTC--
+T ss_pred             HHHHHHHHHHHhCCCCCCC
+Confidence            4679999999999999764
+
+
+No 47
+>1NS5_B Hypothetical protein ybeA; Structural Genomics, PSI, Protein Structure; 1.68A {Escherichia coli} SCOP: c.116.1.3
+Probab=23.27  E-value=71  Score=19.60  Aligned_cols=19  Identities=26%  Similarity=0.541  Sum_probs=16.0  Template_Neff=6.800
+
+Q T1125_Domain11    7 LNDLYRGDTVVDGKKYTKE   25 (37)
+Q Consensus         7 lndlyrgdtvvdgkkytke   25 (37)
+                      +..+||.-+...|.+|-++
+T Consensus       137 ~EQiYRA~tI~~~~pYHk~  155 (155)
+T 1NS5_B          137 AESLYRAWSITTNHPYHRE  155 (155)
+T ss_dssp             HHHHHHHHHHHTTCCCCCC
+T ss_pred             HHHHHHHHHHHhCCCCCCC
+Confidence            4679999999999999764
+
+
+No 48
+>6DZI_I CONSERVED PROTEIN DOMAIN, 30S ribosomal; Hibernation factor complex, RIBOSOME; 3.46A {Mycobacterium smegmatis str. MC2 155}
+Probab=23.06  E-value=72  Score=17.08  Aligned_cols=15  Identities=27%  Similarity=0.570  Sum_probs=11.0  Template_Neff=9.300
+
+Q T1125_Domain11   16 VVDGKKYTKEEVDAL   30 (37)
+Q Consensus        16 vvdgkkytkeevdal   30 (37)
+                      ++||+-++.+++.++
+T Consensus       109 ~~~~~~~~~~~~~~l  123 (126)
+T 6DZI_I          109 YMDGKALSVADVEKI  123 (126)
+T ss_pred             EECCEEcCHHHHHHH
+Confidence            467788888887664
+
+
+No 49
+>2JPQ_A UPF0352 protein VP2129; dimer, all alpha, homodimer, Structural; NMR {Vibrio parahaemolyticus} SCOP: a.284.1.1
+Probab=23.01  E-value=72  Score=19.71  Aligned_cols=16  Identities=38%  Similarity=0.642  Sum_probs=13.0  Template_Neff=3.200
+
+Q T1125_Domain11   20 KKYTKEEVDALIREKL   35 (37)
+Q Consensus        20 kkytkeevdalirekl   35 (37)
+                      .||+.++|++++.+-+
+T Consensus         5 SKYsd~qvE~ll~dl~   20 (83)
+T 2JPQ_A            5 SKYTDEQVEKILAEVA   20 (83)
+T ss_dssp             CCSCHHHHHHHHHHHH
+T ss_pred             CCCCHHHHHHHHHHHH
+Confidence            4899999999987643
+
+
+No 50
+>5SUP_H ATP-dependent RNA helicase SUB2, YRA1/RNA; mRNA export, HYDROLASE-RNA complex; HET: ADP, BEF; 2.6A {Saccharomyces cerevisiae}
+Probab=22.67  E-value=74  Score=16.00  Aligned_cols=16  Identities=19%  Similarity=0.223  Sum_probs=11.6  Template_Neff=4.600
+
+Q T1125_Domain11   19 GKKYTKEEVDALIREK   34 (37)
+Q Consensus        19 gkkytkeevdalirek   34 (37)
+                      -++.|.||+||-+.+-
+T Consensus        13 ~~~~TaeeLDaELd~Y   28 (32)
+T 5SUP_H           13 PAKKSLEDLDKEMADY   28 (32)
+T ss_pred             CCCCCHHHHHHHHHHH
+Confidence            3567899999876543
+
+
+No 51
+>5SUP_I ATP-dependent RNA helicase SUB2, YRA1/RNA; mRNA export, HYDROLASE-RNA complex; HET: ADP, BEF; 2.6A {Saccharomyces cerevisiae}
+Probab=22.67  E-value=74  Score=16.00  Aligned_cols=16  Identities=19%  Similarity=0.223  Sum_probs=11.6  Template_Neff=4.600
+
+Q T1125_Domain11   19 GKKYTKEEVDALIREK   34 (37)
+Q Consensus        19 gkkytkeevdalirek   34 (37)
+                      -++.|.||+||-+.+-
+T Consensus        13 ~~~~TaeeLDaELd~Y   28 (32)
+T 5SUP_I           13 PAKKSLEDLDKEMADY   28 (32)
+T ss_pred             CCCCCHHHHHHHHHHH
+Confidence            3567899999876543
+
+
+No 52
+>4DXT_A SUN domain-containing protein 2; beta-sandwich, LINC complex, STRUCTURAL PROTEIN; 2.22A {Homo sapiens}
+Probab=22.67  E-value=74  Score=18.77  Aligned_cols=18  Identities=28%  Similarity=0.578  Sum_probs=12.8  Template_Neff=8.800
+
+Q T1125_Domain11   19 GKKYTKEEVDALIREKLK   36 (37)
+Q Consensus        19 gkkytkeevdalireklk   36 (37)
+                      |.-++++++.++|++.++
+T Consensus         1 ~~~~~~~~i~~~v~~~~~   18 (198)
+T 4DXT_A            1 GPGVTEEQVHHIVKQALQ   18 (198)
+T ss_dssp             CCSCCHHHHHHHHHHHHH
+T ss_pred             CCCCCHHHHHHHHHHHHH
+Confidence            345678888888877654
+
+
+No 53
+>1KOO_C TIP ASSOCIATING PROTEIN; mRNA export factor, Constitutive transport; 3.8A {Homo sapiens} SCOP: d.58.7.2, c.10.2.3
+Probab=22.49  E-value=75  Score=19.27  Aligned_cols=20  Identities=35%  Similarity=0.514  Sum_probs=15.4  Template_Neff=9.400
+
+Q T1125_Domain11   15 TVVDGKKYTKEEVDALIREK   34 (37)
+Q Consensus        15 tvvdgkkytkeevdalirek   34 (37)
+                      ++-.|++|+++++-..|..+
+T Consensus        28 ~i~~~~~~~~~~il~~l~~~   47 (277)
+T 1KOO_C           28 TIPYGRKYDKAWLLSMIQSK   47 (277)
+T ss_dssp             EEECTTTSCTTHHHHHHHTT
+T ss_pred             EECCccccCHHHHHHHHHHh
+Confidence            56788999999887776554
+
+
+No 54
+>3JU3_A Probable 2-oxoacid ferredoxin oxidoreductase, alpha; Thermoplasma acidophilum, probable 2-oxoacid ferredoxin; 1.9A {Thermoplasma acidophilum}
+Probab=22.44  E-value=76  Score=17.04  Aligned_cols=20  Identities=25%  Similarity=0.428  Sum_probs=15.7  Template_Neff=9.000
+
+Q T1125_Domain11   17 VDGKKYTKEEVDALIREKLK   36 (37)
+Q Consensus        17 vdgkkytkeevdalireklk   36 (37)
+                      .+|..++.+++.+.|++.+.
+T Consensus        98 ~~g~~~~~~~i~~~i~~~~~  117 (118)
+T 3JU3_A           98 YNGRHMTEDEILKSAKEILN  117 (118)
+T ss_dssp             BTTBCCCHHHHHHHHHHHHH
+T ss_pred             cCCccCCHHHHHHHHHHHHc
+Confidence            56888899999888887653
+
+
+No 55
+>1IOO_A SF11-RNASE, D-XYLITOL; Self-incompatibility Ribonuclease, HYDROLASE; HET: MAN, NAG, XYP, BMA; 1.55A {Nicotiana alata} SCOP: d.124.1.1
+Probab=22.39  E-value=76  Score=18.62  Aligned_cols=29  Identities=17%  Similarity=0.322  Sum_probs=17.5  Template_Neff=8.900
+
+Q T1125_Domain11    6 NLNDLYRGDTVVDGKKYTKEEVDALIREK   34 (37)
+Q Consensus         6 nlndlyrgdtvvdgkkytkeevdalirek   34 (37)
+                      |+.++.+..-...|+.|+.+++.+.|+..
+T Consensus       116 ~~~~~L~~~~i~p~~~y~~~~i~~al~~~  144 (196)
+T 1IOO_A          116 DLLRTLQTHRIIPGSSYTFQDIFDAIKTV  144 (196)
+T ss_dssp             CHHHHHHHTTCCTTEEECHHHHHHHHHHH
+T ss_pred             CHHHHHHhCCCccCCCcCHHHHHHHHHHH
+Confidence            33344443334455689999888777653
+
+
+No 56
+>2FHO_A spliceosomal protein SF3b155, spliceosomal protein; RRM domain, Structural Genomics, NPPSFA; NMR {Homo sapiens}
+Probab=22.08  E-value=78  Score=17.08  Aligned_cols=18  Identities=22%  Similarity=0.331  Sum_probs=13.9  Template_Neff=4.700
+
+Q T1125_Domain11   15 TVVDGKKYTKEEVDALIR   32 (37)
+Q Consensus        15 tvvdgkkytkeevdalir   32 (37)
+                      ....++..|.||+|+++=
+T Consensus        15 ~~~rn~~ltDEeLD~lLP   32 (47)
+T 2FHO_A           15 IDERNRPLSDEELDAMFP   32 (47)
+T ss_dssp             CCCCCCCSCTTHHHHHSC
+T ss_pred             hhhccCCCCHHHHHHhCC
+Confidence            345677889999999864
+
+
+No 57
+>5A9Z_AI RIBOSOME/RNA Complex, NEOMYCIN; BIPA, RIBOSOME, TRANSLATIONAL GTPASE FACTORS; HET: GCP, NMY; 4.7A {Thermus thermophilus HB8}
+Probab=21.45  E-value=82  Score=17.84  Aligned_cols=16  Identities=31%  Similarity=0.588  Sum_probs=12.8  Template_Neff=8.800
+
+Q T1125_Domain11   16 VVDGKKYTKEEVDALI   31 (37)
+Q Consensus        16 vvdgkkytkeevdali   31 (37)
+                      ++||+-++.+++..+-
+T Consensus       108 ~~~g~~~~~~~~~~la  123 (153)
+T 5A9Z_AI         108 LLQGQILTAKDVEALA  123 (153)
+T ss_pred             EECCEEeCHHHHHHHh
+Confidence            5789999999887763
+
+
+No 58
+>3RW6_A nuclear RNA export factor TAP; retroviral constitutive transport element (CTE); HET: GTP, CCC; 2.3A {Homo sapiens}
+Probab=20.96  E-value=85  Score=18.79  Aligned_cols=20  Identities=35%  Similarity=0.514  Sum_probs=15.1  Template_Neff=9.600
+
+Q T1125_Domain11   15 TVVDGKKYTKEEVDALIREK   34 (37)
+Q Consensus        15 tvvdgkkytkeevdalirek   34 (37)
+                      ++-.|.+|+++++-..|..+
+T Consensus        28 ~i~~~~~~~~~~il~~l~~~   47 (267)
+T 3RW6_A           28 TIPYGRKYDKAWLLSMIQSK   47 (267)
+T ss_dssp             EETTGGGSCHHHHHHHHHHT
+T ss_pred             EECCccccCHHHHHHHHHHh
+Confidence            46788899999887766544
+
+
+No 59
+>2IYV_A SHIKIMATE KINASE (E.C.2.7.1.71); TRANSFERASE, AROMATIC AMINO ACID BIOSYNTHESIS; HET: ADP; 1.35A {MYCOBACTERIUM TUBERCULOSIS} SCOP: c.37.1.2
+Probab=20.90  E-value=85  Score=16.31  Aligned_cols=22  Identities=23%  Similarity=0.182  Sum_probs=15.1  Template_Neff=11.300
+
+Q T1125_Domain11   14 DTVVDGKKYTKEEVDALIREKL   35 (37)
+Q Consensus        14 dtvvdgkkytkeevdalirekl   35 (37)
+                      +.++|....+.||+-+.|.+.+
+T Consensus       145 ~~~i~~~~~~~e~~~~~i~~~l  166 (184)
+T 2IYV_A          145 TMRVDTNRRNPGAVVRHILSRL  166 (184)
+T ss_dssp             SEEEECSSSCHHHHHHHHHTTS
+T ss_pred             cEEEECCCCCHHHHHHHHHHHh
+Confidence            6677777777777766665544
+
+
+No 60
+>1A5J_A B-MYB; DNA-BINDING PROTEIN, PROTOONCOGENE PRODUCT, DNA; NMR {Gallus gallus} SCOP: a.4.1.3
+Probab=20.67  E-value=87  Score=15.36  Aligned_cols=16  Identities=31%  Similarity=0.353  Sum_probs=10.5  Template_Neff=10.600
+
+Q T1125_Domain11   17 VDGKKYTKEEVDALIR   32 (37)
+Q Consensus        17 vdgkkytkeevdalir   32 (37)
+                      ....++|.+|.+.|++
+T Consensus         5 ~~~~~Wt~~E~~~L~~   20 (110)
+T 1A5J_A            5 LVKGPWTKEEDQKVIE   20 (110)
+T ss_dssp             SCSSCCCHHHHHHHHH
+T ss_pred             CcCCCCCHHHHHHHHH
+Confidence            3456778888766654
+
+
+No 61
+>2PV3_A Chaperone surA (E.C.5.2.1.8), C-peptide; Survival protein A, Peptidyl-prolyl cis-trans; 3.39A {Escherichia coli} SCOP: a.223.1.2, d.26.1.1
+Probab=20.53  E-value=88  Score=18.33  Aligned_cols=17  Identities=29%  Similarity=0.489  Sum_probs=13.1  Template_Neff=10.500
+
+Q T1125_Domain11   16 VVDGKKYTKEEVDALIR   32 (37)
+Q Consensus        16 vvdgkkytkeevdalir   32 (37)
+                      .|+|+.+|..|+...++
+T Consensus        11 ~V~g~~It~~e~~~~~~   27 (299)
+T 2PV3_A           11 VVNNGVVLESDVDGLMQ   27 (299)
+T ss_dssp             EETTEEEEHHHHHHHHH
+T ss_pred             EECCeeecHHHHHHHHH
+Confidence            57888888888876654
+
+
+No 62
+>5WKN_D Nucleoprotein, Phosphoprotein; Paramyxovirus, Nucleoprotein, Phosphoprotein, Conformational changes; 2.653A {Parainfluenza virus 5 (strain W3)}
+Probab=20.29  E-value=89  Score=16.92  Aligned_cols=15  Identities=27%  Similarity=0.634  Sum_probs=10.6  Template_Neff=4.800
+
+Q T1125_Domain11   21 KYTKEEVDALIREKL   35 (37)
+Q Consensus        21 kytkeevdalirekl   35 (37)
+                      .++.+|+++||..-+
+T Consensus         6 ~~sd~EI~~lietg~   20 (49)
+T 5WKN_D            6 SFSPDEINKLIETGL   20 (49)
+T ss_pred             CCCHHHHHHHHHHhH
+Confidence            367788888886543
+
+
+No 63
+>1M5Y_D survival protein surA (E.C.5.2.1.8); Survival protein A, periplasmic molecular; 3.0A {Escherichia coli} SCOP: d.26.1.1, a.223.1.2
+Probab=20.28  E-value=89  Score=19.36  Aligned_cols=18  Identities=28%  Similarity=0.466  Sum_probs=14.2  Template_Neff=10.300
+
+Q T1125_Domain11   16 VVDGKKYTKEEVDALIRE   33 (37)
+Q Consensus        16 vvdgkkytkeevdalire   33 (37)
+                      .|+|+.+|..|+...++.
+T Consensus        11 ~V~g~~It~~~~~~~~~~   28 (408)
+T 1M5Y_D           11 VVNNGVVLESDVDGLMQS   28 (408)
+T ss_pred             EECCEEecHHHHHHHHHH
+Confidence            579999999998876643
+
+
+No 64
+>4WO7_A PrsA (E.C.5.2.1.8); foldase, prolyl isomerase, protein secretion; HET: MSE; 2.63A {Bacillus subtilis}
+Probab=20.18  E-value=90  Score=18.07  Aligned_cols=17  Identities=24%  Similarity=0.239  Sum_probs=12.3  Template_Neff=10.300
+
+Q T1125_Domain11   16 VVDGKKYTKEEVDALIR   32 (37)
+Q Consensus        16 vvdgkkytkeevdalir   32 (37)
+                      .|+|..+|..|+...++
+T Consensus        13 ~V~g~~It~~e~~~~~~   29 (263)
+T 4WO7_A           13 KTDAGDVTKGELYTNMK   29 (263)
+T ss_pred             EECCEEeeHHHHHHHHH
+Confidence            57888888888766543
+
+

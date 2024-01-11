@@ -1,0 +1,24 @@
+# STOCKHOLM 1.0
+
+#=GS UniRef90_A7XXD0/1075-1170      DE [subseq from] Tape tail measure protein n=3 Tax=Oshimavirus TaxID=1623293 RepID=A7XXD0_BP234
+#=GS UniRef90_UPI000C75AD1D/40-69   DE [subseq from] circumsporozoite protein-like n=1 Tax=Eurytemora affinis TaxID=88015 RepID=UPI000C75AD1D
+#=GS UniRef90_UPI000C75AD1D/93-129  DE [subseq from] circumsporozoite protein-like n=1 Tax=Eurytemora affinis TaxID=88015 RepID=UPI000C75AD1D
+#=GS UniRef90_UPI000C75AD1D/148-188 DE [subseq from] circumsporozoite protein-like n=1 Tax=Eurytemora affinis TaxID=88015 RepID=UPI000C75AD1D
+#=GS UniRef90_UPI000C75AD1D/202-230 DE [subseq from] circumsporozoite protein-like n=1 Tax=Eurytemora affinis TaxID=88015 RepID=UPI000C75AD1D
+#=GS UniRef90_UPI000C75AD1D/246-275 DE [subseq from] circumsporozoite protein-like n=1 Tax=Eurytemora affinis TaxID=88015 RepID=UPI000C75AD1D
+#=GS UniRef90_UPI000C75AD1D/265-304 DE [subseq from] circumsporozoite protein-like n=1 Tax=Eurytemora affinis TaxID=88015 RepID=UPI000C75AD1D
+#=GS UniRef90_UPI000C75AD1D/301-340 DE [subseq from] circumsporozoite protein-like n=1 Tax=Eurytemora affinis TaxID=88015 RepID=UPI000C75AD1D
+#=GS UniRef90_A0A1Y6KN44/460-499    DE [subseq from] Uncharacterized protein n=3 Tax=Bradyrhizobium sp. ORS 285 TaxID=115808 RepID=A0A1Y6KN44_9BRAD
+
+T1125_Domain19:1075-1170               NLPVEEVADTVYDASGQAVEERVPLKQSATRSLVKGLLDLASGKVKED-PDGTVAEDLADLPVFGEL--EQ--LYGLVADAKYDPSSLKSALVKPNKPQGS
+UniRef90_A7XXD0/1075-1170              NLPVEEVADTVYDASGQAVEERVPLKQSATRSLVKGLLDLASGKVKED-PDGTVAEDLADLPVFGEL--EQ--LYGLVADAKYDPSSLKSALVKPNKPQGS
+UniRef90_UPI000C75AD1D/40-69           --------------------------------------DLADGTLFGDLADGTIFGDLADDTIFGDL-----------A----------------------
+UniRef90_UPI000C75AD1D/93-129          -------------------------------------SDLADGTIYEDLTDDTIYGDLADGTIYGDLVDDT--IYG-------------------------
+UniRef90_UPI000C75AD1D/148-188         --------------------------------------DLADGTIFADLADGTIFADLADGTIYGDL--ADGTIYGDLADS--------------------
+UniRef90_UPI000C75AD1D/202-230         --------------------------------------DLADGTIYGDLADSTIYGDLADGTIFGDL----------------------------------
+UniRef90_UPI000C75AD1D/246-275         -------------------------------------VDLADGTIFGDLADGTTYEDLADGTIYGDL----------------------------------
+UniRef90_UPI000C75AD1D/265-304         --------------------------------------DLADGTIYGDLPDGTIFADLADATINGDL--EDGTIYEDLAD---------------------
+UniRef90_UPI000C75AD1D/301-340         --------------------------------------DLADDKIYGDLADGTVYGDLADGTIYGDLVDDT--IYGDLAD---------------------
+UniRef90_A0A1Y6KN44/460-499            -------------------------------TVLGGLTGTPAGQSPQD-TDLTIAAQLLDVPVVGDL--SA--AAA-------------------------
+#=GC RF                                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxx..xx..xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//

@@ -1,0 +1,336 @@
+Query         T1125_Domain4:236-302 
+Match_columns 67
+No_of_seqs    1 out of 1
+Neff          1
+Searched_HMMs 80799
+Date          Thu Jan 11 13:26:16 2024
+Command       /public/dbu/.local/bin/hhsearch -i /public/dbu/CASP/tmp/tmphvtbqn64/query.a3m -o /public/dbu/CASP/tmp/tmphvtbqn64/output.hhr -maxseq 1000000 -d /public/dbu/data/af2_db/pdb70/pdb70 
+
+ No Hit                             Prob E-value P-value  Score    SS Cols Query HMM  Template HMM
+  1 1EIA_A EIAV CAPSID PROTEIN P26  42.5      21 0.00026   24.9   0.0   36   30-65      8-43  (207)
+  2 4E1P_B Protein lsr2; anti-para  38.1      27 0.00033   21.3   0.0   22   21-42     32-53  (61)
+  3 3TOL_B Soluble cytochrome b562  36.1      30 0.00038   19.8   0.0    8   34-41     30-37  (106)
+  4 1CSN_A CASEIN KINASE-1, ADENOS  33.4      36 0.00044   20.6   0.0   42   18-60    256-298 (298)
+  5 3BHW_B Uncharacterized protein  30.5      43 0.00053   23.0   0.0   26   40-65     18-43  (209)
+  6 4E1R_A Protein lsr2; anti-para  30.5      43 0.00054   22.4   0.0   22   21-42     57-78  (86)
+  7 1AY7_B GUANYL-SPECIFIC RIBONUC  30.3      44 0.00054   19.6   0.0   31   35-65     11-42  (89)
+  8 4E1R_B Protein lsr2; anti-para  28.7      49  0.0006   22.2   0.0   22   21-42     57-78  (86)
+  9 4L6R_A Soluble cytochrome b562  26.9      55 0.00068   22.5   0.0   22   38-59      4-25  (425)
+ 10 2IDY_A NSP3; SARS coronavirus   25.8      59 0.00073   21.6   0.0   17   51-67     45-61  (112)
+ 11 2M0A_A Non-structural protein   25.5      60 0.00075   21.7   0.0   17   51-67     44-60  (114)
+ 12 1EH4_A CASEIN KINASE-1 (E.C.2.  25.3      61 0.00076   19.6   0.0   41   18-59    256-297 (298)
+ 13 1FC3_A SPO0A; RESPONSE REGULAT  23.0      72  0.0009   19.9   0.0   46    3-48     12-58  (120)
+ 14 1FC3_C SPO0A; RESPONSE REGULAT  23.0      72  0.0009   19.9   0.0   46    3-48     12-58  (120)
+ 15 2DGK_E Glutamate decarboxylase  22.7      74 0.00092   21.5   0.0   28   38-65      6-33  (452)
+ 16 5WAX_A Uncharacterized protein  21.9      79 0.00097   20.5   0.0   20   29-48    285-304 (310)
+ 17 2ZA4_B Ribonuclease (E.C.3.1.2  21.7      80 0.00099   18.6   0.0   30   35-64     12-42  (90)
+ 18 3VP7_A Vacuolar protein sortin  21.7      80 0.00099   22.4   0.0   13   52-64     29-41  (220)
+ 19 4DDP_A Beclin-1; Beclin 1, ECD  21.6      81   0.001   22.2   0.0   14   51-64     54-67  (210)
+ 20 5XKA_B Serine/threonine-protei  21.0      85   0.001   19.5   0.0   40   18-57    236-275 (288)
+ 21 3J92_v rabbit 60S ribosomal su  20.3      89  0.0011   24.1   0.0   18   49-66    367-384 (501)
+ 22 2CX6_B Hypothetical protein yh  20.1      91  0.0011   18.7   0.0   29   36-64     13-42  (90)
+
+No 1
+>1EIA_A EIAV CAPSID PROTEIN P26; VIRAL CAPSID, EIAV, HIV, LENTIVIRUS; 2.7A {Equine infectious anemia virus} SCOP: a.73.1.1, a.28.3.1
+Probab=42.51  E-value=21  Score=24.91  Aligned_cols=36  Identities=14%  Similarity=0.131  Sum_probs=27.0  Template_Neff=7.300
+
+Q T1125_Domain4:   30 RAKLAKDLGQFMPEVAQVLKAPEKGASWEEINAVVR   65 (67)
+Q Consensus        30 raklakdlgqfmpevaqvlkapekgasweeinavvr   65 (67)
+                      -.+.++.-|-+-+.|+..+.+--++..|.+|+..++
+T Consensus         8 w~~~v~~~~~~~~~v~~~f~~l~~~~~~~Di~~ll~   43 (207)
+T 1EIA_A            8 WVNTIQTNGLLNEASQNLFGILSVDCTSEEMNAFLD   43 (207)
+T ss_pred             HHHHHHHhCCCcHHHHHHHHHHhcCCCHHHHHHHHH
+Confidence            344555666667778888888888899999988754
+
+
+No 2
+>4E1P_B Protein lsr2; anti-parallel beta sheet, dimer, DNA; 1.728A {Mycobacterium tuberculosis}
+Probab=38.14  E-value=27  Score=21.26  Aligned_cols=22  Identities=36%  Similarity=0.561  Sum_probs=19.0  Template_Neff=5.500
+
+Q T1125_Domain4:   21 RAVDLDANNRAKLAKDLGQFMP   42 (67)
+Q Consensus        21 ravdldannraklakdlgqfmp   42 (67)
+                      --+||.+.|+++|.+.|..|..
+T Consensus        32 YeIDLs~~na~~l~~~l~p~i~   53 (61)
+T 4E1P_B           32 YEIDLSTKNATKLRGDLKQWVA   53 (61)
+T ss_dssp             EEEEECHHHHHHHHHHHHHHHH
+T ss_pred             EEEeCCHHHHHHHHHHHHHHHH
+Confidence            4578999999999999998876
+
+
+No 3
+>3TOL_B Soluble cytochrome b562; four helix bundle, electron transfer; HET: HEM; 2.0A {Escherichia coli}
+Probab=36.09  E-value=30  Score=19.78  Aligned_cols=8  Identities=0%  Similarity=-0.176  Sum_probs=3.0  Template_Neff=9.500
+
+Q T1125_Domain4:   34 AKDLGQFM   41 (67)
+Q Consensus        34 akdlgqfm   41 (67)
+                      +..|.+..
+T Consensus        30 ~~~l~~~~   37 (106)
+T 3TOL_B           30 LEKMLAAA   37 (106)
+T ss_dssp             HHHHHHHH
+T ss_pred             HHHHHHHH
+Confidence            33333333
+
+
+No 4
+>1CSN_A CASEIN KINASE-1, ADENOSINE-5'-TRIPHOSPHATE; PHOSPHOTRANSFERASE; HET: SO4, ATP; 2.0A {Schizosaccharomyces pombe} SCOP: d.144.1.7
+Probab=33.45  E-value=36  Score=20.55  Aligned_cols=42  Identities=14%  Similarity=0.275  Sum_probs=24.8  Template_Neff=12.100
+
+Q T1125_Domain4:   18 LLSRAVDLDANNRAKLAKDLGQFMPEVAQVLK-APEKGASWEEI   60 (67)
+Q Consensus        18 llsravdldannraklakdlgqfmpevaqvlk-apekgasweei   60 (67)
+                      ++.++...|+.+|-. ++++-+.+.++.+-++ .+....+|+++
+T Consensus       256 li~~~l~~~p~~Rp~-~~~i~~~l~~~~~~~~~~~~~~~~~~~~  298 (298)
+T 1CSN_A          256 YMHYARNLAFDATPD-YDYLQGLFSKVLERLNTTEDENFDWNLL  298 (298)
+T ss_pred             HHHHHHhcChhhCCC-HHHHHHHHHHHHHHhcCCccccCCcccC
+Confidence            456667778888764 4455555555555543 34556667653
+
+
+No 5
+>3BHW_B Uncharacterized protein; STRUCTURAL GENOMICS, UNKNOWN FUNCTION, PSI-2; 1.5A {Magnetospirillum magneticum}
+Probab=30.54  E-value=43  Score=23.00  Aligned_cols=26  Identities=12%  Similarity=0.162  Sum_probs=21.7  Template_Neff=7.800
+
+Q T1125_Domain4:   40 FMPEVAQVLKAPEKGASWEEINAVVR   65 (67)
+Q Consensus        40 fmpevaqvlkapekgasweeinavvr   65 (67)
+                      +.+|..+|+..-..|.||++|...+.
+T Consensus        18 ~~~E~~~v~~l~~~~~s~~~i~~~i~   43 (209)
+T 3BHW_B           18 KLPESRIIAGLLLEGVTEDQWRHAIE   43 (209)
+T ss_dssp             CHHHHHHHHHHHHHCCCHHHHHCCCC
+T ss_pred             hHHHHHHHHHHHHcCCCHHHHHHHHH
+Confidence            45788889999999999999987653
+
+
+No 6
+>4E1R_A Protein lsr2; anti-parallel beta sheet, dimer, DNA; 2.041A {Mycobacterium tuberculosis}
+Probab=30.45  E-value=43  Score=22.42  Aligned_cols=22  Identities=36%  Similarity=0.561  Sum_probs=19.1  Template_Neff=4.200
+
+Q T1125_Domain4:   21 RAVDLDANNRAKLAKDLGQFMP   42 (67)
+Q Consensus        21 ravdldannraklakdlgqfmp   42 (67)
+                      --+||.+.|+++|.+.|..|..
+T Consensus        57 YEIDLs~~Na~klr~aL~PyI~   78 (86)
+T 4E1R_A           57 YEIDLSTKNATKLRGDLKQWVA   78 (86)
+T ss_dssp             EEEEECHHHHHHHHHHHHHHHH
+T ss_pred             EEEeCCHHHHHHHHHHHHHHHH
+Confidence            4578999999999999998876
+
+
+No 7
+>1AY7_B GUANYL-SPECIFIC RIBONUCLEASE SA, BARSTAR; RIBONUCLEASE, INHIBITOR, STREPTOMYCES AUREOFACIENS, COMPLEX; 1.7A {Streptomyces aureofaciens} SCOP: c.9.1.1
+Probab=30.28  E-value=44  Score=19.57  Aligned_cols=31  Identities=13%  Similarity=0.326  Sum_probs=19.0  Template_Neff=8.300
+
+Q T1125_Domain4:   35 KDLGQFMPEVAQVLKAPE-KGASWEEINAVVR   65 (67)
+Q Consensus        35 kdlgqfmpevaqvlkape-kgasweeinavvr   65 (67)
+                      ++..+|+..+++.+.-|+ -|.+|+.+...++
+T Consensus        11 ~~~~~~~~~l~~~l~~p~~~G~N~DAl~D~L~   42 (89)
+T 1AY7_B           11 RSISDLHQTLKKELALPEYYGENLDALWDCLT   42 (89)
+T ss_dssp             CSHHHHHHHHHHHTTCCTTCCSSHHHHHHHHH
+T ss_pred             CCHHHHHHHHHHHhCCChhcCCCHHHHHHHhc
+Confidence            345566777777777664 4666766555443
+
+
+No 8
+>4E1R_B Protein lsr2; anti-parallel beta sheet, dimer, DNA; 2.041A {Mycobacterium tuberculosis}
+Probab=28.66  E-value=49  Score=22.19  Aligned_cols=22  Identities=36%  Similarity=0.561  Sum_probs=16.0  Template_Neff=4.200
+
+Q T1125_Domain4:   21 RAVDLDANNRAKLAKDLGQFMP   42 (67)
+Q Consensus        21 ravdldannraklakdlgqfmp   42 (67)
+                      --+||.+.|+++|.+.|..|..
+T Consensus        57 YEIDLs~~Na~klr~aL~pyI~   78 (86)
+T 4E1R_B           57 YEIDLSTKNATKLRGDLKQWVA   78 (86)
+T ss_dssp             EEEEECHHHHHHHHHHHH----
+T ss_pred             eEEeCCHHHHHHHHHHHHHHHH
+Confidence            4578999999999999998876
+
+
+No 9
+>4L6R_A Soluble cytochrome b562 and Glucagon; Human glucagon receptor, diabetes, GPCR; 3.3A {Escherichia coli, Homo sapiens}
+Probab=26.89  E-value=55  Score=22.51  Aligned_cols=22  Identities=18%  Similarity=0.098  Sum_probs=7.9  Template_Neff=10.500
+
+Q T1125_Domain4:   38 GQFMPEVAQVLKAPEKGASWEE   59 (67)
+Q Consensus        38 gqfmpevaqvlkapekgaswee   59 (67)
+                      ++-|.++..-+|.-.+-.+-+|
+T Consensus         4 ~~~m~~~~~~~~~~~~a~~~~~   25 (425)
+T 4L6R_A            4 EDNWETLNDNLKVIEKADNAAQ   25 (425)
+T ss_pred             HHHHHHHHHHHHHHHHcCCHHH
+Confidence            3333333333333333333333
+
+
+No 10
+>2IDY_A NSP3; SARS coronavirus NMR nsp3a, Structural; NMR {SARS coronavirus} SCOP: d.15.14.1
+Probab=25.77  E-value=59  Score=21.58  Aligned_cols=17  Identities=41%  Similarity=0.464  Sum_probs=13.6  Template_Neff=6.000
+
+Q T1125_Domain4:   51 PEKGASWEEINAVVREA   67 (67)
+Q Consensus        51 pekgasweeinavvrea   67 (67)
+                      -++|-+||++-+||.+|
+T Consensus        45 v~~~~~~ee~~~Vv~~a   61 (112)
+T 2IDY_A           45 VESGTEVTEFACVVAEA   61 (112)
+T ss_dssp             CCSSCCTTTHHHHHHHH
+T ss_pred             EecCCcHHHHHHHHHHH
+Confidence            36788999999988764
+
+
+No 11
+>2M0A_A Non-structural protein 3  ; HYDROLASE; NMR {Murine hepatitis virus}
+Probab=25.51  E-value=60  Score=21.67  Aligned_cols=17  Identities=29%  Similarity=0.405  Sum_probs=13.7  Template_Neff=5.900
+
+Q T1125_Domain4:   51 PEKGASWEEINAVVREA   67 (67)
+Q Consensus        51 pekgasweeinavvrea   67 (67)
+                      -++|-+||++-+||.+|
+T Consensus        44 v~~~~~~eel~~Vv~~a   60 (114)
+T 2M0A_A           44 VDKDVTLDELLDVVLDA   60 (114)
+T ss_dssp             EETTCCHHHHHHHHHHH
+T ss_pred             EecCCCHHHHHHHHHHH
+Confidence            36788999999988764
+
+
+No 12
+>1EH4_A CASEIN KINASE-1 (E.C.2.7.1.-); PROTEIN KINASE, CASEIN KINASE-1, PROTEIN-INHIBITOR; HET: SO4, IC1; 2.8A {Schizosaccharomyces pombe} SCOP: d.144.1.7
+Probab=25.34  E-value=61  Score=19.58  Aligned_cols=41  Identities=15%  Similarity=0.259  Sum_probs=22.6  Template_Neff=12.100
+
+Q T1125_Domain4:   18 LLSRAVDLDANNRAKLAKDLGQFMPEVAQVLK-APEKGASWEE   59 (67)
+Q Consensus        18 llsravdldannraklakdlgqfmpevaqvlk-apekgaswee   59 (67)
+                      ++.++.+.|+++|.. ++++-+.+.++.+-++ .++...+|++
+T Consensus       256 li~~~l~~~p~~Rp~-~~~l~~~l~~~~~~~~~~~~~~~~~~~  297 (298)
+T 1EH4_A          256 YMHYARNLAFDATPD-YDYLQGLFSKVLERLNTTEDENFDWNL  297 (298)
+T ss_dssp             HHHHHTTCCTTCCCC-HHHHHHHHHHHHHHTTCCSSCCCTTSC
+T ss_pred             HHHHHHHcCCCCCCC-HHHHHHHHHHHHHHcCCCCCccCCccc
+Confidence            456667777777764 3344444444444442 3445566665
+
+
+No 13
+>1FC3_A SPO0A; RESPONSE REGULATOR, SIGNALING PROTEIN; 2.0A {Geobacillus stearothermophilus} SCOP: a.4.6.3
+Probab=23.00  E-value=72  Score=19.91  Aligned_cols=46  Identities=24%  Similarity=0.394  Sum_probs=24.0  Template_Neff=8.000
+
+Q T1125_Domain4:    3 AILSEAGLPT-LKQALLLSRAVDLDANNRAKLAKDLGQFMPEVAQVL   48 (67)
+Q Consensus         3 ailseaglpt-lkqalllsravdldannraklakdlgqfmpevaqvl   48 (67)
+                      .+|.+.|+|. ++---.+..|+.+--.+...+..-.....|.||...
+T Consensus        12 ~~L~~lGi~~~~~Gy~yl~~ai~l~~~~~~~~~~~tk~lY~~iA~~~   58 (120)
+T 1FC3_A           12 SIIHEIGVPAHIKGYLYLREAIAMVYHDIELLGSITKVLYPDIAKKY   58 (120)
+T ss_dssp             HHHHHHTCCTTSHHHHHHHHHHHHHHHCGGGGGGTTTTHHHHHHHHH
+T ss_pred             HHHHHhCCCccchHHHHHHHHHHHHHhCHHHHhHHHHhHHHHHHHHh
+Confidence            3566666654 333334444554444444444444456677777644
+
+
+No 14
+>1FC3_C SPO0A; RESPONSE REGULATOR, SIGNALING PROTEIN; 2.0A {Geobacillus stearothermophilus} SCOP: a.4.6.3
+Probab=23.00  E-value=72  Score=19.91  Aligned_cols=46  Identities=24%  Similarity=0.394  Sum_probs=24.0  Template_Neff=8.000
+
+Q T1125_Domain4:    3 AILSEAGLPT-LKQALLLSRAVDLDANNRAKLAKDLGQFMPEVAQVL   48 (67)
+Q Consensus         3 ailseaglpt-lkqalllsravdldannraklakdlgqfmpevaqvl   48 (67)
+                      .+|.+.|+|. ++---.+..|+.+--.+...+..-.....|.||...
+T Consensus        12 ~~L~~lGi~~~~~Gy~yl~~ai~l~~~~~~~~~~~tk~lY~~iA~~~   58 (120)
+T 1FC3_C           12 SIIHEIGVPAHIKGYLYLREAIAMVYHDIELLGSITKVLYPDIAKKY   58 (120)
+T ss_dssp             HHHHHHTCCTTSHHHHHHHHHHHHHHHCGGGGGGCCCCCHHHHHHHT
+T ss_pred             HHHHHhCCCccchHHHHHHHHHHHHHhCHHHHhHHHHhHHHHHHHHh
+Confidence            3566666654 333334444554444444444444456677777644
+
+
+No 15
+>2DGK_E Glutamate decarboxylase beta (E.C.4.1.1.15); GadB, GadBD1-14, autoinhibition, substituted aldamine; HET: SO4, PLP, EDO; 1.9A {Escherichia coli}
+Probab=22.66  E-value=74  Score=21.54  Aligned_cols=28  Identities=7%  Similarity=0.100  Sum_probs=13.8  Template_Neff=11.100
+
+Q T1125_Domain4:   38 GQFMPEVAQVLKAPEKGASWEEINAVVR   65 (67)
+Q Consensus        38 gqfmpevaqvlkapekgasweeinavvr   65 (67)
+                      +|.++.......-|++|.++++|...++
+T Consensus         6 ~~~~~~~~~~~~~p~~~~~~~~~~~~~~   33 (452)
+T 2DGK_E            6 AKSISTIAESKRFPLHEMRDDVAFQIIN   33 (452)
+T ss_dssp             ---------CCSCCSSCCCHHHHHHHHH
+T ss_pred             ccccccccccccCCCCCCCHHHHHHHHH
+Confidence            3556666666677888888888766553
+
+
+No 16
+>5WAX_A Uncharacterized protein; serine/threonine kinase, abscisic acid-related SnRK2s; HET: GOL; 2.0A {Saccharum officinarum complex}
+Probab=21.94  E-value=79  Score=20.47  Aligned_cols=20  Identities=25%  Similarity=0.242  Sum_probs=5.7  Template_Neff=10.800
+
+Q T1125_Domain4:   29 NRAKLAKDLGQFMPEVAQVL   48 (67)
+Q Consensus        29 nraklakdlgqfmpevaqvl   48 (67)
+                      .+-++-.|+||+|.+.-|.+
+T Consensus       285 ~~~~~~~~~~~~~~~~~~~~  304 (310)
+T 5WAX_A          285 KQYEEPEQPMQSMDEIMQIL  304 (310)
+T ss_dssp             ---------CCCHHHHHHHH
+T ss_pred             hhccCCCCccccHHHHHHHH
+Confidence            33444455555555554443
+
+
+No 17
+>2ZA4_B Ribonuclease (E.C.3.1.27.-), Barstar; protein-protein complex, Endonuclease, Genetically modified; 1.58A {Bacillus amyloliquefaciens}
+Probab=21.75  E-value=80  Score=18.60  Aligned_cols=30  Identities=17%  Similarity=0.370  Sum_probs=17.7  Template_Neff=8.200
+
+Q T1125_Domain4:   35 KDLGQFMPEVAQVLKAPE-KGASWEEINAVV   64 (67)
+Q Consensus        35 kdlgqfmpevaqvlkape-kgasweeinavv   64 (67)
+                      ++...|.-++++.++-|+ -|.+|......+
+T Consensus        12 ~~~~~~~~~l~~~l~~P~~~G~NlDAl~D~L   42 (90)
+T 2ZA4_B           12 RSISDLHQTLKKELALPEYYGENLDALWAAL   42 (90)
+T ss_dssp             CSHHHHHHHHHHHTTCCTTCCCSHHHHHHHH
+T ss_pred             CCHHHHHHHHHHHhCCChhcCCCHHHHHHHH
+Confidence            344556666666777664 456666555443
+
+
+No 18
+>3VP7_A Vacuolar protein sorting-associated protein 30; targeting, PI3-kinase complex I, pre-autophagosomal; 2.3A {Saccharomyces cerevisiae}
+Probab=21.67  E-value=80  Score=22.37  Aligned_cols=13  Identities=46%  Similarity=0.820  Sum_probs=9.8  Template_Neff=7.200
+
+Q T1125_Domain4:   52 EKGASWEEINAVV   64 (67)
+Q Consensus        52 ekgasweeinavv   64 (67)
+                      ....+|+|||+..
+T Consensus        29 ~~~v~w~EINAAl   41 (220)
+T 3VP7_A           29 ESVVPWKEINAAL   41 (220)
+T ss_dssp             TBCCCHHHHHHHH
+T ss_pred             CCCCCHHHHHHHH
+Confidence            3457899999864
+
+
+No 19
+>4DDP_A Beclin-1; Beclin 1, ECD, autophagy, membrane; 1.547A {Homo sapiens}
+Probab=21.58  E-value=81  Score=22.20  Aligned_cols=14  Identities=43%  Similarity=0.743  Sum_probs=10.6  Template_Neff=7.200
+
+Q T1125_Domain4:   51 PEKGASWEEINAVV   64 (67)
+Q Consensus        51 pekgasweeinavv   64 (67)
+                      |....+|+|||+..
+T Consensus        54 ~~~~v~~~EINaal   67 (210)
+T 4DDP_A           54 PSVPVEWNEINAAW   67 (210)
+T ss_dssp             TTBCCCHHHHHHHH
+T ss_pred             CCCCCCHHHHHHHH
+Confidence            34568999999864
+
+
+No 20
+>5XKA_B Serine/threonine-protein kinase PknI (E.C.2.7.11.1); kinase domain, PknI, M.tuberculosis, TRANSFERASE; HET: MSE; 1.599A {Mycobacterium tuberculosis}
+Probab=20.98  E-value=85  Score=19.53  Aligned_cols=40  Identities=25%  Similarity=0.273  Sum_probs=21.9  Template_Neff=11.400
+
+Q T1125_Domain4:   18 LLSRAVDLDANNRAKLAKDLGQFMPEVAQVLKAPEKGASW   57 (67)
+Q Consensus        18 llsravdldannraklakdlgqfmpevaqvlkapekgasw   57 (67)
+                      ++.+..+.|+++|-..+..+.+.+-++.....+-....++
+T Consensus       236 li~~~l~~~p~~Rp~~~~~l~~~l~~~~~~~~~~~~~~~~  275 (288)
+T 5XKA_B          236 VLSRALATAPADRFGSCREFADAMNEQAGVAIADQSSGGV  275 (288)
+T ss_dssp             HHHHHTCSSGGGSCSSHHHHHHHHHHHHTC----------
+T ss_pred             HHHHHhccCHHHcccCHHHHHHHHHHccccchhchhcCCC
+Confidence            4566777888888877777777777766666555444443
+
+
+No 21
+>3J92_v rabbit 60S ribosomal subunit in; RWD, RING, quality control, RIBOSOME-LIGASE; HET: MG;{Oryctolagus cuniculus}
+Probab=20.29  E-value=89  Score=24.06  Aligned_cols=18  Identities=33%  Similarity=0.619  Sum_probs=14.3  Template_Neff=8.200
+
+Q T1125_Domain4:   49 KAPEKGASWEEINAVVRE   66 (67)
+Q Consensus        49 kapekgasweeinavvre   66 (67)
+                      .+-..|.+|++|...|++
+T Consensus       367 ~~la~~~~W~~i~~~i~~  384 (501)
+T 3J92_v          367 SALANQIDWTEIGLIVKE  384 (501)
+T ss_pred             HHHHCCCCHHHHHHHHHH
+Confidence            345679999999988875
+
+
+No 22
+>2CX6_B Hypothetical protein yhcO; Barstar, ribonuclease inhibitor, RSGI, Structural; HET: MSE; 2.43A {Escherichia coli} SCOP: c.9.1.1
+Probab=20.05  E-value=91  Score=18.67  Aligned_cols=29  Identities=14%  Similarity=0.218  Sum_probs=17.0  Template_Neff=7.800
+
+Q T1125_Domain4:   36 DLGQFMPEVAQVLKAPE-KGASWEEINAVV   64 (67)
+Q Consensus        36 dlgqfmpevaqvlkape-kgasweeinavv   64 (67)
+                      +..+|..++++.++-|+ -|.+|+.+...+
+T Consensus        13 ~~~~f~~~l~~~~~fP~~~G~NlDAL~D~L   42 (90)
+T 2CX6_B           13 SQEDFYRDFSQTFGLAKDKVRDLDSLWDVL   42 (90)
+T ss_dssp             SHHHHHHHHHHHTTCCTTSSSSHHHHHHHH
+T ss_pred             CHHHHHHHHHHHhCCChhcCCCHHHHHHHH
+Confidence            44456666666666665 566666555443
+
+

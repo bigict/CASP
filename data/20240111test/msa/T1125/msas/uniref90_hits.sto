@@ -1,0 +1,49 @@
+# STOCKHOLM 1.0
+
+#=GS T1125                        DE gp96RNAP, Thermus phage P23-45, 1200 residues|
+#=GS UniRef90_A7XXD0/1-1200       DE [subseq from] Tape tail measure protein n=3 Tax=Oshimavirus TaxID=1623293 RepID=A7XXD0_BP234
+#=GS UniRef90_A0A411CWB5/4-165    DE [subseq from] Tail tape measure protein n=1 Tax=Thermus phage TSP4 TaxID=1298530 RepID=A0A411CWB5_9CAUD
+#=GS UniRef90_A0A411CWB5/464-1092 DE [subseq from] Tail tape measure protein n=1 Tax=Thermus phage TSP4 TaxID=1298530 RepID=A0A411CWB5_9CAUD
+
+T1125                                MDLERYAIVVSAAVEADELVLDLDKSTLEELEAKLNQELAGTDQVGEQAGKELAEGLERGAVEGLDVRQVLAKLKAALKGEVRELATEEVKALRAAIQHALGVELDDNAKRQLAESAKLLDRIIESATRNQSLTVKLRFDADRS--ALLTAERLADAYLNRIREALKQDKSSPLYQAFSALAKGTGEKLSPDEAKFRAGL
+UniRef90_A7XXD0/1-1200               MDLERYAIVVSAAVEADELVLDLDKSTLEELEAKLNQELAGTDQVGEQAGKELAEGLERGAVEGLDVRQVLAKLKAALKGEVRELATEEVKALRAAIQHALGVELDDNAKRQLAESAKLLDRIIESATRNQSLTVKLRFDADRS--ALLTAERLADAYLNRIREALKQDKSSPLYQAFSALAKGTGEKLSPDEAKFRAGL
+UniRef90_A0A411CWB5/4-165            --TERYQIILSAQAEVEDLSVNLDAEDLSALEQLINQQLQGTDDIGQEAGAKLAEGLEEGAAQALDLRGVLQKVRAILAGEVRELAKEELVALKAALEHLGRVQLSEAAVQRTNQALLGLSKLAEAAEKGYAVSVRVNYSAFSPEEVERQAKAFAEAFQRKARE------------------------------------
+UniRef90_A0A411CWB5/464-1092         --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#=GC RF                              xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+T1125                                FADVRDRFLALLKQDLQSYIADQLKRGHAVGDIKLPDTQAILSEAGLPTLKQALLLSRAVDLDANNRAKLAKDLGQFMPEVAQVLKAPEKGASWEEINAVVREAKKAIHDAEEARRVALSLRSVTKEGNKPFAQQTGRFHTIELQEEGSPDEFQELLRLQASTQGHVDETTLARLVVQKRATKAILKKLLETADRPEEQA
+UniRef90_A7XXD0/1-1200               FADVRDRFLALLKQDLQSYIADQLKRGHAVGDIKLPDTQAILSEAGLPTLKQALLLSRAVDLDANNRAKLAKDLGQFMPEVAQVLKAPEKGASWEEINAVVREAKKAIHDAEEARRVALSLRSVTKEGNKPFAQQTGRFHTIELQEEGSPDEFQELLRLQASTQGHVDETTLARLVVQKRATKAILKKLLETADRPEEQA
+UniRef90_A0A411CWB5/4-165            --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+UniRef90_A0A411CWB5/464-1092         --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#=GC RF                              xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+T1125                                VWRAAIERLVIGNTAYDLKDDESFAKLIELAKKHPLEKVVKNVREVQFSEKVTLSDKYAFV----PASNQGRIFLSHLRRENIYRTPTQRPL---SLKVAE--EGEGVRLKEMEEKALGDGALGILRPQSLGLPEDYTGVVQVRGELADPEGNVYAGLKGTVIVDPRAKEDFLNLNDLYRGDTVVDGKKYTKEEVDALIR
+UniRef90_A7XXD0/1-1200               VWRAAIERLVIGNTAYDLKDDESFAKLIELAKKHPLEKVVKNVREVQFSEKVTLSDKYAFV----PASNQGRIFLSHLRRENIYRTPTQRPL---SLKVAE--EGEGVRLKEMEEKALGDGALGILRPQSLGLPEDYTGVVQVRGELADPEGNVYAGLKGTVIVDPRAKEDFLNLNDLYRGDTVVDGKKYTKEEVDALIR
+UniRef90_A0A411CWB5/4-165            --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+UniRef90_A0A411CWB5/464-1092         ---------------------------LKAVEELPLPEILKSAPKVKASAQTLFTDSKVYLLDEKTAEAVKRGYLTHMRVDNVYRTPIRDLVEVDSIKLLDLKDEQGKR----QKTIWGDGTIGRVRPELLGLPKDFTGVVQVRAAFRNEEGIPVTLGKGTVLVHPKAENEF-NVGDLYANEPG-----Y--EEL---L-
+#=GC RF                              xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx....xxxxxxxxxxxxxxxxxxxxxxxxxxx...xxxxxx..xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+T1125                                EKLKTGALQLNLGIHRVSTVEEAKVGKQVFLRHMGG---VPFNRGRISPSEAAKWAAQA-KELKFLPMIAGREMGLSHYQQIATLAKTFG-VEVDEGQYSMAASHTAYKELDPEIYRLLEEGVELDAEGRPIVPIVIGKEMAAKLGLKEGDIAFTFRNPVMGHGGALLQARVAAIRDRLNAVVVNQEYAKSTGVDFDGDT
+UniRef90_A7XXD0/1-1200               EKLKTGALQLNLGIHRVSTVEEAKVGKQVFLRHMGG---VPFNRGRISPSEAAKWAAQA-KELKFLPMIAGREMGLSHYQQIATLAKTFG-VEVDEGQYSMAASHTAYKELDPEIYRLLEEGVELDAEGRPIVPIVIGKEMAAKLGLKEGDIAFTFRNPVMGHGGALLQARVAAIRDRLNAVVVNQEYAKSTGVDFDGDT
+UniRef90_A0A411CWB5/4-165            --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+UniRef90_A0A411CWB5/464-1092         KAYREGKLKVQLGVVDYPELSPAEFGKQGLIRHTKGFAPIPYSAT-VVDAEKIKNALSATAEAKLLPLAASGEISLFNTTLIPSLASSGNKLSGKEGLGTFIASHKALKGLDDELYELLDKGVFVDEEGALVVPAAIGRDMARQLGLKPGNVALSWRNPMMGHKGGLIKVMVSKVVDGLKGMVFNERGLVTTGADFDGDR
+#=GC RF                              xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...xxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+T1125                                LVVLPKGLPVDPHRLEVFQTLMAHAGLAGGRKGGGSVEPSPGELRFKEQLEVYDKVLARLSKSR-----LAA-ELRNAGVEDL------SNPFEVVRQLESLGEEELLKAFKGYLRKGFAKELGLDLKSEEDRARLNQYLFEGFLDYRKQF-QDPRRVYKKLPLMPSAALAASLLQ----VEAHKKEYD-PSDPVALAAG
+UniRef90_A7XXD0/1-1200               LVVLPKGLPVDPHRLEVFQTLMAHAGLAGGRKGGGSVEPSPGELRFKEQLEVYDKVLARLSKSR-----LAA-ELRNAGVEDL------SNPFEVVRQLESLGEEELLKAFKGYLRKGFAKELGLDLKSEEDRARLNQYLFEGFLDYRKQF-QDPRRVYKKLPLMPSAALAASLLQ----VEAHKKEYD-PSDPVALAAG
+UniRef90_A0A411CWB5/4-165            --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+UniRef90_A0A411CWB5/464-1092         MALMRQLAYVQPEDAEVVSALMALSGLLGGRKGG---EVGGAERVYEDVLKAFDEEAFKTKHQQFLERVLGPEELGLKG-DDLWSVLSKDNPWANLYHLSQYEDKTAYKRYAGFLRK----ELGGLV----EKERLEAFI----KDARRYFGRDPRKFYKQVPVGPAAEFIAGLLSKEFALEAGKEEYRTDKDPVALAVG
+#=GC RF                              xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.....xxx.xxxxxxxxxx......xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxxxxxx....xxxxxxxxx.xxxxxxxxxx
+
+T1125                                QLTTSFLGLSEKLAQDLETSIDFPKLAEAIRAYNQAYSSGNEEQVAKARAELVKVLNDPTVQKFSLSNLLYQIITDRKKRDYSLRVRTESGKTYEYRNLYAVLNRLMQNLPVEEVADTVYDASGQAVEERVPLKQSATRSLVKGLLDLASGKVKEDPDGTVAEDLADLPVFGELEQLYGLVADAKYDPSSLKSALVKPNK
+UniRef90_A7XXD0/1-1200               QLTTSFLGLSEKLAQDLETSIDFPKLAEAIRAYNQAYSSGNEEQVAKARAELVKVLNDPTVQKFSLSNLLYQIITDRKKRDYSLRVRTESGKTYEYRNLYAVLNRLMQNLPVEEVADTVYDASGQAVEERVPLKQSATRSLVKGLLDLASGKVKEDPDGTVAEDLADLPVFGELEQLYGLVADAKYDPSSLKSALVKPNK
+UniRef90_A0A411CWB5/4-165            --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+UniRef90_A0A411CWB5/464-1092         QLTASNIGMAESMAQQLESVLDLDAFAQLVKAYNQASSEEERRQLEK---QLASFVRHPVVRAWGAQNILYQVLTDRQKRDWFLRINGEA-----YR-------------------------------------------------------------------------------------------------------
+#=GC RF                              xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+T1125                                PQGSYAEITTLLYRGIANQEGLAETNLPRDEVAR
+UniRef90_A7XXD0/1-1200               PQGSYAEITTLLYRGIANQEGLAETNLPRDEVAR
+UniRef90_A0A411CWB5/4-165            ----------------------------------
+UniRef90_A0A411CWB5/464-1092         ----------------------------------
+#=GC RF                              xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//

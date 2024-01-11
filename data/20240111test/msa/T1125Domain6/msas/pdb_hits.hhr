@@ -1,0 +1,276 @@
+Query         T1125_Domain6:339-374 
+Match_columns 36
+No_of_seqs    1 out of 1
+Neff          1
+Searched_HMMs 80799
+Date          Thu Jan 11 13:26:23 2024
+Command       /public/dbu/.local/bin/hhsearch -i /public/dbu/CASP/tmp/tmpw2he731k/query.a3m -o /public/dbu/CASP/tmp/tmpw2he731k/output.hhr -maxseq 1000000 -d /public/dbu/data/af2_db/pdb70/pdb70 
+
+ No Hit                             Prob E-value P-value  Score    SS Cols Query HMM  Template HMM
+  1 2LFW_B PhyR sigma-like domain,  45.7      17 0.00021   20.7   0.0   16    4-19     39-54  (62)
+  2 4QIC_D Sensory transduction re  38.6      26 0.00032   21.2   0.0   17    3-19     50-66  (81)
+  3 5UXX_D BaquA.17208.a, BaquA.17  33.4      36 0.00045   19.7   0.0   16    4-19     37-52  (67)
+  4 2P58_A Putative type III secre  31.5      40  0.0005   18.5   0.0   17    4-20     31-47  (65)
+  5 1ZW0_C type III secretion prot  30.9      42 0.00052   18.4   0.0   17    4-20     32-48  (66)
+  6 1ZW0_H type III secretion prot  30.9      42 0.00052   18.4   0.0   17    4-20     32-48  (66)
+  7 3T0Y_B Response regulator, Nep  28.8      48  0.0006   19.5   0.0   15    4-18     45-59  (68)
+  8 3T0Y_D Response regulator, Nep  28.8      48  0.0006   19.5   0.0   15    4-18     45-59  (68)
+  9 2Q1K_C AscE; helix-turn-helix,  25.3      61 0.00076   17.6   0.0   17    4-20     35-51  (67)
+ 10 3PH0_B AscE, AscG; Type III se  24.7      64 0.00079   17.5   0.0   17    4-20     35-51  (67)
+ 11 5NO5_B AbyA5; Deacetylase, Eli  23.9      68 0.00084   20.1   0.0   26   10-35     24-49  (374)
+ 12 5J0K_A designed protein 2L4HC2  23.8      68 0.00084   20.0   0.0   15    4-18     38-53  (80)
+ 13 2JNA_B Putative secreted prote  23.4      70 0.00087   18.6   0.0   20    7-26     50-69  (104)
+ 14 2UWJ_E TYPE III EXPORT PROTEIN  23.0      72  0.0009   17.6   0.0   17    4-20     38-54  (70)
+ 15 2KA6_B CREB-binding protein, S  22.5      75 0.00093   17.7   0.0   17    8-24     21-37  (45)
+ 16 2NOC_A Putative periplasmic pr  22.2      77 0.00095   18.8   0.0   23    4-26     45-67  (99)
+ 17 4YWF_A AbyA5; Deacetylase, Eli  21.5      81   0.001   19.8   0.0   26   10-35     24-49  (374)
+ 18 2MA8_A Putative secreted prote  20.6      87  0.0011   18.1   0.0   19    7-25     29-47  (83)
+
+No 1
+>2LFW_B PhyR sigma-like domain, NepR anti; signal transduction, response regulator, sigma; NMR {Sphingomonas sp. Fr1}
+Probab=45.66  E-value=17  Score=20.74  Aligned_cols=16  Identities=44%  Similarity=0.559  Sum_probs=13.1  Template_Neff=4.200
+
+Q T1125_Domain6:    4 LQEEGSPDEFQELLRL   19 (36)
+Q Consensus         4 lqeegspdefqellrl   19 (36)
+                      +.+|.-||+|..||.-
+T Consensus        39 v~~EpvPDrFldLL~q   54 (62)
+T 2LFW_B           39 TIEEQVPDEMLDLLNK   54 (62)
+T ss_dssp             TTSSCCCCTTGGGSTT
+T ss_pred             HHhcCCCHHHHHHHHH
+Confidence            4578899999999863
+
+
+No 2
+>4QIC_D Sensory transduction regulatory protein, Anti-anti-sigma; like domain, are two-component signaling; HET: MPD; 2.05A {Bartonella quintana}
+Probab=38.58  E-value=26  Score=21.21  Aligned_cols=17  Identities=47%  Similarity=0.640  Sum_probs=13.7  Template_Neff=3.600
+
+Q T1125_Domain6:    3 ELQEEGSPDEFQELLRL   19 (36)
+Q Consensus         3 elqeegspdefqellrl   19 (36)
+                      ++.+|.-||+|.+||.-
+T Consensus        50 ~vv~EpVPDrFldLL~q   66 (81)
+T 4QIC_D           50 EIQEEALPARLLELLER   66 (81)
+T ss_pred             HHhcCCCCHHHHHHHHH
+Confidence            35678899999999863
+
+
+No 3
+>5UXX_D BaquA.17208.a, BaquA.17842.a; SSGCID, Bartonella quintana, sigma factor; HET: SO4, MSE; 2.45A {Bartonella quintana}
+Probab=33.38  E-value=36  Score=19.66  Aligned_cols=16  Identities=44%  Similarity=0.605  Sum_probs=12.9  Template_Neff=4.300
+
+Q T1125_Domain6:    4 LQEEGSPDEFQELLRL   19 (36)
+Q Consensus         4 lqeegspdefqellrl   19 (36)
+                      +..|.-||.|.+||.-
+T Consensus        37 v~~EpvPDrf~~LL~~   52 (67)
+T 5UXX_D           37 IQEEALPARLLELLER   52 (67)
+T ss_dssp             HHHSCCCHHHHHHHHH
+T ss_pred             HHhCccCHHHHHHHHH
+Confidence            4568889999999853
+
+
+No 4
+>2P58_A Putative type III secretion protein; type III secretion system, needle; 1.8A {Yersinia pestis}
+Probab=31.53  E-value=40  Score=18.45  Aligned_cols=17  Identities=18%  Similarity=0.329  Sum_probs=12.9  Template_Neff=5.800
+
+Q T1125_Domain6:    4 LQEEGSPDEFQELLRLQ   20 (36)
+Q Consensus         4 lqeegspdefqellrlq   20 (36)
+                      |....||++|+.+..+.
+T Consensus        31 L~~g~~P~~yq~~~~~~   47 (65)
+T 2P58_A           31 MMRGGDAKQYQVWQRES   47 (65)
+T ss_pred             HHCCCCHHHHHHHHHHH
+Confidence            45678999999887653
+
+
+No 5
+>1ZW0_C type III secretion protein; Type III secretion, chaperone, Yersinia; 1.8A {Yersinia pestis}
+Probab=30.90  E-value=42  Score=18.37  Aligned_cols=17  Identities=18%  Similarity=0.329  Sum_probs=7.2  Template_Neff=5.900
+
+Q T1125_Domain6:    4 LQEEGSPDEFQELLRLQ   20 (36)
+Q Consensus         4 lqeegspdefqellrlq   20 (36)
+                      +....||++||.+..+.
+T Consensus        32 L~~g~~P~~yq~~~~~~   48 (66)
+T 1ZW0_C           32 MMRGGDAKQYQVWQRES   48 (66)
+T ss_dssp             HHTC------CHHHHHH
+T ss_pred             HHCCCCHHHHHHHHHHH
+Confidence            45678999999886653
+
+
+No 6
+>1ZW0_H type III secretion protein; Type III secretion, chaperone, Yersinia; 1.8A {Yersinia pestis}
+Probab=30.90  E-value=42  Score=18.37  Aligned_cols=17  Identities=18%  Similarity=0.329  Sum_probs=12.8  Template_Neff=5.900
+
+Q T1125_Domain6:    4 LQEEGSPDEFQELLRLQ   20 (36)
+Q Consensus         4 lqeegspdefqellrlq   20 (36)
+                      +....||++||.+..+.
+T Consensus        32 L~~g~~P~~yq~~~~~~   48 (66)
+T 1ZW0_H           32 MMRGGDAKQYQVWQRES   48 (66)
+T ss_dssp             TTTCSSGGGHHHHHHHH
+T ss_pred             HHCCCCHHHHHHHHHHH
+Confidence            45678999999886653
+
+
+No 7
+>3T0Y_B Response regulator, NepR; sigma factor, anti-sigma factor, receiver; 2.102A {Caulobacter vibrioides}
+Probab=28.78  E-value=48  Score=19.50  Aligned_cols=15  Identities=47%  Similarity=0.778  Sum_probs=12.5  Template_Neff=3.700
+
+Q T1125_Domain6:    4 LQEEGSPDEFQELLR   18 (36)
+Q Consensus         4 lqeegspdefqellr   18 (36)
+                      +.+|.-||.|.+||.
+T Consensus        45 v~~EpVPDrf~dLL~   59 (68)
+T 3T0Y_B           45 VVNEPVPDEFLAILR   59 (68)
+T ss_dssp             HHHSCCCHHHHHHHH
+T ss_pred             HHcCCCCHHHHHHHH
+Confidence            457888999999985
+
+
+No 8
+>3T0Y_D Response regulator, NepR; sigma factor, anti-sigma factor, receiver; HET: MSE; 2.102A {Caulobacter vibrioides}
+Probab=28.78  E-value=48  Score=19.50  Aligned_cols=15  Identities=47%  Similarity=0.778  Sum_probs=12.5  Template_Neff=3.700
+
+Q T1125_Domain6:    4 LQEEGSPDEFQELLR   18 (36)
+Q Consensus         4 lqeegspdefqellr   18 (36)
+                      +.+|.-||.|.+||.
+T Consensus        45 v~~EpVPDrf~dLL~   59 (68)
+T 3T0Y_D           45 VVNEPVPDEFLAILR   59 (68)
+T ss_dssp             GGGSCCCHHHHHHHH
+T ss_pred             HHcCCCCHHHHHHHH
+Confidence            457888999999985
+
+
+No 9
+>2Q1K_C AscE; helix-turn-helix, Chaperone, TTSS; HET: MSE; 2.7A {Aeromonas hydrophila}
+Probab=25.34  E-value=61  Score=17.59  Aligned_cols=17  Identities=18%  Similarity=0.358  Sum_probs=12.6  Template_Neff=6.200
+
+Q T1125_Domain6:    4 LQEEGSPDEFQELLRLQ   20 (36)
+Q Consensus         4 lqeegspdefqellrlq   20 (36)
+                      +....||++|+.+-.+.
+T Consensus        35 l~~g~tp~eyq~~~~~~   51 (67)
+T 2Q1K_C           35 LLRGGTQQQYQQWQQEA   51 (67)
+T ss_dssp             HTTCCCHHHHHHHHHHH
+T ss_pred             HHcCCCHHHHHHHHHHH
+Confidence            45567999999876654
+
+
+No 10
+>3PH0_B AscE, AscG; Type III secretion system, chaperones; 2.4A {Aeromonas hydrophila}
+Probab=24.66  E-value=64  Score=17.51  Aligned_cols=17  Identities=18%  Similarity=0.358  Sum_probs=12.4  Template_Neff=6.200
+
+Q T1125_Domain6:    4 LQEEGSPDEFQELLRLQ   20 (36)
+Q Consensus         4 lqeegspdefqellrlq   20 (36)
+                      +....||++|+.+-.+.
+T Consensus        35 l~~g~tp~eyq~~~~~~   51 (67)
+T 3PH0_B           35 LLRGGTQQQYQQWQQEA   51 (67)
+T ss_pred             HHcCCCHHHHHHHHHHH
+Confidence            45567899999876654
+
+
+No 11
+>5NO5_B AbyA5; Deacetylase, Elimination, Hydrolase, Spirotetronate, Acetyl; 2.5A {Verrucosispora}
+Probab=23.88  E-value=68  Score=20.09  Aligned_cols=26  Identities=23%  Similarity=0.331  Sum_probs=19.8  Template_Neff=9.600
+
+Q T1125_Domain6:   10 PDEFQELLRLQASTQGHVDETTLARL   35 (36)
+Q Consensus        10 pdefqellrlqastqghvdettlarl   35 (36)
+                      -+|.+|+.+|-+..||--.+.++.|+
+T Consensus        24 ~~~~~~~~~~~~~~~~~~~~~~~~~i   49 (374)
+T 5NO5_B           24 VAELKQYVLAHVSAQNASADGVLARI   49 (374)
+T ss_dssp             HHHHHHHHHHHTTTTCTHHHHHHTTC
+T ss_pred             HHHHHHHHHHHHHHcCCChHHHHHcc
+Confidence            36788999999999997776665553
+
+
+No 12
+>5J0K_A designed protein 2L4HC2_23; rosetta, de novo design, DE; 1.54A {synthetic construct}
+Probab=23.83  E-value=68  Score=19.95  Aligned_cols=15  Identities=73%  Similarity=1.024  Sum_probs=8.8  Template_Neff=1.000
+
+Q T1125_Domain6:    4 LQEEGSPDE-FQELLR   18 (36)
+Q Consensus         4 lqeegspde-fqellr   18 (36)
+                      ||.+||.|| ..+|||
+T Consensus        38 lqregssdedvrellr   53 (80)
+T 5J0K_A           38 LQREGSSDEDVRELLR   53 (80)
+T ss_dssp             HHHHCCCHHHHHHHHH
+T ss_pred             HHHcCCChHHHHHHHH
+Confidence            566776654 455555
+
+
+No 13
+>2JNA_B Putative secreted protein; GFT-NMR, homodimer, PSI-2, alpha+beta, putative; NMR {Salmonella typhimurium} SCOP: d.230.6.1
+Probab=23.43  E-value=70  Score=18.65  Aligned_cols=20  Identities=30%  Similarity=0.423  Sum_probs=14.6  Template_Neff=6.300
+
+Q T1125_Domain6:    7 EGSPDEFQELLRLQASTQGH   26 (36)
+Q Consensus         7 egspdefqellrlqastqgh   26 (36)
+                      .++|++..+.|.-+|..+|-
+T Consensus        50 ~~s~~d~~~~l~~kAd~~GA   69 (104)
+T 2JNA_B           50 ISSPSDLREKLSELADAKGG   69 (104)
+T ss_dssp             CSSHHHHHHHHHHHHHHHTC
+T ss_pred             CCChHHHHHHHHHHHHHCCC
+Confidence            45888888888877766653
+
+
+No 14
+>2UWJ_E TYPE III EXPORT PROTEIN PSCE; VIRULENCE, CHAPERONES, NEEDLE FORMATION, TYPE; 2.0A {PSEUDOMONAS AERUGINOSA}
+Probab=23.01  E-value=72  Score=17.57  Aligned_cols=17  Identities=29%  Similarity=0.444  Sum_probs=12.3  Template_Neff=6.000
+
+Q T1125_Domain6:    4 LQEEGSPDEFQELLRLQ   20 (36)
+Q Consensus         4 lqeegspdefqellrlq   20 (36)
+                      +....+|++||.+-.+.
+T Consensus        38 L~~g~tP~eyq~~~~~~   54 (70)
+T 2UWJ_E           38 LARGACPERFQFLQQQA   54 (70)
+T ss_dssp             HHHCCCHHHHHHHHHHH
+T ss_pred             HHCCCCHHHHHHHHHHH
+Confidence            44567899999876654
+
+
+No 15
+>2KA6_B CREB-binding protein, Signal transducer and; CBP/p300, TAZ2, STAT1, transactivation domain; HET: ZN; NMR {Mus musculus}
+Probab=22.54  E-value=75  Score=17.65  Aligned_cols=17  Identities=41%  Similarity=0.671  Sum_probs=13.1  Template_Neff=3.200
+
+Q T1125_Domain6:    8 GSPDEFQELLRLQASTQ   24 (36)
+Q Consensus         8 gspdefqellrlqastq   24 (36)
+                      -||++|.+|.|.-+.+.
+T Consensus        21 MSPe~fd~l~~~~~~~e   37 (45)
+T 2KA6_B           21 MSPEEFDEVSRIVGSVE   37 (45)
+T ss_dssp             SCHHHHHHHHHHHTTTT
+T ss_pred             CCHHHHHHHHhhhcchh
+Confidence            47999999988876543
+
+
+No 16
+>2NOC_A Putative periplasmic protein; GFT NMR, StR106, Structural Genomics; NMR {Salmonella choleraesuis} SCOP: d.230.6.1
+Probab=22.24  E-value=77  Score=18.85  Aligned_cols=23  Identities=30%  Similarity=0.239  Sum_probs=16.0  Template_Neff=5.500
+
+Q T1125_Domain6:    4 LQEEGSPDEFQELLRLQASTQGH   26 (36)
+Q Consensus         4 lqeegspdefqellrlqastqgh   26 (36)
+                      ....++|++..+-|.-.|..+|-
+T Consensus        45 vs~~~t~~d~~~~La~kAd~~GA   67 (99)
+T 2NOC_A           45 TTGEMSPLDAREDLIKKADEKGA   67 (99)
+T ss_pred             EeCCCCHHHHHHHHHHHHHHCCC
+Confidence            33446788888888777777663
+
+
+No 17
+>4YWF_A AbyA5; Deacetylase, Elimination, Hydrolase, Spirotetronate; HET: MSE; 2.0A {Verrucosispora maris}
+Probab=21.55  E-value=81  Score=19.84  Aligned_cols=26  Identities=23%  Similarity=0.331  Sum_probs=5.7  Template_Neff=9.500
+
+Q T1125_Domain6:   10 PDEFQELLRLQASTQGHVDETTLARL   35 (36)
+Q Consensus        10 pdefqellrlqastqghvdettlarl   35 (36)
+                      -+|.+|+..+-+..||-....++.|+
+T Consensus        24 ~~~~~~~~~~~~~~~~~~~~~~~~~i   49 (374)
+T 4YWF_A           24 VAELKQYVLAHVSAQNASADGVLARI   49 (374)
+T ss_dssp             HHHHHHC------------------C
+T ss_pred             HHHHHHHHHHHHHHcCCCHHHHHHcc
+Confidence            36888899999999998776666553
+
+
+No 18
+>2MA8_A Putative secreted protein; homodimer, PSI-Biology, alpha+beta, secreted protein; NMR {Salmonella enterica subsp. enterica serovar Typhimurium}
+Probab=20.56  E-value=87  Score=18.14  Aligned_cols=19  Identities=32%  Similarity=0.469  Sum_probs=14.9  Template_Neff=5.400
+
+Q T1125_Domain6:    7 EGSPDEFQELLRLQASTQG   25 (36)
+Q Consensus         7 egspdefqellrlqastqg   25 (36)
+                      .++|++..+-|.-+|..+|
+T Consensus        29 ~~s~~d~~~alskkAd~~G   47 (83)
+T 2MA8_A           29 ISSPSDLREKLSELADAKG   47 (83)
+T ss_dssp             CSSHHHHHHHHHHHHHHHT
+T ss_pred             CCCHHHHHHHHHHHHHHCC
+Confidence            6888888888887777666
+
+
