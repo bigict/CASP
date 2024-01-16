@@ -20,7 +20,7 @@ while getopts "i:o:" opt; do
         exit 1 ;;
   esac
 done
-
+shift $((OPTIND -1))
 mkdir -p "$OUTPUT_FOLDER"
 
 # 运行 seq_parse.py
