@@ -12,6 +12,7 @@ help() {
           "  -t, --timestamp <timestamp>\n" \
           "  -o, --output_dir <output_dir>\n" \
           "  -p, --model_params <model_params>\n" \
+          "  -g, --gpu_devices <gpu_devices>\n" \
           "  -s, --enable_domain_split\n" \
           "\n" \
           "workflow:\n" \
@@ -28,10 +29,11 @@ msa_tool_run="ssh ${msa_tool_srv}"
 timestamp=$(date +%Y%m%d-%H%M%S-%N)
 output_dir=${CWD}/data
 model_params=""
+gpu_devices="all"
 
 enable_domain_split=0
 
-ARGS=$(getopt --options "t:o:p:sh" --longoptions "timestamp:,output_dir:,model_params:,enable_domain_split,help" -- "$@") || exit
+ARGS=$(getopt --options "t:o:p:g:sh" --longoptions "timestamp:,output_dir:,model_params:,gpu_devices:,enable_domain_split,help" -- "$@") || exit
 eval "set -- ${ARGS}"
 echo "ARGS: $*"
 while true; do
@@ -40,7 +42,8 @@ while true; do
   case "$1" in
     (-t | --timestamp) timestamp="$2"; shift 2;;
     (-o | --output_dir) output_dir="$2"; shift 2;;
-    (-p | --model_params) model_params="-p \"$2\""; shift 2;;
+    (-p | --model_params) model_params="$2"; shift 2;;
+    (-g | --gpu_devices) gpu_devices="$2"; shift 2;;
     (-h | --help) help 0 ;;
     (-s | --enable_domain_split) enable_domain_split=1; shift 1;;
     (--) shift 1; break;;
@@ -62,12 +65,10 @@ ${msa_tool_sync} $* ${msa_tool_srv}:${msa_tool_data_dir}/fasta/
 
 # 创建msa_tool_file_list文件，里面存放的是各个fasta文件,空格分隔
 msa_tool_file_list=""
-if [ ${enable_domain_split} -eq 0 ]; then
-  for f in $*; do
-    f=$(basename ${f})
-    msa_tool_file_list="${msa_tool_file_list} ${msa_tool_data_dir}/fasta/${f}"
-  done
-fi
+for f in $*; do
+  f=$(basename ${f})
+  msa_tool_file_list="${msa_tool_file_list} ${msa_tool_data_dir}/fasta/${f}"
+done
 
 
 af2_pred_data_dir="${output_dir}/${timestamp}"
@@ -99,10 +100,15 @@ fi
 
 echo "start run msa_tool"
 
+msa_params=""
+if [ x"${model_params}" == x"" ]; then
+  msa_params="-p \"${model_params}\""
+fi
+
 ${msa_tool_run} bash -x ${msa_tool_home}/CASP/run_msa_tool.sh \
     -d ${msa_tool_home}/data/af2_db \
     -o ${msa_tool_data_dir}/msa \
-    ${model_params} \
+    "${msa_params}" \
     ${msa_tool_file_list}
 
 echo "msa_tool_run done"
@@ -121,27 +127,38 @@ if [ ${enable_domain_split} -eq 1 ]; then
       -o "${msa_tool_data_dir}/msa/${f}_assembled"
   done
 fi
-${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/msa ${af2_pred_data_dir}/
+
+${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/fasta ${af2_pred_data_dir}
+${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/msa ${af2_pred_data_dir}
+
+af2_pred_file_list=""
+for f in $*; do
+  f=$(basename ${f})
+  af2_pred_file_list="${af2_pred_file_list} ${af2_pred_data_dir}/fasta/${f}"
+done
+
+if [ ${enable_domain_split} -eq 1 ]; then
+  echo ""
+fi
+
 #########################
 # running alphafold
 #########################
 
 if [ x"${model_params}" == x"" ]; then
-  model_params="-p --use_precomputed_msas"
+  model_params="--use_precomputed_msas"
 else
   has_use_precomputed_msas=$(echo ${model_params}|grep use_precomputed_msas|wc -l)
   if [ ${has_use_precomputed_msas} -eq 0 ]; then
     model_params="${model_params} --use_precomputed_msas"
   fi
 fi
+model_params="${model_params} --gpu_devices=${gpu_devices}"
 
-if [ ${enable_domain_split} -eq 0 ]; then
-  bash -x run_alphafold.sh \
-     -m alphafold \
-     -d db \
-     -o ${af2_pred_data_dir} \
-     ${model_params} \
-     ${msa_tool_file_list}
-fi
-
+bash -x run_alphafold.sh \
+   -m alphafold \
+   -d db \
+   -o ${af2_pred_data_dir}/msa \
+   -p "${model_params}" \
+   ${af2_pred_file_list}
 
