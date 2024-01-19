@@ -9,9 +9,9 @@ $msa_hhblitsdb="/public/dbu/data/af2_db/uniclust30/uniclust30_2018_08/uniclust30
 #$msa_jackhmmerdb="/nfs/amino-home/zhng/local_library/uniref90_04042018/uniref90.fasta";
 $msa_jackhmmerdb="/public/dbu/data/fupred_db/uniref90_db/uniref90.fasta";
 #$msa_hmmsearchdb="/nfs/amino-home/zhng/local_library/metaclust/metaclust.fasta";
-$msa_hmmsearchdb="/public/dbu/data/fupred_db/metaclust_db/metaclust.fasta";
+$msa_hmmsearchdb="/public/dbu/data/fupred_db/metaclust_db/metaclust_2017_05.fasta";
 #$python="/nfs/amino-home/zhng/local_library/anaconda3/bin/python";
-$python="/public/dbu/local/anaconda3/envs/pytorch/bin/python";
+$python="/public/dbu/local/anaconda3/envs/respre/bin/python";
 #$python2="/nfs/amino-home/zhng/local_library/anaconda2/bin/python";
 $python2="/public/dbu/local/anaconda3/envs/py27/bin/python";
 $cpunum=4;
@@ -308,20 +308,27 @@ print "\n";
 print "\n";
 print "predicting domain and domain boundary...\n";
 ############### run FUpred
-print "domain boundary is in protein-FUpred.txt";
-#system("$bindir/FUpred -i protein.ce -2c 0.85 -2d 0.66 -chip 15 -label3c 0 -o protein >$work_dir/fu.txt");
-#改成输出文件的名字不叫fu.txt,而是叫protein-FUpred.txt
-system("$bindir/FUpred -i protein.ce -2c 0.85 -2d 0.66 -chip 15 -label3c 0 -o protein >$work_dir/protein-FUpred.txt");
+my($protein_name,$protein_path,$protein_suffix)=fileparse($infile,qr/\.[^.]*/);
+print("protein_name: $protein_name\n");
+$output_dir="$scriptsdir/../FUpredOutput";
+print("output_dir: $output_dir\n");
+`/bin/mkdir -p $output_dir`;
+
+
+system("$bindir/FUpred -i protein.ce -2c 0.85 -2d 0.66 -chip 15 -label3c 0 -o protein >$work_dir/fu.txt");
+#system("$bindir/FUpred -i protein.ce -2c 0.85 -2d 0.66 -chip 15 -label3c 0 -o protein >$work_dir/protein-FUpred.txt");
 #`cp protein.2c $datadir/`;
 #`cp protein.2d $datadir/`;
-system("cat $work_dir/protein-FUpred.txt");
+system("cat $work_dir/fu.txt");
 print "\n";
+print "domain boundary is in $output_dir/$protein_name-FUpred.txt  \n";
+system("/bin/mv $work_dir/fu.txt $output_dir/$protein_name-FUpred.txt");
 ################# endding procedure ######################
 $time=`date`;
 printf "ending time: $time";
 `sync`;
 sleep(1);
-`rm -fr $work_dir`;
+#`rm -fr $work_dir`;
 exit();
 
 

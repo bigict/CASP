@@ -17,8 +17,9 @@ import sys
 from alphafold.data import parsers
 #from typing import Dict, Iterable, List, Optional, Sequence, Tuple, Set
 
+
 def write_spliced_msa(output_path, spliced_msa):
-  with open(output_path, 'w',encoding='utf-8') as f:
+  with open(output_path, 'w', encoding='utf-8') as f:
     f.write(spliced_msa)
 
   print(f'saved to {output_path}')
@@ -31,6 +32,11 @@ def generate_bfd_paths(input_folder, protein_name):
       if dir.startswith(protein_name + 'Domain')
   ],
                        key=lambda x: int(x[len(protein_name + 'Domain'):]))
+
+  if not domain_dirs:
+    print(f'No matching directories found for {protein_name} in bfd norms\n')
+    sys.exit(1)
+
   print(f'Found {len(domain_dirs)} matching directories: {domain_dirs}')
   bfd_paths = {}
   for domain in domain_dirs:
@@ -47,7 +53,11 @@ def generate_uniref90_paths(input_folder, protein_name):
       dir for dir in os.listdir(input_folder)
       if dir.startswith(protein_name + 'Domain')
   ],
-                      key=lambda x: int(x[len(protein_name + 'Domain'):]))
+                       key=lambda x: int(x[len(protein_name + 'Domain'):]))
+  if not domain_dirs:
+    print(f'No matching directories found for {protein_name} in uniref90\n')
+    sys.exit(1)
+
   uniref90_paths = {}
   for domain in domain_dirs:
     uniref90_path = os.path.join(input_folder, domain, 'msas',
@@ -63,6 +73,10 @@ def generate_mgnify_paths(input_folder, protein_name):
       if dir.startswith(protein_name + 'Domain')
   ],
                        key=lambda x: int(x[len(protein_name + 'Domain'):]))
+  if not domain_dirs:
+    print(f'No matching directories found for {protein_name} in mgnify\n')
+    sys.exit(1)
+
   mgnify_paths = {}
   for domain in domain_dirs:
     mgnify_path = os.path.join(input_folder, domain, 'msas', 'mgnify_hits.sto')
@@ -74,7 +88,7 @@ def read_msa_from_bfd(
     bfd_paths):  #bfd_paths是一个字典，key是domain，value是bfd_uniref_hits.a3m的路径
   bfd_msas = {}
   for domain, path in bfd_paths.items():
-    with open(path, 'r',encoding='utf-8') as file:
+    with open(path, 'r', encoding='utf-8') as file:
       bfd_msas[domain] = file.read()
   return bfd_msas
 
@@ -82,7 +96,7 @@ def read_msa_from_bfd(
 def read_msa_from_uniref90(uniref90_paths):  #同时转换成a3m格式
   uniref90_msas = {}
   for domain, path in uniref90_paths.items():
-    with open(path, 'r',encoding='utf-8') as file:
+    with open(path, 'r', encoding='utf-8') as file:
       temp = file.read()
       uniref90_msas[domain] = parsers.convert_stockholm_to_a3m(temp)
   return uniref90_msas
@@ -91,7 +105,7 @@ def read_msa_from_uniref90(uniref90_paths):  #同时转换成a3m格式
 def read_msa_from_mgnify(mgnify_paths):
   mgnify_msas = {}
   for domain, path in mgnify_paths.items():
-    with open(path, 'r',encoding='utf-8') as file:
+    with open(path, 'r', encoding='utf-8') as file:
       temp = file.read()
       mgnify_msas[domain] = parsers.convert_stockholm_to_a3m(temp)
   return mgnify_msas
@@ -142,7 +156,7 @@ def combine_domain(db_msas):
 
 
 def main():
-  parser = argparse.ArgumentParser(description='Splice MSA')
+  parser = argparse.ArgumentParser(description='Assemble MSA')
   parser.add_argument('-i',
                       '--input_folder',
                       type=str,
@@ -154,18 +168,29 @@ def main():
   parser.add_argument('-o',
                       '--output_folder',
                       type=str,
-                      help='Output folder for spliced MSA file')
+                      help='Output folder for assembled MSA file')
   args = parser.parse_args()
 
   if not args.input_folder or not args.protein_name or not args.output_folder:
     print(
-        'Error:input_folder,protein_name,output_folder arguments are required.'
-    )
+        'Error:input_folder,protein_name,output_folder arguments are required.')
     sys.exit(1)
-
-  bfd_paths = generate_bfd_paths(args.input_folder, args.protein_name)
-  uniref90_paths = generate_uniref90_paths(args.input_folder, args.protein_name)
-  mgnify_paths = generate_mgnify_paths(args.input_folder, args.protein_name)
+  try:
+    bfd_paths = generate_bfd_paths(args.input_folder, args.protein_name)
+  except SystemExit as e1:
+    print(f'find no a3m file in {args.input_folder},exit code: {e1.code}\n')
+    sys.exit(1)
+  try:
+    uniref90_paths = generate_uniref90_paths(args.input_folder,
+                                             args.protein_name)
+  except SystemExit as e2:
+    print(f'find no sto file in {args.input_folder},exit code: {e2.code}\n')
+    sys.exit(1)
+  try:
+    mgnify_paths = generate_mgnify_paths(args.input_folder, args.protein_name)
+  except SystemExit as e3:
+    print(f'find no sto file in {args.input_folder},exit code: {e3.code}\n')
+    sys.exit(1)
 
   #bfd_msas是一个字典，key是domain，value是bfd_uniref_hits.a3m的内容,是一个字符串
   #此时uniref90&mgnify都转成了a3m格式
@@ -181,4 +206,11 @@ def main():
 
 
 if __name__ == '__main__':
-  main()
+  try:
+    main()
+  except SystemExit as e:
+    print('msa_assemble.py has no domains to assemble,thus Canceled\n')
+    sys.exit(1)
+  else:
+    print('msa_assemble.py run successfully\n')
+    sys.exit(0)

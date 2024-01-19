@@ -50,7 +50,8 @@ if [ $# -eq 0 ]; then
 fi
 
 . ${HOME}/.bashrc
-export PATH=${HOME}/.local/anaconda3/bin:${HOME}/.local/bin:${PATH}
+CONDA_HOME=${HOME}/.local/anaconda3
+export PATH=${CONDA_HOME}/bin:${HOME}/.local/bin:${PATH}
 export LD_LIBRARY_PATH=${HOME}/.local/lib:${HOME}/local/lib:${LD_LIBRARY_PATH}
 . activate ${CONDA_ENV} || exit 1
 
@@ -61,7 +62,7 @@ if [ $# -lt ${WORKER_NUM} ]; then
 fi
 
 msa_tool_cmd=" \
-python run_msa_tool.py \
+${CONDA_HOME}/envs/${CONDA_ENV}/bin/python run_msa_tool.py \
       --output_dir=${output_dir} \
       --uniref90_database_path=${data_dir}/uniref90/uniref90.fasta \
       --mgnify_database_path=${data_dir}/mgnify/mgy_clusters.fa \
@@ -70,6 +71,8 @@ python run_msa_tool.py \
       --template_mmcif_dir=${data_dir}/pdb_mmcif/mmcif_files \
       --obsolete_pdbs_path=${data_dir}/pdb_mmcif/obsolete.dat \
       --pdb70_database_path=${data_dir}/pdb70/pdb70 \
+      --pdb_seqres_database_path=${data_dir}/pdb_seqres.txt \
+      --uniprot_database_path=${data_dir}/uniprot/uniprot.fasta \
       --max_template_date=${max_template_date} \
       ${msa_params}"
 

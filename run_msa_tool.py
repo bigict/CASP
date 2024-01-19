@@ -137,12 +137,12 @@ def main(argv):
               should_be_set=not use_small_bfd)
 
   run_multimer_system = 'multimer' in FLAGS.model_preset
-  _check_flag('pdb70_database_path', 'model_preset',
-              should_be_set=not run_multimer_system)
-  _check_flag('pdb_seqres_database_path', 'model_preset',
-              should_be_set=run_multimer_system)
-  _check_flag('uniprot_database_path', 'model_preset',
-              should_be_set=run_multimer_system)
+  # _check_flag('pdb70_database_path', 'model_preset',
+  #             should_be_set=not run_multimer_system)
+  # _check_flag('pdb_seqres_database_path', 'model_preset',
+  #             should_be_set=run_multimer_system)
+  # _check_flag('uniprot_database_path', 'model_preset',
+  #             should_be_set=run_multimer_system)
 
   # Check for duplicate FASTA file names.
   if not FLAGS.fasta_paths:

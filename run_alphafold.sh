@@ -52,6 +52,12 @@ while getopts 'd:o:m:t:p:sh' OPT; do
 done
 shift $((OPTIND - 1))
 
+#
+# make sure it is a absolute path
+#
+data_dir=$(readlink -f ${data_dir})
+output_dir=$(readlink -f ${output_dir})
+
 mkdir -p ${output_dir}
 for f in $*; do
   echo "Start predict (${f}|${msa_mode}) `date`"
