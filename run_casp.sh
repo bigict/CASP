@@ -67,6 +67,10 @@ af2_pred_data_dir="${output_dir}/${timestamp}"
 mkdir -p ${af2_pred_data_dir}
 
 
+af2_pred_data_dir="${output_dir}/${timestamp}"
+mkdir -p ${af2_pred_data_dir}
+
+
 # 创建msa_tool_file_list文件，里面存放的是各个fasta文件,空格分隔
 msa_tool_file_list=""
 if [ ${enable_domain_split} -eq 0 ]; then
@@ -74,6 +78,7 @@ if [ ${enable_domain_split} -eq 0 ]; then
     f=$(basename ${f})
     msa_tool_file_list="${msa_tool_file_list} ${msa_tool_data_dir}/fasta/${f}"
   done
+
 
 fi
 
@@ -88,6 +93,9 @@ if [ ${enable_domain_split} -eq 1 ]; then
   echo "parse_domain done"
 
   # 将远程的${msa_tool_data_dir}/fasta分好的同步到本地
+  #parse_data_dir="${af2_pred_data_dir}/parse"
+  #mkdir -p ${parse_data_dir}
+  ${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/fasta ${af2_pred_data_dir}/
   #parse_data_dir="${af2_pred_data_dir}/parse"
   #mkdir -p ${parse_data_dir}
   ${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/fasta ${af2_pred_data_dir}/
