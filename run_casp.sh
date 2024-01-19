@@ -133,6 +133,7 @@ if [ ${enable_domain_split} -eq 1 ]; then
   echo "msa_assemble done"
 fi
 
+<<<<<<< HEAD
 ${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/fasta ${af2_pred_data_dir}
 ${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/msa ${af2_pred_data_dir}
 
@@ -146,6 +147,9 @@ if [ ${enable_domain_split} -eq 1 ]; then
   echo ""
 fi
 
+=======
+${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/msa ${af2_pred_data_dir}/
+>>>>>>> 38dae5f (add func:mv assembled_msa to correct dir)
 #########################
 # running alphafold
 #########################
