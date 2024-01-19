@@ -63,16 +63,20 @@ ${msa_tool_run} mkdir -p ${msa_tool_data_dir}/fasta
 # fasta上传远程
 ${msa_tool_sync} $* ${msa_tool_srv}:${msa_tool_data_dir}/fasta/
 
-# 创建msa_tool_file_list文件，里面存放的是各个fasta文件,空格分隔
-msa_tool_file_list=""
-for f in $*; do
-  f=$(basename ${f})
-  msa_tool_file_list="${msa_tool_file_list} ${msa_tool_data_dir}/fasta/${f}"
-done
-
-
 af2_pred_data_dir="${output_dir}/${timestamp}"
 mkdir -p ${af2_pred_data_dir}
+
+
+# 创建msa_tool_file_list文件，里面存放的是各个fasta文件,空格分隔
+msa_tool_file_list=""
+if [ ${enable_domain_split} -eq 0 ]; then
+  for f in $*; do
+    f=$(basename ${f})
+    msa_tool_file_list="${msa_tool_file_list} ${msa_tool_data_dir}/fasta/${f}"
+  done
+
+fi
+
 
 if [ ${enable_domain_split} -eq 1 ]; then
   # 远程对input1_fasta input2_fasta ...run seq_parser.py
@@ -84,11 +88,11 @@ if [ ${enable_domain_split} -eq 1 ]; then
   echo "parse_domain done"
 
   # 将远程的${msa_tool_data_dir}/fasta分好的同步到本地
-  parse_data_dir="${af2_pred_data_dir}/parse"
-  mkdir -p ${parse_data_dir}
-  ${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/fasta ${parse_data_dir}/
+  #parse_data_dir="${af2_pred_data_dir}/parse"
+  #mkdir -p ${parse_data_dir}
+  ${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/fasta ${af2_pred_data_dir}/
 
-  for f in "${parse_data_dir}"/fasta/* ; do
+  for f in "${af2_pred_data_dir}"/fasta/* ; do
     f=$(basename ${f})
     #echo "f:${f}"
     msa_tool_file_list="${msa_tool_file_list} ${msa_tool_data_dir}/fasta/${f}"
@@ -126,6 +130,7 @@ if [ ${enable_domain_split} -eq 1 ]; then
       -n "${f}" \
       -o "${msa_tool_data_dir}/msa/${f}_assembled"
   done
+  echo "msa_assemble done"
 fi
 
 ${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/fasta ${af2_pred_data_dir}
@@ -155,10 +160,40 @@ else
 fi
 model_params="${model_params} --gpu_devices=${gpu_devices}"
 
-bash -x run_alphafold.sh \
-   -m alphafold \
-   -d db \
-   -o ${af2_pred_data_dir}/msa \
-   -p "${model_params}" \
-   ${af2_pred_file_list}
+if [ ${enable_domain_split} -eq 0 ]; then
+  bash -x run_alphafold.sh \
+     -m alphafold \
+     -d db \
+     -o ${af2_pred_data_dir} \
+     ${model_params} \
+     ${msa_tool_file_list}
+fi
 
+if [ ${enable_domain_split} -eq 1 ]; then
+  echo "start run alphafold"
+  fasta_file_list=""
+  for f in $@; do
+    f=$(basename ${f})
+    echo "f:${f}"
+    fasta_file_list="${fasta_file_list} ${msa_tool_data_dir}/fasta/${f}"
+    echo "fasta_file_list: ${fasta_file_list}"
+    f=${f%.*}
+    # TODO:查找${af2_pred_data_dir}/msa中${f}_assembled的文件夹，将其中所有内容mv到$f的文件夹中
+    assembled_dir="${af2_pred_data_dir}/msa/${f}_assembled"
+    target_dir="${af2_pred_data_dir}/${f}"
+
+    if [ -d "${assembled_dir}" ]; then
+      echo "move assembled msa to target_dir:${target_dir}."
+      mv "${assembled_dir}"/* "${target_dir}/"
+    else
+      echo "Error: Directory ${assembled_dir} not found."
+    fi
+  done
+
+  bash -x run_alphafold.sh \
+     -m alphafold \
+     -d db \
+     -o ${af2_pred_data_dir} \
+     ${model_params} \
+     ${fasta_file_list}
+fi
