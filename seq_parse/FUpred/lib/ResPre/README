@@ -1,0 +1,44 @@
+ResPre: contact map prediction using Deep Residual network and Precision matrix 
+
+1.Getting Started
+	python respre.py [msa_file] [outfile]
+		msa_file: Multiple Sequence Alignment file
+		outfile:  Output file, each line in this format: [position1 position2 score]
+		where position index start from 1 [NOT 0]
+	
+
+2.Prerequisites
+	Python numpy and scipy should be installed.
+	Please install pytorch-0.3.0 first[http://pytorch.org/]
+		by 'conda install pytorch torchvision -c pytorch' if you have conda installed
+		you can check pytorch version by 'import torch \n torch.__version__'
+	There is an exe file under 'bin' path, Maybe you also need to 'chmod' exe permission to the exe file.
+
+3.Example
+	You can test by fowllowing commands:
+		' python respre.py test/T0759-D1.aln test/T0759-D1.out '
+	It will generate 2 files:
+		' T0759-D1.out.weight ': Weights for each sequence in msa, you can just ignore it.
+		' T0759-D1.out '       : Output file 
+		
+4.Performence
+	Comparing with DeepCov on 158 non-redundant test set using same MSAs:
+			long-range:topL		long-range:topL/5 		all-range:topL		all-range:topL/5
+	DeepCov		37.84				64.23					56.58				78.58
+	DeepPRE		48.04				70.72					65.83				83.98
+	respre		49.70				72.08					68.22				85.54
+	
+5.Built With
+	python numpy scipy pytorch 
+	This tool is only tested under python3.5/3.6. Contact me if you have any problems.
+	
+6.Versioning
+	This is a test version
+
+7.Authors
+	Yang Li [liyangum@umich.edu]
+
+
+8. Acknowledgments
+	Zhang Lab Members [https://zhanglab.ccmb.med.umich.edu/people/]
+	xsede GPU cluster [https://www.xsede.org/]
