@@ -101,7 +101,7 @@ fi
 echo "start run msa_tool"
 
 msa_params=""
-if [ x"${model_params}" == x"" ]; then
+if [ x"${model_params}" != x"" ]; then
   msa_params="-p \"${model_params}\""
 fi
 
