@@ -129,7 +129,7 @@ if [ ${enable_domain_split} -eq 1 ]; then
     ${msa_tool_run} bash -x ${msa_tool_home}/CASP/msa_assemble.sh \
       -i "${msa_tool_data_dir}/msa" \
       -n "${f}" \
-      -o "${msa_tool_data_dir}/msa/${f}_assembled"
+      -o "${msa_tool_data_dir}/msa/${f}_assembled/msas"
   done
   echo "msa_assemble done"
 fi
@@ -161,15 +161,29 @@ if [ ${enable_domain_split} -eq 1 ]; then
     f=$(basename ${f})
     echo "f:${f}"
     f=${f%.*}
-    # TODO:查找${af2_pred_data_dir}/msa中${f}_assembled的文件夹，将其中所有内容mv到$f的文件夹中
-    assembled_dir="${af2_pred_data_dir}/msa/${f}_assembled"
-    target_dir="${af2_pred_data_dir}/${f}"
-    if [ -d "${assembled_dir}" ]; then
-      echo "move assembled msa to target_dir:${target_dir}."
-      mv "${assembled_dir}"/* "${target_dir}/"
-    else
-      echo "Error: Directory ${assembled_dir} not found."
-    fi
+    #-------------deal with fasta-----------------
+    #把msa_tool_data_dir/fasta中的含"${f}Domain"的fasta文件删除
+    ${msa_tool_run} rm -f ${msa_tool_data_dir}/fasta/${f}Domain*.fasta
+    #copy msa_tool_data_dir/fasta中"${f}.fasta"到msa_tool_data_dir/fasta中，命名为"${f}_assembled.fasta"
+    ${msa_tool_run} cp ${msa_tool_data_dir}/fasta/${f}.fasta ${msa_tool_data_dir}/fasta/${f}_assembled.fasta
+    #同步msa_tool_data_dir/fasta到本地
+    ${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/fasta ${af2_pred_data_dir}
+    #讲${F}_assembled.fasta加入af2_pred_file_list
+    af2_pred_file_list="${af2_pred_file_list} ${af2_pred_data_dir}/fasta/${f}_assembled.fasta"
+
+
+    #-------------deal with msa-----------------
+    #删除${msa_tool_data_dir}/msa中${f}Domain*的文件夹
+    ${msa_tool_run} rm -rf ${msa_tool_data_dir}/msa/${f}Domain*
+    #查找${af2_pred_data_dir}/msa中${f}_assembled的文件夹，将其中所有内容mv到$f的文件夹中
+    # assembled_dir="${af2_pred_data_dir}/msa/${f}_assembled"
+    # target_dir="${af2_pred_data_dir}/${f}"
+    # if [ -d "${assembled_dir}" ]; then
+    #   echo "move assembled msa to target_dir:${target_dir}."
+    #   mv "${assembled_dir}"/* "${target_dir}/"
+    # else
+    #   echo "Error: Directory ${assembled_dir} not found."
+    # fi
   done
 
 fi
