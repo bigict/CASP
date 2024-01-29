@@ -139,7 +139,7 @@ ${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/msa ${af2_pred_data_dir}
 #########################
 # running alphafold
 #########################
-if [ x"${model_params}" == x"" ]; then
+if [ x"${model_params}" != x"" ]; then
   model_params="--use_precomputed_msas"
 else
   has_use_precomputed_msas=$(echo ${model_params}|grep use_precomputed_msas|wc -l)
