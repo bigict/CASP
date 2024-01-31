@@ -52,6 +52,8 @@ while true; do
 done
 echo "timestamp: ${timestamp}"
 echo "enable_domain_split: ${enable_domain_split}"
+echo "model_params: ${model_params}"
+echo "gpu_devices: ${gpu_devices}"
 
 msa_tool_data_dir="${msa_tool_home}/CASP/data/${timestamp}"
 ${msa_tool_run} mkdir -p ${msa_tool_data_dir}/fasta
@@ -141,6 +143,7 @@ ${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/msa ${af2_pred_data_dir}
 #########################
 if [ x"${model_params}" != x"" ]; then
   model_params="--use_precomputed_msas"
+  echo "model_params:${model_params}"
 else
   has_use_precomputed_msas=$(echo ${model_params}|grep use_precomputed_msas|wc -l)
   if [ ${has_use_precomputed_msas} -eq 0 ]; then
