@@ -131,7 +131,7 @@ printf "pwd: $pwd";
 
 ################# directories #############################
 $infile=abs_path($ARGV[0]);
-#print "$infile\n";
+print "$infile\n";
 #$datadir=$ENV{'PWD'};
 #$datadir=abs_path($ARGV[0]);
 #$infile="$datadir/seq.fasta";
@@ -141,16 +141,29 @@ $bindir=abs_path("$scriptsdir/./bin");
 $fudir=abs_path("$bindir/../");
 #print "$bindir\n";
 $method="respre";
-$work_dir="/tmp/$ENV{'USER'}/FUD_".&getRandomString(10);
 
+
+my $random = &getRandomString(10);
+$work_dir = "/tmp/$ENV{'USER'}/FUD_$random";
+$deepmsa_tmp_dir = "/tmp/$ENV{'USER'}/DeepMSAtmp_$random";
+$inputdir = "/tmp/$ENV{'USER'}/Input_$random";
+
+# $work_dir="/tmp/$ENV{'USER'}/FUD_".&getRandomString(10);
+# $deepmsa_tmp_dir="/tmp/$ENV{'USER'}/DeepMSAtmp_".&getRandomString(10);
+# $inputdir="/tmp/$ENV{'USER'}/Input_".&getRandomString(10);
+print "work_dir is:$work_dir\n";
+print "inputdir is:$inputdir\n";
+print "deepmsa_tmp_dir is:$deepmsa_tmp_dir\n";
 $psipreddir="$fudir/lib/psipred-4.01";
 $ENV{'HHLIB'}="$fudir/lib/deepMSA";
 $hhsuite=$ENV{'HHLIB'};
-#print "$hhsuite\n";
+print "$hhsuite\n";
 ################ working directory ########################
 `/bin/mkdir -p $work_dir`;
 chdir "$work_dir";
 `/bin/rm -rf $work_dir/*`;
+`/bin/mkdir -p $inputdir`;
+`/bin/rm -rf $inputdir/*`;
 ################ make fasta sequence file #################
 @seqtxts=`cat $infile`;
 $sequence="";
@@ -162,7 +175,7 @@ foreach $seqtxt(@seqtxts){
   pos1:;
 }
 $Lch=length $sequence;
-open(seq,">protein.seq");
+open(seq,">","$inputdir/protein.seq") or die "can't open $inputdir/protein.seq\n";
 printf seq ">protein\n";
 for($i=1;$i<=$Lch;$i++)
 {
@@ -186,19 +199,33 @@ close(seq);
 
 ########### get mtx and prf from deepmsa ######################
 
-system("$python2 $hhsuite/scripts/build_MSA.py -ncpu=$cpunum protein.seq -hhblitsdb=$msa_hhblitsdb -jackhmmerdb=$msa_jackhmmerdb  -hmmsearchdb=$msa_hmmsearchdb -tmpdir=$work_dir/deepMSA");
+printf "start running deepmsa\n";
 
-`cp protein.aln deepmsa_protein.aln`;
-`cp protein.a3m deepmsa_protein.a3m`;
-#`cp protein.aln $datadir/deepmsa.aln`;
-#`cp protein.a3m $datadir/deepmsa.a3m`;
+system("$python2 $hhsuite/scripts/build_MSA.py -ncpu=$cpunum $inputdir/protein.seq -hhblitsdb=$msa_hhblitsdb -jackhmmerdb=$msa_jackhmmerdb  -hmmsearchdb=$msa_hmmsearchdb -tmpdir=$work_dir/deepMSA -outdir=$deepmsa_tmp_dir");
+#用echo $?查看上一条命令的返回值，如果返回值为0，则表示执行成功，否则执行失败，打印出错误信息。
+my $deepmsa_exit_code = $? >> 8;
+print "deepmsa exit code:$deepmsa_exit_code\n";
 
-`$ENV{'HHLIB'}/scripts/a3m2psiblast_v2.pl deepmsa_protein.a3m psitmp -a3m -neff 7`;   ## for ss
 
-`cp psitmp.mtx  protein.mtx`;
-`cp psitmp.pssm protein.pssm`;
+my $current_directory = abs_path();
+print "Current Directory: $current_directory\n";
+`cp $deepmsa_tmp_dir/protein.aln $deepmsa_tmp_dir/deepmsa_protein.aln`;
+`cp $deepmsa_tmp_dir/protein.a3m $deepmsa_tmp_dir/deepmsa_protein.a3m`;
+#check whether cp is successful
+my $cp_exit_code = $? >> 8;
+print "cp_exit_code: $cp_exit_code\n";
 
-open(msa,"deepmsa_protein.aln");
+
+
+`$ENV{'HHLIB'}/scripts/a3m2psiblast_v2.pl $deepmsa_tmp_dir/deepmsa_protein.a3m psitmp -a3m -neff 7 -output $deepmsa_tmp_dir`;   ## for ss
+
+`cp $deepmsa_tmp_dir/psitmp.mtx  $deepmsa_tmp_dir/protein.mtx`;
+`cp $deepmsa_tmp_dir/psitmp.pssm $deepmsa_tmp_dir/protein.pssm`;
+my $cp_exit_code = $? >> 8;
+print "cp_exit_code of psitmp: $cp_exit_code\n";
+
+
+open(msa,"$deepmsa_tmp_dir/deepmsa_protein.aln");
 $it=0;
 my $queryseq=<msa>;
 $L=length $queryseq;
@@ -256,7 +283,7 @@ for($i=1;$i<=$it;$i++){
 }
 #^^^^^^^^^ Henikoff frequence finished ^^^^^^^^^^^^^
 
-open(freq,">protein.prf");
+open(freq,">","$inputdir/protein.prf") or die "can't open $inputdir/protein.prf\n";
 printf freq "$Lch\n";
 for($i=1;$i<=$Lch;$i++){
     printf freq "%3d $seqQ{$i} %3d",$i,$i;
@@ -272,17 +299,26 @@ for($i=1;$i<=$Lch;$i++){
 close(freq);
 
 ############################### run psipred #########################
-print "run psipred...\n";
-system("$psipreddir/bin/psipred protein.mtx $psipreddir/data/weights.dat $psipreddir/data/weights.dat2 $psipreddir/data/weights.dat3 >protein.ss");
-system("$psipreddir/bin/psipass2 $psipreddir/data/weights_p2.dat 1 1.0 1.0 protein.ss2 protein.ss >protein.horiz");
-#`cp protein.ss2 $datadir/protein.ss2`;
+print "run psipred...\n"; 
+system("$psipreddir/bin/psipred $deepmsa_tmp_dir/protein.mtx $psipreddir/data/weights.dat $psipreddir/data/weights.dat2 $psipreddir/data/weights.dat3 > $inputdir/protein.ss");
+my $psipred_exit_code = $? >> 8;
+print "psipred exit code:$psipred_exit_code\n";
 
+
+system("$psipreddir/bin/psipass2 $psipreddir/data/weights_p2.dat 1 1.0 1.0 protein.ss2 $inputdir/protein.ss > $inputdir/protein.horiz");
+my $psipass2_exit_code = $? >> 8;
+print "psipass2 exit code:$psipass2_exit_code\n";
+
+#`cp protein.ss2 $datadir/protein.ss2`;
+print "===========start run respre=============\n";
 $restripletdir="$fudir/lib/ResPre";
-system("cd $restripletdir; $python $restripletdir/respre.py $work_dir/deepmsa_protein.aln $work_dir/deepmsa.contact; cd $work_dir");
+system("cd $restripletdir; $python $restripletdir/respre.py $deepmsa_tmp_dir/deepmsa_protein.aln $work_dir/deepmsa.contact; cd $work_dir");
+my $restripletdir_exit_code = $? >> 8;
+print "restripletdir exit code:$restripletdir_exit_code\n";
 
 ##### convert it to metapsicov format #######
-open(contact,"deepmsa.contact");
-open(metacon,">protein.contact");
+open(contact,"deepmsa.contact") or die "can't open deepmsa.contact\n";
+open(metacon,">protein.contact") or die "can't open protein.contact\n";
 while($line=<contact>)
 {
    @strs=split(/\s/,$line);
@@ -297,7 +333,10 @@ close(contact);
 #`cp deepmsa.contact $datadir/respre.contact`;
 
 ############### Run CEthreader ###############
-system("$bindir/CEdecomposition  -i q -f protein.seq -s protein.horiz -c protein.contact -mtx protein.mtx -o protein.ce -m exp 1.19");
+system("$bindir/CEdecomposition  -i q -f $inputdir/protein.seq -s $inpudir/protein.horiz -c protein.contact -mtx $deepmsa_tmp_dir/protein.mtx -o protein.ce -m exp 1.19");
+my $CEdecomposition_exit_code = $? >> 8;
+print "CEdecomposition exit code:$CEdecomposition_exit_code\n";
+
 #`cp protein.prf $datadir/protein.prf`;
 #`cp protein.mtx $datadir/protein.mtx`;
 #`cp protein.ce $datadir/protein.ce`;
@@ -315,10 +354,11 @@ print("output_dir: $output_dir\n");
 `/bin/mkdir -p $output_dir`;
 
 
-system("$bindir/FUpred -i protein.ce -2c 0.85 -2d 0.66 -chip 15 -label3c 0 -o protein >$work_dir/fu.txt");
+system(".$bindir/FUpred -i protein.ce -2c 0.85 -2d 0.66 -chip 15 -label3c 0 -o protein >$work_dir/fu.txt");
 #system("$bindir/FUpred -i protein.ce -2c 0.85 -2d 0.66 -chip 15 -label3c 0 -o protein >$work_dir/protein-FUpred.txt");
 #`cp protein.2c $datadir/`;
 #`cp protein.2d $datadir/`;
+print("domain boundary is:");
 system("cat $work_dir/fu.txt");
 print "\n";
 print "domain boundary is in $output_dir/$protein_name-FUpred.txt  \n";

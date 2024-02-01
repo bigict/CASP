@@ -30,7 +30,7 @@ before being converted to MTX, the PSIPRED secondary structure prediction
 using this filtred MTX can be improved. This behavior can be specified by
 -neff 7
 
-Usage: a3m2mtx.pl <ali_file> [<outbase(outfile)>] [-fas|-a3m|-clu|-sto|-aln] [-neff 7]
+Usage: a3m2mtx.pl <ali_file> [<outbase(outfile)>] [-fas|-a3m|-clu|-sto|-aln] [-neff 7] [-output <output_dir>]
 \n";
 
 # Variable declarations
@@ -42,7 +42,8 @@ my $name;              # query in fasta format: '>$name [^\n]*\n$qseq\n'
 my $qseq;              # residues of query sequence
 my $infile;
 my $outfile;
-
+my $hhbin = '/public/dbu/local/anaconda3/bin';
+my $output_dir = "";
 ###############################################################################################
 # Processing command line input
 ###############################################################################################
@@ -68,6 +69,10 @@ if ($options=~s/ -o\s+(\S+) //) {$outfile=$1;}
 if ($options=~s/ -neff\s+(\S+) //) {$neff=$1;}
 if ($options=~s/^\s*([^-]\S*) //)  {$infile=$1;}
 if ($options=~s/^\s*([^-]\S*) //)  {$outfile=$1;}
+
+
+# what tanqian add
+if ($options=~s/ -output\s+(\S+) //) {$output_dir=$1;}
 
 # Warn if unknown options found or no infile/outfile
 if ($options!~/^\s*$/) {$options=~s/^\s*(.*?)\s*$/$1/g; die("Error: unknown options '$options'\n");}
@@ -155,9 +160,9 @@ if ($neff > 0) {
 
 # PSI-BLAST on dummy db
 &RunPseudoPsiblast("$tmpfile.sq");
-&HHPaths::System("cp $tmpfile.mtx $outfile.mtx");
-&HHPaths::System("cp $tmpfile.pssm $outfile.pssm");
-&HHPaths::System("cp $tmpfile.chk $outfile.chk");
+&HHPaths::System("cp $tmpfile.mtx $output_dir/$outfile.mtx");
+&HHPaths::System("cp $tmpfile.pssm $output_dir/$outfile.pssm");
+&HHPaths::System("cp $tmpfile.chk $output_dir/$outfile.chk");
 
 
 if ($v<=3) {
