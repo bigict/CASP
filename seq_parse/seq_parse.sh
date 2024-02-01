@@ -22,6 +22,7 @@ while getopts "i:o:" opt; do
 done
 shift $((OPTIND -1))
 mkdir -p "$OUTPUT_FOLDER"
+echo "we are now in seq_parse for $INPUT_FASTA========================"
 
 # 运行 seq_parse.py
 python3 "${CWD}/seq_parse.py" -i "$INPUT_FASTA" -o "$OUTPUT_FOLDER"
