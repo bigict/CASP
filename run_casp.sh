@@ -30,7 +30,7 @@ timestamp=$(date +%Y%m%d-%H%M%S-%N)
 output_dir=${CWD}/data
 model_params=""
 gpu_devices="all"
-
+WORKER_NUM=25
 enable_domain_split=0
 
 ARGS=$(getopt --options "t:o:p:g:sh" --longoptions "timestamp:,output_dir:,model_params:,gpu_devices:,enable_domain_split,help" -- "$@") || exit
@@ -80,13 +80,31 @@ if [ ${enable_domain_split} -eq 0 ]; then
 
 fi
 
+if [ $# -lt ${WORKER_NUM} ]; then
+  WORKER_NUM=$#
+fi
 
 if [ ${enable_domain_split} -eq 1 ]; then
-  # 远程对input1_fasta input2_fasta ...run seq_parser.py
-  for f in $@; do
+  mapred_file_list=""
+  for f in $@;do
     f=$(basename ${f})
-    ${msa_tool_run} bash -x ${msa_tool_home}/CASP/seq_parse/seq_parse.sh -i ${msa_tool_data_dir}/fasta/${f} -o ${msa_tool_data_dir}/fasta
+    mapred_file_list="${mapred_file_list} ${msa_tool_data_dir}/fasta/${f}"
   done
+  echo "mapred_file_list: ${mapred_file_list}"
+  seq_parse_cmd=" \
+  ${msa_tool_run} bash ${msa_tool_home}/CASP/seq_parse/seq_parse.sh \
+  -o ${msa_tool_data_dir}/fasta \
+  -i"
+
+  echo "${mapred_file_list}" |
+  awk '{for (i=1; i<=NF; ++i){print $i}}' | \
+  xargs -t -n 1 -P ${WORKER_NUM} -I {} ${seq_parse_cmd} {}
+  #./bin/mapred -m "${seq_parse_cmd}" -c ${WORKER_NUM}
+  # 远程对input1_fasta input2_fasta ...run seq_parser.py
+  # for f in $@; do
+  #   f=$(basename ${f})
+  #   ${msa_tool_run} bash -x ${msa_tool_home}/CASP/seq_parse/seq_parse.sh -i ${msa_tool_data_dir}/fasta/${f} -o ${msa_tool_data_dir}/fasta
+  # done
 
   echo "parse_domain done"
 
@@ -112,7 +130,7 @@ if [ x"${model_params}" == x"" ]; then
   msa_params="-p \"${model_params}\""
 fi
 
-${msa_tool_run} bash -x ${msa_tool_home}/CASP/run_msa_tool.sh \
+${msa_tool_run} bash  ${msa_tool_home}/CASP/run_msa_tool.sh \
     -d ${msa_tool_home}/data/af2_db \
     -o ${msa_tool_data_dir}/msa \
     "${msa_params}" \
@@ -128,7 +146,7 @@ if [ ${enable_domain_split} -eq 1 ]; then
   for f in $@; do
     f=$(basename ${f})
     f=${f%.*}
-    ${msa_tool_run} bash -x ${msa_tool_home}/CASP/msa_assemble.sh \
+    ${msa_tool_run} bash  ${msa_tool_home}/CASP/msa_assemble.sh \
       -i "${msa_tool_data_dir}/msa" \
       -n "${f}" \
       -o "${msa_tool_data_dir}/msa/${f}_assembled/msas"

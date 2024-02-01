@@ -333,7 +333,7 @@ close(contact);
 #`cp deepmsa.contact $datadir/respre.contact`;
 
 ############### Run CEthreader ###############
-system("$bindir/CEdecomposition  -i q -f $inputdir/protein.seq -s $inpudir/protein.horiz -c protein.contact -mtx $deepmsa_tmp_dir/protein.mtx -o protein.ce -m exp 1.19");
+system(".$bindir/CEdecomposition  -i q -f $inputdir/protein.seq -s $inputdir/protein.horiz -c $work_dir/protein.contact -mtx $deepmsa_tmp_dir/protein.mtx -o $work_dir/protein.ce -m exp 1.19");
 my $CEdecomposition_exit_code = $? >> 8;
 print "CEdecomposition exit code:$CEdecomposition_exit_code\n";
 
@@ -354,7 +354,7 @@ print("output_dir: $output_dir\n");
 `/bin/mkdir -p $output_dir`;
 
 
-system(".$bindir/FUpred -i protein.ce -2c 0.85 -2d 0.66 -chip 15 -label3c 0 -o protein >$work_dir/fu.txt");
+system(".$bindir/FUpred -i $work_dir/protein.ce -2c 0.85 -2d 0.66 -chip 15 -label3c 0 -o protein >$work_dir/fu.txt");
 #system("$bindir/FUpred -i protein.ce -2c 0.85 -2d 0.66 -chip 15 -label3c 0 -o protein >$work_dir/protein-FUpred.txt");
 #`cp protein.2c $datadir/`;
 #`cp protein.2d $datadir/`;
