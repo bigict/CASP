@@ -14,6 +14,10 @@ help() {
           "  -p, --model_params <model_params>\n" \
           "  -g, --gpu_devices <gpu_devices>\n" \
           "  -s, --enable_domain_split\n" \
+	  "\n" \
+	  "platforms:\n" \
+	  "  --msa_tool_home <msa_tool_home>\n" \
+	  "  --msa_tool_srv <msa_tool_srv>\n" \
           "\n" \
           "workflow:\n" \
           "  [MSA preprocess]* -> MSA search -> [MSA postprocess]* -> Predict"
@@ -22,8 +26,6 @@ help() {
 
 msa_tool_home="/public/dbu"
 msa_tool_srv="dbu@idnode17"
-msa_tool_sync="rsync -avP -e ssh"
-msa_tool_run="ssh ${msa_tool_srv}"
 
 
 timestamp=$(date +%Y%m%d-%H%M%S-%N)
@@ -33,7 +35,7 @@ gpu_devices="all"
 
 enable_domain_split=0
 
-ARGS=$(getopt --options "t:o:p:g:sh" --longoptions "timestamp:,output_dir:,model_params:,gpu_devices:,enable_domain_split,help" -- "$@") || exit
+ARGS=$(getopt --options "t:o:p:g:sh" --longoptions "timestamp:,output_dir:,model_params:,gpu_devices:,msa_tool_home:,msa_tool_srv:,enable_domain_split,help" -- "$@") || exit
 eval "set -- ${ARGS}"
 echo "ARGS: $*"
 while true; do
@@ -44,6 +46,8 @@ while true; do
     (-o | --output_dir) output_dir="$2"; shift 2;;
     (-p | --model_params) model_params="$2"; shift 2;;
     (-g | --gpu_devices) gpu_devices="$2"; shift 2;;
+    (--msa_tool_home) msa_tool_home="$2"; shift 2;;
+    (--msa_tool_srv) msa_tool_srv="$2"; shift 2;;
     (-h | --help) help 0 ;;
     (-s | --enable_domain_split) enable_domain_split=1; shift 1;;
     (--) shift 1; break;;
@@ -52,6 +56,9 @@ while true; do
 done
 echo "timestamp: ${timestamp}"
 echo "enable_domain_split: ${enable_domain_split}"
+
+msa_tool_sync="rsync -avP -e ssh"
+msa_tool_run="ssh ${msa_tool_srv}"
 
 msa_tool_data_dir="${msa_tool_home}/CASP/data/${timestamp}"
 ${msa_tool_run} mkdir -p ${msa_tool_data_dir}/fasta
