@@ -136,7 +136,7 @@ print "$infile\n";
 #$datadir=abs_path($ARGV[0]);
 #$infile="$datadir/seq.fasta";
 $scriptsdir=dirname(abs_path(__FILE__));
-$fupredbindir="./bin";
+$fupredbindir="$scriptsdir/bin";
 $bindir=abs_path("$scriptsdir/./bin");
 $fudir=abs_path("$bindir/../");
 #print "$bindir\n";
@@ -333,7 +333,16 @@ close(contact);
 #`cp deepmsa.contact $datadir/respre.contact`;
 
 ############### Run CEthreader ###############
-system("$fupredbindir/CEdecomposition  -i q -f $inputdir/protein.seq -s $inputdir/protein.horiz -c $work_dir/protein.contact -mtx $deepmsa_tmp_dir/protein.mtx -o $inputdir/protein.ce -m exp 1.19");
+# system("cd $scriptsdir");
+# my cd_exit_code=$? >> 8;
+# print "cd_exit_code: $cd_exit_code\n";
+`pwd`;
+
+#print "scriptsdir:$scriptsdir\n";
+
+system("ls -lht");
+
+system("$bindir/CEdecomposition  -i q -f $inputdir/protein.seq -s $inputdir/protein.horiz -c $work_dir/protein.contact -mtx $deepmsa_tmp_dir/protein.mtx -o $inputdir/protein.ce -m exp 1.19");
 my $CEdecomposition_exit_code = $? >> 8;
 print "CEdecomposition exit code:$CEdecomposition_exit_code\n";
 
@@ -354,12 +363,12 @@ print("output_dir: $output_dir\n");
 `/bin/mkdir -p $output_dir`;
 
 
-system("$fupredbindir/FUpred -i $inputdir/protein.ce -2c 0.85 -2d 0.66 -chip 15 -label3c 0 -o protein >$work_dir/fu.txt");
+system("$bindir/FUpred -i $inputdir/protein.ce -2c 0.85 -2d 0.66 -chip 15 -label3c 0 -o protein >$work_dir/fu.txt");
 #system("$bindir/FUpred -i protein.ce -2c 0.85 -2d 0.66 -chip 15 -label3c 0 -o protein >$work_dir/protein-FUpred.txt");
 #`cp protein.2c $datadir/`;
 #`cp protein.2d $datadir/`;
 print("domain boundary is:");
-system("cat $inputdir/fu.txt");
+system("cat $work_dir/fu.txt");
 print "\n";
 print "domain boundary is in $output_dir/$protein_name-FUpred.txt  \n";
 system("/bin/mv $work_dir/fu.txt $output_dir/$protein_name-FUpred.txt");
