@@ -156,6 +156,9 @@ fi
 
 ${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/fasta ${af2_pred_data_dir}
 ${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/msa ${af2_pred_data_dir}
+
+
+
 #########################
 # running alphafold
 #########################
@@ -183,36 +186,43 @@ if [ ${enable_domain_split} -eq 1 ]; then
     echo "f:${f}"
     f=${f%.*}
     #-------------deal with fasta-----------------
-    #把msa_tool_data_dir/fasta中的含"${f}Domain"的fasta文件删除
-    ${msa_tool_run} rm -f ${msa_tool_data_dir}/fasta/${f}Domain*.fasta
-    #copy msa_tool_data_dir/fasta中"${f}.fasta"到msa_tool_data_dir/fasta中，命名为"${f}_assembled.fasta"
-    ${msa_tool_run} cp ${msa_tool_data_dir}/fasta/${f}.fasta ${msa_tool_data_dir}/fasta/${f}_assembled.fasta
-    #同步msa_tool_data_dir/fasta到本地
-    ${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/fasta ${af2_pred_data_dir}
-    #讲${F}_assembled.fasta加入af2_pred_file_list
+    # #把msa_tool_data_dir/fasta中的含"${f}Domain"的fasta文件删除
+    # ${msa_tool_run} rm -f ${msa_tool_data_dir}/fasta/${f}Domain*.fasta
+    # #copy msa_tool_data_dir/fasta中"${f}.fasta"到msa_tool_data_dir/fasta中，命名为"${f}_assembled.fasta"
+    # ${msa_tool_run} cp ${msa_tool_data_dir}/fasta/${f}.fasta ${msa_tool_data_dir}/fasta/${f}_assembled.fasta
+    # #同步msa_tool_data_dir/fasta到本地
+    # ${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/fasta ${af2_pred_data_dir}
+    # #讲${F}_assembled.fasta加入af2_pred_file_list                                                                                                                                                                                                                                                                 
+    # af2_pred_file_list="${af2_pred_file_list} ${af2_pred_data_dir}/fasta/${f}_assembled.fasta"
+
+    #把本地的${af2_pred_data_dir}/fasta中"${f}Domain"的fasta文件删除
+    rm -f ${af2_pred_data_dir}/fasta/${f}Domain*.fasta
+    cp ${af2_pred_data_dir}/fasta/${f}.fasta ${af2_pred_data_dir}/fasta/${f}_assembled.fasta
+    #将{f}_assembled.fasta加入af2_pred_file_list                                                                                                                                                                                                                                                                 
     af2_pred_file_list="${af2_pred_file_list} ${af2_pred_data_dir}/fasta/${f}_assembled.fasta"
 
-
+    echo "af2_pred_file_list:${af2_pred_file_list}"
     #-------------deal with msa-----------------
-    #删除${msa_tool_data_dir}/msa中${f}Domain*的文件夹
-    ${msa_tool_run} rm -rf ${msa_tool_data_dir}/msa/${f}Domain*
-    #查找${af2_pred_data_dir}/msa中${f}_assembled的文件夹，将其中所有内容mv到$f的文件夹中
-    # assembled_dir="${af2_pred_data_dir}/msa/${f}_assembled"
-    # target_dir="${af2_pred_data_dir}/${f}"
-    # if [ -d "${assembled_dir}" ]; then
-    #   echo "move assembled msa to target_dir:${target_dir}."
-    #   mv "${assembled_dir}"/* "${target_dir}/"
-    # else
-    #   echo "Error: Directory ${assembled_dir} not found."
-    # fi
+    rm -rf ${af2_pred_data_dir}/msa/${f}Domain*
+
+    #把${af2_pred_data_dir}/msa/${f}_assembled/msas文件夹中的${f}-assembled.a3m替换同文件目录下的bfd_uniref_hits.a3m
+    assembled_dir="${af2_pred_data_dir}/msa/${f}_assembled/msas"
+    echo "assembled_dir:${assembled_dir}"
+    ls -l "${assembled_dir}"
+    mv "${assembled_dir}/${f}-assembled.a3m" "${assembled_dir}/bfd_uniref_hits.a3m"
+    ls -l "${assembled_dir}"
+    
   done
 
 fi
 
 echo "start run alphafold"
 bash -x run_alphafold.sh \
-  -m alphafold \
-  -d db \
-  -o ${af2_pred_data_dir}/msa \
-  -p "${model_params}" \
-  ${af2_pred_file_list}
+    -m alphafold \
+    -d db \
+    -o "${af2_pred_data_dir}/msa" \
+    -s \
+    -p "${model_params}" \
+    ${af2_pred_file_list}
+
+# s: single: 让sto生成一个空的；一般是确认我之前搜的msa是否正确
