@@ -14,6 +14,7 @@ help() {
           "  -p, --model_params <model_params>\n" \
           "  -g, --gpu_devices <gpu_devices>\n" \
           "  -s, --enable_domain_split\n" \
+          "  --enable_deep_msa2\n" \
 	  "\n" \
 	  "platforms:\n" \
 	  "  --msa_tool_home <msa_tool_home>\n" \
@@ -34,8 +35,9 @@ model_params=""
 gpu_devices="all"
 
 enable_domain_split=0
+enable_deep_msa2=0
 
-ARGS=$(getopt --options "t:o:p:g:sh" --longoptions "timestamp:,output_dir:,model_params:,gpu_devices:,msa_tool_home:,msa_tool_srv:,enable_domain_split,help" -- "$@") || exit
+ARGS=$(getopt --options "t:o:p:g:sh" --longoptions "timestamp:,output_dir:,model_params:,gpu_devices:,msa_tool_home:,msa_tool_srv:,enable_domain_split,enable_deep_msa2,help" -- "$@") || exit
 eval "set -- ${ARGS}"
 echo "ARGS: $*"
 while true; do
@@ -50,6 +52,7 @@ while true; do
     (--msa_tool_srv) msa_tool_srv="$2"; shift 2;;
     (-h | --help) help 0 ;;
     (-s | --enable_domain_split) enable_domain_split=1; shift 1;;
+    ( --enable_deep_msa2) enable_deep_msa2=1; shift 1;;
     (--) shift 1; break;;
     (*) help 1;
   esac
@@ -123,6 +126,11 @@ echo "msa_tool_run done"
 #########################
 # MSA postprocess modules
 #########################
+if [ ${enable_deep_msa2} -eq 1 ]; then
+  ${msa_tool_run} bash -x ${msa_tool_home}/CASP/run_deep_msa2.sh \
+      -o ${msa_tool_data_dir}/msa \
+      ${msa_tool_file_list}
+fi
 if [ ${enable_domain_split} -eq 1 ]; then
   # run msa_assemble
   for f in $@; do
