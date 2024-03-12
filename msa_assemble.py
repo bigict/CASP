@@ -156,7 +156,7 @@ def combine_db_msa(bfd_msas, uniref90_msas, mgnify_msas):
 #   return spliced_msa
 
 
-def combine_domain(db_msas, protein_name, input_folder):
+def combine_domain(db_msas, protein_name):
   spliced_msa = ''
   with open(os.path.join('seq_parse/FUpredOutput',
                          f'{protein_name}-FUpred.txt'),
@@ -177,6 +177,8 @@ def combine_domain(db_msas, protein_name, input_folder):
   #domain_info示例：['1-78','111-138','228-321','79-110','139-196'],现在将这些列表元素按照首个数字排序
   domain_info = sorted(domain_info, key=lambda x: int(x.split('-')[0]))
   print(f'domain_info: {domain_info}')
+  domain_info_len = len(domain_info)
+  print(f'domain_info_len: {domain_info_len}')
 
   #将head_line和msa_line视为一组，所以max_depth/2.值为db_msas.values()中最大的msa的行数
   max_depth = max(len(msa.split('\n')) for msa in db_msas.values()) // 2
@@ -188,6 +190,7 @@ def combine_domain(db_msas, protein_name, input_folder):
     #开始对这一行按照domain_info的顺序进行横向拼接
     for i, region in enumerate(domain_info):
       #region:eg:'1-78',是个字符串
+      print(f'now dealing with the {i}th region:{region}')
       start = int(region.split('-')[0])
       end = int(region.split('-')[1])
       msa_len = end - start + 1
@@ -224,7 +227,7 @@ def combine_domain(db_msas, protein_name, input_folder):
         head_line += ' ' * msa_len
         msa_line += '-' * msa_len
       else:
-        head_line += '>' + region_msa[row_index * 2][start - 1:end]
+        head_line += region_msa[row_index * 2][start - 1:end]
         msa_line += region_msa[row_index * 2 + 1][start - 1:end]
 
     spliced_msa += head_line + '\n' + msa_line + '\n'
@@ -276,7 +279,7 @@ def main():
   mgnify_msas = read_msa_from_mgnify(mgnify_paths)
   db_msas = combine_db_msa(bfd_msas, uniref90_msas, mgnify_msas)
 
-  spliced_msa = combine_domain(db_msas, args.protein_name, args.input_folder)
+  spliced_msa = combine_domain(db_msas, args.protein_name)
   output_path = os.path.join(args.output_folder,
                              f'{args.protein_name}-assembled.a3m')
   write_spliced_msa(output_path, spliced_msa)
