@@ -163,17 +163,19 @@ def combine_domain(db_msas, protein_name, input_folder):
             encoding='utf-8') as fu_file:
     domain_info = fu_file.read()
 
-  domain_info = domain_info.split(';')
+  #domain_info删掉文章末尾可能出现的换行符和';'，并按照‘；’分割
+  domain_info = domain_info.strip().strip(';').split(';')
   domain_info_list = [domain.split(',') for domain in domain_info]
   #domain_info_list示例：['1-78','111-138','228-321','79-110','139-196'],现在将这些列表元素按照首个数字排序
   domain_info_list = sorted(domain_info_list,
                             key=lambda x: int(x[0].split('-')[0]))
   print(f'domain_info_list: {domain_info_list}')
 
-  #将head_line和msa_line视为一组，所以max_depth/2
-  max_depth = max(len(msa) in db_msas.values()) / 2
+  #将head_line和msa_line视为一组，所以max_depth/2.值为db_msas.values()中最大的msa的行数
+  max_depth = max(len(msa.split('\n')) for msa in db_msas.values()) // 2
+  print(f'max_depth: {max_depth}')
 
-  for row_index in range(max_depth):
+  for row_index in range(max_depth):  #注意row_index从0开始！
     head_line = ''
     msa_line = ''
     #开始对这一行按照domain_info_list的顺序进行横向拼接
@@ -195,6 +197,7 @@ def combine_domain(db_msas, protein_name, input_folder):
           msa_line += '-' * (start - 1 -
                              int(domain_info_list[i - 1].split('-')[1]))
 
+      #found_index是domain_info中region所在的domain的索引
       found_index = None
       for j, domain in enumerate(domain_info, start=1):
         if region in domain:
@@ -206,12 +209,20 @@ def combine_domain(db_msas, protein_name, input_folder):
         print(f'{region} not found in domain_info_list')
         sys.exit(1)
 
-      #找到了含有region的domain后，找到这个domain的msa
       #input_folder= msa_tool_data_dir/msa
       region_msa = db_msas[
-          f'{input_folder}/{protein_name}Domain{found_index}'].split('>')
-      head_line += region_msa[row_index].split('\n')[0]
-      msa_line += region_msa[row_index].split('\n')[1]
+          f'{input_folder}/{protein_name}Domain{found_index}'].split('\n')
+      #if 此行对应的domain的msa行数不够，则以'-'填充
+      if row_index > ((len(region_msa) // 2) - 1):
+        print(
+            f'row_index: {row_index} is out of range,max_row_index: {len(region_msa) // 2 - 1}'
+        )
+        head_line += ' ' * msa_len
+        msa_line += '-' * msa_len
+      else:
+        head_line += '>' + region_msa[row_index * 2][start - 1:end]
+        msa_line += region_msa[row_index * 2 + 1][start - 1:end]
+
     spliced_msa += head_line + '\n' + msa_line + '\n'
 
   return spliced_msa
