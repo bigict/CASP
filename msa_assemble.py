@@ -184,7 +184,8 @@ def combine_domain(db_msas, protein_name):
   max_depth = max(len(msa.split('\n')) for msa in db_msas.values()) // 2
   print(f'max_depth: {max_depth}')
 
-  for row_index in range(max_depth):  #注意row_index从0开始！
+
+  for row_index in range(max_depth):  #注意row_index从0开始！ 只有domains的名字从1开始
     head_line = ''
     msa_line = ''
     #开始对这一行按照domain_info的顺序进行横向拼接
@@ -194,7 +195,7 @@ def combine_domain(db_msas, protein_name):
       start = int(region.split('-')[0])
       end = int(region.split('-')[1])
       msa_len = end - start + 1
-
+      
       #如果domain_info不能覆盖原有序列，则以'-'填充
       if i == 0:
         if start > 1:
@@ -205,7 +206,7 @@ def combine_domain(db_msas, protein_name):
           head_line += ' ' * (start - 1 - int(domain_info[i - 1].split('-')[1]))
           msa_line += '-' * (start - 1 - int(domain_info[i - 1].split('-')[1]))
 
-      #found_index是domain_info中region所在的domain的索引
+      #found_index是domains中region所在的domain的索引
       found_index = None
       for j, domain in enumerate(domains, start=1):
         if region in domain:
@@ -216,8 +217,6 @@ def combine_domain(db_msas, protein_name):
       if found_index is None:
         print(f'{region} not found in domains')
         sys.exit(1)
-
-      #input_folder= msa_tool_data_dir/msa
       region_msa = db_msas[f'{protein_name}Domain{found_index}'].split('\n')
       #if 此行对应的domain的msa行数不够，则以'-'填充
       if row_index > ((len(region_msa) // 2) - 1):
@@ -227,8 +226,48 @@ def combine_domain(db_msas, protein_name):
         head_line += ' ' * msa_len
         msa_line += '-' * msa_len
       else:
-        head_line += region_msa[row_index * 2][start - 1:end]
-        msa_line += region_msa[row_index * 2 + 1][start - 1:end]
+        #wrong version:
+        #head_line += region_msa[row_index * 2][start - 1:end]
+        #msa_line += region_msa[row_index * 2 + 1][start - 1:end]
+        #msa中只有大写字母或者‘-’计数要达到msa_len个，小写字母保留但不计数.msa_line根据p_start和p_end截取
+        p,q,k=0,0,0
+
+        while k< start-1:
+          if not region_msa[row_index*2 +1][p].islower():
+            k+=1
+          p+=1
+        #untile here: p是该region之前实际有效的氨基酸应该截取到的下标，k=start-1个大写字母
+        '''
+        eg： start=3,所以看msa_line[0,1,2,3,4,5]：AaBbCD
+        start-1=2,p=0,k=0
+        |index|char| after_p|after_k|
+        |  0  |  A |   1    |   1   |
+        |  1  |  a |   2    |   1   |
+        |  2  |  B |   3    |   2   |----loop end
+        |  3  |  b |   -    |   -   |
+        |  4  |  C |   -    |   -   |
+        所以现在的region:'3-4'就应该从p=3开始截取（因为index从0开始）
+        p=3
+        '''
+        q=p
+        k=0
+        while k < msa_len:
+          if not region_msa[row_index * 2 +1][q].islower():
+            k+=1
+          q+=1
+        #untile here: q 是msa_line实际要截取到的下标(开区间），k=msa_len
+        '''
+        eg： start=3,end=4所以看msa_line[0,1,2,3,4,5]：AaBbCD,region:'3-4'
+        start-1=2,q=3,k-0,msa_len=2
+        |index|char| after_q|after_k|
+        |  3  |  b |   4    |   0   |
+        |  4  |  C |   5    |   1   |
+        |  5  |  D |   6    |   2   |--loop end
+        q=6,而我们要截取的是'CD',所以是msa_line[3:6]=[p:q]
+        '''
+        head_line += region_msa[row_index * 2][p:q]
+        msa_line +=region_msa[row_index * 2 + 1][p:q]
+
 
     spliced_msa += head_line + '\n' + msa_line + '\n'
 
