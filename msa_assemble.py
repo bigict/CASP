@@ -156,6 +156,26 @@ def combine_db_msa(bfd_msas, uniref90_msas, mgnify_msas):
 #   return spliced_msa
 
 
+def parse_domain(domain):
+  n = 0
+  #n：前面包含多少个align的字符，就是Start_at
+  for region in map(lambda x: x.split('-'), domain.split(',')):
+    s, e = map(int, region)
+    assert s <= e
+    yield s, e, n
+    n += e - s + 1
+
+
+def split_domains(domain_info):
+  i = 0
+  #i就是found_index
+  for domain in map(lambda x: x.strip(), domain_info.split(';')):
+    if domain:
+      for region in parse_domain(domain):
+        yield i, region
+      i += 1
+
+
 def combine_domain(db_msas, protein_name):
   spliced_msa = ''
   with open(os.path.join('seq_parse/FUpredOutput',
@@ -165,59 +185,78 @@ def combine_domain(db_msas, protein_name):
     domain_info = fu_file.read()
 
   #domain_info删掉文章末尾可能出现的换行符和';'，并分割
-  domain_info = domain_info.strip().strip(';')
-
-  domains = domain_info.split(';')
-  print(f'domains: {domains}')
-
-  domain_info = [
-      item for sub_string in domain_info.split(';')
-      for item in sub_string.split(',')
-  ]
+  #domain_info = domain_info.strip().strip(';')
+  #domains = domain_info.split(';')
+  # domain_info = [
+  #     item for sub_string in domain_info.split(';')
+  #     for item in sub_string.split(',')
+  # ]
   #domain_info示例：['1-78','111-138','228-321','79-110','139-196'],现在将这些列表元素按照首个数字排序
-  domain_info = sorted(domain_info, key=lambda x: int(x.split('-')[0]))
-  print(f'domain_info: {domain_info}')
-  domain_info_len = len(domain_info)
-  print(f'domain_info_len: {domain_info_len}')
+  # domain_info = sorted(domain_info, key=lambda x: int(x.split('-')[0]))
+  # print(f'domain_info: {domain_info}')
+  # domain_info_len = len(domain_info)
+  # print(f'domain_info_len: {domain_info_len}')
 
+  domains = list(split_domains(domain_info))
+  print(f'domains: {domains}')
+  #domains: [(0, (1, 78, 0)), (0, (111, 138, 78)), (0, (228, 321, 106)), (0, (354, 559, 200)), (0, (603, 687, 406)), (0, (801, 1089, 491)), (0, (1128, 1280, 780)), (0, (1311, 1424, 933)), (1, (79, 110, 0)), (2, (139, 196, 0)), (3, (197, 227, 0)), (4, (322, 353, 0)), (5, (560, 602, 0)), (6, (688, 743, 0)), (7, (744, 800, 0)), (8, (1090, 1127, 0)), (9, (1281, 1310, 0))]
+  #将domains按照(0, (1, 78, 0))中(1, 78, 0)的第一个元素排序
+  domains = sorted(domains, key=lambda x: x[1][0])
+
+  print(f'domains: {domains}')
   #将head_line和msa_line视为一组，所以max_depth/2.值为db_msas.values()中最大的msa的行数
   max_depth = max(len(msa.split('\n')) for msa in db_msas.values()) // 2
   print(f'max_depth: {max_depth}')
 
-
   for row_index in range(max_depth):  #注意row_index从0开始！ 只有domains的名字从1开始
+    print(f'assemble the {row_index}th line')
     head_line = ''
     msa_line = ''
     #开始对这一行按照domain_info的顺序进行横向拼接
-    for i, region in enumerate(domain_info):
-      #region:eg:'1-78',是个字符串
-      print(f'now dealing with the {i}th region:{region}')
-      start = int(region.split('-')[0])
-      end = int(region.split('-')[1])
+    for i, region in enumerate(domains):
+      #i:region的序号，region:（start,end,start_at）
+      print(f'it is the {i} th region:{region}')
+      start = region[1][0]
+      end = region[1][1]
+      start_at = region[1][2]
       msa_len = end - start + 1
-      
-      #如果domain_info不能覆盖原有序列，则以'-'填充
+      found_index = int(region[0])
+      print(f'msa_len:{msa_len}')
+      #如果region不能覆盖原有序列，则以'-'填充
       if i == 0:
         if start > 1:
           head_line += '>' + ' ' * (start - 1)
           msa_line += '-' * (start - 1)
       else:
-        if start > 1 + int(domain_info[i - 1].split('-')[1]):
-          head_line += ' ' * (start - 1 - int(domain_info[i - 1].split('-')[1]))
-          msa_line += '-' * (start - 1 - int(domain_info[i - 1].split('-')[1]))
+        if start > 1 + int(domains[i - 1][1][1]):
+          head_line += ' ' * (start - 1 - int(domains[i - 1][1][1]))
+          msa_line += '-' * (start - 1 - int(domains[i - 1][1][1]))
 
       #found_index是domains中region所在的domain的索引
-      found_index = None
-      for j, domain in enumerate(domains, start=1):
-        if region in domain:
-          print(f'{region}  is in Domain{j}: {domain}')
-          found_index = j
-          break
+      # found_index = None
+      # region_index = None
 
-      if found_index is None:
-        print(f'{region} not found in domains')
-        sys.exit(1)
-      region_msa = db_msas[f'{protein_name}Domain{found_index}'].split('\n')
+      # found_domain_info = None
+      # for j, domain in enumerate(domains, start=1):
+      #   if region in domain:
+      #     found_index = j
+      #     found_domain_info = domain
+      #     print(f'{region}  is in Domain{j}: {found_domain_info}')
+      #     has_region_cnt = len(domain.split(','))
+      #     print(f'has_region_cnt:{has_region_cnt}')
+      #     #查找该region是domain中的第几个
+      #     found_domain_info = found_domain_info.split(',')
+      #     for n, sub_region in enumerate(found_domain_info, start=0):
+      #       if sub_region == region:
+      #         print(f'{region} is the {n}th region in Domain{j}')
+      #         region_index = n
+      #     break
+
+      # if found_index is None:
+      #   print(f'{region} not found in domains')
+      #   sys.exit(1)
+
+      region_msa = db_msas[f'{protein_name}Domain{found_index+1}'].split('\n')
       #if 此行对应的domain的msa行数不够，则以'-'填充
       if row_index > ((len(region_msa) // 2) - 1):
         print(
@@ -226,48 +265,72 @@ def combine_domain(db_msas, protein_name):
         head_line += ' ' * msa_len
         msa_line += '-' * msa_len
       else:
-        #wrong version:
-        #head_line += region_msa[row_index * 2][start - 1:end]
-        #msa_line += region_msa[row_index * 2 + 1][start - 1:end]
         #msa中只有大写字母或者‘-’计数要达到msa_len个，小写字母保留但不计数.msa_line根据p_start和p_end截取
-        p,q,k=0,0,0
+        #has_region_cnt =domains列表中元素[0]是region[0]的个数
+        has_region_cnt = len([x for x in domains if x[0] == region[0]])
+        print(f'has_region_cnt:{has_region_cnt}')
+        if has_region_cnt == 1:
+          print(
+              f'the Domain only has 1 region:{region},so we assemble msa_line:{region_msa[row_index * 2 + 1]}'
+          )
+          head_line += region_msa[row_index * 2]
+          msa_line += region_msa[row_index * 2 + 1]
+          continue
 
-        while k< start-1:
-          if not region_msa[row_index*2 +1][p].islower():
-            k+=1
-          p+=1
+        #wrong:version:不适用于有小写字母的情况
+        # if start == 1:
+        #   print(
+        #       f'start=1,is the beginning,so we choose Domain{found_index+1}\'s {region} from [{start-1}: {end}],msa_line:{region_msa[row_index * 2 + 1][start - 1:end]}'
+        #   )
+        #   head_line += region_msa[row_index * 2][start - 1:end]
+        #   msa_line += region_msa[row_index * 2 + 1][start - 1:end]
+        #   continue
+
+        print(f'start assemble msa at {start_at}')
+        p, q = 0, 0
+        k = 0
+        while k < start_at and start != 1:
+          if not region_msa[row_index * 2 + 1][p].islower():
+            k += 1
+          p += 1
         #untile here: p是该region之前实际有效的氨基酸应该截取到的下标，k=start-1个大写字母
         '''
-        eg： start=3,所以看msa_line[0,1,2,3,4,5]：AaBbCD
-        start-1=2,p=0,k=0
-        |index|char| after_p|after_k|
-        |  0  |  A |   1    |   1   |
-        |  1  |  a |   2    |   1   |
-        |  2  |  B |   3    |   2   |----loop end
-        |  3  |  b |   -    |   -   |
-        |  4  |  C |   -    |   -   |
-        所以现在的region:'3-4'就应该从p=3开始截取（因为index从0开始）
-        p=3
+        eg： region:'1-3','4-5',所以看msa_line[0,1,2,3,4,5,6]：AaBbCDE,结果应该是AaBbC'DE'：msa_line[5:7](左闭右开)
+        start_at=3,msa_len=2,p=0,k=0
+        |index|char| after_p|after_k|p|k|
+        |  0  |  A |   1    |   1   |0|0|
+        |  1  |  a |   2    |   1   |1|1|
+        |  2  |  B |   3    |   2   |2|1|
+        |  3  |  b |   4    |   2   |3|2|
+        |  4  |  C |   5    |   3   |4|2|--loop ended
+        |  5  |  D |   -    |   -   |0|0|
+        |  6  |  E |   -    |   -   |0|0|
+        所以现在的region:'4-5'就应该从p=5开始截取（因为index从0开始）
+        p=5,q=5
         '''
-        q=p
-        k=0
+
+        q = p
+        k = 0
         while k < msa_len:
-          if not region_msa[row_index * 2 +1][q].islower():
-            k+=1
-          q+=1
+          if not region_msa[row_index * 2 + 1][q].islower():
+            k += 1
+          q += 1
         #untile here: q 是msa_line实际要截取到的下标(开区间），k=msa_len
         '''
-        eg： start=3,end=4所以看msa_line[0,1,2,3,4,5]：AaBbCD,region:'3-4'
-        start-1=2,q=3,k-0,msa_len=2
-        |index|char| after_q|after_k|
-        |  3  |  b |   4    |   0   |
-        |  4  |  C |   5    |   1   |
-        |  5  |  D |   6    |   2   |--loop end
-        q=6,而我们要截取的是'CD',所以是msa_line[3:6]=[p:q]
+        eg： region:'1-3','4-5',所以看msa_line[0,1,2,3,4,5,6]：AaBbCDE,结果应该是AaBbC'DE'：msa_line[5:7](左闭右开)
+        start-1=3,q=5,k=0,msa_len=2
+        |index|char| after_q|after_k|q|k|
+        |  5  |  D |   6    |   1   |5|0|
+        |  6  |  E |   7    |   2   |6|1|--loop end
+        |  7  |  - |   -    |   -   |
+        q=7,而我们要截取的是'DE',所以是msa_line[5:7]=[p:q]
         '''
-        head_line += region_msa[row_index * 2][p:q]
-        msa_line +=region_msa[row_index * 2 + 1][p:q]
 
+        print(
+            f'now we choose Domain{found_index+1}\'s {region} from [{p}:{q}],msa_line:{region_msa[row_index * 2 + 1][p:q]}'
+        )
+        head_line += region_msa[row_index * 2][p:q]
+        msa_line += region_msa[row_index * 2 + 1][p:q]
 
     spliced_msa += head_line + '\n' + msa_line + '\n'
 
