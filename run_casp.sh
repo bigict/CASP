@@ -14,6 +14,11 @@ help() {
           "  -p, --model_params <model_params>\n" \
           "  -g, --gpu_devices <gpu_devices>\n" \
           "  -s, --enable_domain_split\n" \
+          " --num_predictions_per_model <num_predictions_per_model>\n" \
+          "\n" \
+          "platforms:\n" \
+          "  --msa_tool_home <msa_tool_home>\n" \
+          "  --msa_tool_srv <msa_tool_srv>\n" \
           "\n" \
           "workflow:\n" \
           "  [MSA preprocess]* -> MSA search -> [MSA postprocess]* -> Predict"
@@ -23,7 +28,7 @@ help() {
 msa_tool_home="/public/dbu"
 msa_tool_srv="dbu@idnode17"
 msa_tool_sync="rsync -avP -e ssh"
-msa_tool_run="ssh ${msa_tool_srv}"
+
 
 
 timestamp=$(date +%Y%m%d-%H%M%S-%N)
@@ -32,8 +37,9 @@ model_params=""
 gpu_devices="all"
 WORKER_NUM=25
 enable_domain_split=0
+num_predictions_per_model=1 #default
 
-ARGS=$(getopt --options "t:o:p:g:sh" --longoptions "timestamp:,output_dir:,model_params:,gpu_devices:,enable_domain_split,help" -- "$@") || exit
+ARGS=$(getopt --options "t:o:p:g:sh" --longoptions "timestamp:,output_dir:,model_params:,gpu_devices:,enable_domain_split,help,msa_tool_home:,msa_tool_srv:,num_predictions_per_model:" -- "$@") || exit
 eval "set -- ${ARGS}"
 echo "ARGS: $*"
 while true; do
@@ -46,6 +52,9 @@ while true; do
     (-g | --gpu_devices) gpu_devices="$2"; shift 2;;
     (-h | --help) help 0 ;;
     (-s | --enable_domain_split) enable_domain_split=1; shift 1;;
+    (--msa_tool_home) msa_tool_home="$2"; shift 2;;
+    (--msa_tool_srv) msa_tool_srv="$2"; shift 2;;
+    (--num_predictions_per_model) num_predictions_per_model="$2"; shift 2;;
     (--) shift 1; break;;
     (*) help 1;
   esac
@@ -54,6 +63,11 @@ echo "timestamp: ${timestamp}"
 echo "enable_domain_split: ${enable_domain_split}"
 echo "model_params: ${model_params}"
 echo "gpu_devices: ${gpu_devices}"
+echo "msa_tool_home: ${msa_tool_home}"
+echo "msa_tool_srv: ${msa_tool_srv}"
+echo "num_predictions_per_model: ${num_predictions_per_model}"
+msa_tool_run="ssh ${msa_tool_srv}"
+
 
 msa_tool_data_dir="${msa_tool_home}/CASP/data/${timestamp}"
 ${msa_tool_run} mkdir -p ${msa_tool_data_dir}/fasta
@@ -171,7 +185,7 @@ else
     model_params="${model_params} --use_precomputed_msas"
   fi
 fi
-model_params="${model_params} --gpu_devices=${gpu_devices}"
+model_params="${model_params} --gpu_devices=${gpu_devices} --num_predictions_per_model=${num_predictions_per_model}"
 
 af2_pred_file_list=""
 for f in $*; do
@@ -181,6 +195,7 @@ done
 
 if [ ${enable_domain_split} -eq 1 ]; then
   echo "prepare for running alphafold"
+
   for f in ${af2_pred_file_list}; do 
     f=$(basename ${f})
     echo "f:${f}"
@@ -194,6 +209,7 @@ if [ ${enable_domain_split} -eq 1 ]; then
     # ${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/fasta ${af2_pred_data_dir}
     # #讲${F}_assembled.fasta加入af2_pred_file_list                                                                                                                                                                                                                                                                 
     # af2_pred_file_list="${af2_pred_file_list} ${af2_pred_data_dir}/fasta/${f}_assembled.fasta"
+
 
     #把本地的${af2_pred_data_dir}/fasta中"${f}Domain"的fasta文件删除
     rm -f ${af2_pred_data_dir}/fasta/${f}Domain*.fasta
@@ -216,6 +232,22 @@ if [ ${enable_domain_split} -eq 1 ]; then
 
 fi
 
+#delete orginal protein prediction, to speed up
+if [ ${enable_domain_split} -eq 1 ]; then
+  ls -l ${af2_pred_data_dir}/fasta
+  for f in $*; do
+    f=$(basename ${f})
+    rm -f ${af2_pred_data_dir}/fasta/${f}
+  done
+  ls -l ${af2_pred_data_dir}/fasta
+  #更新af2_pred_list
+  af2_pred_file_list=""
+  for f in ${af2_pred_data_dir}/fasta/*; do
+    f=$(basename ${f})
+    af2_pred_file_list="${af2_pred_file_list} ${af2_pred_data_dir}/fasta/${f}"
+  done
+  echo "to speed up,now af2_pred_file_list:${af2_pred_file_list}"
+fi
 echo "start run alphafold"
 bash -x run_alphafold.sh \
     -m alphafold \

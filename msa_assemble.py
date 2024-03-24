@@ -223,14 +223,14 @@ def combine_domain(db_msas, protein_name):
       found_index = int(region[0])
       print(f'msa_len:{msa_len}')
       #如果region不能覆盖原有序列，则以'-'填充
-      if i == 0:
-        if start > 1:
-          head_line += '>' + ' ' * (start - 1)
-          msa_line += '-' * (start - 1)
-      else:
-        if start > 1 + int(domains[i - 1][1][1]):
-          head_line += ' ' * (start - 1 - int(domains[i - 1][1][1]))
-          msa_line += '-' * (start - 1 - int(domains[i - 1][1][1]))
+      # if i == 0:
+      #   if start > 1:
+      #     head_line += '>' + ' ' * (start - 1)
+      #     msa_line += '-' * (start - 1)
+      # else:
+      #   if start > 1 + int(domains[i - 1][1][1]):
+      #     head_line += ' ' * (start - 1 - int(domains[i - 1][1][1]))
+      #     msa_line += '-' * (start - 1 - int(domains[i - 1][1][1]))
 
       #found_index是domains中region所在的domain的索引
       # found_index = None
@@ -262,9 +262,20 @@ def combine_domain(db_msas, protein_name):
         print(
             f'row_index: {row_index} is out of range,max_row_index: {len(region_msa) // 2 - 1}'
         )
-        head_line += ' ' * msa_len
+        #跳过该阶段的head_line until row_index is not out of range
         msa_line += '-' * msa_len
+
       else:
+        #如果region不能覆盖原有序列，则以'-'填充
+        if i == 0:
+          if start > 1:
+            head_line += '>' + ' ' * (start - 1)
+            msa_line += '-' * (start - 1)
+        else:
+          if start > 1 + int(domains[i - 1][1][1]):
+            head_line += ' ' * (start - 1 - int(domains[i - 1][1][1]))
+            msa_line += '-' * (start - 1 - int(domains[i - 1][1][1]))
+
         #msa中只有大写字母或者‘-’计数要达到msa_len个，小写字母保留但不计数.msa_line根据p_start和p_end截取
         #has_region_cnt =domains列表中元素[0]是region[0]的个数
         has_region_cnt = len([x for x in domains if x[0] == region[0]])
