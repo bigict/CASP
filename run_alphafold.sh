@@ -5,7 +5,7 @@ CWD=`readlink -f $0`
 CWD=`dirname ${CWD}`
 
 cd ${CWD}
-
+echo "command line is:$0 $*"
 help() {
   echo "usage: `basename $0` -d <data_dir> -o <output_dir> -s -p <af2_params> input_fasta ..."
   exit $1

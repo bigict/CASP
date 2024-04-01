@@ -5,6 +5,7 @@ CWD=`readlink -f $0`
 CWD=`dirname ${CWD}`
 
 cd ${CWD}
+echo "the whole command line is:$0 $*"
 
 help() {
   echo -e "usage: `basename $0` [options] input_fasta1 input_fasta2 ...\n" \
@@ -32,7 +33,8 @@ msa_tool_sync="rsync -avP -e ssh"
 
 
 timestamp=$(date +%Y%m%d-%H%M%S-%N)
-output_dir=${CWD}/data
+#output_dir=${CWD}/data
+output_dir="/mnt/data/tanqian"
 model_params=""
 gpu_devices="all"
 WORKER_NUM=25
@@ -60,6 +62,7 @@ while true; do
   esac
 done
 echo "timestamp: ${timestamp}"
+echo "output_dir:${output_dir}"
 echo "enable_domain_split: ${enable_domain_split}"
 echo "model_params: ${model_params}"
 echo "gpu_devices: ${gpu_devices}"
@@ -140,7 +143,7 @@ fi
 echo "start run msa_tool"
 
 msa_params=""
-if [ x"${model_params}" == x"" ]; then
+if [ x"${model_params}" != x"" ]; then
   msa_params="-p \"${model_params}\""
 fi
 
@@ -176,7 +179,7 @@ ${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/msa ${af2_pred_data_dir}
 #########################
 # running alphafold
 #########################
-if [ x"${model_params}" != x"" ]; then
+if [ x"${model_params}" == x"" ]; then
   model_params="--use_precomputed_msas"
   echo "model_params:${model_params}"
 else
@@ -233,25 +236,28 @@ if [ ${enable_domain_split} -eq 1 ]; then
 fi
 
 #delete orginal protein prediction, to speed up
-if [ ${enable_domain_split} -eq 1 ]; then
-  ls -l ${af2_pred_data_dir}/fasta
-  for f in $*; do
-    f=$(basename ${f})
-    rm -f ${af2_pred_data_dir}/fasta/${f}
-  done
-  ls -l ${af2_pred_data_dir}/fasta
-  #更新af2_pred_list
-  af2_pred_file_list=""
-  for f in ${af2_pred_data_dir}/fasta/*; do
-    f=$(basename ${f})
-    af2_pred_file_list="${af2_pred_file_list} ${af2_pred_data_dir}/fasta/${f}"
-  done
-  echo "to speed up,now af2_pred_file_list:${af2_pred_file_list}"
-fi
+# if [ ${enable_domain_split} -eq 1 ]; then
+#   ls -l ${af2_pred_data_dir}/fasta
+#   for f in $*; do
+#     f=$(basename ${f})
+#     rm -f ${af2_pred_data_dir}/fasta/${f}
+#   done
+#   ls -l ${af2_pred_data_dir}/fasta
+#   #更新af2_pred_list
+#   af2_pred_file_list=""
+#   for f in ${af2_pred_data_dir}/fasta/*; do
+#     f=$(basename ${f})
+#     af2_pred_file_list="${af2_pred_file_list} ${af2_pred_data_dir}/fasta/${f}"
+#   done
+#   echo "to speed up,now af2_pred_file_list:${af2_pred_file_list}"
+# fi
+
 echo "start run alphafold"
+
+db=/mnt/data/alphafold
 bash -x run_alphafold.sh \
-    -m alphafold \
-    -d db \
+    -m alphafold2:tanqian8 \
+    -d ${db} \
     -o "${af2_pred_data_dir}/msa" \
     -s \
     -p "${model_params}" \
