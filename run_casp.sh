@@ -40,8 +40,8 @@ gpu_devices="all"
 WORKER_NUM=25
 enable_domain_split=0
 num_predictions_per_model=1 #default
-
-ARGS=$(getopt --options "t:o:p:g:sh" --longoptions "timestamp:,output_dir:,model_params:,gpu_devices:,enable_domain_split,help,msa_tool_home:,msa_tool_srv:,num_predictions_per_model:" -- "$@") || exit
+clean_model_rsult_pkl=0
+ARGS=$(getopt --options "t:o:p:g:shc" --longoptions "timestamp:,output_dir:,model_params:,gpu_devices:,enable_domain_split,help,msa_tool_home:,msa_tool_srv:,num_predictions_per_model:" -- "$@") || exit
 eval "set -- ${ARGS}"
 echo "ARGS: $*"
 while true; do
@@ -53,6 +53,13 @@ while true; do
     (-p | --model_params) model_params="$2"; shift 2;;
     (-g | --gpu_devices) gpu_devices="$2"; shift 2;;
     (-h | --help) help 0 ;;
+    (-c ) clean_model_rsult_pkl=1; shift 1;;
+    (-s | --enable_domain_split) enable_domain_split=1; shift 1;;
+    (--msa_tool_home) msa_tool_home="$2"; shift 2;;
+    (--msa_tool_srv) msa_tool_srv="$2"; shift 2;;
+    (--num_predictions_per_model) num_predictions_per_model="$2"; shift 2;;
+    (--) shift 1; break;;
+    (*) help 1;
     (-s | --enable_domain_split) enable_domain_split=1; shift 1;;
     (--msa_tool_home) msa_tool_home="$2"; shift 2;;
     (--msa_tool_srv) msa_tool_srv="$2"; shift 2;;
@@ -69,11 +76,14 @@ echo "gpu_devices: ${gpu_devices}"
 echo "msa_tool_home: ${msa_tool_home}"
 echo "msa_tool_srv: ${msa_tool_srv}"
 echo "num_predictions_per_model: ${num_predictions_per_model}"
+echo "clean_model_rsult_pkl: ${clean_model_rsult_pkl}"
 msa_tool_run="ssh ${msa_tool_srv}"
 
 
 msa_tool_data_dir="${msa_tool_home}/CASP/data/${timestamp}"
 ${msa_tool_run} mkdir -p ${msa_tool_data_dir}/fasta
+af2_pred_data_dir="${output_dir}/${timestamp}"
+mkdir -p ${af2_pred_data_dir}
 
 #########################
 # MSA preprocess modules
@@ -82,8 +92,6 @@ ${msa_tool_run} mkdir -p ${msa_tool_data_dir}/fasta
 # fasta上传远程
 ${msa_tool_sync} $* ${msa_tool_srv}:${msa_tool_data_dir}/fasta/
 
-af2_pred_data_dir="${output_dir}/${timestamp}"
-mkdir -p ${af2_pred_data_dir}
 
 
 # 创建msa_tool_file_list文件，里面存放的是各个fasta文件,空格分隔
@@ -264,3 +272,12 @@ bash -x run_alphafold.sh \
     ${af2_pred_file_list}
 
 # s: single: 让sto生成一个空的；一般是确认我之前搜的msa是否正确
+if [ ${clean_model_rsult_pkl} -eq 1 ]; then
+  for f in ${af2_pred_file_list}; do
+    f=$(basename ${f})
+    f=${f%.*}
+    echo "cleanup:find ${af2_pred_data_dir}/msa/${f} -name "result_model_*.pkl" -exec rm -f {} \;" 
+    find ${af2_pred_data_dir}/msa/${f} -name "result_model_*.pkl" -exec rm -f {} \;
+    ls -l ${af2_pred_data_dir}/msa/${f}
+  done
+fi
