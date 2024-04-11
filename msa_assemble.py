@@ -258,6 +258,11 @@ def combine_domain(db_msas, protein_name):
 
       region_msa = db_msas[f'{protein_name}Domain{found_index+1}'].split('\n')
       #if 此行对应的domain的msa行数不够，则以'-'填充
+      if i == 0:
+        if start > 1:
+          head_line += '>' + ' ' * (start - 1)
+          msa_line += '-' * (start - 1)
+
       if row_index > ((len(region_msa) // 2) - 1):
         print(
             f'row_index: {row_index} is out of range,max_row_index: {len(region_msa) // 2 - 1}'
@@ -267,11 +272,7 @@ def combine_domain(db_msas, protein_name):
 
       else:
         #如果region不能覆盖原有序列，则以'-'填充
-        if i == 0:
-          if start > 1:
-            head_line += '>' + ' ' * (start - 1)
-            msa_line += '-' * (start - 1)
-        else:
+        if i != 0:
           if start > 1 + int(domains[i - 1][1][1]):
             head_line += ' ' * (start - 1 - int(domains[i - 1][1][1]))
             msa_line += '-' * (start - 1 - int(domains[i - 1][1][1]))
