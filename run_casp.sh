@@ -59,13 +59,7 @@ while true; do
     (--msa_tool_srv) msa_tool_srv="$2"; shift 2;;
     (--num_predictions_per_model) num_predictions_per_model="$2"; shift 2;;
     (--) shift 1; break;;
-    (*) help 1;
-    (-s | --enable_domain_split) enable_domain_split=1; shift 1;;
-    (--msa_tool_home) msa_tool_home="$2"; shift 2;;
-    (--msa_tool_srv) msa_tool_srv="$2"; shift 2;;
-    (--num_predictions_per_model) num_predictions_per_model="$2"; shift 2;;
-    (--) shift 1; break;;
-    (*) help 1;
+    (*) help 1;;
   esac
 done
 echo "timestamp: ${timestamp}"
@@ -261,11 +255,17 @@ fi
 # fi
 
 echo "start run alphafold"
+echo "bash -x run_alphafold.sh \
+    -m alphafold2 \
+    -d db \
+    -o "${af2_pred_data_dir}/msa" \
+    -s \
+    -p "${model_params}" \
+    ${af2_pred_file_list}"
 
-db=/mnt/data/alphafold
 bash -x run_alphafold.sh \
-    -m alphafold2:tanqian8 \
-    -d ${db} \
+    -m alphafold2 \
+    -d db\
     -o "${af2_pred_data_dir}/msa" \
     -s \
     -p "${model_params}" \
@@ -276,8 +276,9 @@ if [ ${clean_model_rsult_pkl} -eq 1 ]; then
   for f in ${af2_pred_file_list}; do
     f=$(basename ${f})
     f=${f%.*}
-    echo "cleanup:find ${af2_pred_data_dir}/msa/${f} -name "result_model_*.pkl" -exec rm -f {} \;" 
-    find ${af2_pred_data_dir}/msa/${f} -name "result_model_*.pkl" -exec rm -f {} \;
+    echo "cleanup:find ${af2_pred_data_dir}/msa/${f}* -name "result_model_*.pkl" -exec rm -f {} \;" 
+    find ${af2_pred_data_dir}/msa/${f}* -name "result_model_*.pkl" -exec rm -f {} \;
     ls -l ${af2_pred_data_dir}/msa/${f}
+    
   done
 fi
