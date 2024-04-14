@@ -168,7 +168,8 @@ if [ ${enable_domain_split} -eq 1 ]; then
     ${msa_tool_run} bash  ${msa_tool_home}/CASP/msa_assemble.sh \
       -i "${msa_tool_data_dir}/msa" \
       -n "${f}" \
-      -o "${msa_tool_data_dir}/msa/${f}_assembled/msas"
+      -o "${msa_tool_data_dir}/msa/${f}_assembled/msas" \
+      --input_fasta "${msa_tool_data_dir}/fasta/${f}.fasta"
   done
   echo "msa_assemble done"
 fi

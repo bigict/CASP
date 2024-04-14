@@ -117,8 +117,8 @@ def combine_db_msa(bfd_msas, uniref90_msas, mgnify_msas):
   for domain in bfd_msas.keys():
     print(f'Combining {domain} MSAs')
 
-    db_msas[
-        domain] = bfd_msas[domain] + uniref90_msas[domain] + mgnify_msas[domain]
+    db_msas[domain] = bfd_msas[domain][1:] + uniref90_msas[domain][
+        1:] + mgnify_msas[domain][1:]
   return db_msas
 
 
@@ -176,13 +176,19 @@ def split_domains(domain_info):
       i += 1
 
 
-def combine_domain(db_msas, protein_name):
+def combine_domain(db_msas, protein_name, fasta_file):
   spliced_msa = ''
   with open(os.path.join('seq_parse/FUpredOutput',
                          f'{protein_name}-FUpred.txt'),
             'r',
             encoding='utf-8') as fu_file:
     domain_info = fu_file.read()
+
+  with open(fasta_file, 'r') as f:
+    fasta_str = f.read()
+  sequences, descriptions = parsers.parse_fasta(fasta_str)
+  assert len(descriptions) == len(sequences) == 1
+  fasta_len = len(sequences[0])
 
   #domain_info删掉文章末尾可能出现的换行符和';'，并分割
   #domain_info = domain_info.strip().strip(';')
@@ -260,7 +266,7 @@ def combine_domain(db_msas, protein_name):
       #if 此行对应的domain的msa行数不够，则以'-'填充
       if i == 0:
         if start > 1:
-          head_line += '>' + ' ' * (start - 1)
+          head_line += f'>{row_index} '  # + ' ' * (start - 1)
           msa_line += '-' * (start - 1)
 
       if row_index > ((len(region_msa) // 2) - 1):
@@ -287,66 +293,70 @@ def combine_domain(db_msas, protein_name):
           )
           head_line += region_msa[row_index * 2]
           msa_line += region_msa[row_index * 2 + 1]
-          continue
+        else:
+          #wrong:version:不适用于有小写字母的情况
+          # if start == 1:
+          #   print(
+          #       f'start=1,is the beginning,so we choose Domain{found_index+1}\'s {region} from [{start-1}: {end}],msa_line:{region_msa[row_index * 2 + 1][start - 1:end]}'
+          #   )
+          #   head_line += region_msa[row_index * 2][start - 1:end]
+          #   msa_line += region_msa[row_index * 2 + 1][start - 1:end]
+          #   continue
 
-        #wrong:version:不适用于有小写字母的情况
-        # if start == 1:
-        #   print(
-        #       f'start=1,is the beginning,so we choose Domain{found_index+1}\'s {region} from [{start-1}: {end}],msa_line:{region_msa[row_index * 2 + 1][start - 1:end]}'
-        #   )
-        #   head_line += region_msa[row_index * 2][start - 1:end]
-        #   msa_line += region_msa[row_index * 2 + 1][start - 1:end]
-        #   continue
+          print(f'start assemble msa at {start_at}')
+          p, q = 0, 0
+          k = 0
+          while k < start_at and start != 1:
+            if not region_msa[row_index * 2 + 1][p].islower():
+              k += 1
+            p += 1
+          #untile here: p是该region之前实际有效的氨基酸应该截取到的下标，k=start-1个大写字母
+          '''
+          eg： region:'1-3','4-5',所以看msa_line[0,1,2,3,4,5,6]：AaBbCDE,结果应该是AaBbC'DE'：msa_line[5:7](左闭右开)
+          start_at=3,msa_len=2,p=0,k=0
+          |index|char| after_p|after_k|p|k|
+          |  0  |  A |   1    |   1   |0|0|
+          |  1  |  a |   2    |   1   |1|1|
+          |  2  |  B |   3    |   2   |2|1|
+          |  3  |  b |   4    |   2   |3|2|
+          |  4  |  C |   5    |   3   |4|2|--loop ended
+          |  5  |  D |   -    |   -   |0|0|
+          |  6  |  E |   -    |   -   |0|0|
+          所以现在的region:'4-5'就应该从p=5开始截取（因为index从0开始）
+          p=5,q=5
+          '''
 
-        print(f'start assemble msa at {start_at}')
-        p, q = 0, 0
-        k = 0
-        while k < start_at and start != 1:
-          if not region_msa[row_index * 2 + 1][p].islower():
-            k += 1
-          p += 1
-        #untile here: p是该region之前实际有效的氨基酸应该截取到的下标，k=start-1个大写字母
-        '''
-        eg： region:'1-3','4-5',所以看msa_line[0,1,2,3,4,5,6]：AaBbCDE,结果应该是AaBbC'DE'：msa_line[5:7](左闭右开)
-        start_at=3,msa_len=2,p=0,k=0
-        |index|char| after_p|after_k|p|k|
-        |  0  |  A |   1    |   1   |0|0|
-        |  1  |  a |   2    |   1   |1|1|
-        |  2  |  B |   3    |   2   |2|1|
-        |  3  |  b |   4    |   2   |3|2|
-        |  4  |  C |   5    |   3   |4|2|--loop ended
-        |  5  |  D |   -    |   -   |0|0|
-        |  6  |  E |   -    |   -   |0|0|
-        所以现在的region:'4-5'就应该从p=5开始截取（因为index从0开始）
-        p=5,q=5
-        '''
+          q = p
+          k = 0
+          while k < msa_len:
+            if not region_msa[row_index * 2 + 1][q].islower():
+              k += 1
+            q += 1
+          #untile here: q 是msa_line实际要截取到的下标(开区间），k=msa_len
+          '''
+          eg： region:'1-3','4-5',所以看msa_line[0,1,2,3,4,5,6]：AaBbCDE,结果应该是AaBbC'DE'：msa_line[5:7](左闭右开)
+          start-1=3,q=5,k=0,msa_len=2
+          |index|char| after_q|after_k|q|k|
+          |  5  |  D |   6    |   1   |5|0|
+          |  6  |  E |   7    |   2   |6|1|--loop end
+          |  7  |  - |   -    |   -   |
+          q=7,而我们要截取的是'DE',所以是msa_line[5:7]=[p:q]
+          '''
 
-        q = p
-        k = 0
-        while k < msa_len:
-          if not region_msa[row_index * 2 + 1][q].islower():
-            k += 1
-          q += 1
-        #untile here: q 是msa_line实际要截取到的下标(开区间），k=msa_len
-        '''
-        eg： region:'1-3','4-5',所以看msa_line[0,1,2,3,4,5,6]：AaBbCDE,结果应该是AaBbC'DE'：msa_line[5:7](左闭右开)
-        start-1=3,q=5,k=0,msa_len=2
-        |index|char| after_q|after_k|q|k|
-        |  5  |  D |   6    |   1   |5|0|
-        |  6  |  E |   7    |   2   |6|1|--loop end
-        |  7  |  - |   -    |   -   |
-        q=7,而我们要截取的是'DE',所以是msa_line[5:7]=[p:q]
-        '''
+          print(
+              f'now we choose Domain{found_index+1}\'s {region} from [{p}:{q}],msa_line:{region_msa[row_index * 2 + 1][p:q]}'
+          )
+          head_line += region_msa[row_index * 2][p:q]
+          msa_line += region_msa[row_index * 2 + 1][p:q]
 
-        print(
-            f'now we choose Domain{found_index+1}\'s {region} from [{p}:{q}],msa_line:{region_msa[row_index * 2 + 1][p:q]}'
-        )
-        head_line += region_msa[row_index * 2][p:q]
-        msa_line += region_msa[row_index * 2 + 1][p:q]
+      if i + 1 == len(domains):
+        if end < fasta_len:
+          # head_line += '>' + ' ' * (start - 1)
+          msa_line += '-' * (fasta_len - end)
 
     spliced_msa += head_line + '\n' + msa_line + '\n'
 
-  return spliced_msa
+  return f'>{descriptions[0]}\n{sequences[0]}\n{spliced_msa}'
 
 
 def main():
@@ -359,6 +369,9 @@ def main():
                       '--protein_name',
                       type=str,
                       help='Name of the protein')
+  parser.add_argument('--input_fasta',
+                      type=str,
+                      help='Fasta file of the protein')
   parser.add_argument('-o',
                       '--output_folder',
                       type=str,
@@ -393,7 +406,7 @@ def main():
   mgnify_msas = read_msa_from_mgnify(mgnify_paths)
   db_msas = combine_db_msa(bfd_msas, uniref90_msas, mgnify_msas)
 
-  spliced_msa = combine_domain(db_msas, args.protein_name)
+  spliced_msa = combine_domain(db_msas, args.protein_name, args.input_fasta)
   output_path = os.path.join(args.output_folder,
                              f'{args.protein_name}-assembled.a3m')
   write_spliced_msa(output_path, spliced_msa)

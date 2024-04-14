@@ -6,11 +6,12 @@
 #3. assemble msas horizontally with domains
 
 help(){
-  echo "Usage: $0 -i <input_folder> -n <protein_name> -o <output_folder>"
+  echo "Usage: $0 -i <input_folder> -n <protein_name> -o <output_folder> --input_fasta <input_fasta>"
   echo "Options:"
   echo "  -i <input_folder>    input folder of msa results from msa_tool"
   echo "  -n <protein_name>    protein name,eg:T1125"
   echo "  -o <output_folder>   output folder of assembled msa"
+  echo "  --input_fasta <input_fasta>   input fasta file of protein sequence"
   exit $1
 }
 CWD=$(readlink -f $0)
@@ -26,20 +27,27 @@ export PATH=${HOME}/local/anaconda3/bin:${HOME}/local/bin:${PATH}
 PYTHON_MODULE_PATH="/public/dbu/CASP/alphafold/"
 export PYTHONPATH="$PYTHONPATH:$PYTHON_MODULE_PATH"
 
-
-
-while getopts "i:n:o:" opt; do
-  case $opt in
-    i) INPUT_FOLDER=$OPTARG ;;
-    n) PROTEIN_NAME=$OPTARG ;;
-    o) OUTPUT_FOLDER=$OPTARG ;;
-    \?) echo "Invalid option: -$OPTARG" >&2
-        exit 1 ;;
+ARGS=$(getopt --options "i:o:n:h" --longoptions "input_fasta:" -- "$@") || exit
+eval "set -- ${ARGS}"
+echo "ARGS: $*"
+while true; do
+  echo "1:$1"
+  echo "2:$2"
+  case "$1" in
+    (-i ) INPUT_FOLDER="$2"; shift 2;;
+    (-o ) OUTPUT_FOLDER="$2"; shift 2;;
+    (-n ) PROTEIN_NAME="$2"; shift 2;;
+    (--input_fasta) INPUT_FASTA="$2"; shift 2;;
+    (-h | --help) help 0 ;;
+    (--) shift 1; break;;
+    (*) help 1;;
   esac
 done
-shift $((OPTIND -1))
+
 
 mkdir -p "$OUTPUT_FOLDER"
 
 # 运行 Python 脚本
-python3 "${CWD}/msa_assemble.py" -i "$INPUT_FOLDER" -n "$PROTEIN_NAME" -o "$OUTPUT_FOLDER"
+echo python3 "${CWD}/msa_assemble.py" -i "$INPUT_FOLDER" -n "$PROTEIN_NAME" -o "$OUTPUT_FOLDER --input_fasta $INPUT_FASTA"
+
+python3 "${CWD}/msa_assemble.py" -i "$INPUT_FOLDER" -n "$PROTEIN_NAME" -o "$OUTPUT_FOLDER --input_fasta $INPUT_FASTA"
