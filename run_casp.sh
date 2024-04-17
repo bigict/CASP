@@ -13,6 +13,7 @@ help() {
           "  -o, --output_dir <output_dir>\n" \
           "  -p, --model_params <model_params>\n" \
           "  -g, --gpu_devices <gpu_devices>\n" \
+          "  --multi_gpus\n" \
           "  -s, --enable_domain_split\n" \
           "  --enable_deep_msa2\n" \
 	  "\n" \
@@ -33,11 +34,12 @@ timestamp=$(date +%Y%m%d-%H%M%S-%N)
 output_dir=${CWD}/data
 model_params=""
 gpu_devices="all"
+multi_gpus=""
 
 enable_domain_split=0
 enable_deep_msa2=0
 
-ARGS=$(getopt --options "t:o:p:g:sh" --longoptions "timestamp:,output_dir:,model_params:,gpu_devices:,msa_tool_home:,msa_tool_srv:,enable_domain_split,enable_deep_msa2,help" -- "$@") || exit
+ARGS=$(getopt --options "t:o:p:g:sh" --longoptions "timestamp:,output_dir:,model_params:,gpu_devices:,msa_tool_home:,msa_tool_srv:,multi_gpus,enable_domain_split,enable_deep_msa2,help" -- "$@") || exit
 eval "set -- ${ARGS}"
 echo "ARGS: $*"
 while true; do
@@ -48,6 +50,7 @@ while true; do
     (-o | --output_dir) output_dir="$2"; shift 2;;
     (-p | --model_params) model_params="$2"; shift 2;;
     (-g | --gpu_devices) gpu_devices="$2"; shift 2;;
+    (--multi_gpus) multi_gpus="--multi_gpus"; shift 1;;
     (--msa_tool_home) msa_tool_home="$2"; shift 2;;
     (--msa_tool_srv) msa_tool_srv="$2"; shift 2;;
     (-h | --help) help 0 ;;
@@ -168,7 +171,7 @@ else
     model_params="${model_params} --use_precomputed_msas"
   fi
 fi
-model_params="${model_params} --gpu_devices=${gpu_devices}"
+model_params="${model_params} --gpu_devices=${gpu_devices} ${multi_gpus}"
 
 bash -x run_alphafold.sh \
    -m alphafold \
