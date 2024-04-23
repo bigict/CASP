@@ -1,3 +1,5 @@
+"""Clustering MSA based on amino acid mutation site
+"""
 import os
 import re
 import pickle
@@ -41,7 +43,7 @@ def main(argv):
     for j, filter_rule in enumerate(filter_rules, start=1):
       if filter_rule.match(msa):
         new_order.append(i)
-        logging.info("Select MSA [%.5d] %s %s", i, str_msa[i], argv[j])
+        logging.info('Select MSA [%.5d] %s %s', i, str_msa[i], argv[j])
         break
 
   # filter msa based on new_order
@@ -53,7 +55,6 @@ def main(argv):
   for key in ('deletion_matrix_int', 'msa', 'msa_species_identifiers'):
     feature_dict[key] = np.take(feature_dict[key], new_order, axis=0)
   print(feature_dict['num_alignments'])
-  # feature_dict['num_alignments'] = feature_dict['num_alignments'][:len(new_order)]
   feature_dict['num_alignments'].fill(len(new_order))
   print(feature_dict['num_alignments'])
   for key, value in feature_dict.items():

@@ -8,7 +8,6 @@ Author: TanQian
 #import subprocess
 import os
 import argparse
-import re
 #import collections
 #import itertools
 #import string
@@ -157,6 +156,7 @@ def combine_db_msa(bfd_msas, uniref90_msas, mgnify_msas):
 
 
 def combine_domain(db_msas, protein_name, input_folder):
+  del input_folder
   spliced_msa = ''
   with open(os.path.join('seq_parse/FUpredOutput',
                          f'{protein_name}-FUpred.txt'),
@@ -174,11 +174,13 @@ def combine_domain(db_msas, protein_name, input_folder):
       item for sub_string in domain_info.split(';')
       for item in sub_string.split(',')
   ]
-  #domain_info示例：['1-78','111-138','228-321','79-110','139-196'],现在将这些列表元素按照首个数字排序
+  # domain_info示例：['1-78','111-138','228-321','79-110','139-196'],
+  # 现在将这些列表元素按照首个数字排序
   domain_info = sorted(domain_info, key=lambda x: int(x.split('-')[0]))
   print(f'domain_info: {domain_info}')
 
-  #将head_line和msa_line视为一组，所以max_depth/2.值为db_msas.values()中最大的msa的行数
+  # 将head_line和msa_line视为一组，所以max_depth/2.值为
+  # db_msas.values()中最大的msa的行数
   max_depth = max(len(msa.split('\n')) for msa in db_msas.values()) // 2
   print(f'max_depth: {max_depth}')
 
@@ -219,7 +221,8 @@ def combine_domain(db_msas, protein_name, input_folder):
       #if 此行对应的domain的msa行数不够，则以'-'填充
       if row_index > ((len(region_msa) // 2) - 1):
         print(
-            f'row_index: {row_index} is out of range,max_row_index: {len(region_msa) // 2 - 1}'
+            f'row_index: {row_index} is out of range,max_row_index:'
+            f'{len(region_msa) // 2 - 1}'
         )
         head_line += ' ' * msa_len
         msa_line += '-' * msa_len
