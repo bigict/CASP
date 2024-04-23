@@ -2,3 +2,7 @@
 	path = alphafold
 	url = git@github.com:bigict/alphafold.git
     branch = env
+[submodule "msa-suite"]
+	path = msa-suite
+	url = git@github.com:bigict/msa-suite.git
+    branch = main

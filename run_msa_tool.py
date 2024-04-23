@@ -76,6 +76,23 @@ flags.DEFINE_enum('model_preset', 'monomer',
                   'Choose preset model configuration - the monomer model, '
                   'the monomer model with extra ensembling, monomer model with '
                   'pTM head, or multimer model')
+flags.DEFINE_integer('num_predictions_per_model', 1, 'How many '
+                     'predictions (each with a different random seed) will be '
+                     'generated per model. E.g. if this is 2 and there are 5 '
+                     'models then there will be 10 predictions per input. '
+                     'Note: this FLAG only applies if model_preset!=multimer')
+flags.DEFINE_integer('num_multimer_predictions_per_model', 5, 'How many '
+                     'predictions (each with a different random seed) will be '
+                     'generated per model. E.g. if this is 2 and there are 5 '
+                     'models then there will be 10 predictions per input. '
+                     'Note: this FLAG only applies if model_preset=multimer')
+flags.DEFINE_boolean('use_precomputed_msas', False, 'Whether to read MSAs that '
+                     'have been written to disk instead of running the MSA '
+                     'tools. The MSA files are looked up in the output '
+                     'directory, so it must stay the same between multiple '
+                     'runs that are to reuse the MSAs. WARNING: This will not '
+                     'check if the sequence, database or configuration have '
+                     'changed.')
 
 FLAGS = flags.FLAGS
 
@@ -186,14 +203,14 @@ def main(argv):
       template_searcher=template_searcher,
       template_featurizer=template_featurizer,
       use_small_bfd=use_small_bfd,
-      use_precomputed_msas=False)
+      use_precomputed_msas=FLAGS.use_precomputed_msas)
 
   if run_multimer_system:
     data_pipeline = pipeline_multimer.DataPipeline(
         monomer_data_pipeline=monomer_data_pipeline,
         jackhmmer_binary_path=FLAGS.jackhmmer_binary_path,
         uniprot_database_path=FLAGS.uniprot_database_path,
-        use_precomputed_msas=False)
+        use_precomputed_msas=FLAGS.use_precomputed_msas)
   else:
     data_pipeline = monomer_data_pipeline
 

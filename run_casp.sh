@@ -10,10 +10,13 @@ help() {
   echo -e "usage: `basename $0` [options] input_fasta1 input_fasta2 ...\n" \
           "options:\n" \
           "  -t, --timestamp <timestamp>\n" \
+          "  -m, --docker_image_name <docker_image_name>\n" \
           "  -o, --output_dir <output_dir>\n" \
           "  -p, --model_params <model_params>\n" \
           "  -g, --gpu_devices <gpu_devices>\n" \
+          "  --multi_gpus\n" \
           "  -s, --enable_domain_split\n" \
+          "  --enable_deep_msa2\n" \
 	  "\n" \
 	  "platforms:\n" \
 	  "  --msa_tool_home <msa_tool_home>\n" \
@@ -29,13 +32,16 @@ msa_tool_srv="dbu@idnode17"
 
 
 timestamp=$(date +%Y%m%d-%H%M%S-%N)
+docker_image_name="alphafold2"
 output_dir=${CWD}/data
 model_params=""
 gpu_devices="all"
+multi_gpus=""
 
 enable_domain_split=0
+enable_deep_msa2=0
 
-ARGS=$(getopt --options "t:o:p:g:sh" --longoptions "timestamp:,output_dir:,model_params:,gpu_devices:,msa_tool_home:,msa_tool_srv:,enable_domain_split,help" -- "$@") || exit
+ARGS=$(getopt --options "t:o:p:g:sh" --longoptions "timestamp:,output_dir:,model_params:,gpu_devices:,msa_tool_home:,msa_tool_srv:,multi_gpus,enable_domain_split,enable_deep_msa2,help" -- "$@") || exit
 eval "set -- ${ARGS}"
 echo "ARGS: $*"
 while true; do
@@ -43,13 +49,16 @@ while true; do
   echo "2:$2"
   case "$1" in
     (-t | --timestamp) timestamp="$2"; shift 2;;
+    (-m | --docker_image_name) docker_image_name="$2"; shift 2;;
     (-o | --output_dir) output_dir="$2"; shift 2;;
     (-p | --model_params) model_params="$2"; shift 2;;
     (-g | --gpu_devices) gpu_devices="$2"; shift 2;;
+    (--multi_gpus) multi_gpus="--multi_gpus"; shift 1;;
     (--msa_tool_home) msa_tool_home="$2"; shift 2;;
     (--msa_tool_srv) msa_tool_srv="$2"; shift 2;;
     (-h | --help) help 0 ;;
     (-s | --enable_domain_split) enable_domain_split=1; shift 1;;
+    ( --enable_deep_msa2) enable_deep_msa2=1; shift 1;;
     (--) shift 1; break;;
     (*) help 1;
   esac
@@ -123,6 +132,11 @@ echo "msa_tool_run done"
 #########################
 # MSA postprocess modules
 #########################
+if [ ${enable_deep_msa2} -eq 1 ]; then
+  ${msa_tool_run} bash -x ${msa_tool_home}/CASP/run_deep_msa2.sh \
+      -o ${msa_tool_data_dir}/msa \
+      ${msa_tool_file_list}
+fi
 if [ ${enable_domain_split} -eq 1 ]; then
   # run msa_assemble
   for f in $@; do
@@ -160,10 +174,10 @@ else
     model_params="${model_params} --use_precomputed_msas"
   fi
 fi
-model_params="${model_params} --gpu_devices=${gpu_devices}"
+model_params="${model_params} --gpu_devices=${gpu_devices} ${multi_gpus}"
 
 bash -x run_alphafold.sh \
-   -m alphafold \
+   -m ${docker_image_name} \
    -d db \
    -o ${af2_pred_data_dir}/msa \
    -p "${model_params}" \

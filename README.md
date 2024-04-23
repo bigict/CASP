@@ -8,7 +8,7 @@ Improve protein structure prediction accuracy by MSA searching strategies
    ```shell
    $ git clone git@github.com:bigict/CASP.git
    $ cd CASP
-   $ git submodule update --init
+   $ git submodule update --init --recursive --remote
    $ cd alphafold
    $ docker build -t alphafold -f docker/Dockerfile .
    ```

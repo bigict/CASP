@@ -8,7 +8,6 @@ Author: TanQian
 #import subprocess
 import os
 import argparse
-import re
 #import collections
 #import itertools
 #import string
@@ -116,41 +115,122 @@ def combine_db_msa(bfd_msas, uniref90_msas, mgnify_msas):
   db_msas = {}
   for domain in bfd_msas.keys():
     print(f'Combining {domain} MSAs')
+
     db_msas[
         domain] = bfd_msas[domain] + uniref90_msas[domain] + mgnify_msas[domain]
   return db_msas
 
 
-def combine_domain(db_msas):
-  # 将 db_msas 根据 domain 进行横向拼接
-  domain_names = sorted(list(db_msas.keys()),
-                        key=lambda x: int(re.search(r'\d+', x).group()))
+# def combine_domain(db_msas):
+#   # 将 db_msas 根据 domain 进行横向拼接
+#   domain_names = sorted(list(db_msas.keys()),
+#                         key=lambda x: int(re.search(r'\d+', x).group()))
 
-  # domain_msas_lines 是个列表，其中的每个元素是一个 domain 的 MSA，该 MSA 被按照换行符拆分成了行的列表。
-  domain_msas_lines = [msa.split('\n') for msa in db_msas.values()]
+#   # domain_msas_lines 是个列表，其中的每个元素是一个 domain 的 MSA，该 MSA 被按照换行符拆分成了行的列表。
+#   domain_msas_lines = [msa.split('\n') for msa in db_msas.values()]
 
-  # 统一domain内部长度
-  for i in range(len(domain_msas_lines)):
-    #处理各个domain：
-    max_length = max(len(line) for line in domain_msas_lines[i])
-    for j in range(len(domain_msas_lines[i])):
-      if len(domain_msas_lines[i][j]) < max_length:
-        while len(domain_msas_lines[i][j]) < max_length:
-          domain_msas_lines[i][j] += '-'
+#   # 统一domain内部长度
+#   for i in range(len(domain_msas_lines)):
+#     #处理各个domain：
+#     max_length = max(len(line) for line in domain_msas_lines[i])
+#     for j in range(len(domain_msas_lines[i])):
+#       if len(domain_msas_lines[i][j]) < max_length:
+#         while len(domain_msas_lines[i][j]) < max_length:
+#           domain_msas_lines[i][j] += '-'
 
-  # 统一各个domaini的深度
-  max_depth = max(len(msa) for msa in domain_msas_lines)
-  for i in range(len(domain_msas_lines)):
-    if len(domain_msas_lines[i]) < max_depth:
-      while len(domain_msas_lines[i]) < max_depth:
-        domain_msas_lines[i].append('-' * len(domain_msas_lines[i][0]))
+#   # 统一各个domaini的深度
+#   max_depth = max(len(msa) for msa in domain_msas_lines)
+#   for i in range(len(domain_msas_lines)):
+#     if len(domain_msas_lines[i]) < max_depth:
+#       while len(domain_msas_lines[i]) < max_depth:
+#         domain_msas_lines[i].append('-' * len(domain_msas_lines[i][0]))
 
-  # 横向拼接
+#   # 横向拼接
+#   spliced_msa = ''
+#   for row in range(len(domain_msas_lines[0])):
+#     for i in range(len(domain_names)):
+#       spliced_msa += domain_msas_lines[i][row]
+#     spliced_msa += '\n'
+
+#   return spliced_msa
+
+
+def combine_domain(db_msas, protein_name, input_folder):
+  del input_folder
   spliced_msa = ''
-  for row in range(len(domain_msas_lines[0])):
-    for i in range(len(domain_names)):
-      spliced_msa += domain_msas_lines[i][row]
-    spliced_msa += '\n'
+  with open(os.path.join('seq_parse/FUpredOutput',
+                         f'{protein_name}-FUpred.txt'),
+            'r',
+            encoding='utf-8') as fu_file:
+    domain_info = fu_file.read()
+
+  #domain_info删掉文章末尾可能出现的换行符和';'，并分割
+  domain_info = domain_info.strip().strip(';')
+
+  domains = domain_info.split(';')
+  print(f'domains: {domains}')
+
+  domain_info = [
+      item for sub_string in domain_info.split(';')
+      for item in sub_string.split(',')
+  ]
+  # domain_info示例：['1-78','111-138','228-321','79-110','139-196'],
+  # 现在将这些列表元素按照首个数字排序
+  domain_info = sorted(domain_info, key=lambda x: int(x.split('-')[0]))
+  print(f'domain_info: {domain_info}')
+
+  # 将head_line和msa_line视为一组，所以max_depth/2.值为
+  # db_msas.values()中最大的msa的行数
+  max_depth = max(len(msa.split('\n')) for msa in db_msas.values()) // 2
+  print(f'max_depth: {max_depth}')
+
+  for row_index in range(max_depth):  #注意row_index从0开始！
+    head_line = ''
+    msa_line = ''
+    #开始对这一行按照domain_info的顺序进行横向拼接
+    for i, region in enumerate(domain_info):
+      #region:eg:'1-78',是个字符串
+      start = int(region.split('-')[0])
+      end = int(region.split('-')[1])
+      msa_len = end - start + 1
+
+      #如果domain_info不能覆盖原有序列，则以'-'填充
+      if i == 0:
+        if start > 1:
+          head_line += '>' + ' ' * (start - 1)
+          msa_line += '-' * (start - 1)
+      else:
+        if start > 1 + int(domain_info[i - 1].split('-')[1]):
+          head_line += ' ' * (start - 1 - int(domain_info[i - 1].split('-')[1]))
+          msa_line += '-' * (start - 1 - int(domain_info[i - 1].split('-')[1]))
+
+      #found_index是domain_info中region所在的domain的索引
+      found_index = None
+      for j, domain in enumerate(domains, start=1):
+        if region in domain:
+          print(f'{region}  is in Domain{j}: {domain}')
+          found_index = j
+          break
+
+      if found_index is None:
+        print(f'{region} not found in domains')
+        sys.exit(1)
+
+      #input_folder= msa_tool_data_dir/msa
+      region_msa = db_msas[f'{protein_name}Domain{found_index}'].split('\n')
+      #if 此行对应的domain的msa行数不够，则以'-'填充
+      if row_index > ((len(region_msa) // 2) - 1):
+        print(
+            f'row_index: {row_index} is out of range,max_row_index:'
+            f'{len(region_msa) // 2 - 1}'
+        )
+        head_line += ' ' * msa_len
+        msa_line += '-' * msa_len
+      else:
+        head_line += '>' + region_msa[row_index * 2][start - 1:end]
+        msa_line += region_msa[row_index * 2 + 1][start - 1:end]
+
+    spliced_msa += head_line + '\n' + msa_line + '\n'
 
   return spliced_msa
 
@@ -199,7 +279,7 @@ def main():
   mgnify_msas = read_msa_from_mgnify(mgnify_paths)
   db_msas = combine_db_msa(bfd_msas, uniref90_msas, mgnify_msas)
 
-  spliced_msa = combine_domain(db_msas)
+  spliced_msa = combine_domain(db_msas, args.protein_name, args.input_folder)
   output_path = os.path.join(args.output_folder,
                              f'{args.protein_name}-assembled.a3m')
   write_spliced_msa(output_path, spliced_msa)
