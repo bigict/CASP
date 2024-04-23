@@ -10,6 +10,7 @@ help() {
   echo -e "usage: `basename $0` [options] input_fasta1 input_fasta2 ...\n" \
           "options:\n" \
           "  -t, --timestamp <timestamp>\n" \
+          "  -m, --docker_image_name <docker_image_name>\n" \
           "  -o, --output_dir <output_dir>\n" \
           "  -p, --model_params <model_params>\n" \
           "  -g, --gpu_devices <gpu_devices>\n" \
@@ -31,6 +32,7 @@ msa_tool_srv="dbu@idnode17"
 
 
 timestamp=$(date +%Y%m%d-%H%M%S-%N)
+docker_image_name="alphafold2"
 output_dir=${CWD}/data
 model_params=""
 gpu_devices="all"
@@ -47,6 +49,7 @@ while true; do
   echo "2:$2"
   case "$1" in
     (-t | --timestamp) timestamp="$2"; shift 2;;
+    (-m | --docker_image_name) docker_image_name="$2"; shift 2;;
     (-o | --output_dir) output_dir="$2"; shift 2;;
     (-p | --model_params) model_params="$2"; shift 2;;
     (-g | --gpu_devices) gpu_devices="$2"; shift 2;;
@@ -174,7 +177,7 @@ fi
 model_params="${model_params} --gpu_devices=${gpu_devices} ${multi_gpus}"
 
 bash -x run_alphafold.sh \
-   -m alphafold \
+   -m ${docker_image_name} \
    -d db \
    -o ${af2_pred_data_dir}/msa \
    -p "${model_params}" \
