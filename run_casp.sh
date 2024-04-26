@@ -172,7 +172,8 @@ if [ ${enable_domain_split} -eq 1 ]; then
     ${msa_tool_run} bash  ${msa_tool_home}/CASP/msa_assemble.sh \
       -i "${msa_tool_data_dir}/msa" \
       -n "${f}" \
-      -o "${msa_tool_data_dir}/msa/${f}_assembled/msas"
+      -o "${msa_tool_data_dir}/msa/${f}_assembled/msas" \
+      --input_fasta "${msa_tool_data_dir}/fasta/${f}.fasta"
   done
   echo "msa_assemble done"
 fi
@@ -286,8 +287,9 @@ if [ ${clean_model_rsult_pkl} -eq 1 ]; then
   for f in ${af2_pred_file_list}; do
     f=$(basename ${f})
     f=${f%.*}
-    echo "cleanup:find ${af2_pred_data_dir}/msa/${f} -name "result_model_*.pkl" -exec rm -f {} \;" 
-    find ${af2_pred_data_dir}/msa/${f} -name "result_model_*.pkl" -exec rm -f {} \;
+    echo "cleanup:find ${af2_pred_data_dir}/msa/${f}* -name "result_model_*.pkl" -exec rm -f {} \;" 
+    find ${af2_pred_data_dir}/msa/${f}* -name "result_model_*.pkl" -exec rm -f {} \;
     ls -l ${af2_pred_data_dir}/msa/${f}
+    
   done
 fi
