@@ -41,7 +41,8 @@ WORKER_NUM=25
 enable_domain_split=0
 num_predictions_per_model=1 #default
 clean_model_rsult_pkl=0
-ARGS=$(getopt --options "t:o:p:g:shc" --longoptions "timestamp:,output_dir:,model_params:,gpu_devices:,enable_domain_split,help,msa_tool_home:,msa_tool_srv:,num_predictions_per_model:" -- "$@") || exit
+multi_gpus=0
+ARGS=$(getopt --options "t:o:p:g:shc" --longoptions "timestamp:,output_dir:,model_params:,gpu_devices:,enable_domain_split,help,msa_tool_home:,msa_tool_srv:,num_predictions_per_model:,multi_gpus" -- "$@") || exit
 eval "set -- ${ARGS}"
 echo "ARGS: $*"
 while true; do
@@ -58,11 +59,7 @@ while true; do
     (--msa_tool_home) msa_tool_home="$2"; shift 2;;
     (--msa_tool_srv) msa_tool_srv="$2"; shift 2;;
     (--num_predictions_per_model) num_predictions_per_model="$2"; shift 2;;
-    (--) shift 1; break;;
-    (*) help 1;
-    (-s | --enable_domain_split) enable_domain_split=1; shift 1;;
-    (--msa_tool_home) msa_tool_home="$2"; shift 2;;
-    (--msa_tool_srv) msa_tool_srv="$2"; shift 2;;
+    (--multi_gpus) multi_gpus=1; shift 1;;
     (--num_predictions_per_model) num_predictions_per_model="$2"; shift 2;;
     (--) shift 1; break;;
     (*) help 1;
@@ -77,6 +74,7 @@ echo "msa_tool_home: ${msa_tool_home}"
 echo "msa_tool_srv: ${msa_tool_srv}"
 echo "num_predictions_per_model: ${num_predictions_per_model}"
 echo "clean_model_rsult_pkl: ${clean_model_rsult_pkl}"
+echo "multi_gpus: ${multi_gpus}"
 msa_tool_run="ssh ${msa_tool_srv}"
 
 
@@ -196,6 +194,10 @@ else
     model_params="${model_params} --use_precomputed_msas"
   fi
 fi
+
+if [ ${multi_gpus} -eq 1 ]; then
+  model_params="${model_params} --multi_gpus"
+fi
 model_params="${model_params} --gpu_devices=${gpu_devices} --num_predictions_per_model=${num_predictions_per_model}"
 
 af2_pred_file_list=""
@@ -262,10 +264,18 @@ fi
 
 echo "start run alphafold"
 
-db=/mnt/data/alphafold
+echo "bash -x run_alphafold.sh \
+    -m alphafold2:latest \
+    -d db \
+    -o "${af2_pred_data_dir}/msa" \
+    -s \
+    -p "${model_params}" \
+    ${af2_pred_file_list}"
+
+#db=/mnt/data/alphafold   #node10
 bash -x run_alphafold.sh \
-    -m alphafold2:tanqian8 \
-    -d ${db} \
+    -m alphafold2:latest\
+    -d db \
     -o "${af2_pred_data_dir}/msa" \
     -s \
     -p "${model_params}" \
