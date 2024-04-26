@@ -6,3 +6,6 @@
 	path = msa-suite
 	url = git@github.com:bigict/msa-suite.git
     branch = main
+[submodule "massivefold"]
+	path = massivefold
+	url = git@github.com:GBLille/MassiveFold.git
