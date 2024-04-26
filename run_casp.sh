@@ -41,7 +41,7 @@ multi_gpus=""
 enable_domain_split=0
 enable_deep_msa2=0
 
-ARGS=$(getopt --options "t:o:p:g:sh" --longoptions "timestamp:,output_dir:,model_params:,gpu_devices:,msa_tool_home:,msa_tool_srv:,multi_gpus,enable_domain_split,enable_deep_msa2,help" -- "$@") || exit
+ARGS=$(getopt --options "m:t:o:p:g:sh" --longoptions "timestamp:,output_dir:,model_params:,gpu_devices:,msa_tool_home:,msa_tool_srv:,multi_gpus,enable_domain_split,enable_deep_msa2,help" -- "$@") || exit
 eval "set -- ${ARGS}"
 echo "ARGS: $*"
 while true; do
