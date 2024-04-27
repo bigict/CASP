@@ -1,6 +1,8 @@
 #!/bin/bash
 #
 
+set -e
+
 CWD=`readlink -f $0`
 CWD=`dirname ${CWD}`
 
