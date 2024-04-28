@@ -62,7 +62,9 @@ elif [ $# -eq 1 ]; then
   mkdir -p ${output_dir}
 
   pid=$(basename $1 | awk -F '.' '{printf("%s", $1); for(i=2;i<NF;++i){printf(".%s", $i);}}');
-  find ${output_dir}/${pid}/msas -name "*.sto.gz" -exec gunzip {} \;
+  if [ -d ${output_dir}/${pid}/msas ]; then
+    find ${output_dir}/${pid}/msas -name "*.sto.gz" -exec gunzip {} \;
+  fi
   ${CONDA_HOME}/envs/${CONDA_ENV}/bin/python run_msa_tool.py \
         --output_dir=${output_dir} \
         --uniref90_database_path=${data_dir}/uniref90/uniref90.fasta \
