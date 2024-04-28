@@ -1,11 +1,12 @@
 [submodule "alphafold"]
-	path = alphafold
-	url = git@github.com:bigict/alphafold.git
+    path = alphafold
+    url = git@github.com:bigict/alphafold.git
     branch = env
 [submodule "msa-suite"]
-	path = msa-suite
-	url = git@github.com:bigict/msa-suite.git
+    path = msa-suite
+    url = git@github.com:bigict/msa-suite.git
     branch = main
 [submodule "massivefold"]
-	path = massivefold
-	url = git@github.com:GBLille/MassiveFold.git
+    path = massivefold
+    url = git@github.com:GBLille/MassiveFold.git
+    branch = main
