@@ -92,6 +92,7 @@ for f in $*; do
       --output_dir=${output_dir} \
       --fasta_paths=${f} \
       ${af2_params}
+  touch ${output_dir}/${fasta_name}/DONE
   if [ ${clean_model_result_pkl} -ne 0 ]; then
     echo "Cleanup: find ${output_dir}/${fasta_name} -name "result_model_*.pkl" -exec rm -rf {} \;"
     find ${output_dir}/${fasta_name} -name "result_model_*.pkl" -exec rm -rf {} \;
