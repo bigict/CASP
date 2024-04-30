@@ -249,6 +249,7 @@ if [ ${use_deepmsa2} -eq 1 ]; then
       output_dir="${af2_pred_data_dir}/msa/${f}/${dir}"
       echo "bash -x run_alphafold.sh \
           -m alphafold2:latest \
+          -d db\
           -s \
           -o ${output_dir} \
           -p "${model_params}" \
@@ -258,6 +259,7 @@ if [ ${use_deepmsa2} -eq 1 ]; then
       bash -x run_alphafold.sh \
           -m alphafold2:latest \
           -s \
+          -d db\
           -o ${output_dir} \
           -p "${model_params}" \
           ${fasta_file} \
