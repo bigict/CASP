@@ -312,10 +312,20 @@ if [ ${enable_domain_split} -eq 1 ]; then
   for f in $@; do
     f=$(basename ${f})
     f=${f%.*}
+    echo "${msa_tool_run} bash  ${msa_tool_home}/CASP_multimer/msa_assemble.sh \
+      -i "${msa_tool_data_dir}/msa" \
+      -n "${f}" \
+      -o "${msa_tool_data_dir}/msa/${f}_assembled/msas" \
+      --input_fasta "${msa_tool_data_dir}/fasta/${f}.fasta"    "  
+
     ${msa_tool_run} bash  ${msa_tool_home}/CASP_multimer/msa_assemble.sh \
       -i "${msa_tool_data_dir}/msa" \
       -n "${f}" \
-      -o "${msa_tool_data_dir}/msa/${f}_assembled/msas"
+      -o "${msa_tool_data_dir}/msa/${f}_assembled/msas" \
+      --input_fasta "${msa_tool_data_dir}/fasta/${f}.fasta"
+
+    
+    ${msa_tool_run} cp /public/dbu/CASP_multimer/data/424-native/msa/${f}/msas/pdb_hits.hhr ${msa_tool_data_dir}/msa/${f}_assembled/msas
   done
   echo "msa_assemble done"
 fi
@@ -391,30 +401,23 @@ fi
 # fi
 
 echo "start run alphafold"
-db=/mnt/data/alphafold   #node10
+#db=/mnt/data/alphafold   #node10
 echo "bash -x run_alphafold.sh \
     -m alphafold2:latest \
-    -d ${db} \
     -o "${af2_pred_data_dir}/msa" \
     -s \
+    -d db\
     -p "${model_params}" \
     ${af2_pred_file_list}"
 
 bash -x run_alphafold.sh \
     -m alphafold2:latest \
-    -d ${db} \
     -o "${af2_pred_data_dir}/msa" \
     -s \
+    -d db\
     -p "${model_params}" \
     ${af2_pred_file_list}
-#db=/mnt/data/alphafold   #node10
-# bash -x run_alphafold.sh \
-#     -m alphafold2:latest\
-#     -d db \
-#     -o "${af2_pred_data_dir}/msa" \
-#     -s \
-#     -p "${model_params}" \
-#     ${af2_pred_file_list}
+# #db=/mnt/data/alphafold   #node10
 
 # s: single: 让sto生成一个空的；一般是确认我之前搜的msa是否正确
 if [ ${clean_model_rsult_pkl} -eq 1 ]; then
