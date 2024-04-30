@@ -27,7 +27,7 @@ help() {
 }
 
 msa_tool_home="/public/dbu"
-msa_tool_srv="dbu@idnode17"
+msa_tool_srv="dbu@idnode19"
 msa_tool_sync="rsync -avP -e ssh"
 
 
@@ -85,7 +85,7 @@ echo "use_deepmsa2: ${use_deepmsa2}"
 msa_tool_run="ssh ${msa_tool_srv}"
 
 
-msa_tool_data_dir="${msa_tool_home}/CASP/data/${timestamp}"
+msa_tool_data_dir="${msa_tool_home}/CASP_multimer/data/${timestamp}"
 ${msa_tool_run} mkdir -p ${msa_tool_data_dir}/fasta
 af2_pred_data_dir="${output_dir}/${timestamp}"
 mkdir -p ${af2_pred_data_dir}
@@ -122,7 +122,7 @@ if [ ${enable_domain_split} -eq 1 ]; then
   done
   echo "mapred_file_list: ${mapred_file_list}"
   seq_parse_cmd=" \
-  ${msa_tool_run} bash ${msa_tool_home}/CASP/seq_parse/seq_parse.sh \
+  ${msa_tool_run} bash ${msa_tool_home}/CASP_multimer/seq_parse/seq_parse.sh \
   -o ${msa_tool_data_dir}/fasta \
   -i"
 
@@ -159,7 +159,7 @@ if [ ${skip_af2_msa} -eq 0 ]; then
   fi
 
   echo "start run msa_tool"
-  ${msa_tool_run} bash  ${msa_tool_home}/CASP/run_msa_tool.sh \
+  ${msa_tool_run} bash  ${msa_tool_home}/CASP_multimer/run_msa_tool.sh \
     -d ${msa_tool_home}/data/af2_db \
     -o ${msa_tool_data_dir}/msa \
     "${msa_params}" \
@@ -209,33 +209,31 @@ if [ ${use_deepmsa2} -eq 1 ]; then
     fi
   done
   echo "deepmsa2_file_list:${deepmsa2_file_list}"
-  echo "${msa_tool_run} bash  ${msa_tool_home}/CASP/run_deep_msa2.sh \
+  echo "${msa_tool_run} bash  ${msa_tool_home}/CASP_multimer/run_deep_msa2.sh \
     -o ${msa_tool_data_dir}/msa \
     -n ${deepmsa2_work_num} \
-    ${deepmsa2_file_list}"
+    ${deepmsa2_file_list} > ${msa_tool_data_dir}/msa/deepmsa2.log"
 
-  ${msa_tool_run} bash  ${msa_tool_home}/CASP/run_deep_msa2.sh \
-    -o ${msa_tool_data_dir}/msa \
-    -n ${deepmsa2_work_num} \
-    ${deepmsa2_file_list}
-  echo "deepmsa2 search msadone"
+  # ${msa_tool_run} bash ${msa_tool_home}/CASP_multimer/run_deep_msa2.sh \
+  #   -o ${msa_tool_data_dir}/msa \
+  #   -n ${deepmsa2_work_num} \
+  #   ${deepmsa2_file_list} > ${msa_tool_data_dir}/msa/deepmsa2.log
+  echo "deepmsa2 search msa done"
 
   #convert deepmsa2 format to af2 format,running af2
   for f in ${deepmsa2_file_list}; do
     fasta_name=$(basename ${f})
     fasta_name=${fasta_name%.*}
-    echo "${msa_tool_run} bash  ${msa_tool_home}/CASP/deepmsa2af.sh \
+    echo "${msa_tool_run} bash  ${msa_tool_home}/CASP_multimer/deepmsa2af.sh \
       -o "${msa_tool_data_dir}/msa/${fasta_name}" \
-      --hhr_file "/public/dbu/CASP/data/424-native/msa/${fasta_name}/msas/pdb_hits.hhr" \
+      --hhr_file "/public/dbu/CASP_multimer/data/424-native/msa/${fasta_name}/msas/pdb_hits.hhr" \
       ${f}"
 
     ${msa_tool_run} bash  ${msa_tool_home}/CASP/deepmsa2af.sh \
       -o "${msa_tool_data_dir}/msa/${fasta_name}" \
-      --hhr_file "${msa_tool_data_dir}/msa/${fasta_name}/msas/pdb_hits.hhr" \
+      --hhr_file "/public/dbu/CASP_multimer/data/424-native/msa/${fasta_name}/msas/pdb_hits.hhr" \
       ${f}
     echo "${f} deepmsa2af done"
-
-    ls -l ${msa_tool_data_dir}/msa/${fasta_name}
   done
 
   ${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/fasta ${af2_pred_data_dir}
@@ -249,7 +247,7 @@ if [ ${use_deepmsa2} -eq 1 ]; then
     declare -A tmscore_dict #关联数组
     for dir in "dMSA" "qMSA" "mMSA/a" "mMSA/b" "mMSA/c"; do
       output_dir="${af2_pred_data_dir}/msa/${f}/${dir}"
-      echo "nohup bash -x run_alphafold.sh \
+      echo "bash -x run_alphafold.sh \
           -m alphafold2:latest \
           -d db \
           -s \
@@ -258,7 +256,7 @@ if [ ${use_deepmsa2} -eq 1 ]; then
           ${fasta_file} \
           >${output_dir}/${f}.log"
 
-      nohup bash -x run_alphafold.sh \
+      bash -x run_alphafold.sh \
           -m alphafold2:latest \
           -d db \
           -s \
@@ -275,7 +273,7 @@ if [ ${use_deepmsa2} -eq 1 ]; then
       > ${log_file}
       for pdb in $(ls ranked_*.pdb); do
           pdb=$(readlink -f ${pdb})
-          python /mnt/data/tanqian/tmscore.py   --gdt -e /home/tanqian/DeepAlign/DeepScore  -v ${pdb} /mnt/data/tanqian/data/"${pdb}".pdb >>  ${log_file}
+          python /mnt/data/tanqian/tmscore.py   --gdt -e /home/tanqian/DeepAlign/DeepScore  -v ${pdb} /mnt/data/tanqian/data/"${f}".pdb >>  ${log_file}
       done
       
       # 使用 grep 命令找出所有 tmscore 值，并排序找出最大值
@@ -316,7 +314,7 @@ if [ ${enable_domain_split} -eq 1 ]; then
   for f in $@; do
     f=$(basename ${f})
     f=${f%.*}
-    ${msa_tool_run} bash  ${msa_tool_home}/CASP/msa_assemble.sh \
+    ${msa_tool_run} bash  ${msa_tool_home}/CASP_multimer/msa_assemble.sh \
       -i "${msa_tool_data_dir}/msa" \
       -n "${f}" \
       -o "${msa_tool_data_dir}/msa/${f}_assembled/msas"
@@ -395,15 +393,22 @@ fi
 # fi
 
 echo "start run alphafold"
-
+db=/mnt/data/alphafold   #node10
 echo "bash -x run_alphafold.sh \
     -m alphafold2:latest \
-    -d db \
+    -d ${db} \
     -o "${af2_pred_data_dir}/msa" \
     -s \
     -p "${model_params}" \
     ${af2_pred_file_list}"
 
+bash -x run_alphafold.sh \
+    -m alphafold2:latest \
+    -d ${db} \
+    -o "${af2_pred_data_dir}/msa" \
+    -s \
+    -p "${model_params}" \
+    ${af2_pred_file_list}
 #db=/mnt/data/alphafold   #node10
 # bash -x run_alphafold.sh \
 #     -m alphafold2:latest\
@@ -420,6 +425,5 @@ if [ ${clean_model_rsult_pkl} -eq 1 ]; then
     f=${f%.*}
     echo "cleanup:find ${af2_pred_data_dir}/msa/${f} -name "result_model_*.pkl" -exec rm -f {} \;" 
     find ${af2_pred_data_dir}/msa/${f} -name "result_model_*.pkl" -exec rm -f {} \;
-    ls -l ${af2_pred_data_dir}/msa/${f}
   done
 fi
