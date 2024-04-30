@@ -249,7 +249,6 @@ if [ ${use_deepmsa2} -eq 1 ]; then
       output_dir="${af2_pred_data_dir}/msa/${f}/${dir}"
       echo "bash -x run_alphafold.sh \
           -m alphafold2:latest \
-          -d db \
           -s \
           -o ${output_dir} \
           -p "${model_params}" \
@@ -258,7 +257,6 @@ if [ ${use_deepmsa2} -eq 1 ]; then
 
       bash -x run_alphafold.sh \
           -m alphafold2:latest \
-          -d db \
           -s \
           -o ${output_dir} \
           -p "${model_params}" \
@@ -295,12 +293,12 @@ if [ ${use_deepmsa2} -eq 1 ]; then
       fi
     done
     echo "${f}'s max_tmscore:${max_tmscore} in ${max_dir}"
-    mkdir -p ${af2_pred_data_dir}/deepmsa/${f}
-    cp -r ${af2_pred_data_dir}/msa/${f}/${max_dir}/${f} ${af2_pred_data_dir}/deepmsa/${f}  #现在${af2_pred_data_dir}/deepmsa/${f}有msas文件夹
+    mkdir -p ${af2_pred_data_dir}/deepmsa/${f}/msas
+    cp -r ${af2_pred_data_dir}/msa/${f}/${max_dir}/${f}/msas ${af2_pred_data_dir}/deepmsa/${f}/msas  #现在${af2_pred_data_dir}/deepmsa/${f}有msas文件夹
 
   done
   #delete ${af2_pred_data_dir}/msa,change /deepmsa to /msa一些替身文学hhh
-  rm -rf ${af2_pred_data_dir}/msa
+  mv ${af2_pred_data_dir}/msa ${af2_pred_data_dir}/trash-msa
   mv ${af2_pred_data_dir}/deepmsa ${af2_pred_data_dir}/msa
   #将msa_tool_data_dir/msa改名为trash-msa
   ${msa_tool_run} mv ${msa_tool_data_dir}/msa ${msa_tool_data_dir}/trash-msa
