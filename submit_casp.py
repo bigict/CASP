@@ -6,7 +6,35 @@ import gzip
 from io import StringIO
 import smtplib
 
-from Bio.PDB import PDBParser, MMCIFParser, PDBIO
+from Bio.PDB import PDBParser, MMCIFParser, PDBIO, Select
+
+class CustomSelect(Select):
+  """Callback functions
+    """
+
+  def __init__(self, model=None, chain_id=None):
+    super().__init__()
+
+    self.model = model
+    self.chain_id = chain_id
+
+  def accept_model(self, model):
+    if self.model is None:
+      return True
+    return model == self.model
+
+  def accept_chain(self, chain):
+    if self.chain_id:
+      return chain.id == self.chain_id
+    return True
+
+  def accept_atom(self, atom):
+    del atom
+    return True
+
+  def accept_residue(self, residue):
+    del residue
+    return True
 
 def yield_chains(input_file):
   input_pid = os.path.basename(input_file)
@@ -27,7 +55,7 @@ def yield_chains(input_file):
   io.set_structure(protein_structure)
   for chain in model.get_chains():
     f = StringIO()
-    io.save(f)
+    io.save(f, select=CustomSelect(model, chain.id))
     yield chain.id, f.getvalue()
 
 def main(args):  # pylint: disable=redefined-outer-name
