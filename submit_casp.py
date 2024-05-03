@@ -62,7 +62,7 @@ def main(args):  # pylint: disable=redefined-outer-name
   mail_text = (f"PFRMAT {args.format}\n"
                f"TARGET {args.target}\n"
                f"AUTHOR {args.author}\n"
-                "REMARK FALCON2\n"
+               f"REMARK {args.method}\n"
                f"METHOD {args.method}\n"
                f"MODEL  {args.model}\n"
                f"STOICH {args.stoich}\n")
