@@ -64,8 +64,9 @@ def main(args):  # pylint: disable=redefined-outer-name
                f"AUTHOR {args.author}\n"
                f"REMARK {args.method}\n"
                f"METHOD {args.method}\n"
-               f"MODEL  {args.model}\n"
-               f"STOICH {args.stoich}\n")
+               f"MODEL  {args.model}\n")
+  if args.stoich:
+    mail_text += f"STOICH {args.stoich}\n"
 
   for input_file in args.input_file:
     for _, input_text in yield_chains(input_file):
@@ -96,7 +97,7 @@ def main(args):  # pylint: disable=redefined-outer-name
   if not args.dry_run:
     s = smtplib.SMTP_SSL("mail.cstnet.cn")
     if args.passwd is not None:
-      s.login(args.sender, args.passwd)  # "ZBZBHYFG8DC*Bjg!")
+      s.login(args.sender, args.passwd)
     r = s.send_message(msg)
     s.quit()
   if args.verbose:
@@ -131,7 +132,7 @@ if __name__ == "__main__":
                       help="registration code of server group name.")
   parser.add_argument("--method", type=str, default="FALCON2",
                       help="records describing the methods used.")
-  parser.add_argument("--stoich", type=str, default="A2",
+  parser.add_argument("--stoich", type=str, default=None,
                       help="stoichiometry information for each target.")
   parser.add_argument("--model", type=int, default=1,
                       help="model index.")
