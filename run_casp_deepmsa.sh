@@ -40,7 +40,7 @@ gpu_devices="all"
 WORKER_NUM=25
 enable_domain_split=0
 num_predictions_per_model=1 #default
-clean_model_rsult_pkl=0
+clean_model_result_pkl=0
 multi_gpus=0
 use_deepmsa2=0
 skip_af2_msa=0
@@ -56,7 +56,7 @@ while true; do
     (-p | --model_params) model_params="$2"; shift 2;;
     (-g | --gpu_devices) gpu_devices="$2"; shift 2;;
     (-h | --help) help 0 ;;
-    (-c ) clean_model_rsult_pkl=1; shift 1;;
+    (-c ) clean_model_result_pkl=1; shift 1;;
     (-s | --enable_domain_split) enable_domain_split=1; shift 1;;
     (--msa_tool_home) msa_tool_home="$2"; shift 2;;
     (--msa_tool_srv) msa_tool_srv="$2"; shift 2;;
@@ -78,7 +78,7 @@ echo "gpu_devices: ${gpu_devices}"
 echo "msa_tool_home: ${msa_tool_home}"
 echo "msa_tool_srv: ${msa_tool_srv}"
 echo "num_predictions_per_model: ${num_predictions_per_model}"
-echo "clean_model_rsult_pkl: ${clean_model_rsult_pkl}"
+echo "clean_model_result_pkl: ${clean_model_result_pkl}"
 echo "multi_gpus: ${multi_gpus}"
 echo "skip_af2_msa: ${skip_af2_msa}"
 echo "use_deepmsa2: ${use_deepmsa2}"
@@ -212,14 +212,14 @@ if [ ${use_deepmsa2} -eq 1 ]; then
   echo "${msa_tool_run} bash  ${msa_tool_home}/CASP_multimer/run_deep_msa2.sh \
     -o ${msa_tool_data_dir}/msa \
     -n ${deepmsa2_work_num} \
-    ${deepmsa2_file_list} > ${msa_tool_data_dir}/msa/deepmsa2.log"
+    ${deepmsa2_file_list}"
 
   # ${msa_tool_run} bash ${msa_tool_home}/CASP_multimer/run_deep_msa2.sh \
   #   -o ${msa_tool_data_dir}/msa \
   #   -n ${deepmsa2_work_num} \
-  #   ${deepmsa2_file_list} > ${msa_tool_data_dir}/msa/deepmsa2.log
+  #   ${deepmsa2_file_list}
   echo "deepmsa2 search msa done"
-
+  
   #convert deepmsa2 format to af2 format,running af2
   for f in ${deepmsa2_file_list}; do
     fasta_name=$(basename ${f})
@@ -296,7 +296,7 @@ if [ ${use_deepmsa2} -eq 1 ]; then
     done
     echo "${f}'s max_tmscore:${max_tmscore} in ${max_dir}"
     mkdir -p ${af2_pred_data_dir}/deepmsa/${f}/msas
-    cp -r ${af2_pred_data_dir}/msa/${f}/${max_dir}/${f}/msas ${af2_pred_data_dir}/deepmsa/${f}/msas  #现在${af2_pred_data_dir}/deepmsa/${f}有msas文件夹
+    cp -r ${af2_pred_data_dir}/msa/${f}/${max_dir}/${f}/msas ${af2_pred_data_dir}/deepmsa/${f}/  #现在${af2_pred_data_dir}/deepmsa/${f}有msas文件夹
 
   done
   #delete ${af2_pred_data_dir}/msa,change /deepmsa to /msa一些替身文学hhh
@@ -366,9 +366,9 @@ if [ ${enable_domain_split} -eq 1 ]; then
 
     #把本地的${af2_pred_data_dir}/fasta中"${f}Domain"的fasta文件删除
     rm -f ${af2_pred_data_dir}/fasta/${f}Domain*.fasta
-    cp ${af2_pred_data_dir}/fasta/${f}.fasta ${af2_pred_data_dir}/fasta/${f}_assembled.fasta
+    #cp ${af2_pred_data_dir}/fasta/${f}.fasta ${af2_pred_data_dir}/fasta/${f}_assembled.fasta
     #将{f}_assembled.fasta加入af2_pred_file_list                                                                                                                                                                                                                                                                 
-    af2_pred_file_list="${af2_pred_file_list} ${af2_pred_data_dir}/fasta/${f}_assembled.fasta"
+    #af2_pred_file_list="${af2_pred_file_list} ${af2_pred_data_dir}/fasta/${f}_assembled.fasta"
 
     echo "af2_pred_file_list:${af2_pred_file_list}"
     #-------------deal with msa-----------------
@@ -377,30 +377,15 @@ if [ ${enable_domain_split} -eq 1 ]; then
     #把${af2_pred_data_dir}/msa/${f}_assembled/msas文件夹中的${f}-assembled.a3m替换同文件目录下的bfd_uniref_hits.a3m
     assembled_dir="${af2_pred_data_dir}/msa/${f}_assembled/msas"
     echo "assembled_dir:${assembled_dir}"
-    ls -l "${assembled_dir}"
+    #ls -l "${assembled_dir}"
     mv "${assembled_dir}/${f}-assembled.a3m" "${assembled_dir}/bfd_uniref_hits.a3m"
-    ls -l "${assembled_dir}"
-    
+    #ls -l "${assembled_dir}"
+    mv ${assembled_dir} ${af2_pred_data_dir}/msa/${f}
+    echo "mv ${assembled_dir} ${af2_pred_data_dir}/msa/${f}"
   done
 
 fi
 
-#delete orginal protein prediction, to speed up
-# if [ ${enable_domain_split} -eq 1 ]; then
-#   ls -l ${af2_pred_data_dir}/fasta
-#   for f in $*; do
-#     f=$(basename ${f})
-#     rm -f ${af2_pred_data_dir}/fasta/${f}
-#   done
-#   ls -l ${af2_pred_data_dir}/fasta
-#   #更新af2_pred_list
-#   af2_pred_file_list=""
-#   for f in ${af2_pred_data_dir}/fasta/*; do
-#     f=$(basename ${f})
-#     af2_pred_file_list="${af2_pred_file_list} ${af2_pred_data_dir}/fasta/${f}"
-#   done
-#   echo "to speed up,now af2_pred_file_list:${af2_pred_file_list}"
-# fi
 
 echo "start run alphafold"
 #db=/mnt/data/alphafold   #node10
@@ -421,8 +406,23 @@ bash -x run_alphafold.sh \
     ${af2_pred_file_list}
 # #db=/mnt/data/alphafold   #node10
 
+if [ ${enable_domain_split} -eq 1 ]; then
+  for f  in ${af2_pred_file_list}; do
+    f=$(basename ${f})
+    f=${f%.*}
+    pushd ${af2_pred_data_dir}/msa/${f}
+    log_file="${af2_pred_data_dir}/${f}_ass_find_max_tmscore.log"
+    > ${log_file}
+    for pdb in $(ls ranked_*.pdb); do
+      pdb=$(readlink -f ${pdb})
+      echo "python /mnt/data/tanqian/tmscore.py   --gdt -e /home/tanqian/DeepAlign/DeepScore  -v ${pdb} /mnt/data/tanqian/data/"${f/_assembled/}".pdb >>  ${log_file}"
+      python /mnt/data/tanqian/tmscore.py   --gdt -e /home/tanqian/DeepAlign/DeepScore  -v ${pdb} /mnt/data/tanqian/data/"${f/_assembled/}".pdb >>  ${log_file}   
+    done
+  done
+fi
+
 # s: single: 让sto生成一个空的；一般是确认我之前搜的msa是否正确
-if [ ${clean_model_rsult_pkl} -eq 1 ]; then
+if [ ${clean_model_result_pkl} -eq 1 ]; then
   for f in ${af2_pred_file_list}; do
     f=$(basename ${f})
     f=${f%.*}

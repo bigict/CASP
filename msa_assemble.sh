@@ -50,4 +50,4 @@ mkdir -p "$OUTPUT_FOLDER"
 # 运行 Python 脚本
 echo python3 "${CWD}/msa_assemble.py" -i "$INPUT_FOLDER" -n "$PROTEIN_NAME" -o "$OUTPUT_FOLDER --input_fasta $INPUT_FASTA"
 
-python3 "${CWD}/msa_assemble.py" -i "$INPUT_FOLDER" -n "$PROTEIN_NAME" -o "$OUTPUT_FOLDER --input_fasta $INPUT_FASTA"
+python3 "${CWD}/msa_assemble.py" -i "$INPUT_FOLDER" -n "$PROTEIN_NAME" -o "$OUTPUT_FOLDER" --input_fasta "$INPUT_FASTA"
