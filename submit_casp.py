@@ -36,7 +36,9 @@ class CustomSelect(Select):
     del residue
     return True
 
-def yield_chains(input_file):
+def yield_chains(input_file,
+                 renumber_chain=False,
+                 renumber_residue_index=False):
   input_pid = os.path.basename(input_file)
   if input_file.endswith(".gz"):
     input_pid, _ = os.path.splitext(input_pid)
@@ -50,6 +52,19 @@ def yield_chains(input_file):
       protein_structure = pdb_parser.get_structure("none", f)
   else:
     protein_structure = pdb_parser.get_structure("none", input_file)
+
+  # FIX: ProFOLD2
+  if renumber_residue_index:
+    for model in protein_structure.get_models():
+      for chain in model.get_chains():
+        for i, residue in enumerate(chain, start=1):
+          residue.id = (residue.id[0], i, residue.id[2])
+  # FIX: while RNA strands numerically (0,1,2,...)
+  if renumber_chain:
+    for model in protein_structure.get_models():
+      for i, chain in enumerate(model.get_chains()):
+        chain.id = str(i)
+
   model = list(protein_structure.get_models())[0]
   io = PDBIO()
   io.set_structure(protein_structure)
@@ -69,7 +84,10 @@ def main(args):  # pylint: disable=redefined-outer-name
     mail_text += f"STOICH {args.stoich}\n"
 
   for input_file in args.input_file:
-    for _, input_text in yield_chains(input_file):
+    for _, input_text in yield_chains(
+        input_file,
+        renumber_chain=args.renumber_chain,
+        renumber_residue_index=args.renumber_residue_index):
       if args.format == "TS":
         input_text = filter(lambda x: x.startswith("ATOM"),
                             input_text.splitlines())
@@ -138,6 +156,10 @@ if __name__ == "__main__":
                       help="model index.")
   parser.add_argument("--parent", type=str, default="N/A",
                       help="parent.")
+  parser.add_argument("--renumber_chain", action="store_true",
+                      help="renumber chain.")
+  parser.add_argument("--renumber_residue_index", action="store_true",
+                      help="renumber residue index.")
   parser.add_argument("--dry_run", action="store_true",
                       help="dry run.")
   parser.add_argument("-v", "--verbose", action="store_true",
