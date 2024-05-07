@@ -189,7 +189,8 @@ fi
 if [ ${multi_gpus} -eq 1 ]; then
   model_params="${model_params} --multi_gpus"
 fi
-model_params="${model_params} --gpu_devices=${gpu_devices} --num_predictions_per_model=${num_predictions_per_model}"
+model_params="${model_params} --gpu_devices=${gpu_devices}"
+#delete num_predictions_per_model
 echo "model_params:${model_params}"
 
 
@@ -345,6 +346,9 @@ for f in $*; do
   f=$(basename ${f})
   af2_pred_file_list="${af2_pred_file_list} ${af2_pred_data_dir}/fasta/${f}"
 done
+
+model_params ="${model_params}  --num_predictions_per_model=${num_predictions_per_model}"
+echo "model_params:${model_params}"
 
 if [ ${enable_domain_split} -eq 1 ]; then
   echo "prepare for running alphafold"
