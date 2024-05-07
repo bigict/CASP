@@ -89,7 +89,10 @@ def read_msa_from_bfd(
   bfd_msas = {}
   for domain, path in bfd_paths.items():
     with open(path, 'r', encoding='utf-8') as file:
-      bfd_msas[domain] = file.read()
+      temp = file.read()
+      temp = temp.strip().splitlines()
+      bfd_msas[domain] = '\n'.join(temp[2:])
+  #print(f'bfd_msas in func:read_msa_from_bfd:{bfd_msas}')
   return bfd_msas
 
 
@@ -98,7 +101,9 @@ def read_msa_from_uniref90(uniref90_paths):  #同时转换成a3m格式
   for domain, path in uniref90_paths.items():
     with open(path, 'r', encoding='utf-8') as file:
       temp = file.read()
-      uniref90_msas[domain] = parsers.convert_stockholm_to_a3m(temp)
+      temp = parsers.convert_stockholm_to_a3m(temp)
+      temp = temp.strip().splitlines()
+      uniref90_msas[domain] = '\n'.join(temp[2:])
   return uniref90_msas
 
 
@@ -107,7 +112,9 @@ def read_msa_from_mgnify(mgnify_paths):
   for domain, path in mgnify_paths.items():
     with open(path, 'r', encoding='utf-8') as file:
       temp = file.read()
-      mgnify_msas[domain] = parsers.convert_stockholm_to_a3m(temp)
+      temp = parsers.convert_stockholm_to_a3m(temp)
+      temp = temp.strip().splitlines()
+      mgnify_msas[domain] = '\n'.join(temp[2:])
   return mgnify_msas
 
 
@@ -117,8 +124,9 @@ def combine_db_msa(bfd_msas, uniref90_msas, mgnify_msas):
   for domain in bfd_msas.keys():
     print(f'Combining {domain} MSAs')
 
-    db_msas[domain] = bfd_msas[domain][1:] + uniref90_msas[domain][
-        1:] + mgnify_msas[domain][1:]
+    db_msas[
+        domain] = bfd_msas[domain] + uniref90_msas[domain] + mgnify_msas[domain]
+
   return db_msas
 
 
@@ -270,9 +278,9 @@ def combine_domain(db_msas, protein_name, fasta_file):
           msa_line += '-' * (start - 1)
 
       if row_index > ((len(region_msa) // 2) - 1):
-        print(
-            f'row_index: {row_index} is out of range,max_row_index: {len(region_msa) // 2 - 1}'
-        )
+        # print(
+        #     f'row_index: {row_index} is out of range,max_row_index: {len(region_msa) // 2 - 1}'
+        # )
         #跳过该阶段的head_line until row_index is not out of range
         msa_line += '-' * msa_len
 
@@ -288,9 +296,9 @@ def combine_domain(db_msas, protein_name, fasta_file):
         has_region_cnt = len([x for x in domains if x[0] == region[0]])
         print(f'has_region_cnt:{has_region_cnt}')
         if has_region_cnt == 1:
-          print(
-              f'the Domain only has 1 region:{region},so we assemble msa_line:{region_msa[row_index * 2 + 1]}'
-          )
+          # print(
+          #     f'the Domain only has 1 region:{region},so we assemble msa_line:{region_msa[row_index * 2 ]}'
+          # )
           head_line += region_msa[row_index * 2]
           msa_line += region_msa[row_index * 2 + 1]
         else:
@@ -343,9 +351,9 @@ def combine_domain(db_msas, protein_name, fasta_file):
           q=7,而我们要截取的是'DE',所以是msa_line[5:7]=[p:q]
           '''
 
-          print(
-              f'now we choose Domain{found_index+1}\'s {region} from [{p}:{q}],msa_line:{region_msa[row_index * 2 + 1][p:q]}'
-          )
+          # print(
+          #     f'now we choose Domain{found_index+1}\'s {region} from [{p}:{q}],msa_line:{region_msa[row_index * 2 + 1][p:q]}'
+          # )
           head_line += region_msa[row_index * 2][p:q]
           msa_line += region_msa[row_index * 2 + 1][p:q]
 

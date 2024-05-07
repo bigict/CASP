@@ -380,8 +380,10 @@ if [ ${enable_domain_split} -eq 1 ]; then
     #ls -l "${assembled_dir}"
     mv "${assembled_dir}/${f}-assembled.a3m" "${assembled_dir}/bfd_uniref_hits.a3m"
     #ls -l "${assembled_dir}"
+    mkdir -p ${af2_pred_data_dir}/msa/${f}/msas
     mv ${assembled_dir} ${af2_pred_data_dir}/msa/${f}
     echo "mv ${assembled_dir} ${af2_pred_data_dir}/msa/${f}"
+    ls -l ${af2_pred_data_dir}/msa/${f}/msas
   done
 
 fi
