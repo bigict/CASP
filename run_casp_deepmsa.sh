@@ -347,7 +347,7 @@ for f in $*; do
   af2_pred_file_list="${af2_pred_file_list} ${af2_pred_data_dir}/fasta/${f}"
 done
 
-model_params ="${model_params}  --num_predictions_per_model=${num_predictions_per_model}"
+model_params="${model_params}  --num_predictions_per_model=${num_predictions_per_model}"
 echo "model_params:${model_params}"
 
 if [ ${enable_domain_split} -eq 1 ]; then
@@ -424,6 +424,8 @@ if [ ${enable_domain_split} -eq 1 ]; then
       echo "python /mnt/data/tanqian/tmscore.py   --gdt -e /home/tanqian/DeepAlign/DeepScore  -v ${pdb} /mnt/data/tanqian/data/"${f/_assembled/}".pdb >>  ${log_file}"
       python /mnt/data/tanqian/tmscore.py   --gdt -e /home/tanqian/DeepAlign/DeepScore  -v ${pdb} /mnt/data/tanqian/data/"${f/_assembled/}".pdb >>  ${log_file}   
     done
+    max_tmscore=$(grep -o 'tmscore=[0-9.]*' "$log_file" | cut -d= -f2 | sort -nr | head -n1)
+    echo "${f}_ass's max_tmscore=$max_tmscore"
   done
 fi
 
