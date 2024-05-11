@@ -63,6 +63,7 @@ if [ ${force_predict} -ne 0 -o ! -e ${output_dir}/${timestamp}/DONE ]; then
   	-t "${timestamp}" \
   	--gpu_devices=all \
   	--multi_gpus \
+	--msa_tool_srv ${msa_tool_srv} \
   	-p "--model_preset=monomer_ptm --num_predictions_per_model=${num_predictions_per_model} --use_precomputed_msas" \
   	$*
 fi
@@ -86,8 +87,9 @@ if [ ${force_email} -ne 0 -o ! -e ${output_dir}/${timestamp}/DONE ]; then
 	  --target=${pid} \
 	  --model=${model} \
 	  --stoich=${stoichiometry} \
+	  --renumber_chain \
 	  --output_file=${output_dir}/${timestamp}/msa/${pid}/email/model_${model}.pdb \
-	  ${output_dir}/${timestamp}/msa/${pid}/ranked_${idx}.pdb
+	  ${output_dir}/${timestamp}/msa/${pid}/ranked_${idx}.cif
     done
   done
 fi
