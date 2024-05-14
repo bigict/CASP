@@ -215,10 +215,10 @@ if [ ${use_deepmsa2} -eq 1 ]; then
     -n ${deepmsa2_work_num} \
     ${deepmsa2_file_list}"
 
-  # ${msa_tool_run} bash ${msa_tool_home}/CASP_multimer/run_deep_msa2.sh \
-  #   -o ${msa_tool_data_dir}/msa \
-  #   -n ${deepmsa2_work_num} \
-  #   ${deepmsa2_file_list}
+  ${msa_tool_run} bash ${msa_tool_home}/CASP_multimer/run_deep_msa2.sh \
+    -o ${msa_tool_data_dir}/msa \
+    -n ${deepmsa2_work_num} \
+    ${deepmsa2_file_list}
   echo "deepmsa2 search msa done"
   
   #convert deepmsa2 format to af2 format,running af2
@@ -227,12 +227,12 @@ if [ ${use_deepmsa2} -eq 1 ]; then
     fasta_name=${fasta_name%.*}
     echo "${msa_tool_run} bash  ${msa_tool_home}/CASP_multimer/deepmsa2af.sh \
       -o "${msa_tool_data_dir}/msa/${fasta_name}" \
-      --hhr_file "/public/dbu/CASP_multimer/data/424-native/msa/${fasta_name}/msas/pdb_hits.hhr" \
+      --hhr_file "${msa_tool_data_dir}/msa/${fasta_name}/msas/pdb_hits.hhr" \
       ${f}"
 
     ${msa_tool_run} bash  ${msa_tool_home}/CASP/deepmsa2af.sh \
       -o "${msa_tool_data_dir}/msa/${fasta_name}" \
-      --hhr_file "/public/dbu/CASP_multimer/data/424-native/msa/${fasta_name}/msas/pdb_hits.hhr" \
+      --hhr_file "${msa_tool_data_dir}/msa/${fasta_name}/msas/pdb_hits.hhr" \
       ${f}
     echo "${f} deepmsa2af done"
   done
@@ -328,7 +328,7 @@ if [ ${enable_domain_split} -eq 1 ]; then
       --input_fasta "${msa_tool_data_dir}/fasta/${f}.fasta"
 
     
-    ${msa_tool_run} cp /public/dbu/CASP_multimer/data/424-native/msa/${f}/msas/pdb_hits.hhr ${msa_tool_data_dir}/msa/${f}_assembled/msas
+    ${msa_tool_run} cp ${msa_tool_data_dir}/msa/${f}/msas/pdb_hits.hhr ${msa_tool_data_dir}/msa/${f}_assembled/msas
   done
   echo "msa_assemble done"
 fi

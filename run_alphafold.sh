@@ -1,5 +1,4 @@
 #!/bin/bash
-#
 
 CWD=`readlink -f $0`
 CWD=`dirname ${CWD}`
@@ -33,7 +32,8 @@ create_sto() {
 }
 
 docker_image_name="alphafold2"
-data_dir=/mnt/data/alphafold/db
+#data_dir=/mnt/data/alphafold/db
+data_dir=/home/tanqian/CASP/db
 output_dir=/mnt/data/alphafold/test
 max_template_date="2021-05-14"
 msa_mode=1   # msa
