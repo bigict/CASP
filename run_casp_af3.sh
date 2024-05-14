@@ -25,10 +25,7 @@ stoichiometry=""
 
 ARGS=$(getopt --options "o:h" --longoptions "output_dir:,target:,stoich:,help" -- "$@") || exit
 eval "set -- ${ARGS}"
-echo "ARGS: $*"
 while true; do
-  echo "1:$1"
-  echo "2:$2"
   case "$1" in
     (-o | --output_dir) output_dir="$2"; shift 2;;
     (--target) target="$2"; shift 2;;
@@ -51,7 +48,6 @@ mkdir -p ${output_dir}
 model=1
 for cif in $(find $* -name *summary_confidences_*.json -exec grep -H ranking_score {} \; | sort -grk3 | awk -F ':' '{print $1}' | awk -F 'summary_confidences|.json' '{printf("%smodel%s.cif\n", $1, $2)}' | head -n 5); do
   echo ${cif}
-  model=$(expr ${model} + 1)
   python submit_casp.py --dry_run -v \
     --target=${target} \
     --model=${model} \
@@ -59,4 +55,5 @@ for cif in $(find $* -name *summary_confidences_*.json -exec grep -H ranking_sco
     --renumber_chain \
     --output_file=${output_dir}/model_${model}.pdb \
     ${cif}
+  model=$(expr ${model} + 1)
 done
