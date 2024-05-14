@@ -6,7 +6,8 @@ import gzip
 from io import StringIO
 import smtplib
 
-from Bio.PDB import PDBParser, MMCIFParser, PDBIO, Select
+from Bio.PDB import PDBParser, MMCIFParser, Select
+from Bio.PDB.mmcifio import MMCIFIO
 
 class CustomSelect(Select):
   """Callback functions
@@ -38,7 +39,10 @@ class CustomSelect(Select):
 
 def yield_chains(input_file,
                  renumber_chain=False,
-                 renumber_residue_index=False):
+                 renumber_rna_chain_start=0,
+                 renumber_dna_chain_start=-1,
+                 renumber_residue_index=False,
+                 chain_mapping=None):
   input_pid = os.path.basename(input_file)
   if input_file.endswith(".gz"):
     input_pid, _ = os.path.splitext(input_pid)
@@ -59,25 +63,46 @@ def yield_chains(input_file,
       for chain in model.get_chains():
         for i, residue in enumerate(chain, start=1):
           residue.id = (residue.id[0], i, residue.id[2])
+  def _has_chain_mapping(chain):
+    return chain_mapping and chain.id in chain_mapping
+
+  for model in protein_structure.get_models():
+    for chain in model.get_chains():
+      if _has_chain_mapping(chain):
+        chain.id = chain_mapping[chain.id]
+    break
   # FIX: while RNA strands numerically (0,1,2,...)
   if renumber_chain:
-    renumber_chain_list = []
+    renumber_rna_chain_list, renumber_dna_chain_list = [], []
     if hasattr(pdb_parser, "_mmcif_dict"):
       for chain_type, chain_list in zip(
           pdb_parser._mmcif_dict["_entity_poly.type"],  # pylint: disable=protected-access
           pdb_parser._mmcif_dict["_entity_poly.pdbx_strand_id"]):  # pylint: disable=protected-access
         if chain_type.find("polyribonucleotide") != -1:
-          renumber_chain_list += chain_list.split(",")
+          renumber_rna_chain_list += chain_list.split(",")
+        elif chain_type.find("polydeoxyribonucleotide") != -1:
+          renumber_dna_chain_list += chain_list.split(",")
     for model in protein_structure.get_models():
-      i = 0
+      i = renumber_rna_chain_start
       for chain in model.get_chains():
-        if chain.id in renumber_chain_list:
+        if _has_chain_mapping(chain):
+          continue
+        if chain.id in renumber_rna_chain_list:
+          chain.id = str(i)
+          i += 1
+      if renumber_dna_chain_start != -1:
+        assert renumber_dna_chain_start >= i
+        i = renumber_dna_chain_start
+      for chain in model.get_chains():
+        if _has_chain_mapping(chain):
+          continue
+        if chain.id in renumber_dna_chain_list:
           chain.id = str(i)
           i += 1
       break
 
   model = list(protein_structure.get_models())[0]
-  io = PDBIO()
+  io = MMCIFIO()
   io.set_structure(protein_structure)
   for chain in model.get_chains():
     f = StringIO()
@@ -94,11 +119,19 @@ def main(args):  # pylint: disable=redefined-outer-name
   if args.stoich:
     mail_text += f"STOICH {args.stoich}\n"
 
+  chain_mapping = None
+  if args.chain_mapping:
+    chain_mapping = args.chain_mapping.split(",")
+    chain_mapping = {m.split("->")[0]: m.split("->")[1] for m in chain_mapping}
+
   for input_file in args.input_file:
     for _, input_text in yield_chains(
         input_file,
         renumber_chain=args.renumber_chain,
-        renumber_residue_index=args.renumber_residue_index):
+        renumber_rna_chain_start=args.renumber_rna_chain_start,
+        renumber_dna_chain_start=args.renumber_dna_chain_start,
+        renumber_residue_index=args.renumber_residue_index,
+        chain_mapping=chain_mapping):
       if args.format == "TS":
         input_text = filter(lambda x: x.startswith("ATOM"),
                             input_text.splitlines())
@@ -167,8 +200,14 @@ if __name__ == "__main__":
                       help="model index.")
   parser.add_argument("--parent", type=str, default="N/A",
                       help="parent.")
+  parser.add_argument("--chain_mapping", type=str, default=None,
+                      help="chain remapping X->Y,W->V.")
   parser.add_argument("--renumber_chain", action="store_true",
                       help="renumber chain.")
+  parser.add_argument("--renumber_rna_chain_start", type=int, default=0,
+                      help="renumber RNA chain start.")
+  parser.add_argument("--renumber_dna_chain_start", type=int, default=-1,
+                      help="renumber DNA chain start.")
   parser.add_argument("--renumber_residue_index", action="store_true",
                       help="renumber residue index.")
   parser.add_argument("--dry_run", action="store_true",
