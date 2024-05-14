@@ -61,17 +61,25 @@ def yield_chains(input_file,
           residue.id = (residue.id[0], i, residue.id[2])
   # FIX: while RNA strands numerically (0,1,2,...)
   if renumber_chain:
-    renumber_chain_list = []
+    renumber_rna_chain_list, renumber_dna_chain_list = [], []
     if hasattr(pdb_parser, "_mmcif_dict"):
       for chain_type, chain_list in zip(
           pdb_parser._mmcif_dict["_entity_poly.type"],  # pylint: disable=protected-access
           pdb_parser._mmcif_dict["_entity_poly.pdbx_strand_id"]):  # pylint: disable=protected-access
         if chain_type.find("polyribonucleotide") != -1:
-          renumber_chain_list += chain_list.split(",")
+          renumber_rna_chain_list += chain_list.split(",")
+        elif chain_type.find("polydeoxyribonucleotide") != -1:
+          renumber_dna_chain_list += chain_list.split(",")
     for model in protein_structure.get_models():
       i = 0
       for chain in model.get_chains():
-        if chain.id in renumber_chain_list:
+        if chain.id in renumber_rna_chain_list:
+          chain.id = str(i)
+          i += 1
+      if renumber_rna_chain_list:
+        i += 2
+      for chain in model.get_chains():
+        if chain.id in renumber_dna_chain_list:
           chain.id = str(i)
           i += 1
       break
