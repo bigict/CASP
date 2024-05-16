@@ -38,6 +38,8 @@ class CustomSelect(Select):
 
 def yield_chains(input_file,
                  renumber_chain=False,
+                 renumber_rna_chain_start=0,
+                 renumber_dna_chain_start=-1,
                  renumber_residue_index=False):
   input_pid = os.path.basename(input_file)
   if input_file.endswith(".gz"):
@@ -71,13 +73,14 @@ def yield_chains(input_file,
         elif chain_type.find("polydeoxyribonucleotide") != -1:
           renumber_dna_chain_list += chain_list.split(",")
     for model in protein_structure.get_models():
-      i = 0
+      i = renumber_rna_chain_start
       for chain in model.get_chains():
         if chain.id in renumber_rna_chain_list:
           chain.id = str(i)
           i += 1
-      if renumber_rna_chain_list:
-        i += 2
+      if renumber_dna_chain_start != -1:
+        assert renumber_dna_chain_start >= i
+        i = renumber_dna_chain_start
       for chain in model.get_chains():
         if chain.id in renumber_dna_chain_list:
           chain.id = str(i)
@@ -106,6 +109,8 @@ def main(args):  # pylint: disable=redefined-outer-name
     for _, input_text in yield_chains(
         input_file,
         renumber_chain=args.renumber_chain,
+        renumber_rna_chain_start=args.renumber_rna_chain_start,
+        renumber_dna_chain_start=args.renumber_dna_chain_start,
         renumber_residue_index=args.renumber_residue_index):
       if args.format == "TS":
         input_text = filter(lambda x: x.startswith("ATOM"),
@@ -177,6 +182,10 @@ if __name__ == "__main__":
                       help="parent.")
   parser.add_argument("--renumber_chain", action="store_true",
                       help="renumber chain.")
+  parser.add_argument("--renumber_rna_chain_start", type=int, default=0,
+                      help="renumber RNA chain start.")
+  parser.add_argument("--renumber_dna_chain_start", type=int, default=-1,
+                      help="renumber DNA chain start.")
   parser.add_argument("--renumber_residue_index", action="store_true",
                       help="renumber residue index.")
   parser.add_argument("--dry_run", action="store_true",

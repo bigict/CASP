@@ -13,6 +13,8 @@ help() {
           "options:\n" \
           "  -t, --timestamp <timestamp>\n" \
 	  "  --stoich <stoichiometry> *required*" \
+	  "  --renumber_rna_start <renumber_rna_start>" \
+	  "  --renumber_dna_start <renumber_dna_start>" \
           "  --force_predict\n" \
           "  --force_plot\n" \
           "  --force_email\n" \
@@ -36,8 +38,10 @@ output_dir=${CWD}/data
 num_predictions_per_model=${num_predictions_per_model:-"50"}
 model_to_relax_topk=${model_to_relax_topk:-"5"}
 stoichiometry=""
+renumber_rna_start=0
+renumber_dna_start=-1
 
-ARGS=$(getopt --options "t:h" --longoptions "timestamp:,msa_tool_home:,msa_tool_srv:,stoich:,force_predict,force_plot,force_email,help" -- "$@") || exit
+ARGS=$(getopt --options "t:h" --longoptions "timestamp:,msa_tool_home:,msa_tool_srv:,stoich:,renumber_rna_start:,renumber_dna_start:,force_predict,force_plot,force_email,help" -- "$@") || exit
 eval "set -- ${ARGS}"
 echo "ARGS: $*"
 while true; do
@@ -46,6 +50,8 @@ while true; do
   case "$1" in
     (-t | --timestamp) timestamp="$2"; shift 2;;
     (--stoich) stoichiometry="$2"; shift 2;;
+    (--renumber_rna_start) renumber_rna_start="$2"; shift 2;;
+    (--renumber_dna_start) renumber_dna_start="$2"; shift 2;;
     (--force_predict) force_predict=1; shift 1;;
     (--force_plot) force_plot=1; shift 1;;
     (--force_email) force_email=1; shift 1;;
@@ -93,6 +99,8 @@ if [ ${force_email} -ne 0 -o ! -e ${output_dir}/${timestamp}/DONE ]; then
 	  --model=${model} \
 	  --stoich=${stoichiometry} \
 	  --renumber_chain \
+	  --renumber_rna_start=${renumber_rna_start} \
+	  --renumber_dna_start=${renumber_dna_start} \
 	  --output_file=${output_dir}/${timestamp}/msa/${pid}/email/model_${model}.pdb \
 	  ${output_dir}/${timestamp}/msa/${pid}/ranked_${idx}.cif
     done

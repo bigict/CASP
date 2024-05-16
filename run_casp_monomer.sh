@@ -24,7 +24,7 @@ help() {
 }
 
 msa_tool_home="/public/dbu"
-msa_tool_srv="dbu@idnode17"
+msa_tool_srv="dbu@idnode18"
 
 timestamp="casp-monomer-$(date +%Y%m%d-%H%M%S-%N)"
 force_predict=0
@@ -32,7 +32,7 @@ force_plot=0
 force_email=0
 docker_image_name="alphafold2"
 output_dir=${CWD}/data
-num_predictions_per_model=${num_predictions_per_model:-"50"}
+num_predictions_per_model=${num_predictions_per_model:-"1"}
 model_to_relax_topk=${model_to_relax_topk:-"5"}
 stoichiometry="A2"
 
