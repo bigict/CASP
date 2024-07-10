@@ -235,6 +235,8 @@ if [ ${use_deepmsa2} -eq 1 ]; then
       --hhr_file "${msa_tool_data_dir}/msa/${fasta_name}/msas/pdb_hits.hhr" \
       ${f}
     echo "${f} deepmsa2af done"
+    ${msa_tool_run} rm -rf ${msa_tool_data_dir}/msa/${fasta_name}/deepMSA2    
+    ${msa_tool_run} ls -l ${msa_tool_data_dir}/msa/${fasta_name}
   done
 
   ${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/fasta ${af2_pred_data_dir}
@@ -274,7 +276,8 @@ if [ ${use_deepmsa2} -eq 1 ]; then
       > ${log_file}
       for pdb in $(ls ranked_*.pdb); do
           pdb=$(readlink -f ${pdb})
-          python /mnt/data/tanqian/tmscore.py   --gdt -e /home/tanqian/DeepAlign/DeepScore  -v ${pdb} /mnt/data/tanqian/data/"${f}".pdb >>  ${log_file}
+          echo "python /mnt/data/tanqian/tmscore.py   --gdt -e /home/tanqian/DeepAlign/DeepScore  -v ${pdb} /mnt/data/tanqian/data/"${f%%Domain*}".pdb >>  ${log_file}"
+          python /mnt/data/tanqian/tmscore.py   --gdt -e /home/tanqian/DeepAlign/DeepScore  -v ${pdb} /mnt/data/tanqian/data/"${f%%Domain*}".pdb >>  ${log_file}
       done
       
       # 使用 grep 命令找出所有 tmscore 值，并排序找出最大值
