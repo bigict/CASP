@@ -208,7 +208,7 @@ for f in ${msa_tool_file_list}; do
   fi
 done
 echo "deepmsa2_file_list:${deepmsa2_file_list}"
-if [ ${skip_deepmsa2} -eq 0] && [ ${use_deepmsa2} -eq 1 ]; then
+if [ ${skip_deepmsa2} -eq 0 ] && [ ${use_deepmsa2} -eq 1 ]; then
   echo "start run deepmsa2"
   #统计${msa_tool_file_list}中含有字符串“Domain”的fasta文件数
   deepmsa2_work_num=$(echo ${msa_tool_file_list}|grep -o "Domain"|wc -l)
