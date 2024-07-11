@@ -44,7 +44,8 @@ clean_model_result_pkl=0
 multi_gpus=0
 use_deepmsa2=0
 skip_af2_msa=0
-ARGS=$(getopt --options "t:o:p:g:shc" --longoptions "timestamp:,output_dir:,model_params:,gpu_devices:,enable_domain_split,help,msa_tool_home:,msa_tool_srv:,num_predictions_per_model:,multi_gpus,skip_af2_msa,use_deepmsa2" -- "$@") || exit
+skip_deepmsa2=0
+ARGS=$(getopt --options "t:o:p:g:shc" --longoptions "timestamp:,output_dir:,model_params:,gpu_devices:,enable_domain_split,help,msa_tool_home:,msa_tool_srv:,num_predictions_per_model:,multi_gpus,skip_af2_msa,use_deepmsa2,skip_deepmsa2" -- "$@") || exit
 eval "set -- ${ARGS}"
 echo "ARGS: $*"
 while true; do
@@ -65,6 +66,7 @@ while true; do
     (--skip_af2_msa) skip_af2_msa=1;shift 1;;
     (--use_deepmsa2) use_deepmsa2=1; shift 1;;
     (--num_predictions_per_model) num_predictions_per_model="$2"; shift 2;;
+    (--skip_deepmsa2) skip_deepmsa2=1; shift 1;;
     (--) shift 1; break;;
     (*) help 1;
   esac
@@ -82,6 +84,7 @@ echo "clean_model_result_pkl: ${clean_model_result_pkl}"
 echo "multi_gpus: ${multi_gpus}"
 echo "skip_af2_msa: ${skip_af2_msa}"
 echo "use_deepmsa2: ${use_deepmsa2}"
+echo "skip_deepmsa2: ${skip_deepmsa2}"
 msa_tool_run="ssh ${msa_tool_srv}"
 
 
@@ -198,18 +201,17 @@ echo "model_params:${model_params}"
 #########################
 # MSA postprocess modules
 #########################
-
-if [ ${use_deepmsa2} -eq 1 ]; then  
+deepmsa2_file_list=""
+for f in ${msa_tool_file_list}; do
+  if [ $(echo ${f}|grep -o "Domain"|wc -l) -eq 1 ]; then
+    deepmsa2_file_list="${deepmsa2_file_list} ${f}"
+  fi
+done
+echo "deepmsa2_file_list:${deepmsa2_file_list}"
+if [ ${skip_deepmsa2} -eq 0] && [ ${use_deepmsa2} -eq 1 ]; then
   echo "start run deepmsa2"
   #统计${msa_tool_file_list}中含有字符串“Domain”的fasta文件数
   deepmsa2_work_num=$(echo ${msa_tool_file_list}|grep -o "Domain"|wc -l)
-  deepmsa2_file_list=""
-  for f in ${msa_tool_file_list}; do
-    if [ $(echo ${f}|grep -o "Domain"|wc -l) -eq 1 ]; then
-      deepmsa2_file_list="${deepmsa2_file_list} ${f}"
-    fi
-  done
-  echo "deepmsa2_file_list:${deepmsa2_file_list}"
   echo "${msa_tool_run} bash  ${msa_tool_home}/CASP_multimer/run_deep_msa2.sh \
     -o ${msa_tool_data_dir}/msa \
     -n ${deepmsa2_work_num} \
@@ -235,14 +237,18 @@ if [ ${use_deepmsa2} -eq 1 ]; then
       --hhr_file "${msa_tool_data_dir}/msa/${fasta_name}/msas/pdb_hits.hhr" \
       ${f}
     echo "${f} deepmsa2af done"
-    ${msa_tool_run} rm -rf ${msa_tool_data_dir}/msa/${fasta_name}/deepMSA2    
-    ${msa_tool_run} ls -l ${msa_tool_data_dir}/msa/${fasta_name}
+    
   done
+fi
 
+  
+if [ ${use_deepmsa2} -eq 1 ]; then
+  ${msa_tool_run} rm -rf ${msa_tool_data_dir}/msa/${fasta_name}/deepMSA2    
+  ${msa_tool_run} ls -l ${msa_tool_data_dir}/msa/${fasta_name}
   ${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/fasta ${af2_pred_data_dir}
   ${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/msa ${af2_pred_data_dir}
-  
-
+  echo "start filter msa"
+  echo "deepmsa2_file_list:${deepmsa2_file_list}"
   for f in ${deepmsa2_file_list}; do
     f=$(basename ${f})
     fasta_file=${af2_pred_data_dir}/fasta/${f}
@@ -331,7 +337,7 @@ if [ ${enable_domain_split} -eq 1 ]; then
       --input_fasta "${msa_tool_data_dir}/fasta/${f}.fasta"
 
     
-    ${msa_tool_run} cp ${msa_tool_data_dir}/msa/${f}/msas/pdb_hits.hhr ${msa_tool_data_dir}/msa/${f}_assembled/msas
+    ${msa_tool_run} cp ${msa_tool_data_dir}/trash-msa/${f}/msas/pdb_hits.hhr ${msa_tool_data_dir}/msa/${f}_assembled/msas
   done
   echo "msa_assemble done"
 fi
