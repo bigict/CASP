@@ -243,8 +243,12 @@ fi
 
   
 if [ ${use_deepmsa2} -eq 1 ]; then
-  ${msa_tool_run} rm -rf ${msa_tool_data_dir}/msa/${fasta_name}/deepMSA2    
-  ${msa_tool_run} ls -l ${msa_tool_data_dir}/msa/${fasta_name}
+  for f in ${deepmsa2_file_list}; do
+    fasta_name=$(basename ${f})
+    fasta_name=${fasta_name%.*}
+    ${msa_tool_run} rm -rf ${msa_tool_data_dir}/msa/${fasta_name}/deepMSA2   
+  done
+  #${msa_tool_run} ls -l ${msa_tool_data_dir}/msa/${fasta_name}
   ${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/fasta ${af2_pred_data_dir}
   ${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/msa ${af2_pred_data_dir}
   echo "start filter msa"
