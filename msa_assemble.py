@@ -212,30 +212,30 @@ def combine_domain(db_msas, protein_name, fasta_file):
   # print(f'domain_info_len: {domain_info_len}')
 
   domains = list(split_domains(domain_info))
-  print(f'domains: {domains}')
+  #print(f'domains: {domains}')
   #domains: [(0, (1, 78, 0)), (0, (111, 138, 78)), (0, (228, 321, 106)), (0, (354, 559, 200)), (0, (603, 687, 406)), (0, (801, 1089, 491)), (0, (1128, 1280, 780)), (0, (1311, 1424, 933)), (1, (79, 110, 0)), (2, (139, 196, 0)), (3, (197, 227, 0)), (4, (322, 353, 0)), (5, (560, 602, 0)), (6, (688, 743, 0)), (7, (744, 800, 0)), (8, (1090, 1127, 0)), (9, (1281, 1310, 0))]
   #将domains按照(0, (1, 78, 0))中(1, 78, 0)的第一个元素排序
   domains = sorted(domains, key=lambda x: x[1][0])
 
-  print(f'domains: {domains}')
+  #print(f'domains: {domains}')
   #将head_line和msa_line视为一组，所以max_depth/2.值为db_msas.values()中最大的msa的行数
   max_depth = max(len(msa.split('\n')) for msa in db_msas.values()) // 2
   print(f'max_depth: {max_depth}')
 
   for row_index in range(max_depth):  #注意row_index从0开始！ 只有domains的名字从1开始
-    print(f'assemble the {row_index}th line')
+    #print(f'assemble the {row_index}th line')
     head_line = ''
     msa_line = ''
     #开始对这一行按照domain_info的顺序进行横向拼接
     for i, region in enumerate(domains):
       #i:region的序号，region:（start,end,start_at）
-      print(f'it is the {i} th region:{region}')
+      #print(f'it is the {i} th region:{region}')
       start = region[1][0]
       end = region[1][1]
       start_at = region[1][2]
       msa_len = end - start + 1
       found_index = int(region[0])
-      print(f'msa_len:{msa_len}')
+      #print(f'msa_len:{msa_len}')
       #如果region不能覆盖原有序列，则以'-'填充
       # if i == 0:
       #   if start > 1:
@@ -283,6 +283,8 @@ def combine_domain(db_msas, protein_name, fasta_file):
         # )
         #跳过该阶段的head_line until row_index is not out of range
         msa_line += '-' * msa_len
+        if i != 0 and start > 1 + int(domains[i - 1][1][1]):
+          msa_line += '-' * (start - 1 - int(domains[i - 1][1][1]))
 
       else:
         #如果region不能覆盖原有序列，则以'-'填充
@@ -294,7 +296,7 @@ def combine_domain(db_msas, protein_name, fasta_file):
         #msa中只有大写字母或者‘-’计数要达到msa_len个，小写字母保留但不计数.msa_line根据p_start和p_end截取
         #has_region_cnt =domains列表中元素[0]是region[0]的个数
         has_region_cnt = len([x for x in domains if x[0] == region[0]])
-        print(f'has_region_cnt:{has_region_cnt}')
+        #print(f'has_region_cnt:{has_region_cnt}')
         if has_region_cnt == 1:
           # print(
           #     f'the Domain only has 1 region:{region},so we assemble msa_line:{region_msa[row_index * 2 ]}'
@@ -311,7 +313,7 @@ def combine_domain(db_msas, protein_name, fasta_file):
           #   msa_line += region_msa[row_index * 2 + 1][start - 1:end]
           #   continue
 
-          print(f'start assemble msa at {start_at}')
+          #print(f'start assemble msa at {start_at}')
           p, q = 0, 0
           k = 0
           while k < start_at and start != 1:
