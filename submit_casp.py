@@ -4,6 +4,7 @@ import os
 from email.message import EmailMessage
 import gzip
 from io import StringIO
+import requests
 import smtplib
 
 from Bio.PDB import PDBParser, MMCIFParser, Select
@@ -156,7 +157,11 @@ def main(args):  # pylint: disable=redefined-outer-name
   if args.output_file:
     with open(args.output_file, "w") as f:
       f.write(mail_text)
-  if not args.dry_run:
+  if not args.dry_run and args.casp_version == 17:
+    url = "https://predictioncenter.org/casp17/submit"
+    data = {"email": args.sender}  # Additional data if required
+    r = requests.post(url, data=data, files={'prediction_file': StringIO(mail_text)})
+  if not args.dry_run and args.casp_version == 16:
     s = smtplib.SMTP_SSL("mail.cstnet.cn")
     if args.passwd is not None:
       s.login(args.sender, args.passwd)
@@ -212,6 +217,8 @@ if __name__ == "__main__":
                       help="renumber residue index.")
   parser.add_argument("--dry_run", action="store_true",
                       help="dry run.")
+  parser.add_argument("--casp_version", choices=[16, 17], type=int, default=17,
+                      help="casp version.")
   parser.add_argument("-v", "--verbose", action="store_true",
                       help="verbose.")
 
