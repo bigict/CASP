@@ -10,3 +10,7 @@
     path = massivefold
     url = git@github.com:GBLille/MassiveFold.git
     branch = main
+[submodule "alphafold3"]
+	path = alphafold3
+	url = git@github.com:bigict/alphafold3.git
+	branch = dev

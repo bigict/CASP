@@ -36,7 +36,7 @@ force_plot=0
 force_email=0
 docker_image_name="alphafold2"
 output_dir=${CWD}/data
-num_predictions_per_model=${num_predictions_per_model:-"50"}
+num_predictions_per_model=${num_predictions_per_model:-"1"}
 model_to_relax_topk=${model_to_relax_topk:-"5"}
 stoichiometry=""
 renumber_rna_start=0
@@ -69,7 +69,7 @@ fi
 
 if [ ${force_predict} -ne 0 -o ! -e ${output_dir}/${timestamp}/DONE ]; then
   export MODEL_TO_RELAX_TOPK=${model_to_relax_topk}
-  bash -x ${CWD}/run_casp.sh -m ${docker_image_name} \
+  bash -x ${CWD}/run_casp.sh.1 -m ${docker_image_name} \
   	-o ${output_dir} \
   	-t "${timestamp}" \
   	--gpu_devices=all \
