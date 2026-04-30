@@ -8,7 +8,8 @@ import requests
 import smtplib
 
 from Bio.PDB import PDBParser, MMCIFParser, Select
-from Bio.PDB.mmcifio import MMCIFIO
+# from Bio.PDB.mmcifio import MMCIFIO
+from Bio.PDB import PDBIO
 
 class CustomSelect(Select):
   """Callback functions
@@ -103,7 +104,7 @@ def yield_chains(input_file,
       break
 
   model = list(protein_structure.get_models())[0]
-  io = MMCIFIO()
+  io = PDBIO()
   io.set_structure(protein_structure)
   for chain in model.get_chains():
     f = StringIO()
