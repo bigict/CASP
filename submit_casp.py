@@ -4,9 +4,12 @@ import os
 from email.message import EmailMessage
 import gzip
 from io import StringIO
+import requests
 import smtplib
 
-from Bio.PDB import PDBParser, MMCIFParser, PDBIO, Select
+from Bio.PDB import PDBParser, MMCIFParser, Select
+# from Bio.PDB.mmcifio import MMCIFIO
+from Bio.PDB import PDBIO
 
 class CustomSelect(Select):
   """Callback functions
@@ -40,7 +43,8 @@ def yield_chains(input_file,
                  renumber_chain=False,
                  renumber_rna_chain_start=0,
                  renumber_dna_chain_start=-1,
-                 renumber_residue_index=False):
+                 renumber_residue_index=False,
+                 chain_mapping=None):
   input_pid = os.path.basename(input_file)
   if input_file.endswith(".gz"):
     input_pid, _ = os.path.splitext(input_pid)
@@ -61,6 +65,14 @@ def yield_chains(input_file,
       for chain in model.get_chains():
         for i, residue in enumerate(chain, start=1):
           residue.id = (residue.id[0], i, residue.id[2])
+  def _has_chain_mapping(chain):
+    return chain_mapping and chain.id in chain_mapping
+
+  for model in protein_structure.get_models():
+    for chain in model.get_chains():
+      if _has_chain_mapping(chain):
+        chain.id = chain_mapping[chain.id]
+    break
   # FIX: while RNA strands numerically (0,1,2,...)
   if renumber_chain:
     renumber_rna_chain_list, renumber_dna_chain_list = [], []
@@ -75,6 +87,8 @@ def yield_chains(input_file,
     for model in protein_structure.get_models():
       i = renumber_rna_chain_start
       for chain in model.get_chains():
+        if _has_chain_mapping(chain):
+          continue
         if chain.id in renumber_rna_chain_list:
           chain.id = str(i)
           i += 1
@@ -82,6 +96,8 @@ def yield_chains(input_file,
         assert renumber_dna_chain_start >= i
         i = renumber_dna_chain_start
       for chain in model.get_chains():
+        if _has_chain_mapping(chain):
+          continue
         if chain.id in renumber_dna_chain_list:
           chain.id = str(i)
           i += 1
@@ -105,13 +121,19 @@ def main(args):  # pylint: disable=redefined-outer-name
   if args.stoich:
     mail_text += f"STOICH {args.stoich}\n"
 
+  chain_mapping = None
+  if args.chain_mapping:
+    chain_mapping = args.chain_mapping.split(",")
+    chain_mapping = {m.split("->")[0]: m.split("->")[1] for m in chain_mapping}
+
   for input_file in args.input_file:
     for _, input_text in yield_chains(
         input_file,
         renumber_chain=args.renumber_chain,
         renumber_rna_chain_start=args.renumber_rna_chain_start,
         renumber_dna_chain_start=args.renumber_dna_chain_start,
-        renumber_residue_index=args.renumber_residue_index):
+        renumber_residue_index=args.renumber_residue_index,
+        chain_mapping=chain_mapping):
       if args.format == "TS":
         input_text = filter(lambda x: x.startswith("ATOM"),
                             input_text.splitlines())
@@ -136,7 +158,11 @@ def main(args):  # pylint: disable=redefined-outer-name
   if args.output_file:
     with open(args.output_file, "w") as f:
       f.write(mail_text)
-  if not args.dry_run:
+  if not args.dry_run and args.casp_version == 17:
+    url = "https://predictioncenter.org/casp17/submit"
+    data = {"email": args.sender}  # Additional data if required
+    r = requests.post(url, data=data, files={'prediction_file': StringIO(mail_text)})
+  if not args.dry_run and args.casp_version == 16:
     s = smtplib.SMTP_SSL("mail.cstnet.cn")
     if args.passwd is not None:
       s.login(args.sender, args.passwd)
@@ -180,6 +206,8 @@ if __name__ == "__main__":
                       help="model index.")
   parser.add_argument("--parent", type=str, default="N/A",
                       help="parent.")
+  parser.add_argument("--chain_mapping", type=str, default=None,
+                      help="chain remapping X->Y,W->V.")
   parser.add_argument("--renumber_chain", action="store_true",
                       help="renumber chain.")
   parser.add_argument("--renumber_rna_chain_start", type=int, default=0,
@@ -190,6 +218,8 @@ if __name__ == "__main__":
                       help="renumber residue index.")
   parser.add_argument("--dry_run", action="store_true",
                       help="dry run.")
+  parser.add_argument("--casp_version", choices=[16, 17], type=int, default=17,
+                      help="casp version.")
   parser.add_argument("-v", "--verbose", action="store_true",
                       help="verbose.")
 
