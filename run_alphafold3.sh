@@ -25,21 +25,23 @@ msa_tool_srv="dbu@inode21"
 num_seeds=100
 norun_data_pipeline=0
 norun_inference=0
+norun_data_sync=0
 
 timestamp="af3-$(date +%Y%m%d-%H%M%S-%N)"
 output_dir=${CWD}/data
 
-ARGS=$(getopt --options "t:fh" --longoptions "timestamp:,msa_tool_home:,msa_tool_srv:,num_seeds:,norun_data_pipeline,norun_inference,help" -- "$@") || exit
+ARGS=$(getopt --options "t:fh" --longoptions "timestamp:,msa_tool_home:,msa_tool_srv:,num_seeds:,norun_data_pipeline,norun_inference,norun_data_sync,help" -- "$@") || exit
 eval "set -- ${ARGS}"
 echo "ARGS: $*"
 while true; do
   case "$1" in
-    (-t | --timestamp) timestamp="$2"; shift 2;; 
-    (--msa_tool_home) msa_tool_home="$2"; shift 2;; 
-    (--msa_tool_srv) msa_tool_srv="$2"; shift 2;; 
-    (--num_seeds) num_seeds="$2"; shift 2;; 
-    (--norun_data_pipeline) norun_data_pipeline=1; shift 1;; 
-    (--norun_inference) norun_inference=1; shift 1;; 
+    (-t | --timestamp) timestamp="$2"; shift 2;;
+    (--msa_tool_home) msa_tool_home="$2"; shift 2;;
+    (--msa_tool_srv) msa_tool_srv="$2"; shift 2;;
+    (--num_seeds) num_seeds="$2"; shift 2;;
+    (--norun_data_pipeline) norun_data_pipeline=1; shift 1;;
+    (--norun_inference) norun_inference=1; shift 1;;
+    (--norun_data_sync) norun_data_sync=1; shift 1;;
     (-h | --help) help 0 ;;
     (--) shift 1; break;;
     (*) help 1;
@@ -57,7 +59,9 @@ ${msa_tool_run} mkdir -p ${msa_tool_data_dir}/fasta
 #########################
 
 # fasta上传远程
-${msa_tool_sync} $* ${msa_tool_srv}:${msa_tool_data_dir}/fasta/
+if [ ${norun_data_sync} -eq 0 ]; then
+  ${msa_tool_sync} $* ${msa_tool_srv}:${msa_tool_data_dir}/fasta/
+fi
 
 
 # 创建msa_tool_file_list文件，里面存放的是各个fasta文件,空格分隔
@@ -80,8 +84,10 @@ fi
 af3_pred_data_dir="${output_dir}/${timestamp}"
 mkdir -p ${af3_pred_data_dir}
 
-${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/fasta ${af3_pred_data_dir}
-${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/msa ${af3_pred_data_dir}
+if [ ${norun_data_sync} -eq 0 ]; then
+  ${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/fasta ${af3_pred_data_dir}
+  ${msa_tool_sync} ${msa_tool_srv}:${msa_tool_data_dir}/msa ${af3_pred_data_dir}
+fi
 
 af3_pred_file_list=""
 for f in $*; do
